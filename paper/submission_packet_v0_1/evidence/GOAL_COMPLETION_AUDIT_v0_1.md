@@ -20,6 +20,7 @@ Scope: This audit evaluates the objective: complete paper creation, no-paid venu
 | Synthetic trace-corpus evaluation exists | complete | `experiments/TRACE_CORPUS_EVALUATION_v0_1.md` |
 | Field-level mapping coverage evaluation exists | complete | `experiments/MAPPING_COVERAGE_EVALUATION_v0_1.md` |
 | Hostile JOSS readiness decision exists | complete | `paper/joss/JOSS_HOSTILE_READINESS_DECISION_v0_1.json` |
+| Engineering evolution evidence narrative exists | complete | `paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md` |
 | Formal submission performed | not_required_for_this_audit_and_not_done | `formal_submission=false` |
 | JOSS submission readiness | incomplete | `submission_preflight_passed=false` |
 | Public release metadata | complete | `license=MIT`, `author=Bin Zhang`, `repository=https://github.com/joy7758/ecl-execution-compact-layer` |
@@ -36,6 +37,7 @@ The paper-writing surface is complete enough for a submission candidate package:
 - trace-corpus evaluation: `experiments/TRACE_CORPUS_EVALUATION_v0_1.md`
 - mapping coverage evaluation: `experiments/MAPPING_COVERAGE_EVALUATION_v0_1.md`
 - hostile JOSS readiness decision: `paper/joss/JOSS_HOSTILE_READINESS_DECISION_v0_1.md`
+- engineering evolution evidence: `paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md`
 
 The venue-screening surface is complete:
 
@@ -49,7 +51,7 @@ The venue-screening surface is complete:
 These items are outside the current public-release activation scope and require human or repository-state decisions:
 
 - verify public development history
-- verify external impact signal
+- treat external impact signal as advisory unless independently verified
 - decide release/archive DOI plan if required
 - approve final JOSS submission
 

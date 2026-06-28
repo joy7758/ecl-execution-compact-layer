@@ -35,6 +35,7 @@ REQUIRED_FILES = [
     "experiments/TRACE_CORPUS_EVALUATION_v0_1.md",
     "experiments/VALIDATION_MATRIX_EVALUATION_v0_1.md",
     "experiments/MAPPING_COVERAGE_EVALUATION_v0_1.md",
+    "paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md",
 ]
 
 
@@ -149,6 +150,31 @@ def check_public_history() -> dict[str, Any]:
     }
 
 
+def check_development_evidence() -> dict[str, Any]:
+    evidence_file = ROOT / "paper" / "joss" / "ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md"
+    text = evidence_file.read_text(encoding="utf-8").lower() if evidence_file.exists() else ""
+    required_tokens = [
+        "engineering_evolution_narrative",
+        "decision timeline",
+        "rejected alternatives",
+        "stabilization evidence",
+        "does_not_satisfy_public_history_gate=true",
+        "non_fake_history=true",
+    ]
+    missing = [token for token in required_tokens if token not in text]
+    ready = evidence_file.exists() and not missing
+    return {
+        "status": "pass" if ready else "fail",
+        "ready": ready,
+        "evidence": {
+            "path": str(evidence_file.relative_to(ROOT)),
+            "required_tokens_present": not missing,
+            "missing_tokens": missing,
+        },
+        "note": "Engineering evolution narrative is documented, but it does not satisfy the public-history gate.",
+    }
+
+
 def check_research_impact() -> dict[str, Any]:
     paper = ROOT / "paper" / "paper.md"
     research_use = ROOT / "docs" / "research_use" / "ECL_RESEARCH_USE_CASE_v0_1.md"
@@ -225,6 +251,7 @@ def build_payload() -> dict[str, Any]:
         "required_files": check_file_presence(),
         "standard_paper_mirror": check_standard_paper_mirror(),
         "experiment_reports": check_experiment_reports(),
+        "development_evidence": check_development_evidence(),
         "research_impact": check_research_impact(),
         "public_repo_sync": check_public_repo_sync(),
         "public_history": check_public_history(),
@@ -249,6 +276,7 @@ def build_payload() -> dict[str, Any]:
             "content_package_ready": gates["required_files"]["status"] == "pass"
             and gates["standard_paper_mirror"]["status"] == "pass"
             and gates["experiment_reports"]["status"] == "pass"
+            and gates["development_evidence"]["status"] == "pass"
             and gates["research_impact"]["status"] == "pass",
             "immediate_joss_submission_recommended": False if blocking else True,
         },
@@ -258,6 +286,7 @@ def build_payload() -> dict[str, Any]:
             "external_impact_verified": False,
             "public_repo_synced": gates["public_repo_sync"]["status"] == "pass",
             "public_history_verified": gates["public_history"]["status"] == "pass",
+            "development_evidence_verified": gates["development_evidence"]["status"] == "pass",
             "research_impact_verified": gates["research_impact"]["status"] == "pass",
         },
     }
@@ -269,7 +298,7 @@ def markdown(payload: dict[str, Any]) -> str:
         "| Gate | Status |",
         "| --- | --- |",
     ]
-    for gate_id, gate in payload["gates"].items():
+    for gate_id, gate in sorted(payload["gates"].items()):
         rows.append(f"| `{gate_id}` | `{gate['status']}` |")
     return (
         "# ECL JOSS Gate Verification v0.1\n\n"
@@ -296,6 +325,8 @@ def markdown(payload: dict[str, Any]) -> str:
         "external_impact_verified=false\n"
         f"public_repo_synced={str(payload['boundary']['public_repo_synced']).lower()}\n"
         f"public_history_verified={str(payload['boundary']['public_history_verified']).lower()}\n"
+        f"development_evidence_verified={str(payload['boundary']['development_evidence_verified']).lower()}\n"
+        f"research_impact_verified={str(payload['boundary']['research_impact_verified']).lower()}\n"
         "```\n"
     )
 

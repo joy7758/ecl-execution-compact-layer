@@ -31,6 +31,7 @@ Pass:
 - Open-source project metadata exists: `CITATION.cff`, `CHANGELOG.md`, `CONTRIBUTING.md`, `SUPPORT.md`, and `.github/workflows/tests.yml`.
 - JOSS workflow and standard paper mirror exist: `.github/workflows/joss-paper.yml`, `paper/paper.md`, and `paper/paper.bib`.
 - Public collaboration templates exist: `.github/ISSUE_TEMPLATE/` and `.github/PULL_REQUEST_TEMPLATE.md`.
+- Engineering evolution narrative exists: `paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md`.
 - No paid journal route is selected.
 
 Pass:
@@ -45,8 +46,11 @@ Pass:
 Fail / missing:
 
 - No six-month public development history is verified.
-- No external user or third-party research-impact signal is verified.
 - Final JOSS submission approval is not recorded.
+
+Advisory:
+
+- No external user or third-party research-impact signal is verified.
 
 Unknown / requires human confirmation:
 
@@ -70,8 +74,8 @@ paid_journal_selected=false
 ## Required Actions Before Any JOSS Submission
 
 1. Confirm public development history for JOSS review expectations.
-2. Add or verify external user, citation, dependency, or third-party research-impact signal if available.
-3. Confirm final JOSS submission approval.
+2. Confirm final JOSS submission approval.
+3. Add or verify external user, citation, dependency, or third-party research-impact signal if available.
 4. Run the local test suite again and update this audit.
 5. Re-run the synthetic trace-corpus evaluation if adapter behavior changes.
 

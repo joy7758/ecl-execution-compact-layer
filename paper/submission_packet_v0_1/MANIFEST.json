@@ -17,28 +17,31 @@
   "tracks": {
     "joss": {
       "status": "content_package_ready_immediate_submission_not_recommended",
-      "submission_performed": false,
-      "blocking_items": [
-        "public_development_history",
-        "external_impact_signal",
-        "final_human_submission_approval"
-      ],
-      "primary_files": [
-        "standard-paper/paper.md",
-        "standard-paper/paper.bib",
-        "joss/JOSS_SUBMISSION_CHECKLIST.md",
-        "joss/JOSS_READY.md"
+            "submission_performed": false,
+            "blocking_items": [
+                "public_development_history",
+                "final_human_submission_approval"
+            ],
+            "advisory_items": [
+                "external_impact_signal"
+            ],
+            "primary_files": [
+                "standard-paper/paper.md",
+                "standard-paper/paper.bib",
+                "joss/JOSS_SUBMISSION_CHECKLIST.md",
+                "joss/JOSS_READY.md"
       ],
       "supporting_files": [
         "joss/JOSS_PREFLIGHT_AUDIT_v0_1.md",
         "joss/JOSS_PREFLIGHT_AUDIT_v0_1.json",
-        "joss/JOSS_GATE_VERIFICATION_v0_1.md",
-        "joss/JOSS_GATE_VERIFICATION_v0_1.json",
-        "joss/JOSS_HOSTILE_READINESS_DECISION_v0_1.md",
-        "joss/JOSS_HOSTILE_READINESS_DECISION_v0_1.json",
-        "joss/JOSS_SUBMISSION_MANIFEST_v0_1.json",
-        "joss/AUTHOR_METADATA_TEMPLATE_v0_1.json"
-      ]
+                "joss/JOSS_GATE_VERIFICATION_v0_1.md",
+                "joss/JOSS_GATE_VERIFICATION_v0_1.json",
+                "joss/JOSS_HOSTILE_READINESS_DECISION_v0_1.md",
+                "joss/JOSS_HOSTILE_READINESS_DECISION_v0_1.json",
+                "joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md",
+                "joss/JOSS_SUBMISSION_MANIFEST_v0_1.json",
+                "joss/AUTHOR_METADATA_TEMPLATE_v0_1.json"
+            ]
     },
     "arxiv": {
       "status": "ready_for_human_submission",
@@ -120,13 +123,15 @@
     "mapping_coverage_loss_missing_field_count": 4,
     "mapping_coverage_evaluation_hash": "sha256:8a8b820ecbdd1b4e88a2d8e07b05be2d479add0f0c6c3265292cc5a86763e43a",
     "joss_gate_verifier_command": "python3 scripts/joss_gate_verifier.py",
-    "joss_gate_verifier_status": "joss_gate_failed_blockers",
-    "joss_gate_verifier_blocking_gates": [
-      "public_history"
-    ],
-    "joss_gate_verifier_advisory_signals": {
-      "external_impact": "unverified"
-    }
+        "joss_gate_verifier_status": "joss_gate_failed_blockers",
+        "joss_gate_verifier_blocking_gates": [
+            "public_history"
+        ],
+        "development_evidence_ready": true,
+        "development_evidence_satisfies_public_history_gate": false,
+        "joss_gate_verifier_advisory_signals": {
+            "external_impact": "unverified"
+        }
   },
   "boundary": {
     "automatic_submission_performed": false,

@@ -13,6 +13,8 @@ joss_content_package_ready=true
 standard_joss_paper_path_ready=true
 public_collaboration_surface_ready=true
 joss_gate_verifier_ready=true
+development_evidence_ready=true
+development_evidence_satisfies_public_history_gate=false
 immediate_joss_submission_recommended=false
 joss_submission_performed=false
 public_repo_synced=true
@@ -53,6 +55,8 @@ evaluation_hash=sha256:8a8b820ecbdd1b4e88a2d8e07b05be2d479add0f0c6c3265292cc5a86
 python3 scripts/joss_gate_verifier.py
 status=joss_gate_failed_blockers
 blocking_gates=["public_history"]
+development_evidence_ready=true
+development_evidence_satisfies_public_history_gate=false
 external_impact_signal="advisory_unverified"
 ```
 

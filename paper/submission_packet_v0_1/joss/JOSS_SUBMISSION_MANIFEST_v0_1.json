@@ -19,10 +19,11 @@
     "paper/paper.bib",
     "paper/joss/JOSS_SUBMISSION_CHECKLIST_v0_1.md",
     "paper/joss/JOSS_PREFLIGHT_AUDIT_v0_1.md",
-    "paper/joss/JOSS_PREFLIGHT_AUDIT_v0_1.json",
-    "paper/joss/JOSS_GATE_VERIFICATION_v0_1.md",
-    "paper/joss/JOSS_GATE_VERIFICATION_v0_1.json",
-    "paper/joss/AUTHOR_METADATA_TEMPLATE_v0_1.json"
+        "paper/joss/JOSS_PREFLIGHT_AUDIT_v0_1.json",
+        "paper/joss/JOSS_GATE_VERIFICATION_v0_1.md",
+        "paper/joss/JOSS_GATE_VERIFICATION_v0_1.json",
+        "paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md",
+        "paper/joss/AUTHOR_METADATA_TEMPLATE_v0_1.json"
   ],
   "open_source_review_surfaces": [
     "CITATION.cff",
@@ -76,17 +77,24 @@
       "evaluation_hash": "sha256:8a8b820ecbdd1b4e88a2d8e07b05be2d479add0f0c6c3265292cc5a86763e43a"
     },
     "joss_gate_verifier_command": "python3 scripts/joss_gate_verifier.py",
-    "joss_gate_verifier_result": {
-      "status": "joss_gate_failed_blockers",
-      "content_package_ready": true,
-      "immediate_joss_submission_recommended": false,
-      "blocking_gates": [
-        "public_history"
-      ],
-      "advisory_signals": {
-        "external_impact": "unverified"
-      }
-    },
+        "joss_gate_verifier_result": {
+            "status": "joss_gate_failed_blockers",
+            "content_package_ready": true,
+            "immediate_joss_submission_recommended": false,
+            "blocking_gates": [
+                "public_history"
+            ],
+            "development_evidence_ready": true,
+            "development_evidence_satisfies_public_history_gate": false,
+            "advisory_signals": {
+                "external_impact": "unverified"
+            }
+        },
+        "development_evidence": {
+            "path": "paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md",
+            "status": "pass",
+            "satisfies_public_history_gate": false
+        },
     "citation_demo_result_hash": "sha256:8684fa8963ff9ad55c36eed6b89eb15992d1b05566aa1c79ced754fac67e1cdd",
     "mcp_anchor_verification_hash": "sha256:bdcf2ddb30a0e5975782f77fa86415226c46652bbd5490a667a2f2106dd65a5f"
   },

@@ -16,20 +16,23 @@
   },
   "joss_decision": {
     "content_package_ready": true,
-    "standard_paper_path_ready": true,
-    "public_collaboration_surface_ready": true,
-    "immediate_submission_recommended": false,
-    "public_repo_synced": true,
-    "public_development_history_ready": false,
-    "external_impact_signal_ready": false
+        "standard_paper_path_ready": true,
+        "public_collaboration_surface_ready": true,
+        "development_evidence_ready": true,
+        "development_evidence_satisfies_public_history_gate": false,
+        "immediate_submission_recommended": false,
+        "public_repo_synced": true,
+        "public_development_history_ready": false,
+        "external_impact_signal_ready": false
   },
   "primary_files": [
     "standard-paper/paper.md",
-    "standard-paper/paper.bib",
-    "joss/JOSS_HOSTILE_READINESS_DECISION_v0_1.md",
-    "joss/JOSS_GATE_VERIFICATION_v0_1.md",
-    "joss/JOSS_GATE_VERIFICATION_v0_1.json",
-    "arxiv/ARXIV_READY.md",
+        "standard-paper/paper.bib",
+        "joss/JOSS_HOSTILE_READINESS_DECISION_v0_1.md",
+        "joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md",
+        "joss/JOSS_GATE_VERIFICATION_v0_1.md",
+        "joss/JOSS_GATE_VERIFICATION_v0_1.json",
+        "arxiv/ARXIV_READY.md",
     "arxiv/ARXIV_SUBMISSION_PACKAGE.md",
     "zenodo/zenodo_deposit_ready.json"
   ],
@@ -70,13 +73,15 @@
     "mapping_coverage_source_hash_only_field_count": 1,
     "mapping_coverage_loss_missing_field_count": 4,
     "mapping_coverage_evaluation_hash": "sha256:8a8b820ecbdd1b4e88a2d8e07b05be2d479add0f0c6c3265292cc5a86763e43a",
-    "joss_gate_verifier_status": "joss_gate_failed_blockers",
-    "joss_gate_verifier_blocking_gates": [
-      "public_history"
-    ],
-    "joss_gate_verifier_advisory_signals": {
-      "external_impact": "unverified"
-    }
+        "joss_gate_verifier_status": "joss_gate_failed_blockers",
+        "joss_gate_verifier_blocking_gates": [
+            "public_history"
+        ],
+        "development_evidence_ready": true,
+        "development_evidence_satisfies_public_history_gate": false,
+        "joss_gate_verifier_advisory_signals": {
+            "external_impact": "unverified"
+        }
   },
   "boundary": {
     "internal_repair_notes_included": false,

@@ -25,6 +25,13 @@ Pass:
 - JOSS paper sections exist: Summary, Statement of need, State of the field, Software design, Research impact statement, AI usage disclosure.
 - JOSS paper size is within the local candidate gate.
 - Local tests pass: `python3 -m unittest discover -s tests`.
+- Synthetic trace-corpus evaluation passes: `python3 experiments/evaluate_trace_corpus.py`.
+- Mapping coverage evaluation passes: `python3 experiments/evaluate_mapping_coverage.py`.
+- Local JOSS gate verifier runs: `python3 scripts/joss_gate_verifier.py`.
+- Open-source project metadata exists: `CITATION.cff`, `CHANGELOG.md`, `CONTRIBUTING.md`, `SUPPORT.md`, and `.github/workflows/tests.yml`.
+- JOSS workflow and standard paper mirror exist: `.github/workflows/joss-paper.yml`, `paper/paper.md`, and `paper/paper.bib`.
+- Public collaboration templates exist: `.github/ISSUE_TEMPLATE/` and `.github/PULL_REQUEST_TEMPLATE.md`.
+- Engineering evolution narrative exists: `paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md`.
 - No paid journal route is selected.
 
 Pass:
@@ -40,6 +47,10 @@ Fail / missing:
 
 - No six-month public development history is verified.
 - Final JOSS submission approval is not recorded.
+
+Advisory:
+
+- No external user or third-party research-impact signal is verified.
 
 Unknown / requires human confirmation:
 
@@ -64,12 +75,15 @@ paid_journal_selected=false
 
 1. Confirm public development history for JOSS review expectations.
 2. Confirm final JOSS submission approval.
-3. Run the local test suite again and update this audit.
+3. Add or verify external user, citation, dependency, or third-party research-impact signal if available.
+4. Run the local test suite again and update this audit.
+5. Re-run the synthetic trace-corpus evaluation if adapter behavior changes.
 
 ## Boundary
 
 - `formal_submission=false`
 - `joss_submission_performed=false`
+- `public_repo_synced=true`
 - `public_release=true`
 - `github_release_created=true`
 - `license_selected=true`

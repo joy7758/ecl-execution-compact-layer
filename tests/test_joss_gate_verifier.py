@@ -33,6 +33,11 @@ class JOSSGateVerifierTests(unittest.TestCase):
         self.assertEqual(payload["gates"]["required_files"]["status"], "pass")
         self.assertEqual(payload["gates"]["standard_paper_mirror"]["status"], "pass")
         self.assertEqual(payload["gates"]["experiment_reports"]["status"], "pass")
+        self.assertEqual(payload["gates"]["development_evidence"]["status"], "pass")
+        self.assertEqual(
+            payload["gates"]["development_evidence"]["evidence"]["path"],
+            "paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md",
+        )
         self.assertEqual(payload["gates"]["research_impact"]["status"], "pass")
         self.assertTrue(payload["gates"]["research_impact"]["evidence"]["statement_of_need_present"])
         self.assertTrue(payload["gates"]["research_impact"]["evidence"]["research_impact_statement_present"])
@@ -56,6 +61,7 @@ class JOSSGateVerifierTests(unittest.TestCase):
             self.assertFalse(payload["boundary"]["public_repo_synced"])
         self.assertIn("public_history", payload["blocking_gates"])
         self.assertNotIn("external_impact", payload["blocking_gates"])
+        self.assertTrue(payload["boundary"]["development_evidence_verified"])
         self.assertTrue(payload["boundary"]["research_impact_verified"])
         self.assertFalse(payload["boundary"]["joss_submission_performed"])
 

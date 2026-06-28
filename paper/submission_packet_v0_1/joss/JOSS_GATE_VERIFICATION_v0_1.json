@@ -12,6 +12,7 @@
     "public_history"
   ],
   "boundary": {
+    "development_evidence_verified": true,
     "external_impact_verified": false,
     "joss_submission_performed": false,
     "public_history_verified": false,
@@ -25,6 +26,16 @@
     "immediate_joss_submission_recommended": false
   },
   "gates": {
+    "development_evidence": {
+      "evidence": {
+        "missing_tokens": [],
+        "path": "paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md",
+        "required_tokens_present": true
+      },
+      "note": "Engineering evolution narrative is documented, but it does not satisfy the public-history gate.",
+      "ready": true,
+      "status": "pass"
+    },
     "experiment_reports": {
       "mapping_coverage": {
         "case_count": 12,
@@ -98,7 +109,8 @@
         ".github/ISSUE_TEMPLATE/trace_mapping_case.yml",
         "experiments/TRACE_CORPUS_EVALUATION_v0_1.md",
         "experiments/VALIDATION_MATRIX_EVALUATION_v0_1.md",
-        "experiments/MAPPING_COVERAGE_EVALUATION_v0_1.md"
+        "experiments/MAPPING_COVERAGE_EVALUATION_v0_1.md",
+        "paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md"
       ],
       "missing": [],
       "status": "pass"

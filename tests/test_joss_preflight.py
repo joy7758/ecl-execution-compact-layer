@@ -25,10 +25,11 @@ class JOSSPreflightTests(unittest.TestCase):
         self.assertFalse(audit["summary"]["submission_preflight_passed"])
         for key in (
             "public-history",
-            "external-impact",
             "final_joss_submission_approval",
         ):
             self.assertIn(key, audit["summary"]["blocking_items"])
+        self.assertNotIn("external-impact", audit["summary"]["blocking_items"])
+        self.assertIn("external-impact", audit["summary"]["advisory_items"])
 
     def test_boundary_does_not_claim_submission_or_release(self) -> None:
         audit = json.loads(PREFLIGHT_JSON.read_text(encoding="utf-8"))
@@ -75,12 +76,15 @@ class JOSSPreflightTests(unittest.TestCase):
             ".github/ISSUE_TEMPLATE/research_use_report.yml",
             ".github/ISSUE_TEMPLATE/trace_mapping_case.yml",
             "docs/research_use/ECL_RESEARCH_USE_CASE_v0_1.md",
+            "paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md",
         ):
             self.assertTrue((ROOT / relative_path).exists(), relative_path)
         audit = json.loads(PREFLIGHT_JSON.read_text(encoding="utf-8"))
         ids = {check["id"]: check for check in audit["checks"]}
         self.assertEqual(ids["open-source-metadata"]["status"], "pass")
-        self.assertEqual(ids["external-impact"]["status"], "unverified")
+        self.assertEqual(ids["development-evidence"]["status"], "pass")
+        self.assertEqual(ids["external-impact"]["status"], "advisory_unverified")
+        self.assertFalse(ids["external-impact"]["blocking"])
 
     def test_hostile_readiness_decision_keeps_submission_blocked(self) -> None:
         decision = json.loads(HOSTILE_DECISION_JSON.read_text(encoding="utf-8"))
@@ -89,8 +93,10 @@ class JOSSPreflightTests(unittest.TestCase):
         self.assertTrue(decision["decision"]["synthetic_experiment_evidence_ready"])
         self.assertTrue(decision["decision"]["standard_joss_paper_path_ready"])
         self.assertTrue(decision["decision"]["public_collaboration_surface_ready"])
+        self.assertTrue(decision["decision"]["development_evidence_ready"])
         self.assertFalse(decision["decision"]["public_development_history_ready"])
         self.assertFalse(decision["decision"]["external_impact_signal_ready"])
+        self.assertFalse(decision["evidence"]["development_evidence"]["satisfies_public_history_gate"])
         blocker_ids = {blocker["id"] for blocker in decision["remaining_blockers"]}
         self.assertIn("public-development-history", blocker_ids)
         self.assertNotIn("external-impact", blocker_ids)

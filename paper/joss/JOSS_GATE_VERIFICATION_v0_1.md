@@ -6,12 +6,13 @@ Status: joss_gate_failed_blockers
 
 | Gate | Status |
 | --- | --- |
-| `required_files` | `pass` |
-| `standard_paper_mirror` | `pass` |
+| `development_evidence` | `pass` |
 | `experiment_reports` | `pass` |
-| `research_impact` | `pass` |
-| `public_repo_sync` | `pass` |
 | `public_history` | `fail_current_state` |
+| `public_repo_sync` | `pass` |
+| `required_files` | `pass` |
+| `research_impact` | `pass` |
+| `standard_paper_mirror` | `pass` |
 
 ## Advisory Signals
 
@@ -35,4 +36,6 @@ third_party_validation=false
 external_impact_verified=false
 public_repo_synced=true
 public_history_verified=false
+development_evidence_verified=true
+research_impact_verified=true
 ```

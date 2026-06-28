@@ -17,6 +17,10 @@ Scope: This audit evaluates the objective: complete paper creation, no-paid venu
 | Paid journal route is excluded | complete | `selected_paid_journal=false` |
 | Preferred no-fee route identified | complete | `preferred_no_fee_candidate=JOSS` |
 | JOSS preflight audited | complete | `paper/joss/JOSS_PREFLIGHT_AUDIT_v0_1.json` |
+| Synthetic trace-corpus evaluation exists | complete | `experiments/TRACE_CORPUS_EVALUATION_v0_1.md` |
+| Field-level mapping coverage evaluation exists | complete | `experiments/MAPPING_COVERAGE_EVALUATION_v0_1.md` |
+| Hostile JOSS readiness decision exists | complete | `paper/joss/JOSS_HOSTILE_READINESS_DECISION_v0_1.json` |
+| Engineering evolution evidence narrative exists | complete | `paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md` |
 | Formal submission performed | not_required_for_this_audit_and_not_done | `formal_submission=false` |
 | JOSS submission readiness | incomplete | `submission_preflight_passed=false` |
 | Public release metadata | complete | `license=MIT`, `author=Bin Zhang`, `repository=https://github.com/joy7758/ecl-execution-compact-layer` |
@@ -30,6 +34,10 @@ The paper-writing surface is complete enough for a submission candidate package:
 - bibliography: `paper/joss/paper.bib`
 - evidence manifest: `paper/ECL_PAPER_EVIDENCE_v0_1.json`
 - completion report: `paper/PAPER_COMPLETION_REPORT_v0_1.md`
+- trace-corpus evaluation: `experiments/TRACE_CORPUS_EVALUATION_v0_1.md`
+- mapping coverage evaluation: `experiments/MAPPING_COVERAGE_EVALUATION_v0_1.md`
+- hostile JOSS readiness decision: `paper/joss/JOSS_HOSTILE_READINESS_DECISION_v0_1.md`
+- engineering evolution evidence: `paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md`
 
 The venue-screening surface is complete:
 
@@ -43,6 +51,7 @@ The venue-screening surface is complete:
 These items are outside the current public-release activation scope and require human or repository-state decisions:
 
 - verify public development history
+- treat external impact signal as advisory unless independently verified
 - decide release/archive DOI plan if required
 - approve final JOSS submission
 
@@ -58,6 +67,8 @@ joss_submission_performed=false
 public_release=true
 github_release_created=true
 license_selected=true
+synthetic_trace_corpus_evaluated=true
+mapping_coverage_evaluated=true
 ```
 
 This is a paper, screening, and public-release activation state, not a formal JOSS submission state.

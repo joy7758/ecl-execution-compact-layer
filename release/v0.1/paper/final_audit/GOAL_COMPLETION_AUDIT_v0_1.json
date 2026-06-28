@@ -63,13 +63,19 @@
             "evidence": "experiments/MAPPING_COVERAGE_EVALUATION_v0_1.md"
         },
         {
-      "id": "hostile-joss-readiness-decision",
-      "requirement": "hostile JOSS readiness decision exists",
-      "status": "complete",
-      "evidence": "paper/joss/JOSS_HOSTILE_READINESS_DECISION_v0_1.json"
-    },
-    {
-      "id": "formal-submission",
+            "id": "hostile-joss-readiness-decision",
+            "requirement": "hostile JOSS readiness decision exists",
+            "status": "complete",
+            "evidence": "paper/joss/JOSS_HOSTILE_READINESS_DECISION_v0_1.json"
+        },
+        {
+            "id": "development-evidence",
+            "requirement": "engineering evolution evidence narrative exists without fabricating public history",
+            "status": "complete",
+            "evidence": "paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md"
+        },
+        {
+            "id": "formal-submission",
       "requirement": "formal submission performed",
       "status": "not_required_for_paper_and_screening_objective_not_done",
       "evidence": "formal_submission=false"
@@ -95,12 +101,14 @@
     "license_selected": true,
     "human_author_metadata_verified": true
   },
-  "blocking_items_for_submission": [
-    "public_development_history",
-    "external_impact_signal",
-    "final_joss_submission_approval",
-    "zenodo_doi_optional"
-  ],
+    "blocking_items_for_submission": [
+        "public_development_history",
+        "final_joss_submission_approval",
+        "zenodo_doi_optional"
+    ],
+    "advisory_items_for_submission": [
+        "external_impact_signal"
+    ],
   "verification": {
     "command": "python3 -m unittest discover -s tests",
     "expected_result": "Ran 75 tests OK",
@@ -135,6 +143,11 @@
             "source_hash_only_field_count": 1,
             "loss_missing_field_count": 4,
             "evaluation_hash": "sha256:8a8b820ecbdd1b4e88a2d8e07b05be2d479add0f0c6c3265292cc5a86763e43a"
+        },
+        "development_evidence": {
+            "path": "paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md",
+            "status": "pass",
+            "satisfies_public_history_gate": false
         }
     },
   "boundary": {

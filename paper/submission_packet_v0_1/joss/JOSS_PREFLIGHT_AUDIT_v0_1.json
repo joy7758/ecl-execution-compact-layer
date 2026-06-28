@@ -111,9 +111,10 @@
     },
     {
       "id": "external-impact",
-      "requirement": "external research use, citation, dependency, or independent user signal is verified",
-      "status": "unverified",
-      "evidence": "no external dependency, citation, or third-party user signal verified in current worktree"
+      "requirement": "external research use, citation, dependency, or independent user signal is recorded as an advisory signal",
+      "status": "advisory_unverified",
+      "evidence": "no external dependency, citation, or third-party user signal verified in current worktree",
+      "blocking": false
     },
     {
       "id": "author-metadata",
@@ -129,6 +130,13 @@
       "requirement": "release/archive DOI plan is recorded",
       "status": "pass",
       "evidence": "https://github.com/joy7758/ecl-execution-compact-layer/releases/tag/v0.1"
+    },
+    {
+      "id": "development-evidence",
+      "requirement": "engineering evolution narrative is documented without fabricating public history",
+      "status": "pass",
+      "blocking": false,
+      "evidence": "paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md"
     }
   ],
   "summary": {
@@ -136,8 +144,10 @@
     "submission_preflight_passed": false,
     "blocking_items": [
       "public-history",
-      "external-impact",
       "final_joss_submission_approval"
+    ],
+    "advisory_items": [
+      "external-impact"
     ]
   },
   "sources": [

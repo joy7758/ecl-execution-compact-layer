@@ -8,13 +8,14 @@
     "joss_content_package_ready": true,
     "software_install_test_ready": true,
     "synthetic_experiment_evidence_ready": true,
-    "standard_joss_paper_path_ready": true,
-    "public_collaboration_surface_ready": true,
-    "joss_gate_verifier_ready": true,
-    "public_repo_synced": true,
-    "public_development_history_ready": false,
-    "external_impact_signal_ready": false,
-    "research_impact_ready": true
+        "standard_joss_paper_path_ready": true,
+        "public_collaboration_surface_ready": true,
+        "joss_gate_verifier_ready": true,
+        "development_evidence_ready": true,
+        "public_repo_synced": true,
+        "public_development_history_ready": false,
+        "external_impact_signal_ready": false,
+        "research_impact_ready": true
   },
   "evidence": {
     "unit_tests": {
@@ -49,16 +50,21 @@
       "expectation_met_count": 8,
       "evaluation_hash": "sha256:00fe0ee8952988f7460280b40554889a890c93f9d181a6c9d8ee8b0194b031c0"
     },
-    "mapping_coverage": {
-      "command": "python3 experiments/evaluate_mapping_coverage.py",
-      "case_count": 12,
-      "total_source_fields": 81,
-      "direct_mapped_field_count": 80,
-      "source_hash_only_field_count": 1,
-      "loss_missing_field_count": 4,
-      "evaluation_hash": "sha256:8a8b820ecbdd1b4e88a2d8e07b05be2d479add0f0c6c3265292cc5a86763e43a"
-    }
-  },
+        "mapping_coverage": {
+            "command": "python3 experiments/evaluate_mapping_coverage.py",
+            "case_count": 12,
+            "total_source_fields": 81,
+            "direct_mapped_field_count": 80,
+            "source_hash_only_field_count": 1,
+            "loss_missing_field_count": 4,
+            "evaluation_hash": "sha256:8a8b820ecbdd1b4e88a2d8e07b05be2d479add0f0c6c3265292cc5a86763e43a"
+        },
+        "development_evidence": {
+            "path": "paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md",
+            "status": "pass",
+            "satisfies_public_history_gate": false
+        }
+    },
   "remaining_blockers": [
     {
       "id": "public-development-history",
