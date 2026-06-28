@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 from pathlib import Path
 import sys
 from typing import Any
@@ -51,7 +52,8 @@ def verify(ecl_object: dict[str, Any]) -> dict[str, Any]:
     """Validate and replay an ECL object deterministically."""
 
     validation = ECL.validate(ecl_object)
-    out_dir = ROOT / "sdk" / "out" / "dependency" / ecl_object["ecl_id"].replace(":", "_")
+    out_root = Path(os.environ.get("ECL_DEPENDENCY_OUTPUT_DIR", ROOT / "sdk" / "out" / "dependency"))
+    out_dir = out_root / ecl_object["ecl_id"].replace(":", "_")
     replay = replay_ecl(ecl_object, out_dir=out_dir, schema_path=ECL.SCHEMA_PATH)
     return {
         "schema_version": "0.1.0",

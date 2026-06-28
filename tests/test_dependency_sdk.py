@@ -2,9 +2,11 @@ from __future__ import annotations
 
 from hashlib import sha256
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
+import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -47,8 +49,9 @@ class DependencySDKTests(unittest.TestCase):
         ecl_object = ecl.wrap(self._trace("openai"))
         first_emit = ecl.emit(ecl_object)
         second_emit = ecl.emit(ecl_object)
-        first_verify = ecl.verify(ecl_object)
-        second_verify = ecl.verify(ecl_object)
+        with self._dependency_output_dir():
+            first_verify = ecl.verify(ecl_object)
+            second_verify = ecl.verify(ecl_object)
         self.assertEqual(first_emit, second_emit)
         self.assertTrue(first_verify["valid"])
         self.assertEqual(first_verify["replay"]["artifact_hashes"], second_verify["replay"]["artifact_hashes"])
@@ -57,12 +60,13 @@ class DependencySDKTests(unittest.TestCase):
     def test_cross_runtime_equivalence(self) -> None:
         records = {runtime: ecl.wrap(self._trace(runtime)) for runtime in ("openai", "langchain")}
         checks = {}
-        for runtime, record in records.items():
-            checks[runtime] = {
-                "surfaces": all(key in record for key in ("state", "intent", "action", "evidence")),
-                "valid": ecl.verify(record)["valid"],
-                "deterministic": ecl.verify(record)["deterministic"],
-            }
+        with self._dependency_output_dir():
+            for runtime, record in records.items():
+                checks[runtime] = {
+                    "surfaces": all(key in record for key in ("state", "intent", "action", "evidence")),
+                    "valid": ecl.verify(record)["valid"],
+                    "deterministic": ecl.verify(record)["deterministic"],
+                }
         self.assertTrue(all(item["surfaces"] and item["valid"] and item["deterministic"] for item in checks.values()))
 
     def test_dependency_mode_demo(self) -> None:
@@ -95,7 +99,23 @@ class DependencySDKTests(unittest.TestCase):
             actual_hash = sha256((ROOT / relative_path).read_bytes()).hexdigest()
             self.assertEqual(actual_hash, expected_hash, relative_path)
 
+    def _dependency_output_dir(self):
+        class TemporaryDependencyOutput:
+            def __enter__(self_nonlocal):
+                self_nonlocal.tmp = tempfile.TemporaryDirectory()
+                self_nonlocal.previous = os.environ.get("ECL_DEPENDENCY_OUTPUT_DIR")
+                os.environ["ECL_DEPENDENCY_OUTPUT_DIR"] = self_nonlocal.tmp.name
+                return Path(self_nonlocal.tmp.name)
+
+            def __exit__(self_nonlocal, exc_type, exc, traceback):
+                if self_nonlocal.previous is None:
+                    os.environ.pop("ECL_DEPENDENCY_OUTPUT_DIR", None)
+                else:
+                    os.environ["ECL_DEPENDENCY_OUTPUT_DIR"] = self_nonlocal.previous
+                self_nonlocal.tmp.cleanup()
+
+        return TemporaryDependencyOutput()
+
 
 if __name__ == "__main__":
     unittest.main()
-

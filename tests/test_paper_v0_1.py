@@ -11,10 +11,10 @@ EVIDENCE = ROOT / "paper" / "ECL_PAPER_EVIDENCE_v0_1.json"
 
 LOCKED_HASHES = {
     "schemas/ecl-execution-compact-layer.schema.json": "15d089eaee07ec27d1fc69b5418e5dc5f1b1fa55f2c9395c03cde0ad6773cf89",
-    "sdk/ecl_dependency.py": "b578b3fd326e046b43c67ed47fe7e83e8fb11d451301cd384659253b003d1f09",
+    "sdk/ecl_dependency.py": "6e596c3f05208a0d1cd45b8da773a5a18abd52c347402be1ecfef41be250d343",
     "sdk/ecl.py": "6862a865bd1057b0159c135a75ee8fa4492399794c063a21c02aa12e90f5ed04",
     "mcp/ecl_tool_spec.json": "907a3ba39e1f64736c19c6a58a083e2361345c2a5ac80041e1044be546154688",
-    "mcp/ecl_server_stub.py": "1123685e770982965a356966a9e02e17f5795387f486649e33b0e798d40cc5a4",
+    "mcp/ecl_server_stub.py": "bd834ad160a05d97fe7a83ff44a42536491a58329212e6f8649ff03a8e60e001",
 }
 
 

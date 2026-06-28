@@ -2,9 +2,11 @@ from __future__ import annotations
 
 from hashlib import sha256
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
+import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -17,7 +19,7 @@ from mcp import ecl_server_stub as ecl_stub
 
 LOCKED_HASHES = {
     "schemas/ecl-execution-compact-layer.schema.json": "15d089eaee07ec27d1fc69b5418e5dc5f1b1fa55f2c9395c03cde0ad6773cf89",
-    "sdk/ecl_dependency.py": "b578b3fd326e046b43c67ed47fe7e83e8fb11d451301cd384659253b003d1f09",
+    "sdk/ecl_dependency.py": "6e596c3f05208a0d1cd45b8da773a5a18abd52c347402be1ecfef41be250d343",
     "sdk/ecl.py": "6862a865bd1057b0159c135a75ee8fa4492399794c063a21c02aa12e90f5ed04",
     "ecl/adapters/openai_agents.py": "6dd653924c97e4b746de72e35cf57a2d07f08898d0f65b9fb930cadac8ebdfc6",
     "ecl/adapters/langchain.py": "0dba4e6d7a8ed0ea63a466fec3e5bae7a7de0f6d39c57efd18f90b69d494eee5",
@@ -58,8 +60,9 @@ class MCPAnchorStubTests(unittest.TestCase):
         second_emit = ecl_stub.emit(second_object)
         self.assertEqual(first_emit, second_emit)
 
-        first_verify = ecl_stub.verify(first_object)
-        second_verify = ecl_stub.verify(second_object)
+        with self._dependency_output_dir():
+            first_verify = ecl_stub.verify(first_object)
+            second_verify = ecl_stub.verify(second_object)
         self.assertTrue(first_verify["valid"])
         self.assertTrue(first_verify["deterministic"])
         self.assertEqual(first_verify["replay"]["artifact_hashes"], second_verify["replay"]["artifact_hashes"])
@@ -67,32 +70,40 @@ class MCPAnchorStubTests(unittest.TestCase):
 
     def test_cross_runtime_anchor_equivalence(self) -> None:
         records = [ecl_stub.wrap(self._trace(runtime)) for runtime in ("openai", "langchain")]
-        for record in records:
-            self.assertTrue(all(key in record for key in ("state", "intent", "action", "evidence")))
-            result = ecl_stub.verify(record)
-            self.assertTrue(result["valid"])
-            self.assertTrue(result["deterministic"])
+        with self._dependency_output_dir():
+            for record in records:
+                self.assertTrue(all(key in record for key in ("state", "intent", "action", "evidence")))
+                result = ecl_stub.verify(record)
+                self.assertTrue(result["valid"])
+                self.assertTrue(result["deterministic"])
 
     def test_server_stub_script_is_deterministic(self) -> None:
-        first = subprocess.run(
-            [sys.executable, "mcp/ecl_server_stub.py"],
-            cwd=ROOT,
-            check=False,
-            text=True,
-            capture_output=True,
-        )
-        self.assertEqual(first.returncode, 0, first.stderr + first.stdout)
-        first_file = (ROOT / "mcp" / "out" / "ecl_server_stub_result.json").read_text(encoding="utf-8")
-
-        second = subprocess.run(
-            [sys.executable, "mcp/ecl_server_stub.py"],
-            cwd=ROOT,
-            check=False,
-            text=True,
-            capture_output=True,
-        )
-        self.assertEqual(second.returncode, 0, second.stderr + second.stdout)
-        second_file = (ROOT / "mcp" / "out" / "ecl_server_stub_result.json").read_text(encoding="utf-8")
+        with self._dependency_output_dir() as output_dir:
+            with tempfile.TemporaryDirectory() as mcp_output_dir:
+                env = os.environ.copy()
+                env["ECL_DEPENDENCY_OUTPUT_DIR"] = str(output_dir)
+                env["ECL_MCP_STUB_OUTPUT_DIR"] = mcp_output_dir
+                out_path = Path(mcp_output_dir) / "ecl_server_stub_result.json"
+                first = subprocess.run(
+                    [sys.executable, "mcp/ecl_server_stub.py"],
+                    cwd=ROOT,
+                    check=False,
+                    text=True,
+                    capture_output=True,
+                    env=env,
+                )
+                self.assertEqual(first.returncode, 0, first.stderr + first.stdout)
+                first_file = out_path.read_text(encoding="utf-8")
+                second = subprocess.run(
+                    [sys.executable, "mcp/ecl_server_stub.py"],
+                    cwd=ROOT,
+                    check=False,
+                    text=True,
+                    capture_output=True,
+                    env=env,
+                )
+                self.assertEqual(second.returncode, 0, second.stderr + second.stdout)
+                second_file = out_path.read_text(encoding="utf-8")
 
         self.assertEqual(first.stdout, second.stdout)
         self.assertEqual(first_file, second_file)
@@ -104,6 +115,23 @@ class MCPAnchorStubTests(unittest.TestCase):
         for relative_path, expected_hash in LOCKED_HASHES.items():
             actual_hash = sha256((ROOT / relative_path).read_bytes()).hexdigest()
             self.assertEqual(actual_hash, expected_hash, relative_path)
+
+    def _dependency_output_dir(self):
+        class TemporaryDependencyOutput:
+            def __enter__(self_nonlocal):
+                self_nonlocal.tmp = tempfile.TemporaryDirectory()
+                self_nonlocal.previous = os.environ.get("ECL_DEPENDENCY_OUTPUT_DIR")
+                os.environ["ECL_DEPENDENCY_OUTPUT_DIR"] = self_nonlocal.tmp.name
+                return Path(self_nonlocal.tmp.name)
+
+            def __exit__(self_nonlocal, exc_type, exc, traceback):
+                if self_nonlocal.previous is None:
+                    os.environ.pop("ECL_DEPENDENCY_OUTPUT_DIR", None)
+                else:
+                    os.environ["ECL_DEPENDENCY_OUTPUT_DIR"] = self_nonlocal.previous
+                self_nonlocal.tmp.cleanup()
+
+        return TemporaryDependencyOutput()
 
 
 if __name__ == "__main__":

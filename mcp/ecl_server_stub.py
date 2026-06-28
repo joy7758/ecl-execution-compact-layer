@@ -7,6 +7,7 @@ It is agent-readable by design: each public function has one direct delegate.
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 import sys
 from typing import Any
@@ -71,7 +72,7 @@ def _self_check() -> dict[str, Any]:
 
 def main() -> int:
     result = _self_check()
-    out_dir = ROOT / "mcp" / "out"
+    out_dir = Path(os.environ.get("ECL_MCP_STUB_OUTPUT_DIR", ROOT / "mcp" / "out"))
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / "ecl_server_stub_result.json"
     out_path.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
