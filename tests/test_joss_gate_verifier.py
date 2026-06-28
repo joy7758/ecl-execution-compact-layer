@@ -36,6 +36,11 @@ class JOSSGateVerifierTests(unittest.TestCase):
         self.assertEqual(payload["gates"]["research_impact"]["status"], "pass")
         self.assertTrue(payload["gates"]["research_impact"]["evidence"]["statement_of_need_present"])
         self.assertTrue(payload["gates"]["research_impact"]["evidence"]["research_impact_statement_present"])
+        self.assertTrue(payload["gates"]["research_impact"]["evidence"]["developer_research_workflow_documented"])
+        self.assertEqual(
+            payload["gates"]["research_impact"]["evidence"]["developer_research_workflow_path"],
+            "docs/research_use/ECL_RESEARCH_USE_CASE_v0_1.md",
+        )
         self.assertEqual(payload["gates"]["experiment_reports"]["mapping_coverage"]["total_source_fields"], 81)
         self.assertEqual(payload["gates"]["experiment_reports"]["mapping_coverage"]["direct_mapped_field_count"], 80)
         self.assertEqual(payload["gates"]["experiment_reports"]["mapping_coverage"]["source_hash_only_field_count"], 1)

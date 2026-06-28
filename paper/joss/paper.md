@@ -141,14 +141,14 @@ The citation reproducibility demo is:
 
 ```text
 python3 examples/citation_repro_demo.py
-result_hash=sha256:358a039db2c737b8905d91e37e1ed8fc5ea4081dab8d25a0523b4958f7061651
+result_hash=sha256:8684fa8963ff9ad55c36eed6b89eb15992d1b05566aa1c79ced754fac67e1cdd
 ```
 
 The MCP-shaped local wrapper self-check is:
 
 ```text
 python3 mcp/ecl_server_stub.py
-verification_hash=sha256:3770d486d473720ae7d84546906e24214ee156ad458bee8fec3c59873ea153b8
+verification_hash=sha256:bdcf2ddb30a0e5975782f77fa86415226c46652bbd5490a667a2f2106dd65a5f
 ```
 
 # AI usage disclosure

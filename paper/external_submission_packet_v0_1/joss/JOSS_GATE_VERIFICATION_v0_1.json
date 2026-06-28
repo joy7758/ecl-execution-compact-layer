@@ -105,6 +105,8 @@
     },
     "research_impact": {
       "evidence": {
+        "developer_research_workflow_documented": true,
+        "developer_research_workflow_path": "docs/research_use/ECL_RESEARCH_USE_CASE_v0_1.md",
         "experiment_reports_status": "pass",
         "mapping_coverage_cases": 12,
         "research_impact_statement_present": true,

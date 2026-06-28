@@ -151,17 +151,27 @@ def check_public_history() -> dict[str, Any]:
 
 def check_research_impact() -> dict[str, Any]:
     paper = ROOT / "paper" / "paper.md"
+    research_use = ROOT / "docs" / "research_use" / "ECL_RESEARCH_USE_CASE_v0_1.md"
     text = paper.read_text(encoding="utf-8").lower() if paper.exists() else ""
+    research_text = research_use.read_text(encoding="utf-8").lower() if research_use.exists() else ""
     experiments = check_experiment_reports()
     has_statement = "# research impact statement" in text and "# statement of need" in text
+    has_developer_workflow = (
+        research_use.exists()
+        and "developer_research_use=true" in research_text
+        and "external_research_use=false" in research_text
+        and "third_party_validation=false" in research_text
+    )
     has_reproducible_evidence = experiments["status"] == "pass"
-    ready = bool(has_statement and has_reproducible_evidence)
+    ready = bool(has_statement and has_developer_workflow and has_reproducible_evidence)
     return {
         "status": "pass" if ready else "fail",
         "ready": ready,
         "evidence": {
             "statement_of_need_present": "# statement of need" in text,
             "research_impact_statement_present": "# research impact statement" in text,
+            "developer_research_workflow_documented": has_developer_workflow,
+            "developer_research_workflow_path": str(research_use.relative_to(ROOT)),
             "experiment_reports_status": experiments["status"],
             "trace_corpus_cases": experiments.get("trace_corpus", {}).get("case_count"),
             "validation_matrix_cases": experiments.get("validation_matrix", {}).get("case_count"),
