@@ -20,7 +20,6 @@ arxiv_submission_material_ready=true
 joss_route_deprioritized=true
 joss_public_history_gate_status=fail_current_state
 jss_public_history_gate_required=false
-joss_submission_performed=false
 jss_submission_performed=false
 arxiv_submission_performed=false
 doi_minted=false
