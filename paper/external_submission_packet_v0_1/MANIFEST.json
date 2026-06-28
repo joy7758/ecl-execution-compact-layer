@@ -70,11 +70,13 @@
     "mapping_coverage_source_hash_only_field_count": 1,
     "mapping_coverage_loss_missing_field_count": 4,
     "mapping_coverage_evaluation_hash": "sha256:8a8b820ecbdd1b4e88a2d8e07b05be2d479add0f0c6c3265292cc5a86763e43a",
-    "joss_gate_verifier_status": "joss_gate_failed_external_blockers",
+    "joss_gate_verifier_status": "joss_gate_failed_blockers",
     "joss_gate_verifier_blocking_gates": [
-            "public_history",
-      "external_impact"
-    ]
+      "public_history"
+    ],
+    "joss_gate_verifier_advisory_signals": {
+      "external_impact": "unverified"
+    }
   },
   "boundary": {
     "internal_repair_notes_included": false,

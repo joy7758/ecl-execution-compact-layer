@@ -33,7 +33,7 @@ external_impact_signal_ready=false
 - Field-level mapping coverage now reports 80 directly mapped source fields, 1 source-hash-only field, and 4 loss-missing fields over 12 synthetic cases.
 - Standard JOSS paper mirror files are present at `paper/paper.md` and `paper/paper.bib`.
 - Public collaboration surfaces are present through issue templates, pull request template, test CI, and JOSS paper draft workflow.
-- `scripts/joss_gate_verifier.py` records the remaining external blockers as machine-readable gate evidence.
+- `scripts/joss_gate_verifier.py` records the remaining JOSS blocker and advisory external-impact signal as machine-readable gate evidence.
 
 ## Current Evidence
 
@@ -73,12 +73,12 @@ evaluation_hash=sha256:8a8b820ecbdd1b4e88a2d8e07b05be2d479add0f0c6c3265292cc5a86
 | Gate | Status | Evidence |
 | --- | --- | --- |
 | Public development history over time | fail_current_state | Local git history is concentrated on 2026-06-28. |
-| External impact or independent use | unverified | No external citation, third-party dependency, or independent user signal is verified. |
+| External impact or independent use | advisory_unverified | No external citation, third-party dependency, or independent user signal is verified; this is advisory rather than the sole impact gate. |
 | JOSS final human submission approval | not_done | No JOSS portal action has been performed. |
 
 ## Recommendation
 
-Do not submit to JOSS immediately unless the author accepts a high desk-reject risk. The technically repaired package is suitable for continued public development, arXiv/Zenodo staging, and external feedback gathering. Re-run this decision after public history is clearer and external-use evidence exists.
+Do not submit to JOSS immediately unless the author accepts a high desk-reject risk. The technically repaired package is suitable for continued public development, arXiv/Zenodo staging, and external feedback gathering. Re-run this decision after public history is clearer; external-use evidence remains a positive advisory signal but is not treated as the sole JOSS impact gate.
 
 ## Sources
 

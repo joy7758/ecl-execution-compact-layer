@@ -51,8 +51,9 @@ loss_missing_field_count=4
 evaluation_hash=sha256:8a8b820ecbdd1b4e88a2d8e07b05be2d479add0f0c6c3265292cc5a86763e43a
 
 python3 scripts/joss_gate_verifier.py
-status=joss_gate_failed_external_blockers
-blocking_gates=["public_history", "external_impact"]
+status=joss_gate_failed_blockers
+blocking_gates=["public_history"]
+external_impact_signal="advisory_unverified"
 ```
 
 Boundary:

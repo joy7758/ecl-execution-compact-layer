@@ -44,9 +44,9 @@
     },
     {
       "id": "joss-gate-verifier",
-      "requirement": "local JOSS gate verifier exists and records external blockers",
+      "requirement": "local JOSS gate verifier exists and records blockers plus advisory signals",
       "status": "pass",
-      "evidence": "python3 scripts/joss_gate_verifier.py -> joss_gate_failed_external_blockers"
+      "evidence": "python3 scripts/joss_gate_verifier.py -> joss_gate_failed_blockers"
     },
     {
       "id": "open-source-metadata",

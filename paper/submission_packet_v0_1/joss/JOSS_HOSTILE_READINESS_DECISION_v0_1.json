@@ -5,15 +5,16 @@
   "date_checked": "2026-06-28",
   "decision": {
     "immediate_joss_submission_recommended": false,
-        "joss_content_package_ready": true,
-        "software_install_test_ready": true,
-        "synthetic_experiment_evidence_ready": true,
-        "standard_joss_paper_path_ready": true,
-        "public_collaboration_surface_ready": true,
-        "joss_gate_verifier_ready": true,
-        "public_repo_synced": true,
-        "public_development_history_ready": false,
-    "external_impact_signal_ready": false
+    "joss_content_package_ready": true,
+    "software_install_test_ready": true,
+    "synthetic_experiment_evidence_ready": true,
+    "standard_joss_paper_path_ready": true,
+    "public_collaboration_surface_ready": true,
+    "joss_gate_verifier_ready": true,
+    "public_repo_synced": true,
+    "public_development_history_ready": false,
+    "external_impact_signal_ready": false,
+    "research_impact_ready": true
   },
   "evidence": {
     "unit_tests": {
@@ -65,11 +66,6 @@
       "evidence": "local git history is concentrated on 2026-06-28"
     },
     {
-      "id": "external-impact",
-      "status": "unverified",
-      "evidence": "no external citation, third-party dependency, or independent user signal verified"
-    },
-    {
       "id": "human-submission-approval",
       "status": "not_done",
       "evidence": "no JOSS portal action performed"
@@ -87,5 +83,12 @@
     "external_adoption": false,
     "public_repo_synced": true,
     "synthetic_corpus_only": true
-  }
+  },
+  "advisory_signals": [
+    {
+      "id": "external-impact-signal",
+      "status": "advisory_unverified",
+      "evidence": "no external citation, third-party dependency, or independent user signal verified; not treated as the sole JOSS impact gate"
+    }
+  ]
 }

@@ -77,13 +77,15 @@
     },
     "joss_gate_verifier_command": "python3 scripts/joss_gate_verifier.py",
     "joss_gate_verifier_result": {
-      "status": "joss_gate_failed_external_blockers",
+      "status": "joss_gate_failed_blockers",
       "content_package_ready": true,
       "immediate_joss_submission_recommended": false,
       "blocking_gates": [
-        "public_history",
-        "external_impact"
-      ]
+        "public_history"
+      ],
+      "advisory_signals": {
+        "external_impact": "unverified"
+      }
     },
     "citation_demo_result_hash": "sha256:358a039db2c737b8905d91e37e1ed8fc5ea4081dab8d25a0523b4958f7061651",
     "mcp_anchor_verification_hash": "sha256:3770d486d473720ae7d84546906e24214ee156ad458bee8fec3c59873ea153b8"

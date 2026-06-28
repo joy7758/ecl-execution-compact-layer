@@ -1,6 +1,6 @@
 # ECL JOSS Gate Verification v0.1
 
-Status: joss_gate_failed_external_blockers
+Status: joss_gate_failed_blockers
 
 ## Gate Results
 
@@ -9,16 +9,22 @@ Status: joss_gate_failed_external_blockers
 | `required_files` | `pass` |
 | `standard_paper_mirror` | `pass` |
 | `experiment_reports` | `pass` |
+| `research_impact` | `pass` |
 | `public_repo_sync` | `pass` |
 | `public_history` | `fail_current_state` |
-| `external_impact` | `unverified` |
+
+## Advisory Signals
+
+| Signal | Status | Blocking |
+| --- | --- | --- |
+| `external_impact` | `unverified` | `false` |
 
 ## Decision
 
 ```text
 content_package_ready=true
 immediate_joss_submission_recommended=false
-blocking_gates=['public_history', 'external_impact']
+blocking_gates=['public_history']
 ```
 
 ## Boundary

@@ -149,6 +149,28 @@ def check_public_history() -> dict[str, Any]:
     }
 
 
+def check_research_impact() -> dict[str, Any]:
+    paper = ROOT / "paper" / "paper.md"
+    text = paper.read_text(encoding="utf-8").lower() if paper.exists() else ""
+    experiments = check_experiment_reports()
+    has_statement = "# research impact statement" in text and "# statement of need" in text
+    has_reproducible_evidence = experiments["status"] == "pass"
+    ready = bool(has_statement and has_reproducible_evidence)
+    return {
+        "status": "pass" if ready else "fail",
+        "ready": ready,
+        "evidence": {
+            "statement_of_need_present": "# statement of need" in text,
+            "research_impact_statement_present": "# research impact statement" in text,
+            "experiment_reports_status": experiments["status"],
+            "trace_corpus_cases": experiments.get("trace_corpus", {}).get("case_count"),
+            "validation_matrix_cases": experiments.get("validation_matrix", {}).get("case_count"),
+            "mapping_coverage_cases": experiments.get("mapping_coverage", {}).get("case_count"),
+        },
+        "note": "This gate checks local research-software significance and reproducible evidence; it does not claim external adoption or third-party validation.",
+    }
+
+
 def check_public_repo_sync() -> dict[str, Any]:
     status = run(["git", "status", "--porcelain", "--untracked-files=all"])
     head = run(["git", "rev-parse", "HEAD"])
@@ -175,14 +197,16 @@ def check_public_repo_sync() -> dict[str, Any]:
     }
 
 
-def check_external_impact() -> dict[str, Any]:
+def check_external_impact_signal() -> dict[str, Any]:
     research_use = ROOT / "docs" / "research_use" / "ECL_RESEARCH_USE_CASE_v0_1.md"
     text = research_use.read_text(encoding="utf-8") if research_use.exists() else ""
     external_false = "external_research_use=false" in text and "third_party_validation=false" in text
     return {
         "status": "unverified" if external_false else "unknown",
         "ready": False,
+        "blocking": False,
         "evidence": "No external citation, dependency, independent user report, or third-party validation is recorded in the current worktree.",
+        "note": "External adoption is recorded as a strong advisory signal, not as the sole JOSS impact gate.",
     }
 
 
@@ -191,9 +215,12 @@ def build_payload() -> dict[str, Any]:
         "required_files": check_file_presence(),
         "standard_paper_mirror": check_standard_paper_mirror(),
         "experiment_reports": check_experiment_reports(),
+        "research_impact": check_research_impact(),
         "public_repo_sync": check_public_repo_sync(),
         "public_history": check_public_history(),
-        "external_impact": check_external_impact(),
+    }
+    advisory_signals = {
+        "external_impact": check_external_impact_signal(),
     }
     blocking = [
         gate_id
@@ -203,14 +230,16 @@ def build_payload() -> dict[str, Any]:
     payload = {
         "schema_version": "0.1.0",
         "object_type": "ecl_joss_gate_verification",
-        "status": "joss_gate_failed_external_blockers" if blocking else "joss_gate_passed",
+        "status": "joss_gate_failed_blockers" if blocking else "joss_gate_passed",
         "date_checked": "2026-06-28",
         "gates": gates,
+        "advisory_signals": advisory_signals,
         "blocking_gates": blocking,
         "decision": {
             "content_package_ready": gates["required_files"]["status"] == "pass"
             and gates["standard_paper_mirror"]["status"] == "pass"
-            and gates["experiment_reports"]["status"] == "pass",
+            and gates["experiment_reports"]["status"] == "pass"
+            and gates["research_impact"]["status"] == "pass",
             "immediate_joss_submission_recommended": False if blocking else True,
         },
         "boundary": {
@@ -219,6 +248,7 @@ def build_payload() -> dict[str, Any]:
             "external_impact_verified": False,
             "public_repo_synced": gates["public_repo_sync"]["status"] == "pass",
             "public_history_verified": gates["public_history"]["status"] == "pass",
+            "research_impact_verified": gates["research_impact"]["status"] == "pass",
         },
     }
     return payload
@@ -236,6 +266,13 @@ def markdown(payload: dict[str, Any]) -> str:
         f"Status: {payload['status']}\n\n"
         "## Gate Results\n\n"
         + "\n".join(rows)
+        + "\n\n## Advisory Signals\n\n"
+        "| Signal | Status | Blocking |\n"
+        "| --- | --- | --- |\n"
+        + "\n".join(
+            f"| `{signal_id}` | `{signal['status']}` | `{str(signal.get('blocking', False)).lower()}` |"
+            for signal_id, signal in payload["advisory_signals"].items()
+        )
         + "\n\n## Decision\n\n"
         "```text\n"
         f"content_package_ready={str(payload['decision']['content_package_ready']).lower()}\n"

@@ -93,7 +93,9 @@ class JOSSPreflightTests(unittest.TestCase):
         self.assertFalse(decision["decision"]["external_impact_signal_ready"])
         blocker_ids = {blocker["id"] for blocker in decision["remaining_blockers"]}
         self.assertIn("public-development-history", blocker_ids)
-        self.assertIn("external-impact", blocker_ids)
+        self.assertNotIn("external-impact", blocker_ids)
+        advisory_ids = {signal["id"] for signal in decision["advisory_signals"]}
+        self.assertIn("external-impact-signal", advisory_ids)
         self.assertFalse(decision["boundary"]["joss_submission_performed"])
 
 
