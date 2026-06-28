@@ -210,10 +210,12 @@ Surfaces}\label{tool-and-protocol-surfaces}
 
 The Model Context Protocol (MCP) defines a protocol surface for tools
 and context exchange. ECL's MCP-shaped local wrapper is not a conformant
-MCP implementation, JSON-RPC transport, published MCP server, or
-registry integration. It is a local anchor surface that demonstrates how
-an execution representation can be exposed through tool-shaped
-functions.
+MCP implementation, JSON-RPC transport, host-client-server session
+model, stateful connection, capability negotiation mechanism,
+authorization layer, published MCP server, or registry integration. It
+is a local anchor surface that demonstrates how an execution
+representation can be exposed through tool-shaped functions. It is not a
+tool-authorization system and does not prove external side effects.
 
 \subsubsection{3.3 Observability and Trace
 Standards}\label{observability-and-trace-standards}
@@ -223,7 +225,47 @@ related in spirit because it treats execution as reviewable trace data,
 but ECL is narrower: it targets deterministic agent execution
 representation, replay artifacts, and evidence bundles.
 
-\subsubsection{3.4 Intermediate
+\subsubsection{3.4 Provenance and Lineage}\label{provenance-and-lineage}
+
+Provenance and lineage systems such as W3C PROV and OpenLineage provide
+broader interchange models for provenance records and data lineage. ECL
+does not replace those systems. Its v0.1 contribution is limited to a
+compact representation of agent execution surfaces and deterministic
+replay artifacts.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Adjacent system
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Primary role
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+ECL v0.1 boundary
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+OpenAI Agents SDK tracing & Runtime-specific agent workflow tracing &
+ECL consumes OpenAI-style traces but does not replace the tracing
+implementation. \\
+LangChain / LangSmith tracing & Runtime observability and debugging &
+ECL consumes LangChain-style traces but is not a hosted observability
+system. \\
+OpenTelemetry & Distributed trace telemetry & ECL does not define
+telemetry semantics or span conventions. \\
+W3C PROV & General provenance interchange & ECL records local execution
+representation, not general provenance. \\
+OpenLineage & Dataset and job lineage metadata & ECL records agent
+execution surfaces, not dataset lineage facets. \\
+\end{longtable}
+}
+
+\subsubsection{3.5 Intermediate
 Representations}\label{intermediate-representations}
 
 Compiler and runtime ecosystems use intermediate representations such as
@@ -231,7 +273,7 @@ LLVM IR and WebAssembly to separate source-level systems from execution
 targets. ECL uses the same separation principle at a smaller scale: host
 runtimes emit or are mapped into a compact execution representation.
 
-\subsubsection{3.5 Canonicalization}\label{canonicalization}
+\subsubsection{3.6 Canonicalization}\label{canonicalization}
 
 ECL's deterministic hash model depends on sorted-key compact JSON
 serialization and SHA-256 hashing. This local serialization is used for
@@ -442,8 +484,10 @@ tool-shaped functions:
 \end{Shaded}
 
 This is a local wrapper only. It is not a conformant MCP implementation,
-JSON-RPC transport, registry plugin, published MCP server, and not an
-external adoption signal.
+JSON-RPC transport, host-client-server session model, stateful
+connection, capability negotiation mechanism, authorization layer,
+registry plugin, published MCP server, and not an external adoption
+signal.
 
 \subsection{7. Architecture}\label{architecture}
 
@@ -530,6 +574,14 @@ missing fields, unknown fields, failure status, timestamp drift, nested
 runs, and implicit tool events. It is not production trace evidence,
 third-party validation, or a benchmark result.
 
+The trace-corpus counters use case-level units. \texttt{case\_count},
+\texttt{valid\_count}, \texttt{deterministic\_count},
+\texttt{loss\_expectation\_met\_count}, and
+\texttt{loss\_detected\_count} count synthetic cases.
+\texttt{loss\_type\_counts} also partitions all 12 synthetic cases by
+the adapter-level loss type classification, so it is not a subset of the
+three cases where missing fields were detected.
+
 The negative validation-matrix evaluation reported:
 
 \begin{Shaded}
@@ -567,6 +619,15 @@ This mapping coverage evaluation records whether each top-level source
 trace field is projected into an ECL surface or retained only through
 the source trace hash. It is synthetic corpus evidence, not a benchmark
 or external adoption signal.
+
+The mapping-coverage counters use field-level and label-level units.
+\texttt{total\_source\_fields}, \texttt{direct\_mapped\_field\_count},
+and \texttt{source\_hash\_only\_field\_count} count top-level source
+trace fields and form a retention accounting over the synthetic corpus.
+\texttt{loss\_missing\_field\_count} counts missing-field labels emitted
+by the loss report; it is not mutually exclusive with source field
+retention because a missing expected field may be absent from the source
+trace and therefore not part of \texttt{total\_source\_fields}.
 
 The citation reproducibility demo reported:
 
@@ -672,6 +733,10 @@ or external adoption result.
 \item
   OpenTelemetry trace specification:
   https://opentelemetry.io/docs/specs/otel/trace/
+\item
+  W3C PROV Data Model: https://www.w3.org/TR/prov-dm/
+\item
+  OpenLineage specification: https://openlineage.io/docs/spec/
 \item
   RFC 8785 JSON Canonicalization Scheme:
   https://www.rfc-editor.org/rfc/rfc8785

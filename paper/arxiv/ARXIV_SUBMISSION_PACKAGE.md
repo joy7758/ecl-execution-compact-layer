@@ -48,6 +48,8 @@ evaluation_hash=sha256:2434da21056811e7eacf1ffac6944d5420ddeb2aa783f74423326a2b5
 
 This is local synthetic evidence only, not production trace evidence, third-party validation, or benchmark evidence.
 
+Metric units are documented in the full arXiv manuscript. In short, trace-corpus counts are case-level, mapping-coverage counts are field-level, and loss-missing counts are missing-field labels rather than mutually exclusive source-field retention counts.
+
 The validation-matrix evaluation adds eight negative mutation cases:
 
 ```text
@@ -80,6 +82,8 @@ result = ecl.verify(ecl_object)
 ```
 
 The dependency interface lets an external system emit or verify ECL objects without modifying its host runtime.
+
+The MCP-shaped local wrapper is representation-only. It is not an MCP protocol implementation, JSON-RPC server, host-client-server session model, stateful connection, capability negotiation mechanism, authorization layer, registry plugin, or side-effect proof.
 
 ## 4. Figure References
 

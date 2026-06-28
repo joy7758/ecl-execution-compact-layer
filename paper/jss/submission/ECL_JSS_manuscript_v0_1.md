@@ -1,3 +1,5 @@
+# ECL: A Deterministic Cross-Runtime Execution IR with Replayable Semantics and Dependency Interface
+
 ## Title Page
 
 Title: ECL: A Deterministic Cross-Runtime Execution IR with Replayable Semantics and Dependency Interface
@@ -65,9 +67,19 @@ The required properties are minimality, determinism, replayability, loss awarene
 
 OpenAI Agents SDK exposes tracing for agent workflows, and LangChain exposes tracing and callback-style observability for chains, tools, and model calls. These systems are runtime-specific trace surfaces. ECL differs by mapping traces into a minimal replayable IR rather than serving as the primary runtime trace system.
 
-The Model Context Protocol defines a protocol surface for tools and context exchange. ECL's MCP-shaped local wrapper is not a conformant MCP implementation, JSON-RPC transport, published MCP server, or registry integration. It is a local anchor surface that demonstrates how an execution representation can be exposed through tool-shaped functions.
+The Model Context Protocol defines a protocol surface for tools and context exchange. ECL's MCP-shaped local wrapper is not a conformant MCP implementation, JSON-RPC transport, host-client-server session model, stateful connection, capability negotiation mechanism, authorization layer, published MCP server, or registry integration. It is a local anchor surface that demonstrates how an execution representation can be exposed through tool-shaped functions. It is not a tool-authorization system and does not prove external side effects.
 
 OpenTelemetry defines trace data models for distributed systems. ECL is related in spirit because it treats execution as reviewable trace data, but ECL is narrower: it targets deterministic agent execution representation, replay artifacts, and evidence bundles.
+
+Provenance and lineage systems such as W3C PROV and OpenLineage provide broader interchange models for provenance records and data lineage. ECL does not replace those systems. Its v0.1 contribution is limited to a compact representation of agent execution surfaces and deterministic replay artifacts.
+
+| Adjacent system | Primary role | ECL v0.1 boundary |
+| --- | --- | --- |
+| OpenAI Agents SDK tracing | Runtime-specific agent workflow tracing | ECL consumes OpenAI-style traces but does not replace the tracing implementation. |
+| LangChain / LangSmith tracing | Runtime observability and debugging | ECL consumes LangChain-style traces but is not a hosted observability system. |
+| OpenTelemetry | Distributed trace telemetry | ECL does not define telemetry semantics or span conventions. |
+| W3C PROV | General provenance interchange | ECL records local execution representation, not general provenance. |
+| OpenLineage | Dataset and job lineage metadata | ECL records agent execution surfaces, not dataset lineage facets. |
 
 Compiler and runtime ecosystems use intermediate representations such as LLVM IR and WebAssembly to separate source-level systems from execution targets. ECL uses the same separation principle at a smaller scale: host runtimes emit or are mapped into a compact execution representation.
 
@@ -146,7 +158,7 @@ payload = ecl.emit(ecl_object)
 result = ecl.verify(ecl_object)
 ```
 
-The MCP-shaped local wrapper exposes the dependency API through tool-shaped functions in `mcp/ecl_tool_spec.json` and `mcp/ecl_server_stub.py`. This is a local wrapper only. It is not a conformant MCP implementation, JSON-RPC transport, registry plugin, published MCP server, or external adoption signal.
+The MCP-shaped local wrapper exposes the dependency API through tool-shaped functions in `mcp/ecl_tool_spec.json` and `mcp/ecl_server_stub.py`. This is a local wrapper only. It is not a conformant MCP implementation, JSON-RPC transport, host-client-server session model, stateful connection, capability negotiation mechanism, authorization layer, registry plugin, published MCP server, or external adoption signal.
 
 ## 7. Architecture
 
@@ -189,6 +201,8 @@ loss_type_counts={"semantic": 9, "structural": 3}
 evaluation_hash=sha256:2434da21056811e7eacf1ffac6944d5420ddeb2aa783f74423326a2b54a33974
 ```
 
+The trace-corpus counters use case-level units. `case_count`, `valid_count`, `deterministic_count`, `loss_expectation_met_count`, and `loss_detected_count` count synthetic cases. `loss_type_counts` also partitions all 12 synthetic cases by the adapter-level loss type classification, so it is not a subset of the three cases where missing fields were detected.
+
 The negative validation-matrix evaluation reported:
 
 ```text
@@ -212,6 +226,8 @@ source_hash_only_field_count=1
 loss_missing_field_count=4
 evaluation_hash=sha256:8a8b820ecbdd1b4e88a2d8e07b05be2d479add0f0c6c3265292cc5a86763e43a
 ```
+
+The mapping-coverage counters use field-level and label-level units. `total_source_fields`, `direct_mapped_field_count`, and `source_hash_only_field_count` count top-level source trace fields and form a retention accounting over the synthetic corpus. `loss_missing_field_count` counts missing-field labels emitted by the loss report; it is not mutually exclusive with source field retention because a missing expected field may be absent from the source trace and therefore not part of `total_source_fields`.
 
 The citation reproducibility demo reported:
 
@@ -290,6 +306,10 @@ LangChain tracing documentation. https://docs.langchain.com/langsmith/tracing
 Model Context Protocol specification. https://modelcontextprotocol.io/specification/
 
 OpenTelemetry trace specification. https://opentelemetry.io/docs/specs/otel/trace/
+
+W3C PROV Data Model. https://www.w3.org/TR/prov-dm/
+
+OpenLineage specification. https://openlineage.io/docs/spec/
 
 RFC 8785 JSON Canonicalization Scheme. https://www.rfc-editor.org/rfc/rfc8785
 

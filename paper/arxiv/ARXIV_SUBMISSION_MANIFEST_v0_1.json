@@ -23,20 +23,20 @@
   },
   "file_hashes": {
     "paper/arxiv/submission/ECL_arxiv_v0_1.pdf": {
-      "sha256": "c618c08fc20227d2ce9edb0f750d5416278b75056e9c8c91d407a1d28aad1ea0",
-      "size_bytes": 54111
+      "sha256": "a55a238fdb9f46cf7277b8dffa24dc1007e18ba193dcd4af6419fc7f18fc926a",
+      "size_bytes": 58015
     },
     "paper/arxiv/submission/ECL_arxiv_v0_1.tex": {
-      "sha256": "02eb8fe2b9da8d4b787e8cd764f3c494fc97eb4373aafb4c5603aadf9a116eb3",
-      "size_bytes": 23388
+      "sha256": "eca5a36f968910f28d33530045a25cdf24993670e5d3d650dec288bbd47243bc",
+      "size_bytes": 26458
     },
     "paper/arxiv/submission/ECL_arxiv_v0_1.md": {
-      "sha256": "fb604b001547b12f94b80fd3263f911c063f7c1d96c9cec350d6b81ebb317755",
-      "size_bytes": 14308
+      "sha256": "5b948c525a8fb1cf2f220cc26e4a5a118572e9813dd89532308ab6e0b44428fa",
+      "size_bytes": 16661
     },
     "paper/arxiv/submission/ECL_arxiv_v0_1_source.zip": {
-      "sha256": "6655df38d52eca36c20496713c39531d84c1f22f75d474a259720de3085cd6b1",
-      "size_bytes": 13547
+      "sha256": "6e7698867b851fc0eb98da9f3b1083096cc880dd20de532a1292e74f39a118d4",
+      "size_bytes": 15225
     },
     "paper/arxiv/submission/README.md": {
       "sha256": "78befdef9dde5928dbd71eabb79680b7da73539526311847b35f2d8e1b002ebc",
@@ -44,7 +44,7 @@
     }
   },
   "validation": {
-    "pdf_pages": 8,
+    "pdf_pages": 10,
     "tex_source_generated": true,
     "visual_preview_checked": true
   }

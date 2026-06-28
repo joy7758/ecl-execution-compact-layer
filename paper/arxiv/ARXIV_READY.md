@@ -112,7 +112,7 @@ The stub exposes:
 - `ecl.emit`
 - `ecl.verify`
 
-The wrapper is local only. It is not a conformant MCP implementation, JSON-RPC transport, host-client-server session model, registry plugin, or external adoption signal.
+The wrapper is local only. It is not a conformant MCP implementation, JSON-RPC transport, host-client-server session model, stateful connection, capability negotiation mechanism, authorization layer, registry plugin, or external adoption signal. It is not a tool-authorization system and does not prove external side effects.
 
 ## 6. Replay Semantics
 
@@ -193,7 +193,7 @@ loss_type_counts={"semantic": 9, "structural": 3}
 evaluation_hash=sha256:2434da21056811e7eacf1ffac6944d5420ddeb2aa783f74423326a2b54a33974
 ```
 
-The corpus is local and synthetic. It is not production trace evidence, third-party validation, or a benchmark result.
+The corpus is local and synthetic. It is not production trace evidence, third-party validation, or a benchmark result. The trace-corpus counters use case-level units; `loss_type_counts` partitions all 12 synthetic cases by adapter-level loss type classification and is not a subset of `loss_detected_count`.
 
 The negative validation-matrix evaluation is:
 
@@ -218,6 +218,8 @@ source_hash_only_field_count=1
 loss_missing_field_count=4
 evaluation_hash=sha256:8a8b820ecbdd1b4e88a2d8e07b05be2d479add0f0c6c3265292cc5a86763e43a
 ```
+
+The mapping-coverage counters use field-level and label-level units. `total_source_fields`, `direct_mapped_field_count`, and `source_hash_only_field_count` count top-level source trace fields. `loss_missing_field_count` counts missing-field labels emitted by the loss report and is not mutually exclusive with source field retention.
 
 ## 8. Boundary
 
