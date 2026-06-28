@@ -1,0 +1,14 @@
+{
+  "deterministic": true,
+  "execution_hash": "sha256:db8830384c3f9038a5e731484d14f0fca5f7dbcd8efb5f23a0183f95462e26d3",
+  "generated_at": "2026-06-28T00:00:00Z",
+  "object_type": "ecl_replay_result",
+  "output_refs": [
+    "/Users/zhangbin/GitHub/ecl-execution-compact-layer/experiments/out/trace_corpus/artifacts/openai_unknown_fields/execution_trace.json",
+    "/Users/zhangbin/GitHub/ecl-execution-compact-layer/experiments/out/trace_corpus/artifacts/openai_unknown_fields/evidence_bundle.json",
+    "/Users/zhangbin/GitHub/ecl-execution-compact-layer/experiments/out/trace_corpus/artifacts/openai_unknown_fields/replay_result.json"
+  ],
+  "record_id": "ecl:a8665582c1bd51cd",
+  "schema_version": "0.1.0",
+  "valid": true
+}

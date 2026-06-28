@@ -3,7 +3,7 @@
     "aip_action_ref": "aip-action:0eb8f7faa1bfb183",
     "execution_mode": "delegated",
     "name": "read_source_schema",
-    "parameters_hash": "sha256:c425662c66af1775746e5016411e3e12c791c2021bde20efbcb1feda9f8c78b3",
+    "parameters_hash": "sha256:a383de46a6a697c817f28158eaf13f6a9903233f892d01156274e65d0c6b237e",
     "raw_ref": "raw-action:0eb8f7faa1bfb183",
     "side_effect_class": "read_only",
     "summary": "read_source_schema",
@@ -73,21 +73,21 @@
     "generated_by": "ecl-execution-compact-layer",
     "hash_algorithm": "sha256"
   },
-  "ecl_id": "ecl:b2776372f804ab72",
+  "ecl_id": "ecl:1c591e6e8beeb89f",
   "evidence": {
     "aip_result_ref": "aip-result:e98778ff06431639",
-    "aro_evidence_ref": "aro-evidence:1a18e4351d61a714",
-    "aro_receipt_ref": "aro-receipt:d4a38816c7f9185b",
+    "aro_evidence_ref": "aro-evidence:843cdb942252c236",
+    "aro_receipt_ref": "aro-receipt:d4681feafd2548d8",
     "event_chain": [
       {
-        "chain_hash": "sha256:daa77a1016b3c55a87539e54c6b2890875e49ecfc3f6366047c93daffd298181",
-        "event_hash": "sha256:6f6af2f3b058795c3163710e0ac73ea4b4638fff6f61251fd7155dc1fcf161e2",
+        "chain_hash": "sha256:f50c3a53e14c461e24f66977c10ec947422019f2e3ac8a5494cb3f14e0c3d927",
+        "event_hash": "sha256:c2c451f230fb868040628a2f75337a349cc9cb7805e1088acd8196a93efc8c36",
         "event_id": "span-0001",
         "event_ref": "span-0001",
         "event_type": "tool_call"
       },
       {
-        "chain_hash": "sha256:5a46e4059d1e6510a30230d932e0a500f6c01f6a01bc226bc210a4431216c6d3",
+        "chain_hash": "sha256:2a70ff8a071c1baa65c7b62fcbdc137346a19ad4499cb077571330d92dcf224e",
         "event_hash": "sha256:45dba0f0a703fd8ed99155c4390589c269ea7820a67176dd4e7ed7eaecf3bf22",
         "event_id": "span-0002",
         "event_ref": "span-0002",
@@ -95,9 +95,9 @@
       }
     ],
     "hashes": {
-      "canonical_hash": "sha256:a75f3feed3c26861c7a74f8f8b01ea67f7b667d2ddd5ed09b51ac3e396ec719d",
-      "event_chain_hash": "sha256:574f285a90370ea9b9a150e06c14c5ea9703d70128310712fa66301665f6d819",
-      "source_trace_hash": "sha256:fd20f80252fb03b2d9ffdf81dd76ed08e2ab33df21bb7ecb3184c14e71019002"
+      "canonical_hash": "sha256:557ba4eb3b31d6c3d6ca4fba933b4a8b7fb9972ecae8d34c2f22bb8db24a426e",
+      "event_chain_hash": "sha256:f9040d6044bcff860e473aaa22908ffff166f02171b2d7902c3c649dff69dcb8",
+      "source_trace_hash": "sha256:f9f8f5dad4ff21956794c4ff2d0df4a97e99b305fd30c166aae858731a628fca"
     },
     "output_refs": [
       "out/ecl_artifacts/ecl_from_openai_agents_trace.json"
@@ -120,7 +120,7 @@
           "missing_source_fields": [
             "reasoning"
           ],
-          "source_trace_hash": "sha256:fd20f80252fb03b2d9ffdf81dd76ed08e2ab33df21bb7ecb3184c14e71019002"
+          "source_trace_hash": "sha256:f9f8f5dad4ff21956794c4ff2d0df4a97e99b305fd30c166aae858731a628fca"
         },
         "reason": "Deterministic OpenAI trace to ECL mapping loss report."
       }
@@ -149,14 +149,14 @@
       "artifact_type": "ecl_execution_record"
     },
     "operation": "build_ecl",
-    "raw_ref": "raw-intent:fd20f80252fb03b2",
+    "raw_ref": "raw-intent:f9f8f5dad4ff2195",
     "summary": "Build a deterministic ECL artifact package"
   },
   "lineage": {
     "checkpoint_ref": "examples/out/external_recognition/openai/checkpoint.json",
     "generated_at": "2026-06-28T00:00:00Z",
     "source_adapter": "openai_agents_trace",
-    "source_trace_hash": "sha256:fd20f80252fb03b2d9ffdf81dd76ed08e2ab33df21bb7ecb3184c14e71019002",
+    "source_trace_hash": "sha256:f9f8f5dad4ff21956794c4ff2d0df4a97e99b305fd30c166aae858731a628fca",
     "source_trace_ref": "tests/fixtures/openai_agents_trace.json"
   },
   "object_type": "ecl_execution_record",

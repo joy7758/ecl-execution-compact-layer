@@ -1,0 +1,33 @@
+name: Bug report
+description: Report a reproducible ECL software defect.
+title: "[bug]: "
+labels:
+  - bug
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Describe the defect and the expected deterministic behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Include commands, trace fixture, and observed output.
+      value: |
+        ```bash
+        python3 -m unittest discover -s tests
+        python3 experiments/evaluate_trace_corpus.py
+        python3 experiments/evaluate_validation_matrix.py
+        ```
+    validations:
+      required: true
+  - type: textarea
+    id: boundary
+    attributes:
+      label: Boundary
+      description: State whether this changes schema, mapping, replay, documentation, or paper materials.
+    validations:
+      required: true

@@ -1,0 +1,32 @@
+name: Research use report
+description: Report an external research, citation, dependency, or reuse signal for ECL.
+title: "[research-use]: "
+labels:
+  - research-use
+body:
+  - type: dropdown
+    id: signal_type
+    attributes:
+      label: Signal type
+      options:
+        - academic citation
+        - repository dependency
+        - specification reference
+        - implementation reuse
+        - review feedback
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Provide a URL, repository path, citation text, or reproducible reference.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and boundary
+      description: State whether the signal is external, independent, synthetic, internal, or unverified.
+    validations:
+      required: true

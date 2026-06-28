@@ -32,7 +32,7 @@
       "name": "read_source_schema",
       "tool": "filesystem.read",
       "parameters": {
-        "path": "/Users/zhangbin/GitHub/agent-intent-protocol/schema/intent-object.schema.json"
+        "path": "fixtures/schemas/intent-object.schema.json"
       },
       "execution_mode": "delegated",
       "side_effect_class": "read_only"
@@ -64,4 +64,3 @@
     ]
   }
 }
-

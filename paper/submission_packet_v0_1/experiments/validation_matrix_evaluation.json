@@ -1,0 +1,134 @@
+{
+  "base_record_id": "ecl:6bc01778cb0d03dd",
+  "baseline": {
+    "error_count": 0,
+    "record_hash": "sha256:097b985efcdbef66821b9eb4bb830cf7ffaa3c38ba96e520daf016e6f6baeca5",
+    "valid": true
+  },
+  "boundary": {
+    "benchmark_result": false,
+    "external_api_calls": false,
+    "synthetic_mutation": true,
+    "third_party_validation": false
+  },
+  "evaluation_hash": "sha256:00fe0ee8952988f7460280b40554889a890c93f9d181a6c9d8ee8b0194b031c0",
+  "generated_at": "2026-06-28T00:00:00Z",
+  "object_type": "ecl_validation_matrix_evaluation",
+  "results": [
+    {
+      "actual_valid": false,
+      "case_id": "missing_state",
+      "description": "Remove the state surface.",
+      "error_count": 3,
+      "errors": [
+        "missing:state",
+        "evidence.hashes.canonical_hash:mismatch:expected:sha256:8ccfc270a75eb038977146032c28248aabbdc27e189aaf462467481b89f7759a:actual:sha256:09e7daab51c547a2c2c4d433f3410aaa69c4e455d59ec1c4eb804ce01d068941",
+        "$:'state' is a required property"
+      ],
+      "expectation_met": true,
+      "expected_valid": false,
+      "record_hash": "sha256:812258d351ed897ba22782588965d3dca15faa033e3ab1b65ad915c1721a631f"
+    },
+    {
+      "actual_valid": false,
+      "case_id": "wrong_schema_version",
+      "description": "Change schema_version outside the frozen v0.1 schema.",
+      "error_count": 3,
+      "errors": [
+        "schema_version:not_0.1.0-draft",
+        "evidence.hashes.canonical_hash:mismatch:expected:sha256:0d57efd920588563984efbcccc5f73354a4026f8beb2c4f100dd3cd3899ea6bd:actual:sha256:09e7daab51c547a2c2c4d433f3410aaa69c4e455d59ec1c4eb804ce01d068941",
+        "$.schema_version:'0.1.0-draft' was expected"
+      ],
+      "expectation_met": true,
+      "expected_valid": false,
+      "record_hash": "sha256:c17aa3ec1183f822c13bd7e26db024b1f23798b5faa6febf6f1b48cc6dd32293"
+    },
+    {
+      "actual_valid": false,
+      "case_id": "tampered_canonical_hash",
+      "description": "Replace evidence.hashes.canonical_hash with a fixed invalid hash.",
+      "error_count": 1,
+      "errors": [
+        "evidence.hashes.canonical_hash:mismatch:expected:sha256:09e7daab51c547a2c2c4d433f3410aaa69c4e455d59ec1c4eb804ce01d068941:actual:sha256:0000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "expectation_met": true,
+      "expected_valid": false,
+      "record_hash": "sha256:09e7daab51c547a2c2c4d433f3410aaa69c4e455d59ec1c4eb804ce01d068941"
+    },
+    {
+      "actual_valid": false,
+      "case_id": "source_hash_mismatch",
+      "description": "Make evidence source_trace_hash disagree with lineage source_trace_hash.",
+      "error_count": 2,
+      "errors": [
+        "evidence.hashes.canonical_hash:mismatch:expected:sha256:b3ecdb50853f0e41ad35290bfb1f68c9bcbd29bb1ab400ee4c815b738b0c93d8:actual:sha256:09e7daab51c547a2c2c4d433f3410aaa69c4e455d59ec1c4eb804ce01d068941",
+        "source_trace_hash:mismatch_between_lineage_and_evidence"
+      ],
+      "expectation_met": true,
+      "expected_valid": false,
+      "record_hash": "sha256:d815389b80d65df76ecc6ed0468c88ac3c73c64380b28c383216b12f976414cc"
+    },
+    {
+      "actual_valid": false,
+      "case_id": "empty_event_chain",
+      "description": "Remove event-chain evidence.",
+      "error_count": 3,
+      "errors": [
+        "evidence.hashes.canonical_hash:mismatch:expected:sha256:266bb3117b68e12c9db94e399c233bc5b6ceca0b4ab7b52f63ff47fd596a2bce:actual:sha256:09e7daab51c547a2c2c4d433f3410aaa69c4e455d59ec1c4eb804ce01d068941",
+        "evidence.event_chain:empty",
+        "$.evidence.event_chain:[] should be non-empty"
+      ],
+      "expectation_met": true,
+      "expected_valid": false,
+      "record_hash": "sha256:8050ca836e0ec15a8e8df782fd19ac5918e96cb216c80d57bac37f7b47e880c2"
+    },
+    {
+      "actual_valid": false,
+      "case_id": "additional_root_property",
+      "description": "Add a root property not allowed by the schema.",
+      "error_count": 2,
+      "errors": [
+        "evidence.hashes.canonical_hash:mismatch:expected:sha256:dff8090af12ca99277b8024cf99347af074580f480dbaf54e459059a2a17e241:actual:sha256:09e7daab51c547a2c2c4d433f3410aaa69c4e455d59ec1c4eb804ce01d068941",
+        "$:Additional properties are not allowed ('unexpected_root_property' was unexpected)"
+      ],
+      "expectation_met": true,
+      "expected_valid": false,
+      "record_hash": "sha256:23a03f6ac5d75a06a4a2a0ccbc139fd386fbcdee0b063811e353b1998c7cccc6"
+    },
+    {
+      "actual_valid": false,
+      "case_id": "invalid_action_mode",
+      "description": "Use an action execution_mode outside the allowed enum.",
+      "error_count": 2,
+      "errors": [
+        "evidence.hashes.canonical_hash:mismatch:expected:sha256:9a187167a36fa4fcdad11a5fbb0b9d8693061c3061394fe5a4341a173ca66249:actual:sha256:09e7daab51c547a2c2c4d433f3410aaa69c4e455d59ec1c4eb804ce01d068941",
+        "$.action.execution_mode:'nondeterministic' is not one of ['proposal', 'direct', 'delegated', 'simulation', 'unknown']"
+      ],
+      "expectation_met": true,
+      "expected_valid": false,
+      "record_hash": "sha256:48d9693f52df2e13c025ad8d11592d8d918efe660f0689376d99939a2e6cf5ec"
+    },
+    {
+      "actual_valid": false,
+      "case_id": "missing_evidence_hashes",
+      "description": "Remove the required evidence.hashes object.",
+      "error_count": 3,
+      "errors": [
+        "evidence.hashes:not_object",
+        "$.evidence:'hashes' is a required property",
+        "recomputed_canonical_hash:unavailable:KeyError"
+      ],
+      "expectation_met": true,
+      "expected_valid": false,
+      "record_hash": "sha256:898c18aad4bcab9dcd0b4df2dd5b853bb38b40aba5eb0ca430a1f4f61472b3c9"
+    }
+  ],
+  "schema_version": "0.1.0",
+  "summary": {
+    "baseline_valid": true,
+    "case_count": 8,
+    "expectation_met_count": 8,
+    "expected_invalid_count": 8,
+    "invalid_detected_count": 8
+  }
+}

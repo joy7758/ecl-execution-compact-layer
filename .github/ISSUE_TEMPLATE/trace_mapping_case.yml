@@ -1,0 +1,30 @@
+name: Trace mapping case
+description: Propose or report an OpenAI-style or LangChain-style trace mapping case.
+title: "[trace-mapping]: "
+labels:
+  - trace-mapping
+body:
+  - type: dropdown
+    id: runtime
+    attributes:
+      label: Runtime
+      options:
+        - openai
+        - langchain
+        - other
+    validations:
+      required: true
+  - type: textarea
+    id: trace_shape
+    attributes:
+      label: Trace shape
+      description: Provide a redacted or synthetic trace shape.
+    validations:
+      required: true
+  - type: textarea
+    id: expected_mapping
+    attributes:
+      label: Expected ECL mapping
+      description: State how fields should map to state, intent, action, and evidence, including expected loss.
+    validations:
+      required: true

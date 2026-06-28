@@ -1,0 +1,26 @@
+{
+  "boundary": {
+    "external_api_calls": false,
+    "randomness": false,
+    "schema_modified": false
+  },
+  "execution_hash": "sha256:ecba096d17faffff2e36fdcbfb8a28b3eda74c3fff689739acbe2807a6049899",
+  "execution_trace_hash": "sha256:dad9be8f67aaa57352b2d942328460e9c1c524b90454af4295b4a049b4d5c515",
+  "generated_at": "2026-06-28T00:00:00Z",
+  "input_hash": "sha256:9c72361ec02a578f6287665d8c9caa6ea7b71f93a7d1efb3f4dbc2d76d61ea2c",
+  "input_ref": "memory:/external-adoption-ecl",
+  "object_type": "ecl_replay_evidence_bundle",
+  "record_id": "ecl:6ccd4f97b2547e28",
+  "replay_result_hash": "sha256:5372e4ce79933f30d9cca5b9f2ec9eeead75aed5ad83881bf55393c8ffa46b10",
+  "schema_version": "0.1.0",
+  "validation_report": {
+    "canonical_hash": "sha256:157fedc8ec5e2f554ee1839892d7bbf18efc02ed3e4ba7c3fe372467cca53b7c",
+    "errors": [],
+    "object_type": "ecl_validation_report",
+    "recomputed_canonical_hash": "sha256:157fedc8ec5e2f554ee1839892d7bbf18efc02ed3e4ba7c3fe372467cca53b7c",
+    "record_hash": "sha256:9c72361ec02a578f6287665d8c9caa6ea7b71f93a7d1efb3f4dbc2d76d61ea2c",
+    "record_id": "ecl:6ccd4f97b2547e28",
+    "schema_version": "0.1.0",
+    "valid": true
+  }
+}

@@ -1,6 +1,6 @@
 {
   "deterministic": true,
-  "execution_hash": "sha256:0baac32afe6d12426e59b31f2429684b4d8fa868a746da70ad719e0b2c6c78bd",
+  "execution_hash": "sha256:a49d72789c411dda33911f11fbef5987e8b1c25ce11d23d50bd942058767395d",
   "generated_at": "2026-06-28T00:00:00Z",
   "object_type": "ecl_replay_result",
   "output_refs": [
@@ -8,7 +8,7 @@
     "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/external_adoption/openai/evidence_bundle.json",
     "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/external_adoption/openai/replay_result.json"
   ],
-  "record_id": "ecl:b2776372f804ab72",
+  "record_id": "ecl:1c591e6e8beeb89f",
   "schema_version": "0.1.0",
   "valid": true
 }

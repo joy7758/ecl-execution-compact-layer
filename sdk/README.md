@@ -3,7 +3,7 @@
 ## 1. 10-line Integration Example
 
 ```python
-from sdk.ecl import ECL
+from sdk import ECL
 trace = {"runtime": "openai", "trace": openai_trace}
 ecl_object = ECL.from_trace(trace)
 validation = ECL.validate(ecl_object)
@@ -35,5 +35,4 @@ replay = ECL.replay(ecl_object)
 
 ## 5. Determinism Guarantee
 
-The SDK uses fixed generation parameters, frozen schema validation, canonical JSON hashing, and local replay artifacts only.
-
+The SDK uses fixed generation parameters, frozen schema validation, deterministic sorted-key compact JSON hashing, and local replay artifacts only.

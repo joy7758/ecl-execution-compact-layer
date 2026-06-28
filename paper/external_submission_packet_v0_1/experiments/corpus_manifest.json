@@ -1,0 +1,240 @@
+{
+  "object_type": "ecl_trace_corpus_manifest",
+  "schema_version": "0.1.0",
+  "status": "synthetic_stress_corpus",
+  "description": "Synthetic local trace corpus for ECL adapter, loss, and replay evaluation. These traces are not presented as production traces or third-party validation.",
+  "cases": [
+    {
+      "case_id": "openai_complete_multi_tool",
+      "runtime": "openai",
+      "category": "complete",
+      "expected_loss": false,
+      "tags": ["complete", "multi_event"],
+      "trace": {
+        "trace_id": "oa-corpus-001",
+        "correlation_id": "corr-oa-001",
+        "agent": {"id": "agent:corpus", "persona_id": "persona:eval", "runtime": "openai-agents-sdk"},
+        "model_input": {
+          "summary": "Summarize execution evidence",
+          "operation": "summarize_evidence",
+          "constraints": {"deterministic": true},
+          "expected_result": {"artifact_type": "summary"},
+          "evidence_requirements": {"hashes": true}
+        },
+        "reasoning": {"summary": "Need stable evidence summary", "operation": "summarize_evidence"},
+        "tool_call": {
+          "name": "summarize",
+          "tool": "tool:summarize",
+          "parameters": {"format": "short"},
+          "execution_mode": "delegated",
+          "side_effect_class": "read_only"
+        },
+        "trace_events": [
+          {"event_id": "oa-001-1", "type": "model_input", "ref": "input"},
+          {"event_id": "oa-001-2", "type": "tool_call", "name": "summarize", "tool": "tool:summarize"},
+          {"event_id": "oa-001-3", "type": "tool_result", "status": "completed"}
+        ],
+        "result": {"status": "completed", "summary": "Summary generated", "output_refs": ["memory://oa-001-summary"]}
+      }
+    },
+    {
+      "case_id": "openai_missing_reasoning",
+      "runtime": "openai",
+      "category": "missing_reasoning",
+      "expected_loss": true,
+      "tags": ["missing_field", "loss_expected"],
+      "trace": {
+        "trace_id": "oa-corpus-002",
+        "agent": {"id": "agent:corpus", "persona_id": "persona:eval", "runtime": "openai-agents-sdk"},
+        "input": {
+          "summary": "Build an ECL record",
+          "operation": "build_ecl",
+          "constraints": {"offline": true},
+          "expected_result": {"artifact_type": "ecl_record"},
+          "evidence_requirements": {"event_chain": true}
+        },
+        "tool_call": {"name": "build_record", "tool": "tool:ecl.build", "parameters": {"mode": "local"}},
+        "spans": [{"span_id": "oa-002-1", "type": "tool_call", "name": "build_record"}],
+        "result": {"status": "completed", "summary": "Record built"}
+      }
+    },
+    {
+      "case_id": "openai_event_only_tool",
+      "runtime": "openai",
+      "category": "implicit_tool_call",
+      "expected_loss": true,
+      "tags": ["implicit_tool", "loss_expected"],
+      "trace": {
+        "trace_id": "oa-corpus-003",
+        "input": {"summary": "Read local schema", "operation": "read_schema"},
+        "events": [
+          {"id": "oa-003-1", "type": "tool_call", "name": "read_schema", "tool": "filesystem.read", "input": {"path": "schemas/ecl-execution-compact-layer.schema.json"}},
+          {"id": "oa-003-2", "type": "tool_result", "status": "completed"}
+        ],
+        "result": {"status": "completed", "summary": "Schema loaded"}
+      }
+    },
+    {
+      "case_id": "openai_failed_result",
+      "runtime": "openai",
+      "category": "failed_result",
+      "expected_loss": false,
+      "tags": ["failure_status", "complete"],
+      "trace": {
+        "trace_id": "oa-corpus-004",
+        "agent": {"id": "agent:corpus", "persona_id": "persona:eval", "runtime": "openai-agents-sdk"},
+        "model_input": {"summary": "Attempt blocked write", "operation": "write_artifact"},
+        "reasoning": {"summary": "Policy may block write", "operation": "write_artifact"},
+        "tool_call": {
+          "name": "write_file",
+          "tool": "filesystem.write",
+          "parameters": {"path": "out/blocked.json"},
+          "execution_mode": "delegated",
+          "side_effect_class": "state_change"
+        },
+        "trace_events": [{"event_id": "oa-004-1", "type": "tool_call", "name": "write_file"}],
+        "result": {"status": "failed", "summary": "Policy blocked write"}
+      }
+    },
+    {
+      "case_id": "openai_unknown_fields",
+      "runtime": "openai",
+      "category": "unknown_fields",
+      "expected_loss": false,
+      "tags": ["unknown_field", "complete"],
+      "trace": {
+        "trace_id": "oa-corpus-005",
+        "agent": {"id": "agent:corpus", "persona_id": "persona:eval", "runtime": "openai-agents-sdk"},
+        "model_input": {"summary": "Process unknown metadata", "operation": "normalize_unknown"},
+        "reasoning": {"summary": "Unknown metadata should be hash-protected", "operation": "normalize_unknown"},
+        "tool_call": {"name": "normalize", "tool": "tool:normalize", "parameters": {"strict": false}},
+        "trace_events": [{"event_id": "oa-005-1", "type": "tool_call", "name": "normalize"}],
+        "result": {"status": "completed", "summary": "Unknown field preserved in source hash"},
+        "vendor_extra": {"opaque": true, "timestamp": "2026-06-28T00:00:00Z"}
+      }
+    },
+    {
+      "case_id": "openai_timestamp_drift",
+      "runtime": "openai",
+      "category": "timestamp_drift",
+      "expected_loss": false,
+      "tags": ["timestamp", "complete"],
+      "trace": {
+        "trace_id": "oa-corpus-006",
+        "agent": {"id": "agent:corpus", "persona_id": "persona:eval", "runtime": "openai-agents-sdk"},
+        "model_input": {"summary": "Record timestamped event", "operation": "timestamp_event"},
+        "reasoning": {"summary": "Timestamp is source data", "operation": "timestamp_event"},
+        "tool_call": {"name": "record_event", "tool": "tool:event.record", "parameters": {"event": "checkpoint"}},
+        "trace_events": [{"event_id": "oa-006-1", "type": "tool_call", "name": "record_event", "created_at": "2026-06-28T00:00:00Z"}],
+        "result": {"status": "completed", "summary": "Timestamped event recorded"}
+      }
+    },
+    {
+      "case_id": "langchain_complete_nested",
+      "runtime": "langchain",
+      "category": "complete",
+      "expected_loss": false,
+      "tags": ["complete", "nested_run"],
+      "trace": {
+        "run_id": "lc-corpus-001",
+        "name": "evidence_chain",
+        "run_type": "chain",
+        "inputs": {
+          "summary": "Convert nested LangChain run",
+          "operation": "convert_nested",
+          "constraints": {"deterministic": true},
+          "expected_result": {"artifact_type": "ecl_record"},
+          "evidence_requirements": {"hash_chain": true}
+        },
+        "outputs": {"status": "completed", "summary": "Nested run converted", "output_refs": ["memory://lc-001"]},
+        "metadata": {"actor_ref": "agent:corpus", "persona_ref": "persona:eval", "runtime_ref": "langchain", "correlation_id": "corr-lc-001", "execution_mode": "delegated", "side_effect_class": "read_only"},
+        "child_runs": [
+          {"run_id": "lc-001-tool-1", "name": "load_schema", "run_type": "tool", "inputs": {"path": "schemas/ecl-execution-compact-layer.schema.json"}, "outputs": {"status": "completed"}},
+          {"run_id": "lc-001-tool-2", "name": "validate_record", "run_type": "tool", "inputs": {"mode": "strict"}, "outputs": {"status": "completed"}}
+        ]
+      }
+    },
+    {
+      "case_id": "langchain_missing_child_runs",
+      "runtime": "langchain",
+      "category": "missing_child_runs",
+      "expected_loss": true,
+      "tags": ["missing_field", "loss_expected"],
+      "trace": {
+        "run_id": "lc-corpus-002",
+        "name": "minimal_chain",
+        "run_type": "chain",
+        "inputs": {"summary": "Minimal LangChain run", "operation": "minimal"},
+        "outputs": {"status": "completed", "summary": "Minimal run complete"},
+        "metadata": {"actor_ref": "agent:corpus", "runtime_ref": "langchain"}
+      }
+    },
+    {
+      "case_id": "langchain_failed_tool",
+      "runtime": "langchain",
+      "category": "failed_result",
+      "expected_loss": false,
+      "tags": ["failure_status", "complete"],
+      "trace": {
+        "run_id": "lc-corpus-003",
+        "name": "failed_tool_chain",
+        "run_type": "chain",
+        "inputs": {"summary": "Run tool that fails", "operation": "tool_failure"},
+        "outputs": {"status": "failed", "summary": "Tool failed"},
+        "metadata": {"actor_ref": "agent:corpus", "runtime_ref": "langchain", "execution_mode": "delegated", "side_effect_class": "read_only"},
+        "child_runs": [{"run_id": "lc-003-tool-1", "name": "read_missing", "run_type": "tool", "inputs": {"path": "missing.json"}, "outputs": {"status": "failed"}}]
+      }
+    },
+    {
+      "case_id": "langchain_unknown_metadata",
+      "runtime": "langchain",
+      "category": "unknown_fields",
+      "expected_loss": false,
+      "tags": ["unknown_field", "complete"],
+      "trace": {
+        "run_id": "lc-corpus-004",
+        "name": "metadata_chain",
+        "run_type": "chain",
+        "inputs": {"summary": "Handle metadata", "operation": "metadata"},
+        "outputs": {"status": "completed", "summary": "Metadata handled"},
+        "metadata": {"actor_ref": "agent:corpus", "runtime_ref": "langchain", "vendor_extra": {"opaque": true}},
+        "child_runs": [{"run_id": "lc-004-tool-1", "name": "metadata_tool", "run_type": "tool", "inputs": {"strict": false}, "outputs": {"status": "completed"}}]
+      }
+    },
+    {
+      "case_id": "langchain_multi_step_tree",
+      "runtime": "langchain",
+      "category": "multi_step",
+      "expected_loss": false,
+      "tags": ["nested_run", "multi_event"],
+      "trace": {
+        "run_id": "lc-corpus-005",
+        "name": "multi_step_chain",
+        "run_type": "chain",
+        "inputs": {"summary": "Execute multi-step tree", "operation": "multi_step"},
+        "outputs": {"status": "completed", "summary": "Tree complete"},
+        "metadata": {"actor_ref": "agent:corpus", "runtime_ref": "langchain", "execution_mode": "delegated", "side_effect_class": "read_only"},
+        "child_runs": [
+          {"run_id": "lc-005-tool-1", "name": "step_one", "run_type": "tool", "inputs": {"step": 1}, "outputs": {"status": "completed"}, "child_runs": [{"run_id": "lc-005-inner-1", "name": "inner_check", "run_type": "tool", "inputs": {"check": true}, "outputs": {"status": "completed"}}]},
+          {"run_id": "lc-005-tool-2", "name": "step_two", "run_type": "tool", "inputs": {"step": 2}, "outputs": {"status": "completed"}}
+        ]
+      }
+    },
+    {
+      "case_id": "langchain_timestamp_drift",
+      "runtime": "langchain",
+      "category": "timestamp_drift",
+      "expected_loss": false,
+      "tags": ["timestamp", "complete"],
+      "trace": {
+        "run_id": "lc-corpus-006",
+        "name": "timestamp_chain",
+        "run_type": "chain",
+        "inputs": {"summary": "Record timestamp", "operation": "timestamp"},
+        "outputs": {"status": "completed", "summary": "Timestamp recorded"},
+        "metadata": {"actor_ref": "agent:corpus", "runtime_ref": "langchain", "created_at": "2026-06-28T00:00:00Z"},
+        "child_runs": [{"run_id": "lc-006-tool-1", "name": "timestamp_tool", "run_type": "tool", "inputs": {"created_at": "2026-06-28T00:00:00Z"}, "outputs": {"status": "completed"}}]
+      }
+    }
+  ]
+}

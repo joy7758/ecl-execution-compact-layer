@@ -1,6 +1,6 @@
 # ECL MCP Anchor Stub v0.1
 
-This directory is a local MCP-style stub ONLY.
+This directory is an MCP-shaped local wrapper ONLY.
 
 It is NOT a registry plugin.
 It is NOT external adoption.
@@ -19,7 +19,7 @@ result = ecl.verify(ecl_object)
 
 `mcp/ecl_server_stub.py` maps directly to `sdk/ecl_dependency.py`:
 
-| MCP-style surface | Dependency SDK call |
+| MCP-shaped surface | Dependency SDK call |
 | --- | --- |
 | `ecl.wrap(trace)` | `sdk.ecl_dependency.wrap(trace)` |
 | `ecl.emit(ecl_object)` | `sdk.ecl_dependency.emit(ecl_object)` |
@@ -27,4 +27,4 @@ result = ecl.verify(ecl_object)
 
 ## Determinism
 
-The stub does not call network services, does not register tools, and does not modify any host runtime. Its outputs are deterministic for identical inputs.
+The wrapper does not implement JSON-RPC transport, MCP host/client/server sessions, auth, registry integration, network services, or host runtime mutation. Its outputs are deterministic for identical inputs.

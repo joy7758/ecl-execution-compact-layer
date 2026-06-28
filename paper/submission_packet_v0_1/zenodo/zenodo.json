@@ -1,0 +1,29 @@
+{
+  "title": "ECL v0.1",
+  "description": "deterministic execution IR layer",
+  "creators": [
+    {
+      "name": "Bin Zhang",
+      "affiliation": "independent researcher"
+    }
+  ],
+  "version": "0.1",
+  "keywords": [
+    "execution IR",
+    "agent systems",
+    "determinism",
+    "replay"
+  ],
+  "license": "MIT",
+  "publication_date": "2026-06-28",
+  "upload_type": "software",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/joy7758/ecl-execution-compact-layer",
+      "relation": "isSupplementTo",
+      "scheme": "url",
+      "resource_type": "software"
+    }
+  ],
+  "notes": "GitHub release metadata prepared. Zenodo DOI minting has not been performed."
+}

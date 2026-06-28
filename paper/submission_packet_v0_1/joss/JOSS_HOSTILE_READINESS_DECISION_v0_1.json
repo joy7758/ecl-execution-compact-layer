@@ -1,0 +1,96 @@
+{
+  "schema_version": "0.1.0",
+  "object_type": "ecl_joss_hostile_readiness_decision",
+  "status": "not_ready_for_immediate_joss_submission",
+  "date_checked": "2026-06-28",
+  "decision": {
+    "immediate_joss_submission_recommended": false,
+        "joss_content_package_ready": true,
+        "software_install_test_ready": true,
+        "synthetic_experiment_evidence_ready": true,
+        "standard_joss_paper_path_ready": true,
+        "public_collaboration_surface_ready": true,
+        "joss_gate_verifier_ready": true,
+        "public_repo_synced": false,
+        "public_development_history_ready": false,
+    "external_impact_signal_ready": false
+  },
+  "evidence": {
+    "unit_tests": {
+      "command": "python3 -m unittest discover -s tests",
+      "tests": 75,
+      "status": "OK"
+    },
+    "trace_corpus": {
+      "command": "python3 experiments/evaluate_trace_corpus.py",
+      "case_count": 12,
+      "by_runtime": {
+        "langchain": 6,
+        "openai": 6
+      },
+      "valid_count": 12,
+      "deterministic_count": 12,
+      "loss_expectation_met_count": 12,
+      "surface_coverage": {
+        "action": 12,
+        "evidence": 12,
+        "intent": 12,
+        "state": 12
+      },
+      "evaluation_hash": "sha256:2434da21056811e7eacf1ffac6944d5420ddeb2aa783f74423326a2b54a33974"
+    },
+    "validation_matrix": {
+      "command": "python3 experiments/evaluate_validation_matrix.py",
+      "baseline_valid": true,
+      "case_count": 8,
+      "expected_invalid_count": 8,
+      "invalid_detected_count": 8,
+      "expectation_met_count": 8,
+      "evaluation_hash": "sha256:00fe0ee8952988f7460280b40554889a890c93f9d181a6c9d8ee8b0194b031c0"
+    },
+    "mapping_coverage": {
+      "command": "python3 experiments/evaluate_mapping_coverage.py",
+      "case_count": 12,
+      "total_source_fields": 81,
+      "direct_mapped_field_count": 80,
+      "source_hash_only_field_count": 1,
+      "loss_missing_field_count": 4,
+      "evaluation_hash": "sha256:8a8b820ecbdd1b4e88a2d8e07b05be2d479add0f0c6c3265292cc5a86763e43a"
+    }
+  },
+  "remaining_blockers": [
+    {
+      "id": "public-repo-sync",
+      "status": "fail_uncommitted_changes",
+      "evidence": "local worktree contains submission repairs not committed and pushed to public origin/main"
+    },
+    {
+      "id": "public-development-history",
+      "status": "fail_current_state",
+      "evidence": "local git history is concentrated on 2026-06-28"
+    },
+    {
+      "id": "external-impact",
+      "status": "unverified",
+      "evidence": "no external citation, third-party dependency, or independent user signal verified"
+    },
+    {
+      "id": "human-submission-approval",
+      "status": "not_done",
+      "evidence": "no JOSS portal action performed"
+    }
+  ],
+  "sources": [
+    "https://joss.readthedocs.io/en/latest/submitting.html",
+    "https://joss.readthedocs.io/en/latest/review_criteria.html",
+    "https://joss.readthedocs.io/en/latest/paper.html"
+  ],
+  "boundary": {
+    "joss_submission_performed": false,
+    "acceptance_claim": false,
+    "third_party_validation": false,
+    "external_adoption": false,
+    "public_repo_synced": false,
+    "synthetic_corpus_only": true
+  }
+}

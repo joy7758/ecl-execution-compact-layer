@@ -1,0 +1,410 @@
+{
+  "boundary": {
+    "benchmark_result": false,
+    "external_api_calls": false,
+    "synthetic_corpus": true,
+    "third_party_validation": false
+  },
+  "corpus": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/experiments/trace_corpus/corpus_manifest.json",
+  "corpus_hash": "sha256:84423ba61eb71fae836ecbfb970df07f2eb1222ee6b0baa1f14cd65482ad79cc",
+  "evaluation_hash": "sha256:2434da21056811e7eacf1ffac6944d5420ddeb2aa783f74423326a2b54a33974",
+  "generated_at": "2026-06-28T00:00:00Z",
+  "object_type": "ecl_trace_corpus_evaluation",
+  "results": [
+    {
+      "case_id": "openai_complete_multi_tool",
+      "category": "complete",
+      "deterministic": true,
+      "ecl_id": "ecl:6bc01778cb0d03dd",
+      "expectation_met": true,
+      "expected_loss": false,
+      "loss_detected": false,
+      "loss_fields": [],
+      "loss_type": "semantic",
+      "mapping": {
+        "events": "evidence",
+        "model_input": "intent",
+        "outputs": "evidence",
+        "reasoning": "intent",
+        "runtime_metadata": "state",
+        "tool_call": "action"
+      },
+      "mapping_hash": "sha256:eeb830b01c1de66381ef2414c14e1f62efe4ce69818d3ed5fec2e2c579290bd8",
+      "normalized_event_count": 3,
+      "runtime": "openai",
+      "tags": [
+        "complete",
+        "multi_event"
+      ],
+      "valid": true,
+      "verification_hash": "sha256:dd7ff48deeb96f13f9f82fe68d6d68cd7bf9716519d896c97d3d14d4d2cee56a"
+    },
+    {
+      "case_id": "openai_missing_reasoning",
+      "category": "missing_reasoning",
+      "deterministic": true,
+      "ecl_id": "ecl:2c101b2ba1f446b7",
+      "expectation_met": true,
+      "expected_loss": true,
+      "loss_detected": true,
+      "loss_fields": [
+        "reasoning"
+      ],
+      "loss_type": "structural",
+      "mapping": {
+        "events": "evidence",
+        "model_input": "intent",
+        "outputs": "evidence",
+        "reasoning": "intent",
+        "runtime_metadata": "state",
+        "tool_call": "action"
+      },
+      "mapping_hash": "sha256:20e80d03e16ddb7190dfefc2b302055fec8c57424559a5474ec3a59835a97cb8",
+      "normalized_event_count": 1,
+      "runtime": "openai",
+      "tags": [
+        "loss_expected",
+        "missing_field"
+      ],
+      "valid": true,
+      "verification_hash": "sha256:cd066dbba182af7b86c2b6a753d43534e0a8346b30dee7c02fe1f42384bca5bf"
+    },
+    {
+      "case_id": "openai_event_only_tool",
+      "category": "implicit_tool_call",
+      "deterministic": true,
+      "ecl_id": "ecl:7216ea199fd33937",
+      "expectation_met": true,
+      "expected_loss": true,
+      "loss_detected": true,
+      "loss_fields": [
+        "reasoning"
+      ],
+      "loss_type": "structural",
+      "mapping": {
+        "events": "evidence",
+        "model_input": "intent",
+        "outputs": "evidence",
+        "reasoning": "intent",
+        "runtime_metadata": "state",
+        "tool_call": "action"
+      },
+      "mapping_hash": "sha256:2fc2731fcb54720fa9eb10060fea3d64aefe62497fca5b91187836069f0035e8",
+      "normalized_event_count": 2,
+      "runtime": "openai",
+      "tags": [
+        "implicit_tool",
+        "loss_expected"
+      ],
+      "valid": true,
+      "verification_hash": "sha256:c8437f9414bab7f452f63ea8ab689cf9120a4cad99426d08cf567d7f761f56c7"
+    },
+    {
+      "case_id": "openai_failed_result",
+      "category": "failed_result",
+      "deterministic": true,
+      "ecl_id": "ecl:4724f70152bd9104",
+      "expectation_met": true,
+      "expected_loss": false,
+      "loss_detected": false,
+      "loss_fields": [],
+      "loss_type": "semantic",
+      "mapping": {
+        "events": "evidence",
+        "model_input": "intent",
+        "outputs": "evidence",
+        "reasoning": "intent",
+        "runtime_metadata": "state",
+        "tool_call": "action"
+      },
+      "mapping_hash": "sha256:e0760d87a170bfcb0d6b76a88c865e91ebf7615465350341eaba5f2b708ecfa6",
+      "normalized_event_count": 1,
+      "runtime": "openai",
+      "tags": [
+        "complete",
+        "failure_status"
+      ],
+      "valid": true,
+      "verification_hash": "sha256:54ae33cd3357ae2dceb655a8f46b949edee9afdc03dbbc7b2d1497d4a8459625"
+    },
+    {
+      "case_id": "openai_unknown_fields",
+      "category": "unknown_fields",
+      "deterministic": true,
+      "ecl_id": "ecl:a8665582c1bd51cd",
+      "expectation_met": true,
+      "expected_loss": false,
+      "loss_detected": false,
+      "loss_fields": [],
+      "loss_type": "semantic",
+      "mapping": {
+        "events": "evidence",
+        "model_input": "intent",
+        "outputs": "evidence",
+        "reasoning": "intent",
+        "runtime_metadata": "state",
+        "tool_call": "action"
+      },
+      "mapping_hash": "sha256:b37fe3a553ea2c28b038a01221721905bcfc578c5bebfbe1a304f1119b51a6ba",
+      "normalized_event_count": 1,
+      "runtime": "openai",
+      "tags": [
+        "complete",
+        "unknown_field"
+      ],
+      "valid": true,
+      "verification_hash": "sha256:d8c3253b82e3f9443eed0c9e56eef8ae96ad2f595ed52bf94c3624d973f095e9"
+    },
+    {
+      "case_id": "openai_timestamp_drift",
+      "category": "timestamp_drift",
+      "deterministic": true,
+      "ecl_id": "ecl:bde128c8beae9470",
+      "expectation_met": true,
+      "expected_loss": false,
+      "loss_detected": false,
+      "loss_fields": [],
+      "loss_type": "semantic",
+      "mapping": {
+        "events": "evidence",
+        "model_input": "intent",
+        "outputs": "evidence",
+        "reasoning": "intent",
+        "runtime_metadata": "state",
+        "tool_call": "action"
+      },
+      "mapping_hash": "sha256:224fc1a8945d60b5c74b8cccc1ae1b6fd951ca9b45936ddcbacf24151659b74a",
+      "normalized_event_count": 1,
+      "runtime": "openai",
+      "tags": [
+        "complete",
+        "timestamp"
+      ],
+      "valid": true,
+      "verification_hash": "sha256:1caafc311a0a6e17d221f42d6eb11d6c759ffed5ac267aa8dd22d3eeebb48b61"
+    },
+    {
+      "case_id": "langchain_complete_nested",
+      "category": "complete",
+      "deterministic": true,
+      "ecl_id": "ecl:400058d2f82052b6",
+      "expectation_met": true,
+      "expected_loss": false,
+      "loss_detected": false,
+      "loss_fields": [],
+      "loss_type": "semantic",
+      "mapping": {
+        "events": "evidence",
+        "model_input": "intent",
+        "outputs": "evidence",
+        "reasoning": "intent",
+        "runtime_metadata": "state",
+        "tool_call": "action"
+      },
+      "mapping_hash": "sha256:060d8bba2bdee2385b15e3d05f8c9286c66c66a4659f1d6996db592fb7a1c67f",
+      "normalized_event_count": 3,
+      "runtime": "langchain",
+      "tags": [
+        "complete",
+        "nested_run"
+      ],
+      "valid": true,
+      "verification_hash": "sha256:6e67e6138f544cb7732c5254d321216cb2ca27f3278abecacef9b60b6cd7afd0"
+    },
+    {
+      "case_id": "langchain_missing_child_runs",
+      "category": "missing_child_runs",
+      "deterministic": true,
+      "ecl_id": "ecl:6ccd4f97b2547e28",
+      "expectation_met": true,
+      "expected_loss": true,
+      "loss_detected": true,
+      "loss_fields": [
+        "events",
+        "tool_call"
+      ],
+      "loss_type": "structural",
+      "mapping": {
+        "events": "evidence",
+        "model_input": "intent",
+        "outputs": "evidence",
+        "reasoning": "intent",
+        "runtime_metadata": "state",
+        "tool_call": "action"
+      },
+      "mapping_hash": "sha256:184b461143479d98a66803b30e9d10bc0c398aee5a6000b3a9619e98893f94dc",
+      "normalized_event_count": 1,
+      "runtime": "langchain",
+      "tags": [
+        "loss_expected",
+        "missing_field"
+      ],
+      "valid": true,
+      "verification_hash": "sha256:615d3235ae8a054b143e08b7bdcb0bf581c611c7c723224f0ebe707db2c8ccaa"
+    },
+    {
+      "case_id": "langchain_failed_tool",
+      "category": "failed_result",
+      "deterministic": true,
+      "ecl_id": "ecl:0061d35b9434668a",
+      "expectation_met": true,
+      "expected_loss": false,
+      "loss_detected": false,
+      "loss_fields": [],
+      "loss_type": "semantic",
+      "mapping": {
+        "events": "evidence",
+        "model_input": "intent",
+        "outputs": "evidence",
+        "reasoning": "intent",
+        "runtime_metadata": "state",
+        "tool_call": "action"
+      },
+      "mapping_hash": "sha256:2d38c6ded7d243f2c6f8b8f126900c3d5cc62c08bf02453d420082b2bbe8b19e",
+      "normalized_event_count": 2,
+      "runtime": "langchain",
+      "tags": [
+        "complete",
+        "failure_status"
+      ],
+      "valid": true,
+      "verification_hash": "sha256:e110361319f41d518b7b1576c876e2bba2f501a99cc22dd7f26848912e807f2a"
+    },
+    {
+      "case_id": "langchain_unknown_metadata",
+      "category": "unknown_fields",
+      "deterministic": true,
+      "ecl_id": "ecl:0bbdad129b208812",
+      "expectation_met": true,
+      "expected_loss": false,
+      "loss_detected": false,
+      "loss_fields": [],
+      "loss_type": "semantic",
+      "mapping": {
+        "events": "evidence",
+        "model_input": "intent",
+        "outputs": "evidence",
+        "reasoning": "intent",
+        "runtime_metadata": "state",
+        "tool_call": "action"
+      },
+      "mapping_hash": "sha256:f2cd361005f99b02ea47ea72b90865201404ec9383c55850c595f548146435cd",
+      "normalized_event_count": 2,
+      "runtime": "langchain",
+      "tags": [
+        "complete",
+        "unknown_field"
+      ],
+      "valid": true,
+      "verification_hash": "sha256:80405a922a48cc891f8ee09000159df4addbd192d5e4a07de26423f1f504deb7"
+    },
+    {
+      "case_id": "langchain_multi_step_tree",
+      "category": "multi_step",
+      "deterministic": true,
+      "ecl_id": "ecl:84a7a0dcae1c3bf5",
+      "expectation_met": true,
+      "expected_loss": false,
+      "loss_detected": false,
+      "loss_fields": [],
+      "loss_type": "semantic",
+      "mapping": {
+        "events": "evidence",
+        "model_input": "intent",
+        "outputs": "evidence",
+        "reasoning": "intent",
+        "runtime_metadata": "state",
+        "tool_call": "action"
+      },
+      "mapping_hash": "sha256:3d84a46e179a5bec991e6670aaa0ca15aab0ebb84825e0e5be9ee4b1f8d67220",
+      "normalized_event_count": 4,
+      "runtime": "langchain",
+      "tags": [
+        "multi_event",
+        "nested_run"
+      ],
+      "valid": true,
+      "verification_hash": "sha256:346790451fada68e3442021b086a55f689c86fa225c23d1cc5d061743e5f480d"
+    },
+    {
+      "case_id": "langchain_timestamp_drift",
+      "category": "timestamp_drift",
+      "deterministic": true,
+      "ecl_id": "ecl:345ea6381ea0e925",
+      "expectation_met": true,
+      "expected_loss": false,
+      "loss_detected": false,
+      "loss_fields": [],
+      "loss_type": "semantic",
+      "mapping": {
+        "events": "evidence",
+        "model_input": "intent",
+        "outputs": "evidence",
+        "reasoning": "intent",
+        "runtime_metadata": "state",
+        "tool_call": "action"
+      },
+      "mapping_hash": "sha256:d692f348c63cde27e9901067e49c8ee6408ad760f2434f1a44f3f563090f27d7",
+      "normalized_event_count": 2,
+      "runtime": "langchain",
+      "tags": [
+        "complete",
+        "timestamp"
+      ],
+      "valid": true,
+      "verification_hash": "sha256:5f338d11f4cbc3d677d7ca438aa2342a89d63730a7f0b75879ffdebb61edd51e"
+    }
+  ],
+  "schema_version": "0.1.0",
+  "summary": {
+    "by_runtime": {
+      "langchain": 6,
+      "openai": 6
+    },
+    "case_count": 12,
+    "deterministic_count": 12,
+    "loss_detected_count": 3,
+    "loss_expectation_met_count": 12,
+    "loss_expected_count": 3,
+    "loss_type_counts": {
+      "semantic": 9,
+      "structural": 3
+    },
+    "max_normalized_events": 4,
+    "runtime_count": 2,
+    "surface_coverage": {
+      "action": 12,
+      "evidence": 12,
+      "intent": 12,
+      "state": 12
+    },
+    "surface_coverage_by_runtime": {
+      "langchain": {
+        "action": 6,
+        "evidence": 6,
+        "intent": 6,
+        "state": 6
+      },
+      "openai": {
+        "action": 6,
+        "evidence": 6,
+        "intent": 6,
+        "state": 6
+      }
+    },
+    "tag_count": 9,
+    "tags": [
+      "complete",
+      "failure_status",
+      "implicit_tool",
+      "loss_expected",
+      "missing_field",
+      "multi_event",
+      "nested_run",
+      "timestamp",
+      "unknown_field"
+    ],
+    "total_normalized_events": 23,
+    "valid_count": 12
+  }
+}

@@ -1,6 +1,6 @@
 {
   "deterministic": true,
-  "execution_hash": "sha256:cc6b9889bdf29346fcb7da051d70a24d6e9864b02052591c77d2d45966973f5f",
+  "execution_hash": "sha256:a15b24b2150ef49e5352e9cda58af0013a324e8a66e216533757b9d2e9785d5a",
   "generated_at": "2026-06-28T00:00:00Z",
   "object_type": "ecl_replay_result",
   "output_refs": [
@@ -8,7 +8,7 @@
     "examples/out/external_recognition/openai/evidence_bundle.json",
     "examples/out/external_recognition/openai/replay_result.json"
   ],
-  "record_id": "ecl:b2776372f804ab72",
+  "record_id": "ecl:1c591e6e8beeb89f",
   "schema_version": "0.1.0",
   "valid": true
 }

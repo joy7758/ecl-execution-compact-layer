@@ -75,6 +75,11 @@ def validate_minimal(record: dict[str, Any]) -> list[str]:
 def validate_record(record: dict[str, Any], schema: dict[str, Any] | None = None) -> dict[str, Any]:
     errors = validate_minimal(record)
     errors.extend(validate_with_jsonschema(record, schema))
+    try:
+        recomputed_hash = compute_record_hash(record) if isinstance(record, dict) and "evidence" in record else None
+    except Exception as exc:
+        recomputed_hash = None
+        errors.append(f"recomputed_canonical_hash:unavailable:{type(exc).__name__}")
     report = {
         "schema_version": "0.1.0",
         "object_type": "ecl_validation_report",
@@ -82,7 +87,7 @@ def validate_record(record: dict[str, Any], schema: dict[str, Any] | None = None
         "valid": not errors,
         "errors": errors,
         "canonical_hash": record.get("evidence", {}).get("hashes", {}).get("canonical_hash"),
-        "recomputed_canonical_hash": compute_record_hash(record) if isinstance(record, dict) and "evidence" in record else None,
+        "recomputed_canonical_hash": recomputed_hash,
         "record_hash": sha256_json(record),
     }
     return report
@@ -109,4 +114,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

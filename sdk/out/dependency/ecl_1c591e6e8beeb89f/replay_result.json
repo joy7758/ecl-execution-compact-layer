@@ -1,0 +1,14 @@
+{
+  "deterministic": true,
+  "execution_hash": "sha256:ccb947c33078fed29b3ca1eabff93b613b7c51fdfcfaed7299452323304469df",
+  "generated_at": "2026-06-28T00:00:00Z",
+  "object_type": "ecl_replay_result",
+  "output_refs": [
+    "/Users/zhangbin/GitHub/ecl-execution-compact-layer/sdk/out/dependency/ecl_1c591e6e8beeb89f/execution_trace.json",
+    "/Users/zhangbin/GitHub/ecl-execution-compact-layer/sdk/out/dependency/ecl_1c591e6e8beeb89f/evidence_bundle.json",
+    "/Users/zhangbin/GitHub/ecl-execution-compact-layer/sdk/out/dependency/ecl_1c591e6e8beeb89f/replay_result.json"
+  ],
+  "record_id": "ecl:1c591e6e8beeb89f",
+  "schema_version": "0.1.0",
+  "valid": true
+}

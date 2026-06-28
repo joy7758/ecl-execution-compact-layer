@@ -18,5 +18,16 @@ ECL is a minimal deterministic execution IR for representing agent execution as 
 
 ## Minimal Execution Flow
 
-`ECL -> validator -> trace -> evidence -> replay`
+`runtime trace -> normalize/adapt -> ECL record -> validate -> replay -> {execution_trace, evidence_bundle, replay_result} -> artifact hashes`
 
+## Reproducibility
+
+```bash
+python3 -m pip install -e .
+python3 -m unittest discover -s tests
+python3 experiments/evaluate_trace_corpus.py
+```
+
+## Citation
+
+Use `CITATION.cff` for software citation metadata. Current boundaries are recorded in `CHANGELOG.md` and `paper/SUBMISSION_MATERIALS_INDEX.md`.

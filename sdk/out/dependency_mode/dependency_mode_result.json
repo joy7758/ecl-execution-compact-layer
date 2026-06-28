@@ -3,7 +3,7 @@
   "all_valid": true,
   "dependency_mode": true,
   "object_type": "ecl_dependency_mode_demo_result",
-  "result_hash": "sha256:d404cb3d74f2124927c6a64f5202b19cccdb59b4f94e357219fd787c102ed0d3",
+  "result_hash": "sha256:e6decc8c2c4117011db44c6bcd62956b62344fe47871fc6564913cac2c156ac2",
   "results": {
     "langchain": {
       "deterministic": true,
@@ -28,22 +28,22 @@
     "openai": {
       "deterministic": true,
       "ecl_ref": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/sdk/out/dependency_mode/openai/ecl_object.json",
-      "evidence_bundle": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/sdk/out/dependency/ecl_b2776372f804ab72/evidence_bundle.json",
+      "evidence_bundle": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/sdk/out/dependency/ecl_1c591e6e8beeb89f/evidence_bundle.json",
       "replay_result": {
         "artifact_hashes": {
-          "evidence_bundle": "sha256:bcd3125b52f83652dd943c1c2fb8ca87da94a3c2f0864c6e28c93e7b91301a6a",
-          "execution_trace": "sha256:ce78801a831d781a58657c23e55eef73eee75dea15ef57d3c5656e834301202f",
-          "replay_result": "sha256:5c182306a37e49241ed83beca5ebf8c05859f90124b73b0e80acbb18ad2dfe2b"
+          "evidence_bundle": "sha256:bdc761ef3b6d9c7f69faa4b23727b44ec11a385887664787705e5b212de2c90d",
+          "execution_trace": "sha256:c851fea85f983469e509fe71ae55cb121d952d73b18e4c7212bac4ce9d21ef7a",
+          "replay_result": "sha256:2986d0db582b0c30153772b43d71f0bcb90c4ae530ce33deb61f51a135a9fc23"
         },
         "deterministic": true,
         "object_type": "ecl_external_replay_verification",
         "schema_version": "0.1.0",
         "valid": true,
-        "verification_hash": "sha256:aad03a2bcf20236bbe6a92c99abe2438e666fc1abee8a8521f60a45f3c3b6b15"
+        "verification_hash": "sha256:c562b4d612c66bf4d149b45e0fcd8b93b9deb2089505cd07d7de7da4928c1239"
       },
       "runtime": "openai",
       "valid": true,
-      "verification_hash": "sha256:aad03a2bcf20236bbe6a92c99abe2438e666fc1abee8a8521f60a45f3c3b6b15"
+      "verification_hash": "sha256:c562b4d612c66bf4d149b45e0fcd8b93b9deb2089505cd07d7de7da4928c1239"
     }
   },
   "schema_version": "0.1.0"

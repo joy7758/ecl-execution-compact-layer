@@ -1,0 +1,14 @@
+{
+  "deterministic": true,
+  "execution_hash": "sha256:776403d4501b59c03c75eccd540285331f575a337dd8acaa29a310afdab86288",
+  "generated_at": "2026-06-28T00:00:00Z",
+  "object_type": "ecl_replay_result",
+  "output_refs": [
+    "/Users/zhangbin/GitHub/ecl-execution-compact-layer/experiments/out/trace_corpus/artifacts/langchain_timestamp_drift/execution_trace.json",
+    "/Users/zhangbin/GitHub/ecl-execution-compact-layer/experiments/out/trace_corpus/artifacts/langchain_timestamp_drift/evidence_bundle.json",
+    "/Users/zhangbin/GitHub/ecl-execution-compact-layer/experiments/out/trace_corpus/artifacts/langchain_timestamp_drift/replay_result.json"
+  ],
+  "record_id": "ecl:345ea6381ea0e925",
+  "schema_version": "0.1.0",
+  "valid": true
+}

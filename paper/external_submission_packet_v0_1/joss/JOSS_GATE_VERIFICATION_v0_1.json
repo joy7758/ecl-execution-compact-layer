@@ -1,0 +1,117 @@
+{
+  "blocking_gates": [
+    "public_repo_sync",
+    "public_history",
+    "external_impact"
+  ],
+  "boundary": {
+    "external_impact_verified": false,
+    "joss_submission_performed": false,
+    "public_history_verified": false,
+    "public_repo_synced": false,
+    "third_party_validation": false
+  },
+  "date_checked": "2026-06-28",
+  "decision": {
+    "content_package_ready": true,
+    "immediate_joss_submission_recommended": false
+  },
+  "gates": {
+    "experiment_reports": {
+      "mapping_coverage": {
+        "case_count": 12,
+        "direct_mapped_field_count": 80,
+        "evaluation_hash": "sha256:8a8b820ecbdd1b4e88a2d8e07b05be2d479add0f0c6c3265292cc5a86763e43a",
+        "loss_missing_field_count": 4,
+        "source_hash_only_field_count": 1,
+        "total_source_fields": 81
+      },
+      "status": "pass",
+      "trace_corpus": {
+        "case_count": 12,
+        "deterministic_count": 12,
+        "evaluation_hash": "sha256:2434da21056811e7eacf1ffac6944d5420ddeb2aa783f74423326a2b54a33974",
+        "surface_coverage": {
+          "action": 12,
+          "evidence": 12,
+          "intent": 12,
+          "state": 12
+        },
+        "valid_count": 12
+      },
+      "validation_matrix": {
+        "case_count": 8,
+        "evaluation_hash": "sha256:00fe0ee8952988f7460280b40554889a890c93f9d181a6c9d8ee8b0194b031c0",
+        "expectation_met_count": 8,
+        "invalid_detected_count": 8
+      }
+    },
+    "external_impact": {
+      "evidence": "No external citation, dependency, independent user report, or third-party validation is recorded in the current worktree.",
+      "ready": false,
+      "status": "unverified"
+    },
+    "public_history": {
+      "evidence": {
+        "all_dates": [
+          "2026-06-28"
+        ],
+        "available": true,
+        "first_date": "2026-06-28",
+        "last_date": "2026-06-28",
+        "unique_day_count": 1
+      },
+      "note": "Local git history is not a substitute for verified public repository history.",
+      "ready": false,
+      "status": "fail_current_state"
+    },
+    "public_repo_sync": {
+      "dirty_entry_count": 244,
+      "dirty_worktree": true,
+      "note": "JOSS submission should point at a public repository containing the submitted software and paper state.",
+      "ready": false,
+      "remote_matches_local_head": true,
+      "remote_query_available": true,
+      "status": "fail_uncommitted_changes"
+    },
+    "required_files": {
+      "checked": [
+        "LICENSE",
+        "README.md",
+        "CITATION.cff",
+        "CHANGELOG.md",
+        "CONTRIBUTING.md",
+        "SUPPORT.md",
+        "pyproject.toml",
+        "paper/paper.md",
+        "paper/paper.bib",
+        "paper/joss/paper.md",
+        "paper/joss/paper.bib",
+        ".github/workflows/tests.yml",
+        ".github/workflows/joss-paper.yml",
+        ".github/PULL_REQUEST_TEMPLATE.md",
+        ".github/ISSUE_TEMPLATE/bug_report.yml",
+        ".github/ISSUE_TEMPLATE/research_use_report.yml",
+        ".github/ISSUE_TEMPLATE/trace_mapping_case.yml",
+        "experiments/TRACE_CORPUS_EVALUATION_v0_1.md",
+        "experiments/VALIDATION_MATRIX_EVALUATION_v0_1.md",
+        "experiments/MAPPING_COVERAGE_EVALUATION_v0_1.md"
+      ],
+      "missing": [],
+      "status": "pass"
+    },
+    "standard_paper_mirror": {
+      "evidence": [
+        "paper/paper.md",
+        "paper/paper.bib",
+        "paper/joss/paper.md",
+        "paper/joss/paper.bib"
+      ],
+      "paper_mirror_matches": true,
+      "status": "pass"
+    }
+  },
+  "object_type": "ecl_joss_gate_verification",
+  "schema_version": "0.1.0",
+  "status": "joss_gate_failed_external_blockers"
+}

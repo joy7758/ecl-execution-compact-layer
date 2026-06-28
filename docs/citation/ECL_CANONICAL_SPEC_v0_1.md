@@ -21,10 +21,10 @@ ECL v0.1 is intended to be cited as a local, reproducible execution representati
 
 ## Deterministic Contract
 
-For identical input traces and frozen schema files, ECL v0.1 must produce identical canonical hashes, replay artifacts, and validation results.
+For identical input traces and frozen schema files, ECL v0.1 must produce identical sorted-key compact JSON hashes, replay artifacts, and validation results.
 
 ```text
-trace -> ECL object -> validate -> replay -> evidence -> hash
+runtime trace -> normalize/adapt -> ECL record -> validate -> replay -> {execution_trace, evidence_bundle, replay_result} -> artifact hashes
 ```
 
 ## Reference Surface
@@ -35,7 +35,7 @@ Agent-readable entrypoints:
 - `sdk/ecl.py`
 - `sdk/ecl_dependency.py`
 - `mcp/ecl_tool_spec.json`
-- `mcp/ecl_server_stub.py`
+- `mcp/ecl_server_stub.py` as an MCP-shaped local wrapper, not a conformant MCP server
 - `examples/citation_repro_demo.py`
 
 ## Boundary Claims

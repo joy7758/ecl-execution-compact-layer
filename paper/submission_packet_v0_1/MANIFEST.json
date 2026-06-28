@@ -1,0 +1,142 @@
+{
+  "object_type": "ecl_submission_packet_manifest",
+  "version": "0.1",
+  "status": "human_review_packet_ready_joss_immediate_submission_not_recommended",
+  "date_prepared": "2026-06-28",
+  "repository": {
+    "url": "https://github.com/joy7758/ecl-execution-compact-layer",
+    "release_url": "https://github.com/joy7758/ecl-execution-compact-layer/releases/tag/v0.1",
+    "release_tag": "v0.1",
+    "license": "MIT"
+  },
+  "author": {
+    "name": "Bin Zhang",
+    "affiliation": "independent researcher",
+    "orcid": ""
+  },
+  "tracks": {
+    "joss": {
+      "status": "content_package_ready_immediate_submission_not_recommended",
+      "submission_performed": false,
+      "blocking_items": [
+        "public_repo_sync",
+        "public_development_history",
+        "external_impact_signal",
+        "final_human_submission_approval"
+      ],
+      "primary_files": [
+        "standard-paper/paper.md",
+        "standard-paper/paper.bib",
+        "joss/JOSS_SUBMISSION_CHECKLIST.md",
+        "joss/JOSS_READY.md"
+      ],
+      "supporting_files": [
+        "joss/JOSS_PREFLIGHT_AUDIT_v0_1.md",
+        "joss/JOSS_PREFLIGHT_AUDIT_v0_1.json",
+        "joss/JOSS_GATE_VERIFICATION_v0_1.md",
+        "joss/JOSS_GATE_VERIFICATION_v0_1.json",
+        "joss/JOSS_HOSTILE_READINESS_DECISION_v0_1.md",
+        "joss/JOSS_HOSTILE_READINESS_DECISION_v0_1.json",
+        "joss/JOSS_SUBMISSION_MANIFEST_v0_1.json",
+        "joss/AUTHOR_METADATA_TEMPLATE_v0_1.json"
+      ]
+    },
+    "arxiv": {
+      "status": "ready_for_human_submission",
+      "submission_performed": false,
+      "primary_files": [
+        "arxiv/ARXIV_SUBMISSION_PACKAGE.md",
+        "arxiv/ARXIV_READY.md",
+        "arxiv/ECL_PAPER_v0_1.md"
+      ]
+    },
+    "zenodo": {
+      "status": "metadata_ready_not_deposited",
+      "deposit_created": false,
+      "doi_minted": false,
+      "primary_files": [
+        "zenodo/zenodo_deposit_ready.json",
+        "zenodo/zenodo.json"
+      ]
+    }
+  },
+  "github_review_surfaces": [
+    "github/tests.yml",
+    "github/joss-paper.yml",
+    "github/PULL_REQUEST_TEMPLATE.md",
+    "github/ISSUE_TEMPLATE/bug_report.yml",
+    "github/ISSUE_TEMPLATE/research_use_report.yml",
+    "github/ISSUE_TEMPLATE/trace_mapping_case.yml"
+  ],
+  "metadata": [
+    "metadata/CITATION.cff",
+    "metadata/CHANGELOG.md",
+    "metadata/CONTRIBUTING.md",
+    "metadata/SUPPORT.md",
+    "metadata/ECL_RESEARCH_USE_CASE_v0_1.md"
+  ],
+  "evidence": [
+    "evidence/ECL_PAPER_EVIDENCE_v0_1.json",
+    "evidence/PAPER_COMPLETION_REPORT_v0_1.md",
+    "evidence/GOAL_COMPLETION_AUDIT_v0_1.md",
+    "evidence/GOAL_COMPLETION_AUDIT_v0_1.json"
+  ],
+  "experiments": [
+    "experiments/TRACE_CORPUS_EVALUATION_v0_1.md",
+    "experiments/trace_corpus_evaluation.json",
+    "experiments/corpus_manifest.json",
+    "experiments/VALIDATION_MATRIX_EVALUATION_v0_1.md",
+    "experiments/validation_matrix_evaluation.json",
+    "experiments/MAPPING_COVERAGE_EVALUATION_v0_1.md",
+    "experiments/mapping_coverage_evaluation.json"
+  ],
+  "scripts": [
+    "scripts/joss_gate_verifier.py"
+  ],
+  "validation": {
+    "command": "python3 -m unittest discover -s tests",
+    "tests_passed": true,
+    "test_count": 75,
+    "trace_corpus_command": "python3 experiments/evaluate_trace_corpus.py",
+    "trace_corpus_cases": 12,
+    "trace_corpus_valid": 12,
+    "trace_corpus_deterministic": 12,
+    "trace_corpus_loss_expectation_met": 12,
+    "trace_corpus_surface_coverage": {
+      "action": 12,
+      "evidence": 12,
+      "intent": 12,
+      "state": 12
+    },
+    "trace_corpus_evaluation_hash": "sha256:2434da21056811e7eacf1ffac6944d5420ddeb2aa783f74423326a2b54a33974",
+    "validation_matrix_command": "python3 experiments/evaluate_validation_matrix.py",
+    "validation_matrix_cases": 8,
+    "validation_matrix_invalid_detected": 8,
+    "validation_matrix_expectation_met": 8,
+    "validation_matrix_evaluation_hash": "sha256:00fe0ee8952988f7460280b40554889a890c93f9d181a6c9d8ee8b0194b031c0",
+    "mapping_coverage_command": "python3 experiments/evaluate_mapping_coverage.py",
+    "mapping_coverage_total_source_fields": 81,
+    "mapping_coverage_direct_mapped_field_count": 80,
+    "mapping_coverage_source_hash_only_field_count": 1,
+    "mapping_coverage_loss_missing_field_count": 4,
+    "mapping_coverage_evaluation_hash": "sha256:8a8b820ecbdd1b4e88a2d8e07b05be2d479add0f0c6c3265292cc5a86763e43a",
+    "joss_gate_verifier_command": "python3 scripts/joss_gate_verifier.py",
+    "joss_gate_verifier_status": "joss_gate_failed_external_blockers",
+    "joss_gate_verifier_blocking_gates": [
+      "public_repo_sync",
+      "public_history",
+      "external_impact"
+    ]
+  },
+  "boundary": {
+    "automatic_submission_performed": false,
+    "joss_submission_performed": false,
+    "arxiv_submission_performed": false,
+    "zenodo_deposit_created": false,
+    "doi_minted": false,
+    "third_party_validation": false,
+    "synthetic_corpus_only": true,
+    "public_repo_synced": false,
+    "immediate_joss_submission_recommended": false
+  }
+}

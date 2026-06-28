@@ -38,9 +38,11 @@ Adapters MUST NOT modify ECL schema semantics.
 | Source | ECL |
 | --- | --- |
 | `tool_call` | `action` |
-| `model_input` | `state` |
+| `model_input` | `intent` |
 | `reasoning` | `intent` |
+| runtime metadata / actor / correlation | `state` |
 | `events` | `evidence` |
+| outputs / result references | `evidence` |
 
 Mappings MUST be deterministic.
 
@@ -68,4 +70,3 @@ Loss reporting MUST use this structure:
 `preserved_fields` MUST list source fields preserved through direct mapping, reference, or hash.
 
 `confidence` MUST be a number from `0.0` to `1.0`.
-

@@ -50,9 +50,11 @@ def map_to_ecl(trace_envelope: dict[str, Any], *, generated_at: str, checkpoint_
         "loss": loss,
         "mapping": {
             "tool_call": "action",
-            "model_input": "state",
+            "model_input": "intent",
             "reasoning": "intent",
+            "runtime_metadata": "state",
             "events": "evidence",
+            "outputs": "evidence",
         },
         "deterministic": True,
         "mapping_hash": sha256_json({"runtime": runtime, "ecl": ecl_record, "loss": loss}),
@@ -78,4 +80,3 @@ def _generic_loss_annotation(raw_trace: dict[str, Any], *, required_fields: dict
         "missing_fields": sorted(missing),
         "confidence": 1.0 if not missing else 0.75,
     }
-

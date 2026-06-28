@@ -1,0 +1,12 @@
+{
+  "event_chain_tail": "sha256:cdad0766444081ab67c06af562bce1e487d506a45fa2f91cc825119d52aca501",
+  "event_count": 1,
+  "execution_hash": "sha256:db8830384c3f9038a5e731484d14f0fca5f7dbcd8efb5f23a0183f95462e26d3",
+  "generated_at": "2026-06-28T00:00:00Z",
+  "input_hash": "sha256:5715d13dc17b19b123a1899a72d02ce4016e3afcc1ebcb4828b5fa2c5b9fd31a",
+  "input_ref": "memory:/external-adoption-ecl",
+  "object_type": "ecl_replay_execution_trace",
+  "record_id": "ecl:a8665582c1bd51cd",
+  "schema_version": "0.1.0",
+  "validation_valid": true
+}

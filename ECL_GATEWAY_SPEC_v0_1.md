@@ -32,7 +32,7 @@ The only core ECL object shape is:
 ECL execution is a pure deterministic function:
 
 ```text
-input -> validate -> execute -> trace -> evidence -> replay
+runtime trace -> normalize/adapt -> ECL record -> validate -> replay -> {execution_trace, evidence_bundle, replay_result} -> artifact hashes
 ```
 
 The runtime layer MUST be deterministic.
@@ -48,7 +48,7 @@ Replay MUST produce an identical artifact hash for identical inputs, schema, ada
 Inbound boundary:
 
 ```text
-OpenAI / LangChain / MCP -> ECL
+OpenAI / LangChain / MCP-shaped local wrapper -> ECL
 ```
 
 Inbound adapters map external runtime traces into ECL without changing ECL semantics.
@@ -64,7 +64,7 @@ The internal boundary validates ECL objects and executes deterministic artifact 
 Outbound boundary:
 
 ```text
-ECL -> trace / evidence / replay
+ECL -> execution_trace / evidence_bundle / replay_result
 ```
 
 Outbound artifacts expose trace, evidence, and replay surfaces without claiming external validation or standard status.
@@ -80,4 +80,3 @@ Mapping loss MUST be explicitly recorded.
 `loss_report` is mandatory in the adapter layer.
 
 A conforming adapter MUST report omitted, approximated, or structurally remapped source fields.
-

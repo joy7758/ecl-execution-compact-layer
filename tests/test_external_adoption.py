@@ -59,6 +59,10 @@ class ExternalAdoptionTests(unittest.TestCase):
         )
         self.assertEqual(mapped["runtime"], runtime)
         self.assertTrue(mapped["deterministic"])
+        self.assertEqual(mapped["mapping"]["model_input"], "intent")
+        self.assertEqual(mapped["mapping"]["runtime_metadata"], "state")
+        self.assertEqual(mapped["mapping"]["tool_call"], "action")
+        self.assertEqual(mapped["mapping"]["events"], "evidence")
         self.assertIn("loss", mapped)
         self.assertIn("missing_fields", mapped["loss"])
         ecl_record = mapped["ecl"]

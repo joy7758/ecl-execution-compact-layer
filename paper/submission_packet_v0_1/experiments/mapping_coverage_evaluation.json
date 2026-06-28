@@ -1,0 +1,975 @@
+{
+  "boundary": {
+    "benchmark_result": false,
+    "external_api_calls": false,
+    "synthetic_corpus": true,
+    "third_party_validation": false
+  },
+  "corpus": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/experiments/trace_corpus/corpus_manifest.json",
+  "corpus_hash": "sha256:84423ba61eb71fae836ecbfb970df07f2eb1222ee6b0baa1f14cd65482ad79cc",
+  "evaluation_hash": "sha256:8a8b820ecbdd1b4e88a2d8e07b05be2d479add0f0c6c3265292cc5a86763e43a",
+  "field_rules": {
+    "langchain": {
+      "child_runs": [
+        "action",
+        "evidence"
+      ],
+      "error": [
+        "evidence"
+      ],
+      "events": [
+        "evidence"
+      ],
+      "id": [
+        "state"
+      ],
+      "inputs": [
+        "intent"
+      ],
+      "metadata": [
+        "state",
+        "intent"
+      ],
+      "name": [
+        "state"
+      ],
+      "outputs": [
+        "evidence"
+      ],
+      "prompt": [
+        "intent"
+      ],
+      "run_id": [
+        "state"
+      ],
+      "run_type": [
+        "state"
+      ],
+      "serialized": [
+        "action"
+      ],
+      "tags": [
+        "state"
+      ],
+      "tool_input": [
+        "action"
+      ],
+      "tool_name": [
+        "action"
+      ]
+    },
+    "openai": {
+      "agent": [
+        "state"
+      ],
+      "correlation_id": [
+        "state"
+      ],
+      "events": [
+        "evidence"
+      ],
+      "input": [
+        "intent"
+      ],
+      "items": [
+        "evidence"
+      ],
+      "model_input": [
+        "intent"
+      ],
+      "outputs": [
+        "evidence"
+      ],
+      "reasoning": [
+        "intent"
+      ],
+      "result": [
+        "evidence"
+      ],
+      "spans": [
+        "evidence"
+      ],
+      "tool_call": [
+        "action"
+      ],
+      "trace_events": [
+        "evidence"
+      ],
+      "trace_id": [
+        "state"
+      ]
+    }
+  },
+  "generated_at": "2026-06-28T00:00:00Z",
+  "object_type": "ecl_mapping_coverage_evaluation",
+  "results": [
+    {
+      "case_id": "openai_complete_multi_tool",
+      "category": "complete",
+      "direct_mapped_field_count": 8,
+      "field_count": 8,
+      "fields": [
+        {
+          "field": "agent",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state"
+          ]
+        },
+        {
+          "field": "correlation_id",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state"
+          ]
+        },
+        {
+          "field": "model_input",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "intent"
+          ]
+        },
+        {
+          "field": "reasoning",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "intent"
+          ]
+        },
+        {
+          "field": "result",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "evidence"
+          ]
+        },
+        {
+          "field": "tool_call",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "action"
+          ]
+        },
+        {
+          "field": "trace_events",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "evidence"
+          ]
+        },
+        {
+          "field": "trace_id",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state"
+          ]
+        }
+      ],
+      "loss_missing_count": 0,
+      "loss_missing_fields": [],
+      "mapping_hash": "sha256:eeb830b01c1de66381ef2414c14e1f62efe4ce69818d3ed5fec2e2c579290bd8",
+      "raw_trace_hash": "sha256:b0ace831cb53639842d480a8ee0cb5f5ef8f51714a8579c818cc8ce9c2769d3a",
+      "runtime": "openai",
+      "source_hash_only_field_count": 0,
+      "surface_count": 4,
+      "surfaces": [
+        "action",
+        "evidence",
+        "intent",
+        "state"
+      ]
+    },
+    {
+      "case_id": "openai_missing_reasoning",
+      "category": "missing_reasoning",
+      "direct_mapped_field_count": 6,
+      "field_count": 6,
+      "fields": [
+        {
+          "field": "agent",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state"
+          ]
+        },
+        {
+          "field": "input",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "intent"
+          ]
+        },
+        {
+          "field": "result",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "evidence"
+          ]
+        },
+        {
+          "field": "spans",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "evidence"
+          ]
+        },
+        {
+          "field": "tool_call",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "action"
+          ]
+        },
+        {
+          "field": "trace_id",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state"
+          ]
+        }
+      ],
+      "loss_missing_count": 1,
+      "loss_missing_fields": [
+        "reasoning"
+      ],
+      "mapping_hash": "sha256:20e80d03e16ddb7190dfefc2b302055fec8c57424559a5474ec3a59835a97cb8",
+      "raw_trace_hash": "sha256:994b10241c2464489645f64ef457b807eccb52f750f4e113ff4664971ebda4a0",
+      "runtime": "openai",
+      "source_hash_only_field_count": 0,
+      "surface_count": 4,
+      "surfaces": [
+        "action",
+        "evidence",
+        "intent",
+        "state"
+      ]
+    },
+    {
+      "case_id": "openai_event_only_tool",
+      "category": "implicit_tool_call",
+      "direct_mapped_field_count": 4,
+      "field_count": 4,
+      "fields": [
+        {
+          "field": "events",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "evidence"
+          ]
+        },
+        {
+          "field": "input",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "intent"
+          ]
+        },
+        {
+          "field": "result",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "evidence"
+          ]
+        },
+        {
+          "field": "trace_id",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state"
+          ]
+        }
+      ],
+      "loss_missing_count": 1,
+      "loss_missing_fields": [
+        "reasoning"
+      ],
+      "mapping_hash": "sha256:2fc2731fcb54720fa9eb10060fea3d64aefe62497fca5b91187836069f0035e8",
+      "raw_trace_hash": "sha256:b127a3d27bd31b82de1754b1369fe170f7bed8c5cf7d15abe44107623313277a",
+      "runtime": "openai",
+      "source_hash_only_field_count": 0,
+      "surface_count": 3,
+      "surfaces": [
+        "evidence",
+        "intent",
+        "state"
+      ]
+    },
+    {
+      "case_id": "openai_failed_result",
+      "category": "failed_result",
+      "direct_mapped_field_count": 7,
+      "field_count": 7,
+      "fields": [
+        {
+          "field": "agent",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state"
+          ]
+        },
+        {
+          "field": "model_input",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "intent"
+          ]
+        },
+        {
+          "field": "reasoning",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "intent"
+          ]
+        },
+        {
+          "field": "result",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "evidence"
+          ]
+        },
+        {
+          "field": "tool_call",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "action"
+          ]
+        },
+        {
+          "field": "trace_events",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "evidence"
+          ]
+        },
+        {
+          "field": "trace_id",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state"
+          ]
+        }
+      ],
+      "loss_missing_count": 0,
+      "loss_missing_fields": [],
+      "mapping_hash": "sha256:e0760d87a170bfcb0d6b76a88c865e91ebf7615465350341eaba5f2b708ecfa6",
+      "raw_trace_hash": "sha256:714d97bec888cc19206cb0ac4b6ec3702bc2c6622fcba3b20bbc3391110a9772",
+      "runtime": "openai",
+      "source_hash_only_field_count": 0,
+      "surface_count": 4,
+      "surfaces": [
+        "action",
+        "evidence",
+        "intent",
+        "state"
+      ]
+    },
+    {
+      "case_id": "openai_unknown_fields",
+      "category": "unknown_fields",
+      "direct_mapped_field_count": 7,
+      "field_count": 8,
+      "fields": [
+        {
+          "field": "agent",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state"
+          ]
+        },
+        {
+          "field": "model_input",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "intent"
+          ]
+        },
+        {
+          "field": "reasoning",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "intent"
+          ]
+        },
+        {
+          "field": "result",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "evidence"
+          ]
+        },
+        {
+          "field": "tool_call",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "action"
+          ]
+        },
+        {
+          "field": "trace_events",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "evidence"
+          ]
+        },
+        {
+          "field": "trace_id",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state"
+          ]
+        },
+        {
+          "field": "vendor_extra",
+          "retention": "source_hash_only",
+          "surfaces": []
+        }
+      ],
+      "loss_missing_count": 0,
+      "loss_missing_fields": [],
+      "mapping_hash": "sha256:b37fe3a553ea2c28b038a01221721905bcfc578c5bebfbe1a304f1119b51a6ba",
+      "raw_trace_hash": "sha256:5cd7951053b8ee69f15775a198c4c438a933929e3f83fb0fcdd69625c40c89a7",
+      "runtime": "openai",
+      "source_hash_only_field_count": 1,
+      "surface_count": 4,
+      "surfaces": [
+        "action",
+        "evidence",
+        "intent",
+        "state"
+      ]
+    },
+    {
+      "case_id": "openai_timestamp_drift",
+      "category": "timestamp_drift",
+      "direct_mapped_field_count": 7,
+      "field_count": 7,
+      "fields": [
+        {
+          "field": "agent",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state"
+          ]
+        },
+        {
+          "field": "model_input",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "intent"
+          ]
+        },
+        {
+          "field": "reasoning",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "intent"
+          ]
+        },
+        {
+          "field": "result",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "evidence"
+          ]
+        },
+        {
+          "field": "tool_call",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "action"
+          ]
+        },
+        {
+          "field": "trace_events",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "evidence"
+          ]
+        },
+        {
+          "field": "trace_id",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state"
+          ]
+        }
+      ],
+      "loss_missing_count": 0,
+      "loss_missing_fields": [],
+      "mapping_hash": "sha256:224fc1a8945d60b5c74b8cccc1ae1b6fd951ca9b45936ddcbacf24151659b74a",
+      "raw_trace_hash": "sha256:40bcf8d6b364b763eb235f5a0ac91888d03c26d5e7ac24092cfd151b91383585",
+      "runtime": "openai",
+      "source_hash_only_field_count": 0,
+      "surface_count": 4,
+      "surfaces": [
+        "action",
+        "evidence",
+        "intent",
+        "state"
+      ]
+    },
+    {
+      "case_id": "langchain_complete_nested",
+      "category": "complete",
+      "direct_mapped_field_count": 7,
+      "field_count": 7,
+      "fields": [
+        {
+          "field": "child_runs",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "action",
+            "evidence"
+          ]
+        },
+        {
+          "field": "inputs",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "intent"
+          ]
+        },
+        {
+          "field": "metadata",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state",
+            "intent"
+          ]
+        },
+        {
+          "field": "name",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state"
+          ]
+        },
+        {
+          "field": "outputs",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "evidence"
+          ]
+        },
+        {
+          "field": "run_id",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state"
+          ]
+        },
+        {
+          "field": "run_type",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state"
+          ]
+        }
+      ],
+      "loss_missing_count": 0,
+      "loss_missing_fields": [],
+      "mapping_hash": "sha256:060d8bba2bdee2385b15e3d05f8c9286c66c66a4659f1d6996db592fb7a1c67f",
+      "raw_trace_hash": "sha256:7a5358c131138680abd64e4206eeda329f6d16c95a676a2036daad695d393ec5",
+      "runtime": "langchain",
+      "source_hash_only_field_count": 0,
+      "surface_count": 4,
+      "surfaces": [
+        "action",
+        "evidence",
+        "intent",
+        "state"
+      ]
+    },
+    {
+      "case_id": "langchain_missing_child_runs",
+      "category": "missing_child_runs",
+      "direct_mapped_field_count": 6,
+      "field_count": 6,
+      "fields": [
+        {
+          "field": "inputs",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "intent"
+          ]
+        },
+        {
+          "field": "metadata",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state",
+            "intent"
+          ]
+        },
+        {
+          "field": "name",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state"
+          ]
+        },
+        {
+          "field": "outputs",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "evidence"
+          ]
+        },
+        {
+          "field": "run_id",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state"
+          ]
+        },
+        {
+          "field": "run_type",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state"
+          ]
+        }
+      ],
+      "loss_missing_count": 2,
+      "loss_missing_fields": [
+        "events",
+        "tool_call"
+      ],
+      "mapping_hash": "sha256:184b461143479d98a66803b30e9d10bc0c398aee5a6000b3a9619e98893f94dc",
+      "raw_trace_hash": "sha256:e1e4773632aa176a80aed6b1588939baa3b19116bcea045df9d69d21d07c35a9",
+      "runtime": "langchain",
+      "source_hash_only_field_count": 0,
+      "surface_count": 3,
+      "surfaces": [
+        "evidence",
+        "intent",
+        "state"
+      ]
+    },
+    {
+      "case_id": "langchain_failed_tool",
+      "category": "failed_result",
+      "direct_mapped_field_count": 7,
+      "field_count": 7,
+      "fields": [
+        {
+          "field": "child_runs",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "action",
+            "evidence"
+          ]
+        },
+        {
+          "field": "inputs",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "intent"
+          ]
+        },
+        {
+          "field": "metadata",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state",
+            "intent"
+          ]
+        },
+        {
+          "field": "name",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state"
+          ]
+        },
+        {
+          "field": "outputs",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "evidence"
+          ]
+        },
+        {
+          "field": "run_id",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state"
+          ]
+        },
+        {
+          "field": "run_type",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state"
+          ]
+        }
+      ],
+      "loss_missing_count": 0,
+      "loss_missing_fields": [],
+      "mapping_hash": "sha256:2d38c6ded7d243f2c6f8b8f126900c3d5cc62c08bf02453d420082b2bbe8b19e",
+      "raw_trace_hash": "sha256:08b84086a48dd2e522a803d87a0784f59d647b8d250349ef7083537917a3d2f5",
+      "runtime": "langchain",
+      "source_hash_only_field_count": 0,
+      "surface_count": 4,
+      "surfaces": [
+        "action",
+        "evidence",
+        "intent",
+        "state"
+      ]
+    },
+    {
+      "case_id": "langchain_unknown_metadata",
+      "category": "unknown_fields",
+      "direct_mapped_field_count": 7,
+      "field_count": 7,
+      "fields": [
+        {
+          "field": "child_runs",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "action",
+            "evidence"
+          ]
+        },
+        {
+          "field": "inputs",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "intent"
+          ]
+        },
+        {
+          "field": "metadata",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state",
+            "intent"
+          ]
+        },
+        {
+          "field": "name",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state"
+          ]
+        },
+        {
+          "field": "outputs",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "evidence"
+          ]
+        },
+        {
+          "field": "run_id",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state"
+          ]
+        },
+        {
+          "field": "run_type",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state"
+          ]
+        }
+      ],
+      "loss_missing_count": 0,
+      "loss_missing_fields": [],
+      "mapping_hash": "sha256:f2cd361005f99b02ea47ea72b90865201404ec9383c55850c595f548146435cd",
+      "raw_trace_hash": "sha256:388913301282f84223a9ad96015c8874603c1c3cc97dd710dd7b7ace772eee71",
+      "runtime": "langchain",
+      "source_hash_only_field_count": 0,
+      "surface_count": 4,
+      "surfaces": [
+        "action",
+        "evidence",
+        "intent",
+        "state"
+      ]
+    },
+    {
+      "case_id": "langchain_multi_step_tree",
+      "category": "multi_step",
+      "direct_mapped_field_count": 7,
+      "field_count": 7,
+      "fields": [
+        {
+          "field": "child_runs",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "action",
+            "evidence"
+          ]
+        },
+        {
+          "field": "inputs",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "intent"
+          ]
+        },
+        {
+          "field": "metadata",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state",
+            "intent"
+          ]
+        },
+        {
+          "field": "name",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state"
+          ]
+        },
+        {
+          "field": "outputs",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "evidence"
+          ]
+        },
+        {
+          "field": "run_id",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state"
+          ]
+        },
+        {
+          "field": "run_type",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state"
+          ]
+        }
+      ],
+      "loss_missing_count": 0,
+      "loss_missing_fields": [],
+      "mapping_hash": "sha256:3d84a46e179a5bec991e6670aaa0ca15aab0ebb84825e0e5be9ee4b1f8d67220",
+      "raw_trace_hash": "sha256:090a7821af485a567380a0dc3013ef9d0dc3c0e0a225990a0af071843d462ef0",
+      "runtime": "langchain",
+      "source_hash_only_field_count": 0,
+      "surface_count": 4,
+      "surfaces": [
+        "action",
+        "evidence",
+        "intent",
+        "state"
+      ]
+    },
+    {
+      "case_id": "langchain_timestamp_drift",
+      "category": "timestamp_drift",
+      "direct_mapped_field_count": 7,
+      "field_count": 7,
+      "fields": [
+        {
+          "field": "child_runs",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "action",
+            "evidence"
+          ]
+        },
+        {
+          "field": "inputs",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "intent"
+          ]
+        },
+        {
+          "field": "metadata",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state",
+            "intent"
+          ]
+        },
+        {
+          "field": "name",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state"
+          ]
+        },
+        {
+          "field": "outputs",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "evidence"
+          ]
+        },
+        {
+          "field": "run_id",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state"
+          ]
+        },
+        {
+          "field": "run_type",
+          "retention": "direct_mapping",
+          "surfaces": [
+            "state"
+          ]
+        }
+      ],
+      "loss_missing_count": 0,
+      "loss_missing_fields": [],
+      "mapping_hash": "sha256:d692f348c63cde27e9901067e49c8ee6408ad760f2434f1a44f3f563090f27d7",
+      "raw_trace_hash": "sha256:d11eaa6cd8dfe86704eb8934fbe06334be065fafc5290e65ca0d696cc12715f6",
+      "runtime": "langchain",
+      "source_hash_only_field_count": 0,
+      "surface_count": 4,
+      "surfaces": [
+        "action",
+        "evidence",
+        "intent",
+        "state"
+      ]
+    }
+  ],
+  "schema_version": "0.1.0",
+  "summary": {
+    "by_runtime": {
+      "langchain": 6,
+      "openai": 6
+    },
+    "case_count": 12,
+    "cases_with_loss": 3,
+    "cases_with_source_hash_only_fields": 1,
+    "direct_mapped_field_count": 80,
+    "loss_missing_field_count": 4,
+    "runtime_count": 2,
+    "source_hash_only_field_count": 1,
+    "surface_presence": {
+      "action": 10,
+      "evidence": 12,
+      "intent": 12,
+      "state": 12
+    },
+    "surface_presence_by_runtime": {
+      "langchain": {
+        "action": 5,
+        "evidence": 6,
+        "intent": 6,
+        "state": 6
+      },
+      "openai": {
+        "action": 5,
+        "evidence": 6,
+        "intent": 6,
+        "state": 6
+      }
+    },
+    "total_source_fields": 81
+  }
+}

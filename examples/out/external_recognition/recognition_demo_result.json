@@ -3,7 +3,7 @@
   "all_valid": true,
   "generated_at": "2026-06-28T00:00:00Z",
   "object_type": "ecl_external_recognition_demo_result",
-  "result_hash": "sha256:3b75d317c7ba5c7f23a36431750c6fdbeba2164c55c4dd5af6346e938e012862",
+  "result_hash": "sha256:dfafe2572fdf1ee2f48732d0c3931795151afcdeb0b1ead11b887747a99f7441",
   "results": {
     "langchain": {
       "artifact_hashes": {
@@ -26,9 +26,9 @@
     },
     "openai": {
       "artifact_hashes": {
-        "evidence_bundle": "sha256:eb025a5e64bb3f144ef56a6cb167b28cf9c6d4de3e2b0a7399dcc5e3bbb49e6b",
-        "execution_trace": "sha256:4e5f38ca889a043e52c2ec6f46c8b4380615656eec48ba8dcc21b292fedabc75",
-        "replay_result": "sha256:fcdd0bef3696e431549afcbe0222568d8ec88bd15e942497f1b247070137a49e"
+        "evidence_bundle": "sha256:71b0cdd98f29ade86e7edfbe617c6849cc9cbc4d44f090c51b256911a7206643",
+        "execution_trace": "sha256:dfcc7442010e3fa07be7c4be46bb3a557f301d8b266aa0d718c57a33ea3fc357",
+        "replay_result": "sha256:074d2f8dade906305137aaa75f67993e9c68c2e025809831d4b66e9360c249e4"
       },
       "deterministic": true,
       "ecl_ref": "examples/out/external_recognition/openai/ecl_object.json",
@@ -43,7 +43,7 @@
       "replay_result_ref": "examples/out/external_recognition/openai/replay_result.json",
       "runtime": "openai",
       "valid": true,
-      "verification_hash": "sha256:15b026a82e251406ab783638948bb02c32ba2e7139d08217f1f2d139e0982afe"
+      "verification_hash": "sha256:a213dc60bb86ad602a93ad5101c3c1a9f0e88b9fbabdae8e5cc166b2ac077a3f"
     }
   },
   "schema_version": "0.1.0"

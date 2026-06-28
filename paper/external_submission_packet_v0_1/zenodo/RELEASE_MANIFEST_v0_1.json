@@ -1,0 +1,46 @@
+{
+  "schema_version": "0.1.0",
+  "object_type": "ecl_publication_finalization_manifest",
+  "status": "github_release_ready_zenodo_pending",
+  "version": "0.1",
+  "release_root": "release/v0.1",
+  "required_structure": {
+    "paper": "release/v0.1/paper",
+    "sdk": "release/v0.1/sdk",
+    "mcp": "release/v0.1/mcp",
+    "examples": "release/v0.1/examples",
+    "readme": "release/v0.1/README.md",
+    "license": "release/v0.1/LICENSE",
+    "zenodo": "release/v0.1/zenodo.json",
+    "integrity_report": "release/v0.1/INTEGRITY_REPORT_v0_1.json"
+  },
+  "packaged_support_surfaces": [
+    "release/v0.1/schemas",
+    "release/v0.1/ecl",
+    "release/v0.1/external",
+    "release/v0.1/demo",
+    "release/v0.1/pyproject.toml"
+  ],
+  "integrity": {
+    "source_schema_sha256": "15d089eaee07ec27d1fc69b5418e5dc5f1b1fa55f2c9395c03cde0ad6773cf89",
+    "source_sdk_dependency_sha256": "b578b3fd326e046b43c67ed47fe7e83e8fb11d451301cd384659253b003d1f09",
+    "source_sdk_facade_sha256": "6862a865bd1057b0159c135a75ee8fa4492399794c063a21c02aa12e90f5ed04",
+    "source_mcp_tool_spec_sha256": "907a3ba39e1f64736c19c6a58a083e2361345c2a5ac80041e1044be546154688",
+    "source_mcp_server_stub_sha256": "1123685e770982965a356966a9e02e17f5795387f486649e33b0e798d40cc5a4"
+  },
+  "boundary": {
+    "schema_modified": false,
+    "feature_change": false,
+    "github_release_created": true,
+    "zenodo_deposit_created": false,
+    "doi_minted": false,
+    "public_release": true,
+    "license_selected": true
+  },
+  "github": {
+    "repository": "joy7758/ecl-execution-compact-layer",
+    "url": "https://github.com/joy7758/ecl-execution-compact-layer",
+    "release_tag": "v0.1",
+    "release_url": "https://github.com/joy7758/ecl-execution-compact-layer/releases/tag/v0.1"
+  }
+}

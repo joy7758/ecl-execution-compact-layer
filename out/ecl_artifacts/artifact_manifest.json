@@ -1,5 +1,5 @@
 {
-  "artifact_set_hash": "sha256:2494ba8d65986dabf21c7f819eb64d586b6049022b9863052452113046ae7e48",
+  "artifact_set_hash": "sha256:e174718aa2d226a6b3406e76e31ade576d993d71f52e77a519e651f9edf5b196",
   "artifacts": [
     {
       "bytes": 11149,
@@ -23,7 +23,7 @@
       "bytes": 5910,
       "exists": true,
       "path": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/ecl_from_openai_agents_trace.json",
-      "sha256": "sha256:e6c7d53dbb5a79ddd107c161599ba43e9e208af072d654307e3789440abf30de"
+      "sha256": "sha256:ecc4557c42cb1f834142d4ea8add38b47eaa0c5f2454e76e4aee11e68503fc2d"
     },
     {
       "bytes": 5147,
@@ -35,7 +35,7 @@
       "bytes": 1122,
       "exists": true,
       "path": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/validator_report.json",
-      "sha256": "sha256:a8bab31a644b304bccb85a5e4eb75b8adfaea0880abbde69bd17b8e81285f9a6"
+      "sha256": "sha256:45198c37fc02dc95b12849aeda1734e3fba214f8617388201064039de981f9fd"
     },
     {
       "bytes": 1515,

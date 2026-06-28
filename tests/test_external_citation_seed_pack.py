@@ -32,7 +32,13 @@ class ExternalCitationSeedPackTests(unittest.TestCase):
 
     def test_canonical_spec_contains_required_surfaces(self) -> None:
         text = (ROOT / "docs/citation/ECL_CANONICAL_SPEC_v0_1.md").read_text(encoding="utf-8")
-        for token in ("state", "intent", "action", "evidence", "trace -> ECL object -> validate -> replay -> evidence -> hash"):
+        for token in (
+            "state",
+            "intent",
+            "action",
+            "evidence",
+            "runtime trace -> normalize/adapt -> ECL record -> validate -> replay",
+        ):
             self.assertIn(token, text)
         self.assertIn("does not claim public release", text)
         self.assertIn("ecosystem adoption", text)
@@ -42,7 +48,7 @@ class ExternalCitationSeedPackTests(unittest.TestCase):
         strategy = (ROOT / "docs/citation/FIRST_EXTERNAL_MENTION_STRATEGY_v0_1.md").read_text(encoding="utf-8").lower()
         forbidden = [
             "is an adopted ecosystem standard",
-            "is a published mcp server",
+            "is a published or conformant mcp server",
             "has third-party production validation",
             "benchmark leadership",
         ]
