@@ -9,6 +9,7 @@ Status: joss_gate_failed_blockers
 | `development_evidence` | `pass` |
 | `experiment_reports` | `pass` |
 | `public_history` | `fail_current_state` |
+| `public_history_maturation_plan` | `pass` |
 | `public_repo_sync` | `pass` |
 | `required_files` | `pass` |
 | `research_impact` | `pass` |
@@ -37,5 +38,6 @@ external_impact_verified=false
 public_repo_synced=true
 public_history_verified=false
 development_evidence_verified=true
+public_history_maturation_plan_verified=true
 research_impact_verified=true
 ```

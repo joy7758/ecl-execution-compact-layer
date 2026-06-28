@@ -15,6 +15,8 @@ public_collaboration_surface_ready=true
 joss_gate_verifier_ready=true
 development_evidence_ready=true
 development_evidence_satisfies_public_history_gate=false
+public_history_maturation_plan_ready=true
+public_history_maturation_plan_satisfies_public_history_gate=false
 immediate_joss_submission_recommended=false
 joss_submission_performed=false
 public_repo_synced=true
@@ -57,6 +59,8 @@ status=joss_gate_failed_blockers
 blocking_gates=["public_history"]
 development_evidence_ready=true
 development_evidence_satisfies_public_history_gate=false
+public_history_maturation_plan_ready=true
+public_history_maturation_plan_satisfies_public_history_gate=false
 external_impact_signal="advisory_unverified"
 ```
 

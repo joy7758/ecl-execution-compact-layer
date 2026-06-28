@@ -1,0 +1,54 @@
+{
+  "schema_version": "0.1.0",
+  "object_type": "ecl_joss_public_history_maturation_plan",
+  "status": "public_history_maturation_plan_active_not_ready",
+  "date_checked": "2026-06-28",
+  "repository": {
+    "url": "https://github.com/joy7758/ecl-execution-compact-layer",
+    "visibility": "public",
+    "public_created_at": "2026-06-28T02:14:34Z",
+    "latest_verified_push_at": "2026-06-28T06:19:35Z",
+    "source": "https://api.github.com/repos/joy7758/ecl-execution-compact-layer"
+  },
+  "maturation_window": {
+    "earliest_safe_review_date_utc": "2026-12-29",
+    "automatic_pass": false,
+    "reason": "JOSS public-history eligibility requires real elapsed public development time and maintainer reassessment."
+  },
+  "required_evidence": [
+    "repository_remains_public",
+    "real_public_commits",
+    "public_issue_or_discussion_activity",
+    "real_release_or_tag_states",
+    "test_or_ci_history",
+    "documentation_updates_from_real_needs"
+  ],
+  "prohibited_actions": [
+    "backdated_commits",
+    "rewritten_history_for_credibility",
+    "synthetic_activity_commits",
+    "private_history_claimed_as_public_history",
+    "plan_treated_as_submission_readiness"
+  ],
+  "gate_transition_rule": {
+    "repository_public_age_exceeds_six_months": "required",
+    "public_development_evidence_is_real": "required",
+    "no_backdated_history": true,
+    "no_synthetic_activity_claim": true,
+    "public_repo_sync": "pass",
+    "maintainer_reassesses_joss_submission": true
+  },
+  "boundary": {
+    "public_history_maturation_plan_ready": true,
+    "public_history_gate_status": "fail_current_state",
+    "does_not_satisfy_public_history_gate": true,
+    "no_backdated_history": true,
+    "immediate_joss_submission_recommended": false,
+    "joss_submission_performed": false
+  },
+  "sources": [
+    "https://joss.readthedocs.io/en/latest/submitting.html",
+    "https://joss.readthedocs.io/en/latest/review_criteria.html",
+    "https://api.github.com/repos/joy7758/ecl-execution-compact-layer"
+  ]
+}

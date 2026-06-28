@@ -73,12 +73,13 @@ evaluation_hash=sha256:8a8b820ecbdd1b4e88a2d8e07b05be2d479add0f0c6c3265292cc5a86
 | Gate | Status | Evidence |
 | --- | --- | --- |
 | Public development history over time | fail_current_state | Local git history is concentrated on 2026-06-28. |
+| Public-history maturation plan | pass_not_gate_satisfying | `paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.md` records a non-fabricated maturation path with earliest safe reassessment on 2026-12-29. |
 | External impact or independent use | advisory_unverified | No external citation, third-party dependency, or independent user signal is verified; this is advisory rather than the sole impact gate. |
 | JOSS final human submission approval | not_done | No JOSS portal action has been performed. |
 
 ## Recommendation
 
-Do not submit to JOSS immediately unless the author accepts a high desk-reject risk. The technically repaired package is suitable for continued public development, arXiv/Zenodo staging, and external feedback gathering. Re-run this decision after public history is clearer; external-use evidence remains a positive advisory signal but is not treated as the sole JOSS impact gate.
+Do not submit to JOSS immediately unless the author accepts a high desk-reject risk. The technically repaired package is suitable for continued public development, arXiv/Zenodo staging, and external feedback gathering. Re-run this decision no earlier than the public-history maturation checkpoint unless JOSS policy or verified external evidence changes; external-use evidence remains a positive advisory signal but is not treated as the sole JOSS impact gate.
 
 ## Sources
 

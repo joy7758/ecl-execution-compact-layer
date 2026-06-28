@@ -77,12 +77,16 @@ class JOSSPreflightTests(unittest.TestCase):
             ".github/ISSUE_TEMPLATE/trace_mapping_case.yml",
             "docs/research_use/ECL_RESEARCH_USE_CASE_v0_1.md",
             "paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md",
+            "paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.md",
+            "paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.json",
         ):
             self.assertTrue((ROOT / relative_path).exists(), relative_path)
         audit = json.loads(PREFLIGHT_JSON.read_text(encoding="utf-8"))
         ids = {check["id"]: check for check in audit["checks"]}
         self.assertEqual(ids["open-source-metadata"]["status"], "pass")
         self.assertEqual(ids["development-evidence"]["status"], "pass")
+        self.assertEqual(ids["public-history-maturation-plan"]["status"], "pass")
+        self.assertFalse(ids["public-history-maturation-plan"]["blocking"])
         self.assertEqual(ids["external-impact"]["status"], "advisory_unverified")
         self.assertFalse(ids["external-impact"]["blocking"])
 
@@ -94,9 +98,15 @@ class JOSSPreflightTests(unittest.TestCase):
         self.assertTrue(decision["decision"]["standard_joss_paper_path_ready"])
         self.assertTrue(decision["decision"]["public_collaboration_surface_ready"])
         self.assertTrue(decision["decision"]["development_evidence_ready"])
+        self.assertTrue(decision["decision"]["public_history_maturation_plan_ready"])
         self.assertFalse(decision["decision"]["public_development_history_ready"])
         self.assertFalse(decision["decision"]["external_impact_signal_ready"])
         self.assertFalse(decision["evidence"]["development_evidence"]["satisfies_public_history_gate"])
+        self.assertFalse(decision["evidence"]["public_history_maturation_plan"]["satisfies_public_history_gate"])
+        self.assertEqual(
+            decision["evidence"]["public_history_maturation_plan"]["earliest_safe_review_date_utc"],
+            "2026-12-29",
+        )
         blocker_ids = {blocker["id"] for blocker in decision["remaining_blockers"]}
         self.assertIn("public-development-history", blocker_ids)
         self.assertNotIn("external-impact", blocker_ids)

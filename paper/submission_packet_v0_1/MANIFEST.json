@@ -39,6 +39,8 @@
                 "joss/JOSS_HOSTILE_READINESS_DECISION_v0_1.md",
                 "joss/JOSS_HOSTILE_READINESS_DECISION_v0_1.json",
                 "joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md",
+                "joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.md",
+                "joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.json",
                 "joss/JOSS_SUBMISSION_MANIFEST_v0_1.json",
                 "joss/AUTHOR_METADATA_TEMPLATE_v0_1.json"
             ]
@@ -129,6 +131,8 @@
         ],
         "development_evidence_ready": true,
         "development_evidence_satisfies_public_history_gate": false,
+        "public_history_maturation_plan_ready": true,
+        "public_history_maturation_plan_satisfies_public_history_gate": false,
         "joss_gate_verifier_advisory_signals": {
             "external_impact": "unverified"
         }

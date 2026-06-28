@@ -36,6 +36,8 @@ REQUIRED_FILES = [
     "experiments/VALIDATION_MATRIX_EVALUATION_v0_1.md",
     "experiments/MAPPING_COVERAGE_EVALUATION_v0_1.md",
     "paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md",
+    "paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.md",
+    "paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.json",
 ]
 
 
@@ -175,6 +177,44 @@ def check_development_evidence() -> dict[str, Any]:
     }
 
 
+def check_public_history_maturation_plan() -> dict[str, Any]:
+    plan_md = ROOT / "paper" / "joss" / "JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.md"
+    plan_json = ROOT / "paper" / "joss" / "JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.json"
+    md_text = plan_md.read_text(encoding="utf-8").lower() if plan_md.exists() else ""
+    payload = json.loads(plan_json.read_text(encoding="utf-8")) if plan_json.exists() else {}
+    required_tokens = [
+        "public_history_maturation_plan",
+        "repository_public_created_at=2026-06-28t02:14:34z",
+        "earliest_safe_review_date_utc=2026-12-29",
+        "does_not_satisfy_public_history_gate=true",
+        "no_backdated_history=true",
+    ]
+    missing = [token for token in required_tokens if token not in md_text]
+    boundary = payload.get("boundary", {})
+    ready = (
+        plan_md.exists()
+        and plan_json.exists()
+        and not missing
+        and boundary.get("public_history_maturation_plan_ready") is True
+        and boundary.get("does_not_satisfy_public_history_gate") is True
+        and boundary.get("no_backdated_history") is True
+    )
+    return {
+        "status": "pass" if ready else "fail",
+        "ready": ready,
+        "evidence": {
+            "paths": [
+                str(plan_md.relative_to(ROOT)),
+                str(plan_json.relative_to(ROOT)),
+            ],
+            "required_tokens_present": not missing,
+            "missing_tokens": missing,
+            "earliest_safe_review_date_utc": payload.get("maturation_window", {}).get("earliest_safe_review_date_utc"),
+        },
+        "note": "Public-history maturation plan is documented, but elapsed public history still fails the JOSS gate.",
+    }
+
+
 def check_research_impact() -> dict[str, Any]:
     paper = ROOT / "paper" / "paper.md"
     research_use = ROOT / "docs" / "research_use" / "ECL_RESEARCH_USE_CASE_v0_1.md"
@@ -252,6 +292,7 @@ def build_payload() -> dict[str, Any]:
         "standard_paper_mirror": check_standard_paper_mirror(),
         "experiment_reports": check_experiment_reports(),
         "development_evidence": check_development_evidence(),
+        "public_history_maturation_plan": check_public_history_maturation_plan(),
         "research_impact": check_research_impact(),
         "public_repo_sync": check_public_repo_sync(),
         "public_history": check_public_history(),
@@ -277,6 +318,7 @@ def build_payload() -> dict[str, Any]:
             and gates["standard_paper_mirror"]["status"] == "pass"
             and gates["experiment_reports"]["status"] == "pass"
             and gates["development_evidence"]["status"] == "pass"
+            and gates["public_history_maturation_plan"]["status"] == "pass"
             and gates["research_impact"]["status"] == "pass",
             "immediate_joss_submission_recommended": False if blocking else True,
         },
@@ -287,6 +329,7 @@ def build_payload() -> dict[str, Any]:
             "public_repo_synced": gates["public_repo_sync"]["status"] == "pass",
             "public_history_verified": gates["public_history"]["status"] == "pass",
             "development_evidence_verified": gates["development_evidence"]["status"] == "pass",
+            "public_history_maturation_plan_verified": gates["public_history_maturation_plan"]["status"] == "pass",
             "research_impact_verified": gates["research_impact"]["status"] == "pass",
         },
     }
@@ -326,6 +369,7 @@ def markdown(payload: dict[str, Any]) -> str:
         f"public_repo_synced={str(payload['boundary']['public_repo_synced']).lower()}\n"
         f"public_history_verified={str(payload['boundary']['public_history_verified']).lower()}\n"
         f"development_evidence_verified={str(payload['boundary']['development_evidence_verified']).lower()}\n"
+        f"public_history_maturation_plan_verified={str(payload['boundary']['public_history_maturation_plan_verified']).lower()}\n"
         f"research_impact_verified={str(payload['boundary']['research_impact_verified']).lower()}\n"
         "```\n"
     )

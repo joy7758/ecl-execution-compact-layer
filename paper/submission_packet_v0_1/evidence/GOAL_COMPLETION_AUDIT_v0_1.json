@@ -75,6 +75,12 @@
             "evidence": "paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md"
         },
         {
+            "id": "public-history-maturation-plan",
+            "requirement": "public-history maturation plan exists without fabricating elapsed public history",
+            "status": "complete",
+            "evidence": "paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.md"
+        },
+        {
             "id": "formal-submission",
       "requirement": "formal submission performed",
       "status": "not_required_for_paper_and_screening_objective_not_done",
@@ -147,6 +153,12 @@
         "development_evidence": {
             "path": "paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md",
             "status": "pass",
+            "satisfies_public_history_gate": false
+        },
+        "public_history_maturation_plan": {
+            "path": "paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.md",
+            "status": "pass",
+            "earliest_safe_review_date_utc": "2026-12-29",
             "satisfies_public_history_gate": false
         }
     },

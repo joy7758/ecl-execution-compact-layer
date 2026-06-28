@@ -63,6 +63,8 @@
             ],
             "development_evidence_ready": true,
             "development_evidence_satisfies_public_history_gate": false,
+            "public_history_maturation_plan_ready": true,
+            "public_history_maturation_plan_satisfies_public_history_gate": false,
             "advisory_signals": {
                 "external_impact": "unverified"
             }
@@ -70,6 +72,12 @@
         "development_evidence": {
             "path": "paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md",
             "status": "pass",
+            "satisfies_public_history_gate": false
+        },
+        "public_history_maturation_plan": {
+            "path": "paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.md",
+            "status": "pass",
+            "earliest_safe_review_date_utc": "2026-12-29",
             "satisfies_public_history_gate": false
         },
         "citation_demo_command": "python3 examples/citation_repro_demo.py",
@@ -96,6 +104,8 @@
         "paper/joss/JOSS_GATE_VERIFICATION_v0_1.md",
         "paper/joss/JOSS_GATE_VERIFICATION_v0_1.json",
         "paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md",
+        "paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.md",
+        "paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.json",
         "paper/joss/AUTHOR_METADATA_TEMPLATE_v0_1.json",
     "paper/venue_screening/NO_PAID_JOURNAL_SCREENING_v0_1.md",
     "paper/venue_screening/NO_PAID_JOURNAL_SCREENING_v0_1.json",

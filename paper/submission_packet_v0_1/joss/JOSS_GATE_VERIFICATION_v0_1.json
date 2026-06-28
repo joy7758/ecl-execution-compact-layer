@@ -15,6 +15,7 @@
     "development_evidence_verified": true,
     "external_impact_verified": false,
     "joss_submission_performed": false,
+    "public_history_maturation_plan_verified": true,
     "public_history_verified": false,
     "public_repo_synced": true,
     "research_impact_verified": true,
@@ -79,6 +80,20 @@
       "ready": false,
       "status": "fail_current_state"
     },
+    "public_history_maturation_plan": {
+      "evidence": {
+        "earliest_safe_review_date_utc": "2026-12-29",
+        "missing_tokens": [],
+        "paths": [
+          "paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.md",
+          "paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.json"
+        ],
+        "required_tokens_present": true
+      },
+      "note": "Public-history maturation plan is documented, but elapsed public history still fails the JOSS gate.",
+      "ready": true,
+      "status": "pass"
+    },
     "public_repo_sync": {
       "dirty_entry_count": 0,
       "dirty_worktree": false,
@@ -110,7 +125,9 @@
         "experiments/TRACE_CORPUS_EVALUATION_v0_1.md",
         "experiments/VALIDATION_MATRIX_EVALUATION_v0_1.md",
         "experiments/MAPPING_COVERAGE_EVALUATION_v0_1.md",
-        "paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md"
+        "paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md",
+        "paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.md",
+        "paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.json"
       ],
       "missing": [],
       "status": "pass"

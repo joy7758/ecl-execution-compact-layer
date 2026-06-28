@@ -23,8 +23,9 @@ Human actions:
 1. Review the hostile readiness decision.
 2. Review the gate verification output.
 3. Commit and push the repaired worktree before using the public repository URL.
-4. Confirm whether to accept the public-history blocker and the external-impact advisory risk.
-5. If still proceeding, open the JOSS submission website and enter final metadata manually.
+4. Review `joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.md`.
+5. Confirm whether to accept the public-history blocker and the external-impact advisory risk.
+6. If still proceeding, open the JOSS submission website and enter final metadata manually.
 
 ## arXiv
 

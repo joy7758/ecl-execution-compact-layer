@@ -32,6 +32,7 @@ Pass:
 - JOSS workflow and standard paper mirror exist: `.github/workflows/joss-paper.yml`, `paper/paper.md`, and `paper/paper.bib`.
 - Public collaboration templates exist: `.github/ISSUE_TEMPLATE/` and `.github/PULL_REQUEST_TEMPLATE.md`.
 - Engineering evolution narrative exists: `paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md`.
+- Public-history maturation plan exists: `paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.md`.
 - No paid journal route is selected.
 
 Pass:
@@ -73,7 +74,7 @@ paid_journal_selected=false
 
 ## Required Actions Before Any JOSS Submission
 
-1. Confirm public development history for JOSS review expectations.
+1. Let public development history mature through real public activity; do not backdate or synthesize repository history.
 2. Confirm final JOSS submission approval.
 3. Add or verify external user, citation, dependency, or third-party research-impact signal if available.
 4. Run the local test suite again and update this audit.

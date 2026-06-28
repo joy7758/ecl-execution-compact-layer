@@ -110,6 +110,16 @@
       "evidence": "new public release; six-month public development history not verified"
     },
     {
+      "id": "public-history-maturation-plan",
+      "requirement": "non-fabricated public-history maturation plan is documented",
+      "status": "pass",
+      "blocking": false,
+      "evidence": [
+        "paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.md",
+        "paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.json"
+      ]
+    },
+    {
       "id": "external-impact",
       "requirement": "external research use, citation, dependency, or independent user signal is recorded as an advisory signal",
       "status": "advisory_unverified",

@@ -23,6 +23,8 @@
         "paper/joss/JOSS_GATE_VERIFICATION_v0_1.md",
         "paper/joss/JOSS_GATE_VERIFICATION_v0_1.json",
         "paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md",
+        "paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.md",
+        "paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.json",
         "paper/joss/AUTHOR_METADATA_TEMPLATE_v0_1.json"
   ],
   "open_source_review_surfaces": [
@@ -86,6 +88,8 @@
             ],
             "development_evidence_ready": true,
             "development_evidence_satisfies_public_history_gate": false,
+            "public_history_maturation_plan_ready": true,
+            "public_history_maturation_plan_satisfies_public_history_gate": false,
             "advisory_signals": {
                 "external_impact": "unverified"
             }
@@ -93,6 +97,12 @@
         "development_evidence": {
             "path": "paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md",
             "status": "pass",
+            "satisfies_public_history_gate": false
+        },
+        "public_history_maturation_plan": {
+            "path": "paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.md",
+            "status": "pass",
+            "earliest_safe_review_date_utc": "2026-12-29",
             "satisfies_public_history_gate": false
         },
     "citation_demo_result_hash": "sha256:8684fa8963ff9ad55c36eed6b89eb15992d1b05566aa1c79ced754fac67e1cdd",

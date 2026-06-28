@@ -18,6 +18,7 @@ Scope: This file maps the ECL v0.1 submission package to JOSS readiness concerns
 | Statement of need | `paper/paper.md` includes a statement of need. | pass |
 | Research impact statement | `paper/paper.md` includes a scoped research impact statement backed by local reproducibility experiments. | pass |
 | Engineering evolution narrative | `paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md` records design decisions, rejected alternatives, and stabilization evidence. | pass |
+| Public-history maturation plan | `paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.md` records a non-fabricated route to future reassessment. | pass_not_gate_satisfying |
 | Public development history | Current local git history is concentrated on 2026-06-28. | fail_current_state |
 
 ## Advisory Signals
@@ -37,6 +38,8 @@ external_impact_is_advisory_signal=true
 research_impact_gate_uses_local_reproducibility_evidence=true
 development_evidence_mitigates_reviewer_risk=true
 development_evidence_satisfies_public_history_gate=false
+public_history_maturation_plan_ready=true
+public_history_maturation_plan_satisfies_public_history_gate=false
 third_party_validation=false
 joss_submission_performed=false
 ```
