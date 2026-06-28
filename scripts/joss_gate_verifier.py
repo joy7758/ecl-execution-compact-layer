@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -254,10 +255,20 @@ def markdown(payload: dict[str, Any]) -> str:
 
 def main() -> int:
     payload = build_payload()
-    OUT_JSON.write_text(json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=True) + "\n", encoding="utf-8")
-    OUT_MD.write_text(markdown(payload), encoding="utf-8")
+    out_json, out_md = output_paths()
+    out_json.parent.mkdir(parents=True, exist_ok=True)
+    out_json.write_text(json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=True) + "\n", encoding="utf-8")
+    out_md.write_text(markdown(payload), encoding="utf-8")
     print(json.dumps({"status": payload["status"], "blocking_gates": payload["blocking_gates"]}, sort_keys=True))
     return 0 if payload["decision"]["content_package_ready"] else 1
+
+
+def output_paths() -> tuple[Path, Path]:
+    output_dir = os.environ.get("ECL_JOSS_GATE_OUTPUT_DIR")
+    if not output_dir:
+        return OUT_JSON, OUT_MD
+    root = Path(output_dir)
+    return root / OUT_JSON.name, root / OUT_MD.name
 
 
 if __name__ == "__main__":
