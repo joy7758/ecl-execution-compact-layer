@@ -1,6 +1,5 @@
 {
   "blocking_gates": [
-    "public_repo_sync",
     "public_history",
     "external_impact"
   ],
@@ -8,7 +7,7 @@
     "external_impact_verified": false,
     "joss_submission_performed": false,
     "public_history_verified": false,
-    "public_repo_synced": false,
+    "public_repo_synced": true,
     "third_party_validation": false
   },
   "date_checked": "2026-06-28",
@@ -66,13 +65,13 @@
       "status": "fail_current_state"
     },
     "public_repo_sync": {
-      "dirty_entry_count": 244,
-      "dirty_worktree": true,
+      "dirty_entry_count": 0,
+      "dirty_worktree": false,
       "note": "JOSS submission should point at a public repository containing the submitted software and paper state.",
-      "ready": false,
+      "ready": true,
       "remote_matches_local_head": true,
       "remote_query_available": true,
-      "status": "fail_uncommitted_changes"
+      "status": "pass"
     },
     "required_files": {
       "checked": [

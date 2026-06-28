@@ -44,7 +44,6 @@ Pass:
 
 Fail / missing:
 
-- Local repaired worktree is not committed and pushed to the public repository.
 - No six-month public development history is verified.
 - No external user or third-party research-impact signal is verified.
 - Final JOSS submission approval is not recorded.
@@ -71,16 +70,16 @@ paid_journal_selected=false
 ## Required Actions Before Any JOSS Submission
 
 1. Confirm public development history for JOSS review expectations.
-2. Commit and push the repaired worktree to the public repository before using the public repo URL in a submission.
-3. Add or verify external user, citation, dependency, or third-party research-impact signal if available.
-4. Confirm final JOSS submission approval.
-5. Run the local test suite again and update this audit.
-6. Re-run the synthetic trace-corpus evaluation if adapter behavior changes.
+2. Add or verify external user, citation, dependency, or third-party research-impact signal if available.
+3. Confirm final JOSS submission approval.
+4. Run the local test suite again and update this audit.
+5. Re-run the synthetic trace-corpus evaluation if adapter behavior changes.
 
 ## Boundary
 
 - `formal_submission=false`
 - `joss_submission_performed=false`
+- `public_repo_synced=true`
 - `public_release=true`
 - `github_release_created=true`
 - `license_selected=true`

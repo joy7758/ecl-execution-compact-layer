@@ -49,7 +49,7 @@ paper_content_ready=true
 joss_submission_preflight_passed=false
 ```
 
-The preflight gap is not paper content. Author metadata, MIT license, public repository URL, and issue tracker URL are now recorded. Remaining gaps are committing and pushing the repaired worktree, public development history, release/archive DOI decision if required, and final submission approval.
+The preflight gap is not paper content. Author metadata, MIT license, public repository URL, and issue tracker URL are now recorded. Remaining gaps are public development history, release/archive DOI decision if required, and final submission approval.
 
 The JOSS candidate paper currently contains:
 
@@ -136,7 +136,6 @@ These fields are outside the current publication activation step and are intenti
 - Conflict-of-interest statement
 - Data availability statement
 - Public development history eligibility
-- Public repository sync for the repaired worktree
 - External user, dependency, citation, or independent research-impact signal
 - Release/archive DOI decision if required
 - Final JOSS submission approval

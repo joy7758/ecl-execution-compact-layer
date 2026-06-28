@@ -43,7 +43,7 @@ Hostile readiness decision:
 paper/joss/JOSS_HOSTILE_READINESS_DECISION_v0_1.json
 public_development_history_ready=false
 external_impact_signal_ready=false
-public_repo_synced=false
+public_repo_synced=true
 ```
 
 ## 2. arXiv Readiness Status

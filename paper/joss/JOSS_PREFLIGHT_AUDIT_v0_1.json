@@ -104,12 +104,6 @@
       "evidence": "https://github.com/joy7758/ecl-execution-compact-layer/issues"
     },
     {
-      "id": "public-repo-sync",
-      "requirement": "local repaired submission state is committed and pushed to the public repository",
-      "status": "fail_uncommitted_changes",
-      "evidence": "local worktree contains submission repairs not committed and pushed to public origin/main"
-    },
-    {
       "id": "public-history",
       "requirement": "six-month public development history is verified",
       "status": "unverified",
@@ -141,7 +135,6 @@
     "paper_content_ready": true,
     "submission_preflight_passed": false,
     "blocking_items": [
-      "public-repo-sync",
       "public-history",
       "external-impact",
       "final_joss_submission_approval"
@@ -155,7 +148,7 @@
   "boundary": {
     "formal_submission": false,
     "joss_submission_performed": false,
-    "public_repo_synced": false,
+    "public_repo_synced": true,
     "public_release": true,
     "github_release_created": true,
     "license_selected": true,

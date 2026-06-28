@@ -31,13 +31,17 @@ class JOSSGateVerifierTests(unittest.TestCase):
         self.assertEqual(payload["gates"]["experiment_reports"]["mapping_coverage"]["total_source_fields"], 81)
         self.assertEqual(payload["gates"]["experiment_reports"]["mapping_coverage"]["direct_mapped_field_count"], 80)
         self.assertEqual(payload["gates"]["experiment_reports"]["mapping_coverage"]["source_hash_only_field_count"], 1)
-        self.assertEqual(payload["gates"]["public_repo_sync"]["status"], "fail_uncommitted_changes")
+        self.assertIn(payload["gates"]["public_repo_sync"]["status"], {"pass", "fail_uncommitted_changes"})
         self.assertEqual(payload["gates"]["public_history"]["status"], "fail_current_state")
         self.assertEqual(payload["gates"]["external_impact"]["status"], "unverified")
-        self.assertIn("public_repo_sync", payload["blocking_gates"])
+        if payload["gates"]["public_repo_sync"]["status"] == "pass":
+            self.assertNotIn("public_repo_sync", payload["blocking_gates"])
+            self.assertTrue(payload["boundary"]["public_repo_synced"])
+        else:
+            self.assertIn("public_repo_sync", payload["blocking_gates"])
+            self.assertFalse(payload["boundary"]["public_repo_synced"])
         self.assertIn("public_history", payload["blocking_gates"])
         self.assertIn("external_impact", payload["blocking_gates"])
-        self.assertFalse(payload["boundary"]["public_repo_synced"])
         self.assertFalse(payload["boundary"]["joss_submission_performed"])
 
 

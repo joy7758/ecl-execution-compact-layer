@@ -49,7 +49,6 @@ The venue-screening surface is complete:
 These items are outside the current public-release activation scope and require human or repository-state decisions:
 
 - verify public development history
-- commit and push the repaired worktree to the public repository
 - verify external impact signal
 - decide release/archive DOI plan if required
 - approve final JOSS submission

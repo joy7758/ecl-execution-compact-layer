@@ -59,7 +59,6 @@
       "content_package_ready": true,
       "immediate_joss_submission_recommended": false,
       "blocking_gates": [
-        "public_repo_sync",
         "public_history",
         "external_impact"
       ]

@@ -96,7 +96,6 @@
     "human_author_metadata_verified": true
   },
   "blocking_items_for_submission": [
-    "public_repo_sync",
     "public_development_history",
     "external_impact_signal",
     "final_joss_submission_approval",

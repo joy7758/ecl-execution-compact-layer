@@ -19,8 +19,7 @@
       "status": "content_package_ready_immediate_submission_not_recommended",
       "submission_performed": false,
       "blocking_items": [
-        "public_repo_sync",
-        "public_development_history",
+                "public_development_history",
         "external_impact_signal",
         "final_human_submission_approval"
       ],
@@ -123,8 +122,7 @@
     "joss_gate_verifier_command": "python3 scripts/joss_gate_verifier.py",
     "joss_gate_verifier_status": "joss_gate_failed_external_blockers",
     "joss_gate_verifier_blocking_gates": [
-      "public_repo_sync",
-      "public_history",
+            "public_history",
       "external_impact"
     ]
   },
@@ -136,7 +134,7 @@
     "doi_minted": false,
     "third_party_validation": false,
     "synthetic_corpus_only": true,
-    "public_repo_synced": false,
+    "public_repo_synced": true,
     "immediate_joss_submission_recommended": false
   }
 }

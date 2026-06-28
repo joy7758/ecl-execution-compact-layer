@@ -29,7 +29,7 @@ immediate_joss_submission_recommended=false
 joss_submission_performed=false
 ```
 
-The JOSS package includes software scope, reproducibility commands, MIT license status, examples, tests, and repository metadata. A hostile readiness decision does not recommend immediate JOSS submission until the repaired worktree is committed and pushed, public-development-history is clearer, and external-impact signals are addressed.
+The JOSS package includes software scope, reproducibility commands, MIT license status, examples, tests, and repository metadata. A hostile readiness decision does not recommend immediate JOSS submission until public-development-history is clearer and external-impact signals are addressed.
 
 Additional repository-review surfaces now present:
 

@@ -16,7 +16,7 @@ synthetic_experiment_evidence_ready=true
 standard_joss_paper_path_ready=true
 public_collaboration_surface_ready=true
 joss_gate_verifier_ready=true
-public_repo_synced=false
+public_repo_synced=true
 public_development_history_ready=false
 external_impact_signal_ready=false
 ```
@@ -72,14 +72,13 @@ evaluation_hash=sha256:8a8b820ecbdd1b4e88a2d8e07b05be2d479add0f0c6c3265292cc5a86
 
 | Gate | Status | Evidence |
 | --- | --- | --- |
-| Public repository sync | fail_uncommitted_changes | Local worktree contains submission repairs that have not yet been committed and pushed. |
 | Public development history over time | fail_current_state | Local git history is concentrated on 2026-06-28. |
 | External impact or independent use | unverified | No external citation, third-party dependency, or independent user signal is verified. |
 | JOSS final human submission approval | not_done | No JOSS portal action has been performed. |
 
 ## Recommendation
 
-Do not submit to JOSS immediately unless the author accepts a high desk-reject risk. The technically repaired package is suitable for continued public development, arXiv/Zenodo staging, and external feedback gathering. Re-run this decision after the repaired worktree is committed and pushed, public history is clearer, and external-use evidence exists.
+Do not submit to JOSS immediately unless the author accepts a high desk-reject risk. The technically repaired package is suitable for continued public development, arXiv/Zenodo staging, and external feedback gathering. Re-run this decision after public history is clearer and external-use evidence exists.
 
 ## Sources
 
@@ -94,6 +93,6 @@ joss_submission_performed=false
 acceptance_claim=false
 third_party_validation=false
 external_adoption=false
-public_repo_synced=false
+public_repo_synced=true
 synthetic_corpus_only=true
 ```

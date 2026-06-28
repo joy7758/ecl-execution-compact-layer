@@ -81,7 +81,6 @@
       "content_package_ready": true,
       "immediate_joss_submission_recommended": false,
       "blocking_gates": [
-        "public_repo_sync",
         "public_history",
         "external_impact"
       ]
@@ -90,7 +89,6 @@
     "mcp_anchor_verification_hash": "sha256:3770d486d473720ae7d84546906e24214ee156ad458bee8fec3c59873ea153b8"
   },
   "human_required_fields": [
-    "public_repo_sync_confirmation",
     "public_development_history_confirmation",
     "release_or_archive_doi_decision",
     "final_joss_submission_approval"

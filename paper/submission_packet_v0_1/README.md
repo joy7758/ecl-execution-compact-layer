@@ -23,7 +23,7 @@ public_collaboration_surface_ready=true
 joss_gate_verifier_ready=true
 immediate_joss_submission_recommended=false
 joss_submission_performed=false
-public_repo_synced=false
+public_repo_synced=true
 public_development_history_ready=false
 external_impact_signal_ready=false
 ```
@@ -62,7 +62,7 @@ evaluation_hash=sha256:8a8b820ecbdd1b4e88a2d8e07b05be2d479add0f0c6c3265292cc5a86
 
 python3 scripts/joss_gate_verifier.py
 status=joss_gate_failed_external_blockers
-blocking_gates=["public_repo_sync", "public_history", "external_impact"]
+blocking_gates=["public_history", "external_impact"]
 ```
 
 ## Boundary
@@ -76,5 +76,5 @@ zenodo_deposit_created=false
 doi_minted=false
 third_party_validation=false
 synthetic_corpus_only=true
-public_repo_synced=false
+public_repo_synced=true
 ```

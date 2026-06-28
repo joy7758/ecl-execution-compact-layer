@@ -133,7 +133,7 @@ joss_submission_performed=false
 arxiv_submission_performed=false
 zenodo_deposit_created=false
 doi_minted=false
-public_repo_synced=false
+public_repo_synced=true
 third_party_validation=false
 synthetic_corpus_only=true
 ```

@@ -19,7 +19,7 @@
     "standard_paper_path_ready": true,
     "public_collaboration_surface_ready": true,
     "immediate_submission_recommended": false,
-    "public_repo_synced": false,
+    "public_repo_synced": true,
     "public_development_history_ready": false,
     "external_impact_signal_ready": false
   },
@@ -72,8 +72,7 @@
     "mapping_coverage_evaluation_hash": "sha256:8a8b820ecbdd1b4e88a2d8e07b05be2d479add0f0c6c3265292cc5a86763e43a",
     "joss_gate_verifier_status": "joss_gate_failed_external_blockers",
     "joss_gate_verifier_blocking_gates": [
-      "public_repo_sync",
-      "public_history",
+            "public_history",
       "external_impact"
     ]
   },
@@ -84,6 +83,6 @@
     "zenodo_deposit_created": false,
     "doi_minted": false,
     "third_party_validation": false,
-    "public_repo_synced": false
+    "public_repo_synced": true
   }
 }

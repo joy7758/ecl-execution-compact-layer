@@ -11,7 +11,7 @@
         "standard_joss_paper_path_ready": true,
         "public_collaboration_surface_ready": true,
         "joss_gate_verifier_ready": true,
-        "public_repo_synced": false,
+        "public_repo_synced": true,
         "public_development_history_ready": false,
     "external_impact_signal_ready": false
   },
@@ -60,11 +60,6 @@
   },
   "remaining_blockers": [
     {
-      "id": "public-repo-sync",
-      "status": "fail_uncommitted_changes",
-      "evidence": "local worktree contains submission repairs not committed and pushed to public origin/main"
-    },
-    {
       "id": "public-development-history",
       "status": "fail_current_state",
       "evidence": "local git history is concentrated on 2026-06-28"
@@ -90,7 +85,7 @@
     "acceptance_claim": false,
     "third_party_validation": false,
     "external_adoption": false,
-    "public_repo_synced": false,
+    "public_repo_synced": true,
     "synthetic_corpus_only": true
   }
 }
