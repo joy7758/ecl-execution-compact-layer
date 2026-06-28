@@ -32,6 +32,8 @@ REQUIRED_FILES = [
     ".github/ISSUE_TEMPLATE/bug_report.yml",
     ".github/ISSUE_TEMPLATE/research_use_report.yml",
     ".github/ISSUE_TEMPLATE/trace_mapping_case.yml",
+    "docs/api/ECL_API_REFERENCE_v0_1.md",
+    "docs/joss/REVIEWER_QUICKSTART_v0_1.md",
     "experiments/TRACE_CORPUS_EVALUATION_v0_1.md",
     "experiments/VALIDATION_MATRIX_EVALUATION_v0_1.md",
     "experiments/MAPPING_COVERAGE_EVALUATION_v0_1.md",

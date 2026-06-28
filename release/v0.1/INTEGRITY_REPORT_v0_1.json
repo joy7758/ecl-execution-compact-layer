@@ -12,7 +12,7 @@
     {
       "command": "python3 -m unittest discover -s tests",
       "status": "passed",
-      "result": "Ran 75 tests OK"
+      "result": "Ran 77 tests OK"
     },
     {
       "command": "python3 sdk/demo_dependency_mode.py",

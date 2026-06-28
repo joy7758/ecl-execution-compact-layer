@@ -48,18 +48,22 @@
     "github/ISSUE_TEMPLATE/research_use_report.yml",
     "github/ISSUE_TEMPLATE/trace_mapping_case.yml"
   ],
-  "metadata": [
-    "metadata/CITATION.cff",
-    "metadata/CHANGELOG.md",
-    "metadata/CONTRIBUTING.md",
-    "metadata/SUPPORT.md",
-    "metadata/ECL_RESEARCH_USE_CASE_v0_1.md"
-  ],
-  "scripts": [
+    "metadata": [
+        "metadata/CITATION.cff",
+        "metadata/CHANGELOG.md",
+        "metadata/CONTRIBUTING.md",
+        "metadata/SUPPORT.md",
+        "metadata/ECL_RESEARCH_USE_CASE_v0_1.md"
+    ],
+    "documentation": [
+        "docs/joss/REVIEWER_QUICKSTART_v0_1.md",
+        "docs/api/ECL_API_REFERENCE_v0_1.md"
+    ],
+    "scripts": [
     "scripts/joss_gate_verifier.py"
   ],
   "validation": {
-    "test_count": 75,
+    "test_count": 77,
     "trace_corpus_cases": 12,
     "trace_corpus_surface_coverage": {
       "action": 12,

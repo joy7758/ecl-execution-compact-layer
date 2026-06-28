@@ -18,6 +18,7 @@ class PublicationReleasePackageTests(unittest.TestCase):
             "sdk",
             "mcp",
             "examples",
+            "docs",
             "README.md",
             "LICENSE",
             "zenodo.json",
@@ -91,6 +92,14 @@ class PublicationReleasePackageTests(unittest.TestCase):
         self.assertTrue(report["boundary"]["github_release_created"])
         self.assertTrue(report["boundary"]["public_release"])
         self.assertTrue(report["boundary"]["license_selected"])
+
+    def test_release_includes_reviewer_documentation(self) -> None:
+        quickstart = RELEASE / "docs" / "joss" / "REVIEWER_QUICKSTART_v0_1.md"
+        api_reference = RELEASE / "docs" / "api" / "ECL_API_REFERENCE_v0_1.md"
+        self.assertTrue(quickstart.exists())
+        self.assertTrue(api_reference.exists())
+        self.assertIn("python3 -m unittest discover -s tests", quickstart.read_text(encoding="utf-8"))
+        self.assertIn("ECL.validate(ecl_object)", api_reference.read_text(encoding="utf-8"))
 
 
 if __name__ == "__main__":

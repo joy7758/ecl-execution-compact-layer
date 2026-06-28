@@ -28,6 +28,14 @@ python3 -m unittest discover -s tests
 python3 experiments/evaluate_trace_corpus.py
 ```
 
+## Documentation
+
+- Reviewer quickstart: `docs/joss/REVIEWER_QUICKSTART_v0_1.md`
+- API reference: `docs/api/ECL_API_REFERENCE_v0_1.md`
+- SDK guide: `sdk/README.md`
+- Dependency API guide: `sdk/DEPENDENCY_README.md`
+- Research-use boundary: `docs/research_use/ECL_RESEARCH_USE_CASE_v0_1.md`
+
 ## Citation
 
 Use `CITATION.cff` for software citation metadata. Current boundaries are recorded in `CHANGELOG.md` and `paper/SUBMISSION_MATERIALS_INDEX.md`.

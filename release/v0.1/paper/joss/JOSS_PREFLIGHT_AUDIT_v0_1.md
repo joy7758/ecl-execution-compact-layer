@@ -29,6 +29,7 @@ Pass:
 - Mapping coverage evaluation passes: `python3 experiments/evaluate_mapping_coverage.py`.
 - Local JOSS gate verifier runs: `python3 scripts/joss_gate_verifier.py`.
 - Open-source project metadata exists: `CITATION.cff`, `CHANGELOG.md`, `CONTRIBUTING.md`, `SUPPORT.md`, and `.github/workflows/tests.yml`.
+- Reviewer quickstart and API reference exist: `docs/joss/REVIEWER_QUICKSTART_v0_1.md` and `docs/api/ECL_API_REFERENCE_v0_1.md`.
 - JOSS workflow and standard paper mirror exist: `.github/workflows/joss-paper.yml`, `paper/paper.md`, and `paper/paper.bib`.
 - Public collaboration templates exist: `.github/ISSUE_TEMPLATE/` and `.github/PULL_REQUEST_TEMPLATE.md`.
 - Engineering evolution narrative exists: `paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md`.

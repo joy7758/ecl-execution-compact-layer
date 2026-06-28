@@ -79,7 +79,7 @@ Current local result:
 
 ```text
 all_tests_pass=true
-tests_run=75
+tests_run=77
 deterministic=true
 no_schema_drift=true
 publication_ready=true

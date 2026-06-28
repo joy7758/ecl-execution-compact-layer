@@ -21,7 +21,7 @@
   "evidence": {
     "unit_tests": {
       "command": "python3 -m unittest discover -s tests",
-      "tests": 75,
+      "tests": 77,
       "status": "OK"
     },
     "trace_corpus": {

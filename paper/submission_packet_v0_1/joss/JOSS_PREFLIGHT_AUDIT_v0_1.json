@@ -28,7 +28,7 @@
       "id": "local-tests",
       "requirement": "local test suite passes",
       "status": "pass",
-      "evidence": "python3 -m unittest discover -s tests -> Ran 75 tests OK"
+      "evidence": "python3 -m unittest discover -s tests -> Ran 77 tests OK"
     },
     {
       "id": "trace-corpus-evaluation",
@@ -65,6 +65,17 @@
         ".github/ISSUE_TEMPLATE/trace_mapping_case.yml",
         "paper/paper.md",
         "paper/paper.bib"
+      ]
+    },
+    {
+      "id": "reviewer-documentation",
+      "requirement": "reviewer quickstart and public API reference exist",
+      "status": "pass",
+      "evidence": [
+        "docs/joss/REVIEWER_QUICKSTART_v0_1.md",
+        "docs/api/ECL_API_REFERENCE_v0_1.md",
+        "sdk/README.md",
+        "sdk/DEPENDENCY_README.md"
       ]
     },
     {

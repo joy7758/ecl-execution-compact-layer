@@ -44,12 +44,21 @@
       "status": "complete",
       "evidence": "preferred_no_fee_candidate=JOSS"
     },
-    {
-      "id": "joss-preflight-audited",
-      "requirement": "JOSS submission preflight audited",
-      "status": "complete",
-      "evidence": "paper/joss/JOSS_PREFLIGHT_AUDIT_v0_1.json"
-    },
+        {
+            "id": "joss-preflight-audited",
+            "requirement": "JOSS submission preflight audited",
+            "status": "complete",
+            "evidence": "paper/joss/JOSS_PREFLIGHT_AUDIT_v0_1.json"
+        },
+        {
+            "id": "reviewer-documentation",
+            "requirement": "reviewer quickstart and public API reference exist",
+            "status": "complete",
+            "evidence": [
+                "docs/joss/REVIEWER_QUICKSTART_v0_1.md",
+                "docs/api/ECL_API_REFERENCE_v0_1.md"
+            ]
+        },
         {
             "id": "trace-corpus-evaluation",
             "requirement": "synthetic trace-corpus evaluation exists",
@@ -117,7 +126,7 @@
     ],
   "verification": {
     "command": "python3 -m unittest discover -s tests",
-    "expected_result": "Ran 75 tests OK",
+    "expected_result": "Ran 77 tests OK",
     "trace_corpus_command": "python3 experiments/evaluate_trace_corpus.py",
     "trace_corpus_result": {
       "case_count": 12,

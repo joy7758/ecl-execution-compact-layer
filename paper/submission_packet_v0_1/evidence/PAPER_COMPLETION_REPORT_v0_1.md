@@ -73,7 +73,7 @@ Current local verification:
 
 ```text
 python3 -m unittest discover -s tests
-Ran 75 tests
+Ran 77 tests
 OK
 ```
 

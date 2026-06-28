@@ -10,6 +10,8 @@ License: MIT.
 - MCP stub: `mcp/`
 - replay system: `examples/`, `external/adoption/`, `demo/replay_demo.py`
 - paper: `paper/`
+- reviewer quickstart: `docs/joss/REVIEWER_QUICKSTART_v0_1.md`
+- API reference: `docs/api/ECL_API_REFERENCE_v0_1.md`
 
 ## How To Use
 

@@ -37,7 +37,7 @@ JOSS reviewers can reasonably ask whether ECL is a single repository dump or the
 
 | Stabilization Area | Current Evidence |
 | --- | --- |
-| Unit tests | `python3 -m unittest discover -s tests` runs 75 tests. |
+| Unit tests | `python3 -m unittest discover -s tests` runs 77 tests. |
 | Trace corpus | 12 synthetic OpenAI-style and LangChain-style cases validate and replay deterministically. |
 | Negative validation | 8 invalid-record mutations are detected. |
 | Mapping coverage | 80 direct source-field mappings, 1 source-hash-only field, and 4 loss-missing fields are recorded over 12 cases. |

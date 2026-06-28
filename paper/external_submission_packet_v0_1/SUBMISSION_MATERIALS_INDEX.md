@@ -91,7 +91,7 @@ docs/research_use/ECL_RESEARCH_USE_CASE_v0_1.md
 
 ```text
 python3 -m unittest discover -s tests
-Ran 75 tests
+Ran 77 tests
 OK
 
 python3 experiments/evaluate_trace_corpus.py

@@ -86,7 +86,7 @@ Current verification result:
 
 ```text
 tests_passed=true
-tests_run=75
+tests_run=77
 deterministic=true
 schema_drift=false
 runtime_mutation=false

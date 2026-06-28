@@ -8,8 +8,9 @@
     "paper": "release/v0.1/paper",
     "sdk": "release/v0.1/sdk",
     "mcp": "release/v0.1/mcp",
-    "examples": "release/v0.1/examples",
-    "readme": "release/v0.1/README.md",
+        "examples": "release/v0.1/examples",
+        "docs": "release/v0.1/docs",
+        "readme": "release/v0.1/README.md",
     "license": "release/v0.1/LICENSE",
     "zenodo": "release/v0.1/zenodo.json",
     "integrity_report": "release/v0.1/INTEGRITY_REPORT_v0_1.json"
@@ -17,9 +18,10 @@
   "packaged_support_surfaces": [
     "release/v0.1/schemas",
     "release/v0.1/ecl",
-    "release/v0.1/external",
-    "release/v0.1/demo",
-    "release/v0.1/pyproject.toml"
+        "release/v0.1/external",
+        "release/v0.1/demo",
+        "release/v0.1/docs",
+        "release/v0.1/pyproject.toml"
   ],
   "integrity": {
     "source_schema_sha256": "15d089eaee07ec27d1fc69b5418e5dc5f1b1fa55f2c9395c03cde0ad6773cf89",

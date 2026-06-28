@@ -105,7 +105,7 @@ python3 -m unittest discover -s tests
 The current local result is:
 
 ```text
-Ran 75 tests
+Ran 77 tests
 OK
 ```
 

@@ -75,6 +75,8 @@ class JOSSPreflightTests(unittest.TestCase):
             ".github/ISSUE_TEMPLATE/bug_report.yml",
             ".github/ISSUE_TEMPLATE/research_use_report.yml",
             ".github/ISSUE_TEMPLATE/trace_mapping_case.yml",
+            "docs/joss/REVIEWER_QUICKSTART_v0_1.md",
+            "docs/api/ECL_API_REFERENCE_v0_1.md",
             "docs/research_use/ECL_RESEARCH_USE_CASE_v0_1.md",
             "paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md",
             "paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.md",
@@ -84,6 +86,7 @@ class JOSSPreflightTests(unittest.TestCase):
         audit = json.loads(PREFLIGHT_JSON.read_text(encoding="utf-8"))
         ids = {check["id"]: check for check in audit["checks"]}
         self.assertEqual(ids["open-source-metadata"]["status"], "pass")
+        self.assertEqual(ids["reviewer-documentation"]["status"], "pass")
         self.assertEqual(ids["development-evidence"]["status"], "pass")
         self.assertEqual(ids["public-history-maturation-plan"]["status"], "pass")
         self.assertFalse(ids["public-history-maturation-plan"]["blocking"])
@@ -113,6 +116,25 @@ class JOSSPreflightTests(unittest.TestCase):
         advisory_ids = {signal["id"] for signal in decision["advisory_signals"]}
         self.assertIn("external-impact-signal", advisory_ids)
         self.assertFalse(decision["boundary"]["joss_submission_performed"])
+
+    def test_reviewer_documentation_is_agent_readable(self) -> None:
+        quickstart = (ROOT / "docs" / "joss" / "REVIEWER_QUICKSTART_v0_1.md").read_text(encoding="utf-8")
+        api_reference = (ROOT / "docs" / "api" / "ECL_API_REFERENCE_v0_1.md").read_text(encoding="utf-8")
+        for token in (
+            "python3 -m pip install -e .",
+            "python3 -m unittest discover -s tests",
+            "trace_corpus_evaluation_hash=sha256:2434da21056811e7eacf1ffac6944d5420ddeb2aa783f74423326a2b54a33974",
+            "blocking_gates=[\"public_history\"]",
+        ):
+            self.assertIn(token, quickstart)
+        for token in (
+            "ECL.create(state, intent, action)",
+            "ECL.validate(ecl_object)",
+            "ECL.replay(ecl_object)",
+            "sdk.ecl_dependency",
+            "no_external_api_calls=true",
+        ):
+            self.assertIn(token, api_reference)
 
 
 if __name__ == "__main__":

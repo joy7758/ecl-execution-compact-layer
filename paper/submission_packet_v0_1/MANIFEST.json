@@ -72,14 +72,18 @@
     "github/ISSUE_TEMPLATE/research_use_report.yml",
     "github/ISSUE_TEMPLATE/trace_mapping_case.yml"
   ],
-  "metadata": [
-    "metadata/CITATION.cff",
-    "metadata/CHANGELOG.md",
-    "metadata/CONTRIBUTING.md",
-    "metadata/SUPPORT.md",
-    "metadata/ECL_RESEARCH_USE_CASE_v0_1.md"
-  ],
-  "evidence": [
+    "metadata": [
+        "metadata/CITATION.cff",
+        "metadata/CHANGELOG.md",
+        "metadata/CONTRIBUTING.md",
+        "metadata/SUPPORT.md",
+        "metadata/ECL_RESEARCH_USE_CASE_v0_1.md"
+    ],
+    "documentation": [
+        "docs/joss/REVIEWER_QUICKSTART_v0_1.md",
+        "docs/api/ECL_API_REFERENCE_v0_1.md"
+    ],
+    "evidence": [
     "evidence/ECL_PAPER_EVIDENCE_v0_1.json",
     "evidence/PAPER_COMPLETION_REPORT_v0_1.md",
     "evidence/GOAL_COMPLETION_AUDIT_v0_1.md",
@@ -100,7 +104,7 @@
   "validation": {
     "command": "python3 -m unittest discover -s tests",
     "tests_passed": true,
-    "test_count": 75,
+    "test_count": 77,
     "trace_corpus_command": "python3 experiments/evaluate_trace_corpus.py",
     "trace_corpus_cases": 12,
     "trace_corpus_valid": 12,

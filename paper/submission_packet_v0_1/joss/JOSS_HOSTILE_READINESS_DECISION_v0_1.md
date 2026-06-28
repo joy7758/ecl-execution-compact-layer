@@ -39,7 +39,7 @@ external_impact_signal_ready=false
 
 ```text
 python3 -m unittest discover -s tests
-Ran 75 tests
+Ran 77 tests
 OK
 
 python3 experiments/evaluate_trace_corpus.py

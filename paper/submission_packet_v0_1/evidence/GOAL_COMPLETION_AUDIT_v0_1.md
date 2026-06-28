@@ -17,6 +17,7 @@ Scope: This audit evaluates the objective: complete paper creation, no-paid venu
 | Paid journal route is excluded | complete | `selected_paid_journal=false` |
 | Preferred no-fee route identified | complete | `preferred_no_fee_candidate=JOSS` |
 | JOSS preflight audited | complete | `paper/joss/JOSS_PREFLIGHT_AUDIT_v0_1.json` |
+| Reviewer quickstart and API reference exist | complete | `docs/joss/REVIEWER_QUICKSTART_v0_1.md` and `docs/api/ECL_API_REFERENCE_v0_1.md` |
 | Synthetic trace-corpus evaluation exists | complete | `experiments/TRACE_CORPUS_EVALUATION_v0_1.md` |
 | Field-level mapping coverage evaluation exists | complete | `experiments/MAPPING_COVERAGE_EVALUATION_v0_1.md` |
 | Hostile JOSS readiness decision exists | complete | `paper/joss/JOSS_HOSTILE_READINESS_DECISION_v0_1.json` |
@@ -35,6 +36,8 @@ The paper-writing surface is complete enough for a submission candidate package:
 - bibliography: `paper/joss/paper.bib`
 - evidence manifest: `paper/ECL_PAPER_EVIDENCE_v0_1.json`
 - completion report: `paper/PAPER_COMPLETION_REPORT_v0_1.md`
+- reviewer quickstart: `docs/joss/REVIEWER_QUICKSTART_v0_1.md`
+- API reference: `docs/api/ECL_API_REFERENCE_v0_1.md`
 - trace-corpus evaluation: `experiments/TRACE_CORPUS_EVALUATION_v0_1.md`
 - mapping coverage evaluation: `experiments/MAPPING_COVERAGE_EVALUATION_v0_1.md`
 - hostile JOSS readiness decision: `paper/joss/JOSS_HOSTILE_READINESS_DECISION_v0_1.md`
