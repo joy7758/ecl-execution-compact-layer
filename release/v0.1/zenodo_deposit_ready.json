@@ -1,0 +1,43 @@
+{
+  "title": "ECL v0.1",
+  "authors": [
+    {
+      "name": "Bin Zhang",
+      "affiliation": "independent researcher",
+      "orcid": ""
+    }
+  ],
+  "description": "ECL v0.1 is a deterministic execution IR layer for cross-runtime agent traces with replayable semantics, local validation, SDK embedding, and dependency-mode verification.",
+  "version": "0.1",
+  "keywords": [
+    "execution IR",
+    "agent systems",
+    "determinism",
+    "replay",
+    "runtime traces",
+    "reproducibility"
+  ],
+  "license": "MIT",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/joy7758/ecl-execution-compact-layer",
+      "relation": "isSupplementTo",
+      "scheme": "url",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "https://github.com/joy7758/ecl-execution-compact-layer/releases/tag/v0.1",
+      "relation": "isVersionOf",
+      "scheme": "url",
+      "resource_type": "software"
+    }
+  ],
+  "boundary": {
+    "prepared_only": true,
+    "external_api_call_performed": false,
+    "deposit_created": false,
+    "doi_minted": false,
+    "submission_executed": false
+  }
+}
+
