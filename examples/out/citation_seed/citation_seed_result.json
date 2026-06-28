@@ -1,0 +1,41 @@
+{
+  "all_deterministic": true,
+  "all_valid": true,
+  "boundary": {
+    "ecosystem_adoption": false,
+    "network_calls": false,
+    "public_release": false,
+    "schema_modified": false,
+    "third_party_validation": false
+  },
+  "object_type": "ecl_citation_repro_demo_result",
+  "result_hash": "sha256:358a039db2c737b8905d91e37e1ed8fc5ea4081dab8d25a0523b4958f7061651",
+  "results": {
+    "langchain": {
+      "canonical_hash": "sha256:2ac7a3a935f13212d737adb844b3b02113bd26f4d266634607adb91343a83b47",
+      "deterministic": true,
+      "ecl_id": "ecl:2358c9cb845df184",
+      "ecl_ref": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/examples/out/citation_seed/langchain/ecl_object.json",
+      "emit_hash": "sha256:ae7bb9f08788051b4eb19e032631101403c6cebb1f5d96c54c3a99d0b76740ff",
+      "emit_ref": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/examples/out/citation_seed/langchain/emit.json",
+      "runtime": "langchain",
+      "valid": true,
+      "verification_hash": "sha256:db2d8eb5ab340533ebbfbc2f9638516cd6f269e59efa0cd2a6ba02d07147bf58",
+      "verify_ref": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/examples/out/citation_seed/langchain/verify.json"
+    },
+    "openai": {
+      "canonical_hash": "sha256:5591026f395d20b4a0097c7a6669b62915385d713fb3062397a99b37b192389c",
+      "deterministic": true,
+      "ecl_id": "ecl:b2776372f804ab72",
+      "ecl_ref": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/examples/out/citation_seed/openai/ecl_object.json",
+      "emit_hash": "sha256:dc9721c3035c1ea586fcd33ad4dbe9fcfdc6b7cc6b567c57568ec43587b747df",
+      "emit_ref": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/examples/out/citation_seed/openai/emit.json",
+      "runtime": "openai",
+      "valid": true,
+      "verification_hash": "sha256:eb107cf28aa3ac2b1bb3b7f30ce2937316e81e9da3f027e87c2b25222ac9df2c",
+      "verify_ref": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/examples/out/citation_seed/openai/verify.json"
+    }
+  },
+  "schema_version": "0.1.0",
+  "status": "local_pre_adoption_reproducibility_seed"
+}

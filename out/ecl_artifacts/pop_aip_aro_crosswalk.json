@@ -1,0 +1,164 @@
+{
+  "schema_version": "0.1.0",
+  "object_type": "ecl_protocol_crosswalk",
+  "status": "local_mapping_profile",
+  "scope": {
+    "description": "Map Execution Compact Layer fields to local POP, AIP, and ARO repository surfaces without replacing the source protocols.",
+    "source_repositories": [
+      "/Users/zhangbin/GitHub/persona-object-protocol",
+      "/Users/zhangbin/GitHub/agent-intent-protocol",
+      "/Users/zhangbin/GitHub/aro-audit"
+    ]
+  },
+  "source_files": [
+    {
+      "protocol": "POP",
+      "path": "/Users/zhangbin/GitHub/persona-object-protocol/schema/pop.schema.json",
+      "role": "persona object source for actor persona references and boundary provenance"
+    },
+    {
+      "protocol": "POP",
+      "path": "/Users/zhangbin/GitHub/persona-object-protocol/schema/profiles/pop-agent-runtime-profile.schema.json",
+      "role": "runtime persona profile source for agent-facing persona references"
+    },
+    {
+      "protocol": "AIP",
+      "path": "/Users/zhangbin/GitHub/agent-intent-protocol/schema/intent-object.schema.json",
+      "role": "intent source fields"
+    },
+    {
+      "protocol": "AIP",
+      "path": "/Users/zhangbin/GitHub/agent-intent-protocol/schema/action-object.schema.json",
+      "role": "action source fields"
+    },
+    {
+      "protocol": "AIP",
+      "path": "/Users/zhangbin/GitHub/agent-intent-protocol/schema/result-object.schema.json",
+      "role": "result source fields"
+    },
+    {
+      "protocol": "ARO",
+      "path": "/Users/zhangbin/GitHub/aro-audit/schema/evidence.schema.json",
+      "role": "audit evidence source fields"
+    },
+    {
+      "protocol": "ARO",
+      "path": "/Users/zhangbin/GitHub/aro-audit/spec/receipts/minimal-receipt.schema.json",
+      "role": "minimal receipt source fields"
+    },
+    {
+      "protocol": "ARO",
+      "path": "/Users/zhangbin/GitHub/aro-audit/spec/receipts/lifecycle-receipt.schema.json",
+      "role": "lifecycle receipt source fields"
+    },
+    {
+      "protocol": "ARO",
+      "path": "/Users/zhangbin/GitHub/aro-audit/spec/AAR_v1.0.schema.json",
+      "role": "journal record and checkpoint source fields"
+    }
+  ],
+  "field_mappings": [
+    {
+      "ecl_path": "$.state.persona_ref",
+      "source_protocol": "POP",
+      "source_path": "$.id or $.persona_id",
+      "mapping_type": "reference"
+    },
+    {
+      "ecl_path": "$.state.actor_ref",
+      "source_protocol": "AIP",
+      "source_path": "$.actor_ref",
+      "mapping_type": "normalized_copy"
+    },
+    {
+      "ecl_path": "$.intent.summary",
+      "source_protocol": "AIP",
+      "source_path": "$.intent.summary",
+      "mapping_type": "normalized_copy"
+    },
+    {
+      "ecl_path": "$.intent.operation",
+      "source_protocol": "AIP",
+      "source_path": "$.intent.operation",
+      "mapping_type": "normalized_copy"
+    },
+    {
+      "ecl_path": "$.intent.constraints",
+      "source_protocol": "AIP",
+      "source_path": "$.constraints",
+      "mapping_type": "normalized_copy"
+    },
+    {
+      "ecl_path": "$.intent.evidence_requirements",
+      "source_protocol": "AIP",
+      "source_path": "$.evidence_requirements",
+      "mapping_type": "normalized_copy"
+    },
+    {
+      "ecl_path": "$.action.name",
+      "source_protocol": "AIP",
+      "source_path": "$.action.name",
+      "mapping_type": "normalized_copy"
+    },
+    {
+      "ecl_path": "$.action.execution_mode",
+      "source_protocol": "AIP",
+      "source_path": "$.execution_mode",
+      "mapping_type": "normalized_copy"
+    },
+    {
+      "ecl_path": "$.action.side_effect_class",
+      "source_protocol": "AIP",
+      "source_path": "$.side_effect_class",
+      "mapping_type": "normalized_copy"
+    },
+    {
+      "ecl_path": "$.evidence.result_status",
+      "source_protocol": "AIP",
+      "source_path": "$.status",
+      "mapping_type": "normalized_copy"
+    },
+    {
+      "ecl_path": "$.evidence.event_chain",
+      "source_protocol": "ARO",
+      "source_path": "$.event_chain or $.trace_context",
+      "mapping_type": "derived_hash"
+    },
+    {
+      "ecl_path": "$.evidence.policy_decisions",
+      "source_protocol": "ARO",
+      "source_path": "$.policy_decisions or $.policy_decision",
+      "mapping_type": "normalized_copy"
+    },
+    {
+      "ecl_path": "$.evidence.hashes.source_trace_hash",
+      "source_protocol": "ECL",
+      "source_path": "canonical source trace JSON",
+      "mapping_type": "derived_hash"
+    },
+    {
+      "ecl_path": "$.evidence.hashes.canonical_hash",
+      "source_protocol": "ECL",
+      "source_path": "canonical ECL JSON with canonical_hash blanked",
+      "mapping_type": "derived_hash"
+    }
+  ],
+  "boundary_decisions": [
+    {
+      "decision_id": "crosswalk-001",
+      "decision": "ECL stores protocol references and normalized copies only",
+      "reason": "POP, AIP, and ARO remain separate protocol surfaces."
+    },
+    {
+      "decision_id": "crosswalk-002",
+      "decision": "ARO is downstream evidence, not the governance runtime",
+      "reason": "The local ARO README identifies the repository as a public reference surface for receipt and audit-format examples."
+    },
+    {
+      "decision_id": "crosswalk-003",
+      "decision": "Source trace hashes are mandatory",
+      "reason": "Adapters must make source-to-ECL transformation reproducible and auditable."
+    }
+  ]
+}
+

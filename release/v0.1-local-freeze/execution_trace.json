@@ -1,0 +1,103 @@
+{
+  "artifact_refs": [
+    "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/ecl.schema.json",
+    "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/pop_aip_aro_crosswalk.json",
+    "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/adapter_manifest.json",
+    "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/ecl_from_openai_agents_trace.json",
+    "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/ecl_from_langchain_trace.json",
+    "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/validator_report.json",
+    "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/decision_log.json",
+    "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/schema_diff.json",
+    "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/artifact_manifest.json",
+    "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/evidence_bundle.json"
+  ],
+  "generated_at": "2026-06-28T00:00:00Z",
+  "goal_name": "ECL-Execution-Protocol-Builder",
+  "object_type": "ecl_execution_trace",
+  "schema_version": "0.1.0",
+  "states": [
+    {
+      "artifacts": [
+        "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/ecl.schema.json",
+        "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/pop_aip_aro_crosswalk.json",
+        "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/adapter_manifest.json",
+        "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/ecl_from_openai_agents_trace.json",
+        "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/ecl_from_langchain_trace.json",
+        "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/validator_report.json",
+        "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/decision_log.json",
+        "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/schema_diff.json",
+        "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/artifact_manifest.json",
+        "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/evidence_bundle.json",
+        "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/execution_trace.json"
+      ],
+      "generated_at": "2026-06-28T00:00:00Z",
+      "goal_name": "ECL-Execution-Protocol-Builder",
+      "object_type": "ecl_goal_state",
+      "schema_version": "0.1.0",
+      "state_hash": "sha256:5d1297159180c3a4bdc6c5ef9c51603eba12b1053e479f049297b61e0f03b650",
+      "status": "completed",
+      "step": "final_artifacts"
+    },
+    {
+      "artifacts": [],
+      "generated_at": "2026-06-28T00:00:00Z",
+      "goal_name": "ECL-Execution-Protocol-Builder",
+      "object_type": "ecl_goal_state",
+      "schema_version": "0.1.0",
+      "state_hash": "sha256:ad129ab6e07c55c1791ccfe8490b049b6920e593d5a3afb3fe3f16d1e530d7b9",
+      "status": "completed",
+      "step": "init"
+    },
+    {
+      "artifacts": [
+        "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/ecl.schema.json",
+        "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/pop_aip_aro_crosswalk.json"
+      ],
+      "generated_at": "2026-06-28T00:00:00Z",
+      "goal_name": "ECL-Execution-Protocol-Builder",
+      "object_type": "ecl_goal_state",
+      "schema_version": "0.1.0",
+      "state_hash": "sha256:f20e0051aa4875f75e20748c75eea7fe28cb4e65eac3227c1c4dad51e85f71a8",
+      "status": "completed",
+      "step": "schema_and_crosswalk"
+    },
+    {
+      "artifacts": [
+        "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/adapter_manifest.json"
+      ],
+      "generated_at": "2026-06-28T00:00:00Z",
+      "goal_name": "ECL-Execution-Protocol-Builder",
+      "object_type": "ecl_goal_state",
+      "schema_version": "0.1.0",
+      "state_hash": "sha256:e16dca490d157529e00079abc4244818e38d74e9764a5e3aef24a19b982ce697",
+      "status": "completed",
+      "step": "adapter_manifest"
+    },
+    {
+      "artifacts": [
+        "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/ecl_from_openai_agents_trace.json",
+        "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/ecl_from_langchain_trace.json"
+      ],
+      "generated_at": "2026-06-28T00:00:00Z",
+      "goal_name": "ECL-Execution-Protocol-Builder",
+      "object_type": "ecl_goal_state",
+      "schema_version": "0.1.0",
+      "state_hash": "sha256:22a7b5387c3f8d27e17f46224d89b675cea9643fd1aaa5e92a9cdf95ecbf71a7",
+      "status": "completed",
+      "step": "adapter_records"
+    },
+    {
+      "artifacts": [
+        "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/validator_report.json"
+      ],
+      "generated_at": "2026-06-28T00:00:00Z",
+      "goal_name": "ECL-Execution-Protocol-Builder",
+      "object_type": "ecl_goal_state",
+      "schema_version": "0.1.0",
+      "state_hash": "sha256:f431949ed5aee6277294af44ba88dd5183020e9179e285da37480575700870b6",
+      "status": "completed",
+      "step": "validation"
+    }
+  ],
+  "trace_hash": "sha256:ec8ee283c366fcbffd6329cb3d2ff54435b1c3a0b61f74b781f2f1550f1941c5"
+}

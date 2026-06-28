@@ -1,0 +1,50 @@
+{
+  "schema_version": "0.1.0",
+  "object_type": "ecl_release_integrity_report",
+  "status": "passed_local_release_package_validation",
+  "release_root": "release/v0.1",
+  "commands": [
+    {
+      "command": "python3 tests/test_publication_release_package.py",
+      "status": "passed",
+      "result": "Ran 6 tests OK"
+    },
+    {
+      "command": "python3 -m unittest discover -s tests",
+      "status": "passed",
+      "result": "Ran 65 tests OK"
+    },
+    {
+      "command": "python3 sdk/demo_dependency_mode.py",
+      "status": "passed",
+      "all_valid": true,
+      "all_deterministic": true,
+      "result_hash": "sha256:d404cb3d74f2124927c6a64f5202b19cccdb59b4f94e357219fd787c102ed0d3"
+    },
+    {
+      "command": "python3 examples/external_recognition_demo.py",
+      "status": "passed",
+      "all_valid": true,
+      "all_deterministic": true,
+      "result_hash": "sha256:3b75d317c7ba5c7f23a36431750c6fdbeba2164c55c4dd5af6346e938e012862"
+    }
+  ],
+  "core_hashes": {
+    "schemas/ecl-execution-compact-layer.schema.json": "15d089eaee07ec27d1fc69b5418e5dc5f1b1fa55f2c9395c03cde0ad6773cf89",
+    "sdk/ecl_dependency.py": "b578b3fd326e046b43c67ed47fe7e83e8fb11d451301cd384659253b003d1f09",
+    "sdk/ecl.py": "6862a865bd1057b0159c135a75ee8fa4492399794c063a21c02aa12e90f5ed04",
+    "mcp/ecl_tool_spec.json": "907a3ba39e1f64736c19c6a58a083e2361345c2a5ac80041e1044be546154688",
+    "mcp/ecl_server_stub.py": "1123685e770982965a356966a9e02e17f5795387f486649e33b0e798d40cc5a4"
+  },
+  "boundary": {
+    "deterministic": true,
+    "schema_unchanged": true,
+    "replay_stable": true,
+    "cross_runtime_consistency_stable": true,
+    "github_release_created": false,
+    "zenodo_deposit_created": false,
+    "doi_minted": false,
+    "public_release": false,
+    "license_selected": false
+  }
+}

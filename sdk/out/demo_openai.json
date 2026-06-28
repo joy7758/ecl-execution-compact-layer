@@ -1,0 +1,189 @@
+{
+  "ecl_object": {
+    "action": {
+      "aip_action_ref": "aip-action:0eb8f7faa1bfb183",
+      "execution_mode": "delegated",
+      "name": "read_source_schema",
+      "parameters_hash": "sha256:c425662c66af1775746e5016411e3e12c791c2021bde20efbcb1feda9f8c78b3",
+      "raw_ref": "raw-action:0eb8f7faa1bfb183",
+      "side_effect_class": "read_only",
+      "summary": "read_source_schema",
+      "tool_ref": "filesystem.read"
+    },
+    "audit": {
+      "decisions": [
+        {
+          "decision": "preserve_protocol_boundaries",
+          "decision_id": "ecl-boundary-001",
+          "reason": "ECL references POP, AIP, and ARO fields without redefining their source schemas."
+        },
+        {
+          "decision": "use_openai_agents_trace",
+          "decision_id": "ecl-adapter-001",
+          "reason": "The source trace shape matched this adapter entrypoint."
+        },
+        {
+          "decision": "hash_canonical_json",
+          "decision_id": "ecl-determinism-001",
+          "reason": "Every generated ECL record must be reproducible from sorted-key JSON."
+        }
+      ],
+      "source_map": [
+        {
+          "ecl_path": "$.state.persona_ref",
+          "mapping_type": "reference",
+          "source_path": "$.id or $.persona_id",
+          "source_protocol": "POP"
+        },
+        {
+          "ecl_path": "$.intent",
+          "mapping_type": "normalized_copy",
+          "source_path": "$.intent and $.constraints",
+          "source_protocol": "AIP"
+        },
+        {
+          "ecl_path": "$.action",
+          "mapping_type": "normalized_copy",
+          "source_path": "$.action and execution metadata",
+          "source_protocol": "AIP"
+        },
+        {
+          "ecl_path": "$.evidence",
+          "mapping_type": "reference",
+          "source_path": "trace events, policy decisions, result references, and receipt/evidence refs",
+          "source_protocol": "ARO"
+        },
+        {
+          "ecl_path": "$.evidence.hashes",
+          "mapping_type": "derived_hash",
+          "source_path": "canonical source trace and ECL record",
+          "source_protocol": "ECL"
+        }
+      ],
+      "validation": [
+        {
+          "report_ref": "out/ecl_artifacts/validator_report.json",
+          "status": "not_run",
+          "validator": "ecl.validator"
+        }
+      ]
+    },
+    "determinism": {
+      "adapter_version": "0.1.0",
+      "canonicalization": "json-sort-keys-no-whitespace",
+      "generated_by": "ecl-execution-compact-layer",
+      "hash_algorithm": "sha256"
+    },
+    "ecl_id": "ecl:b2776372f804ab72",
+    "evidence": {
+      "aip_result_ref": "aip-result:e98778ff06431639",
+      "aro_evidence_ref": "aro-evidence:1a18e4351d61a714",
+      "aro_receipt_ref": "aro-receipt:d4a38816c7f9185b",
+      "event_chain": [
+        {
+          "chain_hash": "sha256:daa77a1016b3c55a87539e54c6b2890875e49ecfc3f6366047c93daffd298181",
+          "event_hash": "sha256:6f6af2f3b058795c3163710e0ac73ea4b4638fff6f61251fd7155dc1fcf161e2",
+          "event_id": "span-0001",
+          "event_ref": "span-0001",
+          "event_type": "tool_call"
+        },
+        {
+          "chain_hash": "sha256:5a46e4059d1e6510a30230d932e0a500f6c01f6a01bc226bc210a4431216c6d3",
+          "event_hash": "sha256:45dba0f0a703fd8ed99155c4390589c269ea7820a67176dd4e7ed7eaecf3bf22",
+          "event_id": "span-0002",
+          "event_ref": "span-0002",
+          "event_type": "tool_call"
+        }
+      ],
+      "hashes": {
+        "canonical_hash": "sha256:81b88c3f684cfa15f3157b644727f1563676617964db0d495c82e346ebb44a7c",
+        "event_chain_hash": "sha256:574f285a90370ea9b9a150e06c14c5ea9703d70128310712fa66301665f6d819",
+        "source_trace_hash": "sha256:fd20f80252fb03b2d9ffdf81dd76ed08e2ab33df21bb7ecb3184c14e71019002"
+      },
+      "output_refs": [
+        "out/ecl_artifacts/ecl_from_openai_agents_trace.json"
+      ],
+      "policy_decisions": [
+        {
+          "decision": "allow",
+          "decision_ref": "policy-local-only",
+          "reason": "Local artifact generation with no external submission."
+        },
+        {
+          "decision": "mapping_incomplete",
+          "decision_ref": "adapter-loss-report",
+          "loss_report": {
+            "complete": false,
+            "defaults_used": [
+              "reasoning:model_input",
+              "tool_call:first_trace_event"
+            ],
+            "missing_source_fields": [
+              "reasoning"
+            ],
+            "source_trace_hash": "sha256:fd20f80252fb03b2d9ffdf81dd76ed08e2ab33df21bb7ecb3184c14e71019002"
+          },
+          "reason": "Deterministic OpenAI trace to ECL mapping loss report."
+        }
+      ],
+      "result_status": "completed",
+      "result_summary": "ECL schema and local adapter outputs generated",
+      "trace_refs": [
+        "trace-openai-demo-001"
+      ]
+    },
+    "intent": {
+      "aip_intent_ref": "aip-intent:46232b05290487b8",
+      "constraints": {
+        "external_assumptions": false,
+        "structured_outputs_only": true
+      },
+      "evidence_requirements": {
+        "required_outputs": [
+          "execution_trace.json",
+          "decision_log.json",
+          "schema_diff.json",
+          "evidence_bundle.json"
+        ]
+      },
+      "expected_result": {
+        "artifact_type": "ecl_execution_record"
+      },
+      "operation": "build_ecl",
+      "raw_ref": "raw-intent:fd20f80252fb03b2",
+      "summary": "Build a deterministic ECL artifact package"
+    },
+    "lineage": {
+      "checkpoint_ref": "sdk://checkpoint",
+      "generated_at": "2026-06-28T00:00:00Z",
+      "source_adapter": "openai_agents_trace",
+      "source_trace_hash": "sha256:fd20f80252fb03b2d9ffdf81dd76ed08e2ab33df21bb7ecb3184c14e71019002",
+      "source_trace_ref": "sdk/demo_openai.py"
+    },
+    "object_type": "ecl_execution_record",
+    "schema_version": "0.1.0-draft",
+    "state": {
+      "actor_ref": "agent:ecl-builder",
+      "correlation_id": "corr-ecl-openai-001",
+      "execution_status": "completed",
+      "lifecycle_phase": "complete",
+      "persona_ref": "persona:mentor:v1",
+      "runtime_ref": "openai-agents-sdk"
+    }
+  },
+  "evidence_bundle": "sha256:4f50b5686bb0a1183983ac56e4527e4f700d43abce0b47efa21aa7d19037d766",
+  "replay_result": {
+    "artifact_hashes": {
+      "evidence_bundle": "sha256:4f50b5686bb0a1183983ac56e4527e4f700d43abce0b47efa21aa7d19037d766",
+      "execution_trace": "sha256:72d233506cd23be03ce2f00c93f46ff8293138110ef95ae59e484c68ec6c1847",
+      "replay_result": "sha256:60377b27ceb16a431d7bcadb1ca7d7689bc5d51792a95cc52e9befe13c7ddffb"
+    },
+    "deterministic": true,
+    "object_type": "ecl_external_replay_verification",
+    "schema_version": "0.1.0",
+    "valid": true,
+    "verification_hash": "sha256:6ff5222064807dd200102919f2a0779073ea3b075aa64b40f0c502c5f66d6e7c"
+  },
+  "runtime": "openai",
+  "valid": true
+}

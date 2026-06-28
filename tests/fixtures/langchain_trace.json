@@ -1,0 +1,55 @@
+{
+  "run_id": "lc-run-demo-001",
+  "name": "ecl_builder_chain",
+  "run_type": "chain",
+  "inputs": {
+    "summary": "Convert a LangChain run into an ECL record",
+    "operation": "adapt_langchain_trace",
+    "constraints": {
+      "resume_supported": true,
+      "deterministic": true
+    },
+    "expected_result": {
+      "artifact_type": "ecl_execution_record"
+    },
+    "evidence_requirements": {
+      "hash_chain": true
+    }
+  },
+  "outputs": {
+    "status": "completed",
+    "summary": "LangChain run converted into ECL",
+    "output_refs": [
+      "out/ecl_artifacts/ecl_from_langchain_trace.json"
+    ]
+  },
+  "metadata": {
+    "actor_ref": "agent:ecl-builder",
+    "persona_ref": "persona:mentor:v1",
+    "runtime_ref": "langchain",
+    "correlation_id": "corr-ecl-langchain-001",
+    "execution_mode": "delegated",
+    "side_effect_class": "read_only",
+    "policy_decisions": [
+      {
+        "policy_id": "policy-langchain-local",
+        "decision": "allow",
+        "reason": "Fixture-only trace conversion."
+      }
+    ]
+  },
+  "child_runs": [
+    {
+      "run_id": "lc-tool-demo-001",
+      "name": "load_schema",
+      "run_type": "tool",
+      "inputs": {
+        "path": "schemas/ecl-execution-compact-layer.schema.json"
+      },
+      "outputs": {
+        "status": "completed"
+      }
+    }
+  ]
+}
+

@@ -1,0 +1,14 @@
+{
+  "deterministic": true,
+  "execution_hash": "sha256:411c7547fd12c5c9e9f739b5b8dbdd3a5065a08b26fd88bc268234ecf8dd7337",
+  "generated_at": "2026-06-28T00:00:00Z",
+  "object_type": "ecl_replay_result",
+  "output_refs": [
+    "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/external_adoption/langchain/execution_trace.json",
+    "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/external_adoption/langchain/evidence_bundle.json",
+    "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/external_adoption/langchain/replay_result.json"
+  ],
+  "record_id": "ecl:2358c9cb845df184",
+  "schema_version": "0.1.0",
+  "valid": true
+}

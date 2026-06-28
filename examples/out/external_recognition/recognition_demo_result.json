@@ -1,0 +1,50 @@
+{
+  "all_deterministic": true,
+  "all_valid": true,
+  "generated_at": "2026-06-28T00:00:00Z",
+  "object_type": "ecl_external_recognition_demo_result",
+  "result_hash": "sha256:3b75d317c7ba5c7f23a36431750c6fdbeba2164c55c4dd5af6346e938e012862",
+  "results": {
+    "langchain": {
+      "artifact_hashes": {
+        "evidence_bundle": "sha256:5ccc40011392a9fae4b3fbbd7d60df34f05a99603158a2b957cafe504b42c3ec",
+        "execution_trace": "sha256:79b7f07e9e9a2a69367fcd6ab06e01f8521472dc93d3d28f139582d4d5b24800",
+        "replay_result": "sha256:94ec4e86e8a6f6e2b60e83a6ba7af80c5e85d6fdfaa1e133fdca766ccfd5b2ce"
+      },
+      "deterministic": true,
+      "ecl_ref": "examples/out/external_recognition/langchain/ecl_object.json",
+      "evidence_bundle_ref": "examples/out/external_recognition/langchain/evidence_bundle.json",
+      "loss": {
+        "confidence": 1.0,
+        "missing_fields": [],
+        "type": "semantic"
+      },
+      "replay_result_ref": "examples/out/external_recognition/langchain/replay_result.json",
+      "runtime": "langchain",
+      "valid": true,
+      "verification_hash": "sha256:4250ea98ecedb6be5492accad7aab120011f574cf6cfa398a4586841fe029c83"
+    },
+    "openai": {
+      "artifact_hashes": {
+        "evidence_bundle": "sha256:eb025a5e64bb3f144ef56a6cb167b28cf9c6d4de3e2b0a7399dcc5e3bbb49e6b",
+        "execution_trace": "sha256:4e5f38ca889a043e52c2ec6f46c8b4380615656eec48ba8dcc21b292fedabc75",
+        "replay_result": "sha256:fcdd0bef3696e431549afcbe0222568d8ec88bd15e942497f1b247070137a49e"
+      },
+      "deterministic": true,
+      "ecl_ref": "examples/out/external_recognition/openai/ecl_object.json",
+      "evidence_bundle_ref": "examples/out/external_recognition/openai/evidence_bundle.json",
+      "loss": {
+        "confidence": 0.75,
+        "missing_fields": [
+          "reasoning"
+        ],
+        "type": "structural"
+      },
+      "replay_result_ref": "examples/out/external_recognition/openai/replay_result.json",
+      "runtime": "openai",
+      "valid": true,
+      "verification_hash": "sha256:15b026a82e251406ab783638948bb02c32ba2e7139d08217f1f2d139e0982afe"
+    }
+  },
+  "schema_version": "0.1.0"
+}

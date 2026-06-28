@@ -1,0 +1,81 @@
+{
+  "schema_version": "0.1.0",
+  "object_type": "ecl_paper_evidence_manifest",
+  "paper": {
+    "path": "paper/ECL_PAPER_v0_1.md",
+    "status": "draft_not_submitted",
+    "claim_boundary": "local_reproducibility_only"
+  },
+  "local_evidence": {
+    "test_command": "python3 -m unittest discover -s tests",
+    "test_result": {
+      "tests": 65,
+      "status": "OK"
+    },
+    "citation_demo_command": "python3 examples/citation_repro_demo.py",
+    "citation_demo_result_hash": "sha256:358a039db2c737b8905d91e37e1ed8fc5ea4081dab8d25a0523b4958f7061651",
+    "mcp_anchor_verification_hash": "sha256:3770d486d473720ae7d84546906e24214ee156ad458bee8fec3c59873ea153b8"
+  },
+  "core_surfaces": [
+    "schemas/ecl-execution-compact-layer.schema.json",
+    "SPEC.md",
+    "sdk/ecl.py",
+    "sdk/ecl_dependency.py",
+    "mcp/ecl_tool_spec.json",
+    "mcp/ecl_server_stub.py",
+    "examples/citation_repro_demo.py"
+  ],
+  "paper_surfaces": [
+    "paper/PAPER_COMPLETION_REPORT_v0_1.md",
+    "paper/joss/paper.md",
+    "paper/joss/paper.bib",
+    "paper/joss/JOSS_SUBMISSION_CHECKLIST_v0_1.md",
+    "paper/joss/JOSS_SUBMISSION_MANIFEST_v0_1.json",
+    "paper/joss/JOSS_PREFLIGHT_AUDIT_v0_1.md",
+    "paper/joss/JOSS_PREFLIGHT_AUDIT_v0_1.json",
+    "paper/joss/AUTHOR_METADATA_TEMPLATE_v0_1.json",
+    "paper/venue_screening/NO_PAID_JOURNAL_SCREENING_v0_1.md",
+    "paper/venue_screening/NO_PAID_JOURNAL_SCREENING_v0_1.json",
+    "paper/final_audit/GOAL_COMPLETION_AUDIT_v0_1.md",
+    "paper/final_audit/GOAL_COMPLETION_AUDIT_v0_1.json",
+    "paper/final_audit/HUMAN_ACTION_PACKET_v0_1.md"
+  ],
+  "boundary": {
+    "public_release": false,
+    "formal_submission": false,
+    "third_party_validation": false,
+    "ecosystem_adoption": false,
+    "benchmark_result": false,
+    "schema_modified": false
+  },
+  "related_work_sources": [
+    {
+      "name": "OpenAI Agents SDK tracing documentation",
+      "url": "https://openai.github.io/openai-agents-python/tracing/"
+    },
+    {
+      "name": "LangChain tracing documentation",
+      "url": "https://docs.langchain.com/langsmith/tracing"
+    },
+    {
+      "name": "Model Context Protocol specification",
+      "url": "https://modelcontextprotocol.io/specification/"
+    },
+    {
+      "name": "OpenTelemetry trace specification",
+      "url": "https://opentelemetry.io/docs/specs/otel/trace/"
+    },
+    {
+      "name": "RFC 8785 JSON Canonicalization Scheme",
+      "url": "https://www.rfc-editor.org/rfc/rfc8785"
+    },
+    {
+      "name": "LLVM Language Reference Manual",
+      "url": "https://llvm.org/docs/LangRef.html"
+    },
+    {
+      "name": "WebAssembly Core Specification",
+      "url": "https://webassembly.github.io/spec/core/"
+    }
+  ]
+}

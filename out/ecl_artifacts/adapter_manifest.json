@@ -1,0 +1,19 @@
+{
+  "adapters": [
+    {
+      "adapter_id": "openai_agents_trace",
+      "entrypoint": "adapt_trace",
+      "input_shape": "OpenAI Agents SDK-like trace JSON with trace_id, agent, input, spans or events, result, and optional policy_decisions.",
+      "module": "ecl.adapters.openai_agents"
+    },
+    {
+      "adapter_id": "langchain_trace",
+      "entrypoint": "adapt_trace",
+      "input_shape": "LangChain run JSON with run_id, inputs, outputs, metadata, and optional nested child_runs.",
+      "module": "ecl.adapters.langchain"
+    }
+  ],
+  "generated_at": "2026-06-28T00:00:00Z",
+  "object_type": "ecl_adapter_manifest",
+  "schema_version": "0.1.0"
+}

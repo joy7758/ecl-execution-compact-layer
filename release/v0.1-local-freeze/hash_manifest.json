@@ -1,0 +1,111 @@
+{
+  "boundary": {
+    "ecosystem_adoption_claim": false,
+    "external_validation": false,
+    "public_release": false,
+    "standard_claim": false
+  },
+  "entries": [
+    {
+      "bytes": 7112,
+      "freeze_path": "release/v0.1-local-freeze/SPEC.md",
+      "sha256": "sha256:ffde4cc471c1af1e5b218496d278549c8537cccad09f4dba7c546eb5eda19c3c",
+      "source_path": "SPEC.md"
+    },
+    {
+      "bytes": 4719,
+      "freeze_path": "release/v0.1-local-freeze/CHANGE_POLICY.md",
+      "sha256": "sha256:bd8c93190e9bb8f3c48fe4416685b71396c1849cb45a1b57f9a9a5489c087592",
+      "source_path": "CHANGE_POLICY.md"
+    },
+    {
+      "bytes": 11149,
+      "freeze_path": "release/v0.1-local-freeze/schema.json",
+      "sha256": "sha256:15d089eaee07ec27d1fc69b5418e5dc5f1b1fa55f2c9395c03cde0ad6773cf89",
+      "source_path": "schemas/ecl-execution-compact-layer.schema.json"
+    },
+    {
+      "bytes": 5315,
+      "freeze_path": "release/v0.1-local-freeze/crosswalk.json",
+      "sha256": "sha256:409c2601a23d476ff88d0e56a587761a127ceea60da907ad2f385fd370b45f8d",
+      "source_path": "mappings/pop-aip-aro-crosswalk.json"
+    },
+    {
+      "bytes": 3911,
+      "freeze_path": "release/v0.1-local-freeze/validator.py",
+      "sha256": "sha256:47174a78e47ab6690b57bc311b5e36178888350ba21d45cacad585fdbcd35976",
+      "source_path": "ecl/validator.py"
+    },
+    {
+      "bytes": 10660,
+      "freeze_path": "release/v0.1-local-freeze/canonical.py",
+      "sha256": "sha256:28875fec1d505b726207bb16eb51d1b62d9c0de8c542595e4a7c0c3d82af1a6e",
+      "source_path": "ecl/canonical.py"
+    },
+    {
+      "bytes": 1744,
+      "freeze_path": "release/v0.1-local-freeze/sample_traces/openai_agents_trace.json",
+      "sha256": "sha256:61499c34ea90a49ee6785d5582719734a2158bf443579b45d7470c3dda11cc68",
+      "source_path": "tests/fixtures/openai_agents_trace.json"
+    },
+    {
+      "bytes": 1323,
+      "freeze_path": "release/v0.1-local-freeze/sample_traces/langchain_trace.json",
+      "sha256": "sha256:c9420932c2aaeba90a6818c940e723314fe50655f9e30214807fa88b83eff5e9",
+      "source_path": "tests/fixtures/langchain_trace.json"
+    },
+    {
+      "bytes": 6457,
+      "freeze_path": "release/v0.1-local-freeze/evidence_bundle.json",
+      "sha256": "sha256:3b18029d595dae880e2595bc002ec3654cb2188aade88b412fdb7a9460e55aaa",
+      "source_path": "out/ecl_artifacts/evidence_bundle.json"
+    },
+    {
+      "bytes": 1122,
+      "freeze_path": "release/v0.1-local-freeze/validator_report.json",
+      "sha256": "sha256:a8bab31a644b304bccb85a5e4eb75b8adfaea0880abbde69bd17b8e81285f9a6",
+      "source_path": "out/ecl_artifacts/validator_report.json"
+    },
+    {
+      "bytes": 5247,
+      "freeze_path": "release/v0.1-local-freeze/execution_trace.json",
+      "sha256": "sha256:45cb9d3e81912cd043dc24bd8c0588786ca70f9fae72e1dd8fe2600da7f13d3f",
+      "source_path": "out/ecl_artifacts/execution_trace.json"
+    },
+    {
+      "bytes": 1515,
+      "freeze_path": "release/v0.1-local-freeze/decision_log.json",
+      "sha256": "sha256:0816259a2f9c78463e98428bbf88914ce7a023bfe1477be438eb88873e095af0",
+      "source_path": "out/ecl_artifacts/decision_log.json"
+    },
+    {
+      "bytes": 5431,
+      "freeze_path": "release/v0.1-local-freeze/schema_diff.json",
+      "sha256": "sha256:104712bc577e5b3566d60262ee5702b3e2d5e676eb6b241130d26d7d930d63d8",
+      "source_path": "out/ecl_artifacts/schema_diff.json"
+    },
+    {
+      "bytes": 5910,
+      "freeze_path": "release/v0.1-local-freeze/records/ecl_from_openai_agents_trace.json",
+      "sha256": "sha256:e6c7d53dbb5a79ddd107c161599ba43e9e208af072d654307e3789440abf30de",
+      "source_path": "out/ecl_artifacts/ecl_from_openai_agents_trace.json"
+    },
+    {
+      "bytes": 5147,
+      "freeze_path": "release/v0.1-local-freeze/records/ecl_from_langchain_trace.json",
+      "sha256": "sha256:a81a4bade813b8fd81b2100f5eb20cef9b2da88b9748e2df1b21193c0cb56b0a",
+      "source_path": "out/ecl_artifacts/ecl_from_langchain_trace.json"
+    }
+  ],
+  "freeze_id": "v0.1-local-freeze",
+  "generated_at": "2026-06-28T00:00:00Z",
+  "object_type": "ecl_v0_1_local_freeze_hash_manifest",
+  "reproduction_commands": [
+    "python3 scripts/build_artifacts.py --resume-from latest --verify-state --continue-exact",
+    "python3 scripts/create_v0_1_freeze.py --overwrite",
+    "python3 -m unittest discover -s tests"
+  ],
+  "schema_version": "0.1.0",
+  "snapshot_hash": "sha256:d632a54ca48db2f76056742bcc93980836a2a0d176b4aaf0c1bc40dcca23ed48",
+  "status": "local_semantic_freeze"
+}

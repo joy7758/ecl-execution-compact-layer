@@ -1,0 +1,14 @@
+{
+  "deterministic": true,
+  "execution_hash": "sha256:8060e10261903755c53efdf2f5b12f89aca3a887f346671527a6b8ea4712994d",
+  "generated_at": "2026-06-28T00:00:00Z",
+  "object_type": "ecl_replay_result",
+  "output_refs": [
+    "examples/out/external_recognition/langchain/execution_trace.json",
+    "examples/out/external_recognition/langchain/evidence_bundle.json",
+    "examples/out/external_recognition/langchain/replay_result.json"
+  ],
+  "record_id": "ecl:2358c9cb845df184",
+  "schema_version": "0.1.0",
+  "valid": true
+}

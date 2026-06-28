@@ -1,0 +1,38 @@
+{
+  "decisions": [
+    {
+      "decision": "do_not_execute_codex_goal_cli_template_as_shell_commands",
+      "decision_id": "goal-cli-001",
+      "reason": "The installed codex CLI exposes no goal subcommand in help output."
+    },
+    {
+      "decision": "create_isolated_local_package",
+      "decision_id": "workspace-001",
+      "reason": "Relevant source repositories have existing working tree state; ECL should not mutate them."
+    },
+    {
+      "decision": "emit_structured_json_artifacts",
+      "decision_id": "artifact-001",
+      "reason": "The requested enforcement surface requires execution_trace.json, decision_log.json, schema_diff.json, and evidence_bundle.json."
+    },
+    {
+      "decision": "ECL stores protocol references and normalized copies only",
+      "decision_id": "crosswalk-001",
+      "reason": "POP, AIP, and ARO remain separate protocol surfaces."
+    },
+    {
+      "decision": "ARO is downstream evidence, not the governance runtime",
+      "decision_id": "crosswalk-002",
+      "reason": "The local ARO README identifies the repository as a public reference surface for receipt and audit-format examples."
+    },
+    {
+      "decision": "Source trace hashes are mandatory",
+      "decision_id": "crosswalk-003",
+      "reason": "Adapters must make source-to-ECL transformation reproducible and auditable."
+    }
+  ],
+  "generated_at": "2026-06-28T00:00:00Z",
+  "goal_name": "ECL-Execution-Protocol-Builder",
+  "object_type": "ecl_decision_log",
+  "schema_version": "0.1.0"
+}

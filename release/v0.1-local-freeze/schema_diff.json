@@ -1,0 +1,165 @@
+{
+  "boundary": {
+    "ecl_adds_local_schema": true,
+    "source_protocols_redefined": false,
+    "source_schemas_modified": false
+  },
+  "ecl_schema_hash": {
+    "bytes": 11149,
+    "exists": true,
+    "path": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/schemas/ecl-execution-compact-layer.schema.json",
+    "sha256": "sha256:15d089eaee07ec27d1fc69b5418e5dc5f1b1fa55f2c9395c03cde0ad6773cf89"
+  },
+  "field_mappings": [
+    {
+      "ecl_path": "$.state.persona_ref",
+      "mapping_type": "reference",
+      "source_path": "$.id or $.persona_id",
+      "source_protocol": "POP"
+    },
+    {
+      "ecl_path": "$.state.actor_ref",
+      "mapping_type": "normalized_copy",
+      "source_path": "$.actor_ref",
+      "source_protocol": "AIP"
+    },
+    {
+      "ecl_path": "$.intent.summary",
+      "mapping_type": "normalized_copy",
+      "source_path": "$.intent.summary",
+      "source_protocol": "AIP"
+    },
+    {
+      "ecl_path": "$.intent.operation",
+      "mapping_type": "normalized_copy",
+      "source_path": "$.intent.operation",
+      "source_protocol": "AIP"
+    },
+    {
+      "ecl_path": "$.intent.constraints",
+      "mapping_type": "normalized_copy",
+      "source_path": "$.constraints",
+      "source_protocol": "AIP"
+    },
+    {
+      "ecl_path": "$.intent.evidence_requirements",
+      "mapping_type": "normalized_copy",
+      "source_path": "$.evidence_requirements",
+      "source_protocol": "AIP"
+    },
+    {
+      "ecl_path": "$.action.name",
+      "mapping_type": "normalized_copy",
+      "source_path": "$.action.name",
+      "source_protocol": "AIP"
+    },
+    {
+      "ecl_path": "$.action.execution_mode",
+      "mapping_type": "normalized_copy",
+      "source_path": "$.execution_mode",
+      "source_protocol": "AIP"
+    },
+    {
+      "ecl_path": "$.action.side_effect_class",
+      "mapping_type": "normalized_copy",
+      "source_path": "$.side_effect_class",
+      "source_protocol": "AIP"
+    },
+    {
+      "ecl_path": "$.evidence.result_status",
+      "mapping_type": "normalized_copy",
+      "source_path": "$.status",
+      "source_protocol": "AIP"
+    },
+    {
+      "ecl_path": "$.evidence.event_chain",
+      "mapping_type": "derived_hash",
+      "source_path": "$.event_chain or $.trace_context",
+      "source_protocol": "ARO"
+    },
+    {
+      "ecl_path": "$.evidence.policy_decisions",
+      "mapping_type": "normalized_copy",
+      "source_path": "$.policy_decisions or $.policy_decision",
+      "source_protocol": "ARO"
+    },
+    {
+      "ecl_path": "$.evidence.hashes.source_trace_hash",
+      "mapping_type": "derived_hash",
+      "source_path": "canonical source trace JSON",
+      "source_protocol": "ECL"
+    },
+    {
+      "ecl_path": "$.evidence.hashes.canonical_hash",
+      "mapping_type": "derived_hash",
+      "source_path": "canonical ECL JSON with canonical_hash blanked",
+      "source_protocol": "ECL"
+    }
+  ],
+  "generated_at": "2026-06-28T00:00:00Z",
+  "object_type": "ecl_schema_diff",
+  "schema_version": "0.1.0",
+  "source_schema_hashes": [
+    {
+      "bytes": 4648,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/persona-object-protocol/schema/pop.schema.json",
+      "sha256": "sha256:665f07f52ac5a998a1a85c06d13c3606781b11b22225f5cf32b51a03853e0a12"
+    },
+    {
+      "bytes": 975,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/persona-object-protocol/schema/profiles/pop-agent-runtime-profile.schema.json",
+      "sha256": "sha256:262d24e0e447acd46f83a12997a8c2212eb67a6a18b61e78188fcaac0ff0228d"
+    },
+    {
+      "bytes": 1313,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/agent-intent-protocol/schema/intent-object.schema.json",
+      "sha256": "sha256:ff14e32afb362d490da812b1dc36c90283b883e5a7c04d377c9b82e9010d4adb"
+    },
+    {
+      "bytes": 1331,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/agent-intent-protocol/schema/action-object.schema.json",
+      "sha256": "sha256:5c87ae1eb77cc00b84d9ddd96f7a39e54f433a51aff2da466197b385f4e8e107"
+    },
+    {
+      "bytes": 1108,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/agent-intent-protocol/schema/result-object.schema.json",
+      "sha256": "sha256:89940a87ab5a12402838424e0b5c36177fea1e5caef93b74d9385ea668cb6ec2"
+    },
+    {
+      "bytes": 1136,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/aro-audit/schema/evidence.schema.json",
+      "sha256": "sha256:ccc597f12c31e33e095b9933cef7e5834ce607af28b994306cdc4e5915534097"
+    },
+    {
+      "bytes": 2641,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/aro-audit/spec/receipts/minimal-receipt.schema.json",
+      "sha256": "sha256:e6c292d9e499b67ce3f83975d8e7fa39ceac3d94f82befd5ad09e817026ac9cc"
+    },
+    {
+      "bytes": 1633,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/aro-audit/spec/receipts/lifecycle-receipt.schema.json",
+      "sha256": "sha256:5a50b103c65254cbac4f4c0bed37523e81c5363b74e543a84ef94149dab11d8b"
+    },
+    {
+      "bytes": 2425,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/aro-audit/spec/AAR_v1.0.schema.json",
+      "sha256": "sha256:b04e3baa5aaf8ca65f30905f4c3de52566e6b76a90f3df2baabf88ba219883e3"
+    },
+    {
+      "bytes": 1589,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/aro-audit/README.md",
+      "sha256": "sha256:260405ee28bd42e74a002682a67d36f32cee4e5ce60173cd2d968287b070a3de"
+    }
+  ],
+  "status": "mapping_only_no_source_schema_mutation"
+}

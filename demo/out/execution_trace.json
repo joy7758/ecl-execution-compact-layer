@@ -1,0 +1,12 @@
+{
+  "event_chain_tail": "sha256:5a46e4059d1e6510a30230d932e0a500f6c01f6a01bc226bc210a4431216c6d3",
+  "event_count": 2,
+  "execution_hash": "sha256:4b98a6ccee198d3d5f5d2c05106c3493665a02541efea4bf373bb7d5a798f5d2",
+  "generated_at": "2026-06-28T00:00:00Z",
+  "input_hash": "sha256:8b50fe8967db599b52a6452d39c14df6e5e147fcc7abbf6260cd70f8a9faeb53",
+  "input_ref": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/ecl_from_openai_agents_trace.json",
+  "object_type": "ecl_replay_execution_trace",
+  "record_id": "ecl:b2776372f804ab72",
+  "schema_version": "0.1.0",
+  "validation_valid": true
+}

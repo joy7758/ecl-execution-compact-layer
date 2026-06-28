@@ -1,0 +1,56 @@
+{
+  "artifact_set_hash": "sha256:2494ba8d65986dabf21c7f819eb64d586b6049022b9863052452113046ae7e48",
+  "artifacts": [
+    {
+      "bytes": 11149,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/ecl.schema.json",
+      "sha256": "sha256:15d089eaee07ec27d1fc69b5418e5dc5f1b1fa55f2c9395c03cde0ad6773cf89"
+    },
+    {
+      "bytes": 5315,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/pop_aip_aro_crosswalk.json",
+      "sha256": "sha256:409c2601a23d476ff88d0e56a587761a127ceea60da907ad2f385fd370b45f8d"
+    },
+    {
+      "bytes": 657,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/adapter_manifest.json",
+      "sha256": "sha256:e85ab729665b707be4659bb91727fdc65aa2442bf0b4c27475a796fdb47328c0"
+    },
+    {
+      "bytes": 5910,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/ecl_from_openai_agents_trace.json",
+      "sha256": "sha256:e6c7d53dbb5a79ddd107c161599ba43e9e208af072d654307e3789440abf30de"
+    },
+    {
+      "bytes": 5147,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/ecl_from_langchain_trace.json",
+      "sha256": "sha256:a81a4bade813b8fd81b2100f5eb20cef9b2da88b9748e2df1b21193c0cb56b0a"
+    },
+    {
+      "bytes": 1122,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/validator_report.json",
+      "sha256": "sha256:a8bab31a644b304bccb85a5e4eb75b8adfaea0880abbde69bd17b8e81285f9a6"
+    },
+    {
+      "bytes": 1515,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/decision_log.json",
+      "sha256": "sha256:0816259a2f9c78463e98428bbf88914ce7a023bfe1477be438eb88873e095af0"
+    },
+    {
+      "bytes": 5431,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/schema_diff.json",
+      "sha256": "sha256:104712bc577e5b3566d60262ee5702b3e2d5e676eb6b241130d26d7d930d63d8"
+    }
+  ],
+  "generated_at": "2026-06-28T00:00:00Z",
+  "object_type": "ecl_artifact_manifest",
+  "schema_version": "0.1.0"
+}

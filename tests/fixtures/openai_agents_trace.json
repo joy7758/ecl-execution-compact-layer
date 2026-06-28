@@ -1,0 +1,67 @@
+{
+  "trace_id": "trace-openai-demo-001",
+  "correlation_id": "corr-ecl-openai-001",
+  "agent": {
+    "id": "agent:ecl-builder",
+    "persona_id": "persona:mentor:v1",
+    "runtime": "openai-agents-sdk"
+  },
+  "input": {
+    "summary": "Build a deterministic ECL artifact package",
+    "operation": "build_ecl",
+    "constraints": {
+      "external_assumptions": false,
+      "structured_outputs_only": true
+    },
+    "expected_result": {
+      "artifact_type": "ecl_execution_record"
+    },
+    "evidence_requirements": {
+      "required_outputs": [
+        "execution_trace.json",
+        "decision_log.json",
+        "schema_diff.json",
+        "evidence_bundle.json"
+      ]
+    }
+  },
+  "spans": [
+    {
+      "span_id": "span-0001",
+      "type": "tool_call",
+      "name": "read_source_schema",
+      "tool": "filesystem.read",
+      "parameters": {
+        "path": "/Users/zhangbin/GitHub/agent-intent-protocol/schema/intent-object.schema.json"
+      },
+      "execution_mode": "delegated",
+      "side_effect_class": "read_only"
+    },
+    {
+      "span_id": "span-0002",
+      "type": "tool_call",
+      "name": "write_ecl_schema",
+      "tool": "filesystem.write",
+      "parameters": {
+        "path": "schemas/ecl-execution-compact-layer.schema.json"
+      },
+      "execution_mode": "delegated",
+      "side_effect_class": "state_change"
+    }
+  ],
+  "policy_decisions": [
+    {
+      "policy_id": "policy-local-only",
+      "decision": "allow",
+      "reason": "Local artifact generation with no external submission."
+    }
+  ],
+  "result": {
+    "status": "completed",
+    "summary": "ECL schema and local adapter outputs generated",
+    "output_refs": [
+      "out/ecl_artifacts/ecl_from_openai_agents_trace.json"
+    ]
+  }
+}
+

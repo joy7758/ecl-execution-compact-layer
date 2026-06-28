@@ -1,0 +1,61 @@
+{
+  "schema_version": "0.1.0",
+  "object_type": "ecl_joss_submission_candidate_manifest",
+  "status": "candidate_missing_human_metadata_not_submitted",
+  "target": {
+    "venue": "Journal of Open Source Software",
+    "short_name": "JOSS",
+    "classification": "eligible_zero_fee",
+    "fee_screening": "no_submission_or_publication_fee_per_joss_documentation"
+  },
+  "candidate_files": [
+    "paper/joss/paper.md",
+    "paper/joss/paper.bib",
+    "paper/joss/JOSS_SUBMISSION_CHECKLIST_v0_1.md",
+    "paper/joss/JOSS_PREFLIGHT_AUDIT_v0_1.md",
+    "paper/joss/JOSS_PREFLIGHT_AUDIT_v0_1.json",
+    "paper/joss/AUTHOR_METADATA_TEMPLATE_v0_1.json"
+  ],
+  "local_evidence": {
+    "test_command": "python3 -m unittest discover -s tests",
+    "test_result": {
+      "tests": 65,
+      "status": "OK"
+    },
+    "citation_demo_result_hash": "sha256:358a039db2c737b8905d91e37e1ed8fc5ea4081dab8d25a0523b4958f7061651",
+    "mcp_anchor_verification_hash": "sha256:3770d486d473720ae7d84546906e24214ee156ad458bee8fec3c59873ea153b8"
+  },
+  "human_required_fields": [
+    "AUTHOR_NAME",
+    "AFFILIATION_NAME",
+    "ORCID_OPTIONAL",
+    "repository_public_url",
+    "public_issue_tracker_url",
+    "license_confirmation",
+    "public_development_history_confirmation",
+    "release_or_archive_decision",
+    "final_author_approval"
+  ],
+  "sources": [
+    {
+      "name": "JOSS submitting a paper",
+      "url": "https://joss.readthedocs.io/en/latest/submitting.html"
+    },
+    {
+      "name": "JOSS paper format",
+      "url": "https://joss.readthedocs.io/en/latest/paper.html"
+    },
+    {
+      "name": "JOSS review criteria",
+      "url": "https://joss.readthedocs.io/en/latest/review_criteria.html"
+    }
+  ],
+  "boundary": {
+    "joss_submission_performed": false,
+    "formal_submission": false,
+    "public_release": false,
+    "paid_journal_selected": false,
+    "acceptance_claim": false,
+    "external_validation": false
+  }
+}

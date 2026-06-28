@@ -1,0 +1,23 @@
+{
+  "title": "ECL v0.1",
+  "description": "deterministic execution IR layer",
+  "creators": [
+    {
+      "name": "<AUTHOR_NAME>",
+      "affiliation": "<AFFILIATION_NAME>",
+      "orcid": "<ORCID_OPTIONAL>"
+    }
+  ],
+  "version": "0.1",
+  "keywords": [
+    "execution IR",
+    "agent systems",
+    "determinism",
+    "replay"
+  ],
+  "license": "license_pending_human_approval",
+  "publication_date": "2026-06-28",
+  "upload_type": "software",
+  "related_identifiers": [],
+  "notes": "Publication-finalization metadata only. DOI minting has not been performed."
+}

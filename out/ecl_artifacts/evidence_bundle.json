@@ -1,0 +1,167 @@
+{
+  "boundary": {
+    "external_validation": false,
+    "formal_standard_claim": false,
+    "public_release": false,
+    "source_repositories_modified": false
+  },
+  "commands": [
+    {
+      "command": "python3 scripts/build_artifacts.py",
+      "purpose": "Generate all deterministic ECL artifacts."
+    },
+    {
+      "command": "python3 -m unittest discover -s tests",
+      "purpose": "Run local verification."
+    }
+  ],
+  "generated_artifact_evidence": [
+    {
+      "bytes": 11149,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/ecl.schema.json",
+      "sha256": "sha256:15d089eaee07ec27d1fc69b5418e5dc5f1b1fa55f2c9395c03cde0ad6773cf89"
+    },
+    {
+      "bytes": 5315,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/pop_aip_aro_crosswalk.json",
+      "sha256": "sha256:409c2601a23d476ff88d0e56a587761a127ceea60da907ad2f385fd370b45f8d"
+    },
+    {
+      "bytes": 657,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/adapter_manifest.json",
+      "sha256": "sha256:e85ab729665b707be4659bb91727fdc65aa2442bf0b4c27475a796fdb47328c0"
+    },
+    {
+      "bytes": 5910,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/ecl_from_openai_agents_trace.json",
+      "sha256": "sha256:e6c7d53dbb5a79ddd107c161599ba43e9e208af072d654307e3789440abf30de"
+    },
+    {
+      "bytes": 5147,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/ecl_from_langchain_trace.json",
+      "sha256": "sha256:a81a4bade813b8fd81b2100f5eb20cef9b2da88b9748e2df1b21193c0cb56b0a"
+    },
+    {
+      "bytes": 1122,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/validator_report.json",
+      "sha256": "sha256:a8bab31a644b304bccb85a5e4eb75b8adfaea0880abbde69bd17b8e81285f9a6"
+    },
+    {
+      "bytes": 1515,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/decision_log.json",
+      "sha256": "sha256:0816259a2f9c78463e98428bbf88914ce7a023bfe1477be438eb88873e095af0"
+    },
+    {
+      "bytes": 5431,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/schema_diff.json",
+      "sha256": "sha256:104712bc577e5b3566d60262ee5702b3e2d5e676eb6b241130d26d7d930d63d8"
+    },
+    {
+      "bytes": 2277,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/artifact_manifest.json",
+      "sha256": "sha256:f6a3522a86832f77c41c2ec4c7d9e31281b25cbcae11d49ff6339f5d4e17cf9a"
+    }
+  ],
+  "generated_at": "2026-06-28T00:00:00Z",
+  "goal_name": "ECL-Execution-Protocol-Builder",
+  "object_type": "ecl_evidence_bundle",
+  "reproducibility": {
+    "canonicalization": "json-sort-keys-no-whitespace",
+    "default_generated_at": "2026-06-28T00:00:00Z",
+    "hash_algorithm": "sha256"
+  },
+  "schema_version": "0.1.0",
+  "source_evidence": [
+    {
+      "bytes": 4648,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/persona-object-protocol/schema/pop.schema.json",
+      "sha256": "sha256:665f07f52ac5a998a1a85c06d13c3606781b11b22225f5cf32b51a03853e0a12"
+    },
+    {
+      "bytes": 975,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/persona-object-protocol/schema/profiles/pop-agent-runtime-profile.schema.json",
+      "sha256": "sha256:262d24e0e447acd46f83a12997a8c2212eb67a6a18b61e78188fcaac0ff0228d"
+    },
+    {
+      "bytes": 1313,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/agent-intent-protocol/schema/intent-object.schema.json",
+      "sha256": "sha256:ff14e32afb362d490da812b1dc36c90283b883e5a7c04d377c9b82e9010d4adb"
+    },
+    {
+      "bytes": 1331,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/agent-intent-protocol/schema/action-object.schema.json",
+      "sha256": "sha256:5c87ae1eb77cc00b84d9ddd96f7a39e54f433a51aff2da466197b385f4e8e107"
+    },
+    {
+      "bytes": 1108,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/agent-intent-protocol/schema/result-object.schema.json",
+      "sha256": "sha256:89940a87ab5a12402838424e0b5c36177fea1e5caef93b74d9385ea668cb6ec2"
+    },
+    {
+      "bytes": 1136,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/aro-audit/schema/evidence.schema.json",
+      "sha256": "sha256:ccc597f12c31e33e095b9933cef7e5834ce607af28b994306cdc4e5915534097"
+    },
+    {
+      "bytes": 2641,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/aro-audit/spec/receipts/minimal-receipt.schema.json",
+      "sha256": "sha256:e6c292d9e499b67ce3f83975d8e7fa39ceac3d94f82befd5ad09e817026ac9cc"
+    },
+    {
+      "bytes": 1633,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/aro-audit/spec/receipts/lifecycle-receipt.schema.json",
+      "sha256": "sha256:5a50b103c65254cbac4f4c0bed37523e81c5363b74e543a84ef94149dab11d8b"
+    },
+    {
+      "bytes": 2425,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/aro-audit/spec/AAR_v1.0.schema.json",
+      "sha256": "sha256:b04e3baa5aaf8ca65f30905f4c3de52566e6b76a90f3df2baabf88ba219883e3"
+    },
+    {
+      "bytes": 1589,
+      "exists": true,
+      "path": "/Users/zhangbin/GitHub/aro-audit/README.md",
+      "sha256": "sha256:260405ee28bd42e74a002682a67d36f32cee4e5ce60173cd2d968287b070a3de"
+    }
+  ],
+  "validation_reports": [
+    {
+      "canonical_hash": "sha256:1a23c709ca9e4c1168daa1b5be2157553e44c6261685ae6efcfa470aa78fff1d",
+      "errors": [],
+      "object_type": "ecl_validation_report",
+      "recomputed_canonical_hash": "sha256:1a23c709ca9e4c1168daa1b5be2157553e44c6261685ae6efcfa470aa78fff1d",
+      "record_hash": "sha256:8b50fe8967db599b52a6452d39c14df6e5e147fcc7abbf6260cd70f8a9faeb53",
+      "record_id": "ecl:b2776372f804ab72",
+      "schema_version": "0.1.0",
+      "valid": true
+    },
+    {
+      "canonical_hash": "sha256:ba7952581eea40dd9503946485eb53541cd55edd65bd3f2720216b56414ffd83",
+      "errors": [],
+      "object_type": "ecl_validation_report",
+      "recomputed_canonical_hash": "sha256:ba7952581eea40dd9503946485eb53541cd55edd65bd3f2720216b56414ffd83",
+      "record_hash": "sha256:9e145239ae6265a0e5f9b4323aa2ca69a53f9fa89f998981d4c2141bcc491662",
+      "record_id": "ecl:2358c9cb845df184",
+      "schema_version": "0.1.0",
+      "valid": true
+    }
+  ]
+}

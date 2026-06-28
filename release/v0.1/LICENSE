@@ -1,0 +1,14 @@
+License status: license_pending_human_approval
+
+This v0.1 release package is a publication-finalization structure only.
+No public redistribution license is granted by this file.
+
+Before any public GitHub release, Zenodo archive, DOI minting, JOSS submission,
+or external distribution, the human author must select and approve an
+OSI-approved software license for the code and an appropriate license for the
+paper and metadata.
+
+Boundary:
+- public_release=false
+- license_selected=false
+- external_distribution_authorized=false

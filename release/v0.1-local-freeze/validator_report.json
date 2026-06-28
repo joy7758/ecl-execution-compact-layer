@@ -1,0 +1,28 @@
+{
+  "all_valid": true,
+  "generated_at": "2026-06-28T00:00:00Z",
+  "object_type": "ecl_validator_report_bundle",
+  "reports": [
+    {
+      "canonical_hash": "sha256:1a23c709ca9e4c1168daa1b5be2157553e44c6261685ae6efcfa470aa78fff1d",
+      "errors": [],
+      "object_type": "ecl_validation_report",
+      "recomputed_canonical_hash": "sha256:1a23c709ca9e4c1168daa1b5be2157553e44c6261685ae6efcfa470aa78fff1d",
+      "record_hash": "sha256:8b50fe8967db599b52a6452d39c14df6e5e147fcc7abbf6260cd70f8a9faeb53",
+      "record_id": "ecl:b2776372f804ab72",
+      "schema_version": "0.1.0",
+      "valid": true
+    },
+    {
+      "canonical_hash": "sha256:ba7952581eea40dd9503946485eb53541cd55edd65bd3f2720216b56414ffd83",
+      "errors": [],
+      "object_type": "ecl_validation_report",
+      "recomputed_canonical_hash": "sha256:ba7952581eea40dd9503946485eb53541cd55edd65bd3f2720216b56414ffd83",
+      "record_hash": "sha256:9e145239ae6265a0e5f9b4323aa2ca69a53f9fa89f998981d4c2141bcc491662",
+      "record_id": "ecl:2358c9cb845df184",
+      "schema_version": "0.1.0",
+      "valid": true
+    }
+  ],
+  "schema_version": "0.1.0"
+}

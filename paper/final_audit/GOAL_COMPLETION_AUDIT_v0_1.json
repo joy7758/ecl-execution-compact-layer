@@ -1,0 +1,100 @@
+{
+  "schema_version": "0.1.0",
+  "object_type": "ecl_paper_goal_completion_audit",
+  "status": "paper_created_and_no_paid_screening_complete_submission_not_ready",
+  "date_checked": "2026-06-28",
+  "objective": "complete paper creation and venue screening while excluding paid journals",
+  "requirements": [
+    {
+      "id": "general-paper",
+      "requirement": "general manuscript exists",
+      "status": "complete",
+      "evidence": "paper/ECL_PAPER_v0_1.md"
+    },
+    {
+      "id": "joss-paper",
+      "requirement": "JOSS software-paper candidate exists",
+      "status": "complete",
+      "evidence": [
+        "paper/joss/paper.md",
+        "paper/joss/paper.bib"
+      ]
+    },
+    {
+      "id": "paper-evidence",
+      "requirement": "local paper evidence manifest exists",
+      "status": "complete",
+      "evidence": "paper/ECL_PAPER_EVIDENCE_v0_1.json"
+    },
+    {
+      "id": "venue-screening",
+      "requirement": "no-paid-journal venue screening exists",
+      "status": "complete",
+      "evidence": "paper/venue_screening/NO_PAID_JOURNAL_SCREENING_v0_1.json"
+    },
+    {
+      "id": "paid-journal-excluded",
+      "requirement": "paid journal route excluded",
+      "status": "complete",
+      "evidence": "selected_paid_journal=false"
+    },
+    {
+      "id": "preferred-zero-fee-route",
+      "requirement": "preferred zero-fee route identified",
+      "status": "complete",
+      "evidence": "preferred_no_fee_candidate=JOSS"
+    },
+    {
+      "id": "joss-preflight-audited",
+      "requirement": "JOSS submission preflight audited",
+      "status": "complete",
+      "evidence": "paper/joss/JOSS_PREFLIGHT_AUDIT_v0_1.json"
+    },
+    {
+      "id": "formal-submission",
+      "requirement": "formal submission performed",
+      "status": "not_required_for_paper_and_screening_objective_not_done",
+      "evidence": "formal_submission=false"
+    },
+    {
+      "id": "joss-submission-ready",
+      "requirement": "JOSS submission readiness",
+      "status": "incomplete_requires_human_or_repository_state",
+      "evidence": "paper/joss/JOSS_PREFLIGHT_AUDIT_v0_1.json"
+    }
+  ],
+  "complete_surfaces": {
+    "paper_creation_complete": true,
+    "venue_screening_complete": true,
+    "paid_journal_selected": false
+  },
+  "incomplete_surfaces": {
+    "formal_submission": false,
+    "joss_submission_ready": false,
+    "joss_submission_performed": false,
+    "public_release": false,
+    "github_release_created": false,
+    "license_selected": false,
+    "human_author_metadata_verified": false
+  },
+  "blocking_items_for_submission": [
+    "author_name_affiliation_orcid",
+    "osi_license",
+    "public_git_hosting",
+    "public_issue_tracker",
+    "public_development_history",
+    "release_or_archive_doi",
+    "final_author_approval"
+  ],
+  "verification": {
+    "command": "python3 -m unittest discover -s tests",
+    "expected_result": "Ran 65 tests OK"
+  },
+  "boundary": {
+    "submission_claim": false,
+    "publication_claim": false,
+    "acceptance_claim": false,
+    "paid_journal_selected": false,
+    "public_release": false
+  }
+}

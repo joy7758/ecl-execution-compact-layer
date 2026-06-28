@@ -1,0 +1,13 @@
+[project]
+name = "ecl-execution-compact-layer"
+version = "0.1.0"
+description = "Deterministic local Execution Compact Layer schema, validator, adapters, and audit artifact builder."
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.ecl]
+schema = "schemas/ecl-execution-compact-layer.schema.json"
+artifacts = "out/ecl_artifacts"
+state = "state/ecl_goal_state.json"
+log = "logs/ecl_goal.log"
+

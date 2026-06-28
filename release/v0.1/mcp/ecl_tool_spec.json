@@ -1,0 +1,98 @@
+{
+  "schema_version": "0.1.0",
+  "object_type": "ecl_mcp_style_tool_spec_stub",
+  "status": "local_anchor_stub",
+  "tools": [
+    {
+      "name": "ecl.wrap",
+      "deterministic": true,
+      "input_schema": {
+        "type": "object",
+        "required": [
+          "trace"
+        ],
+        "properties": {
+          "trace": {
+            "type": "object"
+          }
+        },
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "required": [
+          "ecl_object"
+        ],
+        "properties": {
+          "ecl_object": {
+            "type": "object"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "ecl.emit",
+      "deterministic": true,
+      "input_schema": {
+        "type": "object",
+        "required": [
+          "ecl_object"
+        ],
+        "properties": {
+          "ecl_object": {
+            "type": "object"
+          }
+        },
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "required": [
+          "emission"
+        ],
+        "properties": {
+          "emission": {
+            "type": "object"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "ecl.verify",
+      "deterministic": true,
+      "input_schema": {
+        "type": "object",
+        "required": [
+          "ecl_object"
+        ],
+        "properties": {
+          "ecl_object": {
+            "type": "object"
+          }
+        },
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "required": [
+          "validation_result"
+        ],
+        "properties": {
+          "validation_result": {
+            "type": "object"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  ],
+  "constraints": {
+    "local_stub_only": true,
+    "network": false,
+    "runtime_binding": false,
+    "execution_logic": false,
+    "schema_changes": false
+  }
+}

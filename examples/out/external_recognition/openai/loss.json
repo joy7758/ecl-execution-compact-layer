@@ -1,0 +1,7 @@
+{
+  "confidence": 0.75,
+  "missing_fields": [
+    "reasoning"
+  ],
+  "type": "structural"
+}

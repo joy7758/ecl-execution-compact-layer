@@ -1,0 +1,34 @@
+{
+  "artifact_paths": {
+    "evidence_bundle": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/sdk/out/dependency/ecl_2358c9cb845df184/evidence_bundle.json",
+    "execution_trace": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/sdk/out/dependency/ecl_2358c9cb845df184/execution_trace.json",
+    "replay_result": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/sdk/out/dependency/ecl_2358c9cb845df184/replay_result.json"
+  },
+  "deterministic": true,
+  "ecl_id": "ecl:2358c9cb845df184",
+  "object_type": "ecl_dependency_verify",
+  "replay": {
+    "artifact_hashes": {
+      "evidence_bundle": "sha256:baf478a58ecd2e904334dce03ba1f7e0f217b44f65b62d2f272886a2ddd7b8dc",
+      "execution_trace": "sha256:57570dfc6c0ccaaa99ba317742386c31de6426a7529f15aa753cafe76c809a74",
+      "replay_result": "sha256:b46e65b04eb6a50bce20c68b6d19db96b7928f9712d458214ac5145c9635225d"
+    },
+    "deterministic": true,
+    "object_type": "ecl_external_replay_verification",
+    "schema_version": "0.1.0",
+    "valid": true,
+    "verification_hash": "sha256:db2d8eb5ab340533ebbfbc2f9638516cd6f269e59efa0cd2a6ba02d07147bf58"
+  },
+  "schema_version": "0.1.0",
+  "valid": true,
+  "validation": {
+    "canonical_hash": "sha256:2ac7a3a935f13212d737adb844b3b02113bd26f4d266634607adb91343a83b47",
+    "errors": [],
+    "object_type": "ecl_validation_report",
+    "recomputed_canonical_hash": "sha256:2ac7a3a935f13212d737adb844b3b02113bd26f4d266634607adb91343a83b47",
+    "record_hash": "sha256:ae7bb9f08788051b4eb19e032631101403c6cebb1f5d96c54c3a99d0b76740ff",
+    "record_id": "ecl:2358c9cb845df184",
+    "schema_version": "0.1.0",
+    "valid": true
+  }
+}

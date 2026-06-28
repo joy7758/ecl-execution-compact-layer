@@ -1,0 +1,135 @@
+{
+  "schema_version": "0.1.0",
+  "object_type": "ecl_no_paid_journal_screening",
+  "status": "screening_complete_no_submission_performed",
+  "date_checked": "2026-06-28",
+  "objective": "screen submission venues for the ECL paper while excluding paid journals",
+  "selected_paid_journal": false,
+  "formal_submission": false,
+  "preferred_no_fee_candidate": "JOSS",
+  "preferred_candidate_package": "paper/joss/JOSS_SUBMISSION_MANIFEST_v0_1.json",
+  "venues": [
+    {
+      "name": "Journal of Open Source Software",
+      "short_name": "JOSS",
+      "type": "software_paper_journal",
+      "classification": "eligible_zero_fee",
+      "rank": 1,
+      "fit": "strong_for_software_artifact_after_public_packaging",
+      "fee_policy": "no_paid_journal_route_selected",
+      "required_next_steps": [
+        "public repository release decision",
+        "license confirmation",
+        "author metadata confirmation",
+        "JOSS short paper formatting"
+      ],
+      "sources": [
+        "https://joss.theoj.org/",
+        "https://joss.readthedocs.io/en/latest/submitting.html"
+      ]
+    },
+    {
+      "name": "Journal of Systems and Software",
+      "short_name": "JSS",
+      "type": "software_engineering_journal",
+      "classification": "eligible_non_oa_route_only",
+      "rank": 2,
+      "fit": "strong_full_paper_target_after_evaluation_expansion",
+      "fee_policy": "exclude_open_access_apc_route",
+      "required_next_steps": [
+        "confirm no author-side fee on selected submission route",
+        "expand evaluation beyond local fixtures",
+        "prepare journal formatting"
+      ],
+      "sources": [
+        "https://www.sciencedirect.com/journal/journal-of-systems-and-software",
+        "https://www.elsevier.com/researcher/author/publishing-options"
+      ]
+    },
+    {
+      "name": "Empirical Software Engineering",
+      "short_name": "EMSE",
+      "type": "software_engineering_journal",
+      "classification": "eligible_non_oa_route_only",
+      "rank": 3,
+      "fit": "conditional_after_empirical_evaluation_expansion",
+      "fee_policy": "exclude_open_access_apc_route",
+      "required_next_steps": [
+        "add empirical study design",
+        "increase trace corpus",
+        "report failure cases and ablations",
+        "confirm no author-side fee on selected submission route"
+      ],
+      "sources": [
+        "https://link.springer.com/journal/10664",
+        "https://www.springer.com/gp/open-access/springer-open-choice"
+      ]
+    },
+    {
+      "name": "Software and Systems Modeling",
+      "short_name": "SoSyM",
+      "type": "modeling_journal",
+      "classification": "eligible_non_oa_route_only",
+      "rank": 4,
+      "fit": "conditional_after_formal_model_expansion",
+      "fee_policy": "exclude_open_access_apc_route",
+      "required_next_steps": [
+        "strengthen formal model",
+        "state invariants and proof obligations",
+        "confirm no author-side fee on selected submission route"
+      ],
+      "sources": [
+        "https://link.springer.com/journal/10270",
+        "https://www.springer.com/gp/open-access/springer-open-choice"
+      ]
+    }
+  ],
+  "non_journal_options": [
+    {
+      "name": "arXiv",
+      "classification": "preprint_not_journal",
+      "boundary": "not_peer_reviewed_journal_publication",
+      "sources": [
+        "https://info.arxiv.org/help/submit/index.html"
+      ]
+    },
+    {
+      "name": "Zenodo",
+      "classification": "artifact_archive_not_journal",
+      "boundary": "not_peer_reviewed_journal_publication",
+      "sources": [
+        "https://zenodo.org/"
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "name": "paid_open_access_journal_routes",
+      "classification": "excluded_paid_route",
+      "reason": "objective excludes paid journals"
+    },
+    {
+      "name": "ACM TOSEM",
+      "classification": "exclude_for_now_fee_uncertain_or_apc_risk",
+      "reason": "requires institution-specific fee verification before it can satisfy no-paid-journal screening",
+      "sources": [
+        "https://libraries.acm.org/subscriptions-access/acmopen"
+      ]
+    },
+    {
+      "name": "IEEE Access",
+      "classification": "excluded_paid_open_access",
+      "reason": "article processing charge route is not aligned with the no-paid-journal constraint",
+      "sources": [
+        "https://ieeeaccess.ieee.org/guide-for-authors/article-processing-charges/"
+      ]
+    }
+  ],
+  "boundary": {
+    "paid_journal_selected": false,
+    "formal_submission": false,
+    "public_release": false,
+    "acceptance_claim": false,
+    "external_validation": false
+  }
+}

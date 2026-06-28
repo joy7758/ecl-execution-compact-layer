@@ -1,0 +1,158 @@
+{
+  "canonical_hash": "sha256:2ac7a3a935f13212d737adb844b3b02113bd26f4d266634607adb91343a83b47",
+  "ecl_id": "ecl:2358c9cb845df184",
+  "ecl_object": {
+    "action": {
+      "aip_action_ref": "aip-action:6f11625a75ca831e",
+      "execution_mode": "delegated",
+      "name": "load_schema",
+      "parameters_hash": "sha256:a2eddb6fbbac3377c1cd84af612280ec3b462ca173e38b74a69597fc49dabfce",
+      "raw_ref": "raw-action:6f11625a75ca831e",
+      "side_effect_class": "read_only",
+      "summary": "load_schema",
+      "tool_ref": "load_schema"
+    },
+    "audit": {
+      "decisions": [
+        {
+          "decision": "preserve_protocol_boundaries",
+          "decision_id": "ecl-boundary-001",
+          "reason": "ECL references POP, AIP, and ARO fields without redefining their source schemas."
+        },
+        {
+          "decision": "use_langchain_trace",
+          "decision_id": "ecl-adapter-001",
+          "reason": "The source trace shape matched this adapter entrypoint."
+        },
+        {
+          "decision": "hash_canonical_json",
+          "decision_id": "ecl-determinism-001",
+          "reason": "Every generated ECL record must be reproducible from sorted-key JSON."
+        }
+      ],
+      "source_map": [
+        {
+          "ecl_path": "$.state.persona_ref",
+          "mapping_type": "reference",
+          "source_path": "$.id or $.persona_id",
+          "source_protocol": "POP"
+        },
+        {
+          "ecl_path": "$.intent",
+          "mapping_type": "normalized_copy",
+          "source_path": "$.intent and $.constraints",
+          "source_protocol": "AIP"
+        },
+        {
+          "ecl_path": "$.action",
+          "mapping_type": "normalized_copy",
+          "source_path": "$.action and execution metadata",
+          "source_protocol": "AIP"
+        },
+        {
+          "ecl_path": "$.evidence",
+          "mapping_type": "reference",
+          "source_path": "trace events, policy decisions, result references, and receipt/evidence refs",
+          "source_protocol": "ARO"
+        },
+        {
+          "ecl_path": "$.evidence.hashes",
+          "mapping_type": "derived_hash",
+          "source_path": "canonical source trace and ECL record",
+          "source_protocol": "ECL"
+        }
+      ],
+      "validation": [
+        {
+          "report_ref": "out/ecl_artifacts/validator_report.json",
+          "status": "not_run",
+          "validator": "ecl.validator"
+        }
+      ]
+    },
+    "determinism": {
+      "adapter_version": "0.1.0",
+      "canonicalization": "json-sort-keys-no-whitespace",
+      "generated_by": "ecl-execution-compact-layer",
+      "hash_algorithm": "sha256"
+    },
+    "ecl_id": "ecl:2358c9cb845df184",
+    "evidence": {
+      "aip_result_ref": "aip-result:a7c8252db7b9a786",
+      "aro_evidence_ref": "aro-evidence:fe7fa1eb5a9966b9",
+      "aro_receipt_ref": "aro-receipt:214eedcdf77b3dec",
+      "event_chain": [
+        {
+          "chain_hash": "sha256:62dd4e4b8b8a0b1c1da42752f5d7874a95ba24f6ee889d80d620f2ebb0ff44ee",
+          "event_hash": "sha256:dcf2b643e136130bf23cd2294a0bd840a1a4eb99cd79c3481227b6ba616986bc",
+          "event_id": "event-0000",
+          "event_ref": "event-0000",
+          "event_type": "chain"
+        },
+        {
+          "chain_hash": "sha256:60756499bc5b6a0ea8f3a3ada5723b960366403785ab0ffe05481a498fcc499c",
+          "event_hash": "sha256:da0ef8c55177d3bee323b0b8ff0042a1f1ef442dd7078aaa6966f2c84f3bdb78",
+          "event_id": "event-0001",
+          "event_ref": "event-0001",
+          "event_type": "tool"
+        }
+      ],
+      "hashes": {
+        "canonical_hash": "sha256:2ac7a3a935f13212d737adb844b3b02113bd26f4d266634607adb91343a83b47",
+        "event_chain_hash": "sha256:b1414019e24dc840fc8b23258647ae749043e06aa696af03c7c24fc0ce20c5a9",
+        "source_trace_hash": "sha256:c7ca19e1495f79c1461265687b9174964bebd36f79fb0c5c6dc364d6c547f074"
+      },
+      "output_refs": [
+        "out/ecl_artifacts/ecl_from_langchain_trace.json"
+      ],
+      "policy_decisions": [
+        {
+          "decision": "allow",
+          "decision_ref": "policy-langchain-local",
+          "reason": "Fixture-only trace conversion."
+        }
+      ],
+      "result_status": "completed",
+      "result_summary": "LangChain run converted into ECL",
+      "trace_refs": [
+        "lc-run-demo-001"
+      ]
+    },
+    "intent": {
+      "aip_intent_ref": "aip-intent:8f7baafc8c71e2eb",
+      "constraints": {
+        "deterministic": true,
+        "resume_supported": true
+      },
+      "evidence_requirements": {
+        "hash_chain": true
+      },
+      "expected_result": {
+        "artifact_type": "ecl_execution_record"
+      },
+      "operation": "adapt_langchain_trace",
+      "raw_ref": "raw-intent:c7ca19e1495f79c1",
+      "summary": "Convert a LangChain run into an ECL record"
+    },
+    "lineage": {
+      "checkpoint_ref": "sdk://checkpoint",
+      "generated_at": "2026-06-28T00:00:00Z",
+      "source_adapter": "langchain_trace",
+      "source_trace_hash": "sha256:c7ca19e1495f79c1461265687b9174964bebd36f79fb0c5c6dc364d6c547f074",
+      "source_trace_ref": "examples/citation_repro_demo.py:langchain"
+    },
+    "object_type": "ecl_execution_record",
+    "schema_version": "0.1.0-draft",
+    "state": {
+      "actor_ref": "agent:ecl-builder",
+      "correlation_id": "corr-ecl-langchain-001",
+      "execution_status": "completed",
+      "lifecycle_phase": "complete",
+      "persona_ref": "persona:mentor:v1",
+      "runtime_ref": "langchain"
+    }
+  },
+  "emit_hash": "sha256:ae7bb9f08788051b4eb19e032631101403c6cebb1f5d96c54c3a99d0b76740ff",
+  "object_type": "ecl_dependency_emit",
+  "schema_version": "0.1.0"
+}
