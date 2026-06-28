@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 import sys
 from typing import Any
@@ -61,10 +62,17 @@ def run_runtime(runtime: str, trace_path: Path) -> dict[str, Any]:
 
 
 def main() -> int:
-    results = {
-        runtime: run_runtime(runtime, trace_path)
-        for runtime, trace_path in TRACE_FIXTURES.items()
-    }
+    previous_dependency_output = os.environ.get("ECL_DEPENDENCY_OUTPUT_DIR")
+    if previous_dependency_output is None:
+        os.environ["ECL_DEPENDENCY_OUTPUT_DIR"] = str(OUTPUT_ROOT / "dependency")
+    try:
+        results = {
+            runtime: run_runtime(runtime, trace_path)
+            for runtime, trace_path in TRACE_FIXTURES.items()
+        }
+    finally:
+        if previous_dependency_output is None:
+            os.environ.pop("ECL_DEPENDENCY_OUTPUT_DIR", None)
     summary = {
         "schema_version": "0.1.0",
         "object_type": "ecl_citation_repro_demo_result",

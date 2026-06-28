@@ -22,6 +22,8 @@ paper/joss/JOSS_SUBMISSION_MANIFEST_v0_1.json
 paper/joss/JOSS_PREFLIGHT_AUDIT_v0_1.md
 paper/joss/JOSS_PREFLIGHT_AUDIT_v0_1.json
 paper/joss/AUTHOR_METADATA_TEMPLATE_v0_1.json
+paper/paper.md
+paper/paper.bib
 ```
 
 The manuscript currently contains:
@@ -71,8 +73,45 @@ Current local verification:
 
 ```text
 python3 -m unittest discover -s tests
-Ran 65 tests
+Ran 75 tests
 OK
+```
+
+Synthetic trace-corpus evaluation:
+
+```text
+python3 experiments/evaluate_trace_corpus.py
+case_count=12
+by_runtime={"langchain": 6, "openai": 6}
+valid_count=12
+deterministic_count=12
+loss_expectation_met_count=12
+surface_coverage={"action": 12, "evidence": 12, "intent": 12, "state": 12}
+evaluation_hash=sha256:2434da21056811e7eacf1ffac6944d5420ddeb2aa783f74423326a2b54a33974
+```
+
+Negative validation-matrix evaluation:
+
+```text
+python3 experiments/evaluate_validation_matrix.py
+baseline_valid=true
+case_count=8
+expected_invalid_count=8
+invalid_detected_count=8
+expectation_met_count=8
+evaluation_hash=sha256:00fe0ee8952988f7460280b40554889a890c93f9d181a6c9d8ee8b0194b031c0
+```
+
+Field-level mapping coverage evaluation:
+
+```text
+python3 experiments/evaluate_mapping_coverage.py
+case_count=12
+total_source_fields=81
+direct_mapped_field_count=80
+source_hash_only_field_count=1
+loss_missing_field_count=4
+evaluation_hash=sha256:8a8b820ecbdd1b4e88a2d8e07b05be2d479add0f0c6c3265292cc5a86763e43a
 ```
 
 Citation reproducibility:
@@ -97,6 +136,7 @@ These fields are outside the current publication activation step and are intenti
 - Conflict-of-interest statement
 - Data availability statement
 - Public development history eligibility
+- External user, dependency, citation, or independent research-impact signal
 - Release/archive DOI decision if required
 - Final JOSS submission approval
 
@@ -105,6 +145,7 @@ These fields are outside the current publication activation step and are intenti
 - `formal_submission=false`
 - `public_release=true`
 - `third_party_validation=false`
+- `synthetic_corpus_only=true`
 - `ecosystem_adoption=false`
 - `paid_journal_route_selected=false`
 - `joss_submission_performed=false`

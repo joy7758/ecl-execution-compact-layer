@@ -1,8 +1,8 @@
 {
   "artifact_paths": {
-    "evidence_bundle": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/sdk/out/dependency/ecl_1c591e6e8beeb89f/evidence_bundle.json",
-    "execution_trace": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/sdk/out/dependency/ecl_1c591e6e8beeb89f/execution_trace.json",
-    "replay_result": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/sdk/out/dependency/ecl_1c591e6e8beeb89f/replay_result.json"
+    "evidence_bundle": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/mcp/out/dependency/ecl_1c591e6e8beeb89f/evidence_bundle.json",
+    "execution_trace": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/mcp/out/dependency/ecl_1c591e6e8beeb89f/execution_trace.json",
+    "replay_result": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/mcp/out/dependency/ecl_1c591e6e8beeb89f/replay_result.json"
   },
   "canonical_hash": "sha256:6dfd1a6b443a7d847ef7344f3d90519f657753b3013a3fb27d3d0e8e4f6b20be",
   "deterministic": true,
@@ -16,5 +16,5 @@
     "ecl.verify"
   ],
   "valid": true,
-  "verification_hash": "sha256:9b45a96f9049833c954ad53db8a0d99402dd3401d8e5c0a0267146c01b4c79c1"
+  "verification_hash": "sha256:bdcf2ddb30a0e5975782f77fa86415226c46652bbd5490a667a2f2106dd65a5f"
 }

@@ -12,29 +12,29 @@
     {
       "command": "python3 -m unittest discover -s tests",
       "status": "passed",
-      "result": "Ran 65 tests OK"
+      "result": "Ran 75 tests OK"
     },
     {
       "command": "python3 sdk/demo_dependency_mode.py",
       "status": "passed",
       "all_valid": true,
       "all_deterministic": true,
-      "result_hash": "sha256:d404cb3d74f2124927c6a64f5202b19cccdb59b4f94e357219fd787c102ed0d3"
+      "result_hash": "sha256:e6decc8c2c4117011db44c6bcd62956b62344fe47871fc6564913cac2c156ac2"
     },
     {
       "command": "python3 examples/external_recognition_demo.py",
       "status": "passed",
       "all_valid": true,
       "all_deterministic": true,
-      "result_hash": "sha256:3b75d317c7ba5c7f23a36431750c6fdbeba2164c55c4dd5af6346e938e012862"
+      "result_hash": "sha256:dfafe2572fdf1ee2f48732d0c3931795151afcdeb0b1ead11b887747a99f7441"
     }
   ],
   "core_hashes": {
     "schemas/ecl-execution-compact-layer.schema.json": "15d089eaee07ec27d1fc69b5418e5dc5f1b1fa55f2c9395c03cde0ad6773cf89",
-    "sdk/ecl_dependency.py": "b578b3fd326e046b43c67ed47fe7e83e8fb11d451301cd384659253b003d1f09",
+    "sdk/ecl_dependency.py": "6e596c3f05208a0d1cd45b8da773a5a18abd52c347402be1ecfef41be250d343",
     "sdk/ecl.py": "6862a865bd1057b0159c135a75ee8fa4492399794c063a21c02aa12e90f5ed04",
     "mcp/ecl_tool_spec.json": "907a3ba39e1f64736c19c6a58a083e2361345c2a5ac80041e1044be546154688",
-    "mcp/ecl_server_stub.py": "bd834ad160a05d97fe7a83ff44a42536491a58329212e6f8649ff03a8e60e001"
+    "mcp/ecl_server_stub.py": "7d73e5159b78881bdd63fe0360251f07c1014477302e11f1d4bb77a88ad33d57"
   },
   "boundary": {
     "deterministic": true,

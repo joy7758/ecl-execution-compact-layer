@@ -71,8 +71,15 @@ def _self_check() -> dict[str, Any]:
 
 
 def main() -> int:
-    result = _self_check()
     out_dir = Path(os.environ.get("ECL_MCP_STUB_OUTPUT_DIR", ROOT / "mcp" / "out"))
+    previous_dependency_output = os.environ.get("ECL_DEPENDENCY_OUTPUT_DIR")
+    if previous_dependency_output is None:
+        os.environ["ECL_DEPENDENCY_OUTPUT_DIR"] = str(out_dir / "dependency")
+    try:
+        result = _self_check()
+    finally:
+        if previous_dependency_output is None:
+            os.environ.pop("ECL_DEPENDENCY_OUTPUT_DIR", None)
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / "ecl_server_stub_result.json"
     out_path.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")

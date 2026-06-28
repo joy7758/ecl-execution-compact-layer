@@ -26,7 +26,7 @@
     "source_sdk_dependency_sha256": "6e596c3f05208a0d1cd45b8da773a5a18abd52c347402be1ecfef41be250d343",
     "source_sdk_facade_sha256": "6862a865bd1057b0159c135a75ee8fa4492399794c063a21c02aa12e90f5ed04",
     "source_mcp_tool_spec_sha256": "907a3ba39e1f64736c19c6a58a083e2361345c2a5ac80041e1044be546154688",
-    "source_mcp_server_stub_sha256": "bd834ad160a05d97fe7a83ff44a42536491a58329212e6f8649ff03a8e60e001"
+    "source_mcp_server_stub_sha256": "7d73e5159b78881bdd63fe0360251f07c1014477302e11f1d4bb77a88ad33d57"
   },
   "boundary": {
     "schema_modified": false,

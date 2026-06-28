@@ -8,7 +8,7 @@ Date: 2026-06-28
 
 ## Abstract
 
-Agent runtimes increasingly expose traces, tool calls, callbacks, and event streams, but these records are usually tied to a specific framework. This paper presents Execution Compact Layer (ECL), a deterministic execution intermediate representation for agent systems. ECL maps runtime traces into four replayable surfaces: `state`, `intent`, `action`, and `evidence`. The v0.1 system includes a frozen JSON schema, OpenAI Agents SDK and LangChain trace adapters, deterministic validation and replay, an embeddable SDK, a dependency-mode API, and a local MCP-style anchor stub. Local evaluation shows stable replay hashes, cross-runtime fixture conversion, schema validation, and no drift across the locked v0.1 surfaces. ECL is not a framework, public standard, benchmark, or external adoption claim. It is a local, reproducible system artifact for representing agent execution semantics across runtime boundaries.
+Agent runtimes increasingly expose traces, tool calls, callbacks, and event streams, but these records are usually tied to a specific framework. This paper presents Execution Compact Layer (ECL), a deterministic execution intermediate representation for agent systems. ECL maps runtime traces into four replayable surfaces: `state`, `intent`, `action`, and `evidence`. The v0.1 system includes a frozen JSON schema, OpenAI Agents SDK and LangChain trace adapters, deterministic validation and replay, an embeddable SDK, a dependency-mode API, and an MCP-shaped local wrapper. Local evaluation shows stable replay hashes, cross-runtime fixture conversion, schema validation, and no drift across the locked v0.1 surfaces. ECL is not a framework, public standard, benchmark, or external adoption claim. It is a local, reproducible system artifact for representing agent execution semantics across runtime boundaries.
 
 ## 1. Introduction
 
@@ -21,7 +21,7 @@ This paper makes four contributions:
 1. A four-surface execution model: `state`, `intent`, `action`, and `evidence`.
 2. A deterministic hash and replay contract for local execution records.
 3. A cross-runtime mapping surface for OpenAI Agents SDK-style and LangChain-style traces.
-4. A dependency interface and local MCP-style stub that expose ECL without modifying host runtimes.
+4. A dependency interface and MCP-shaped local wrapper that expose ECL without modifying host runtimes.
 
 ## 2. Problem Statement
 
@@ -52,7 +52,7 @@ OpenAI Agents SDK exposes tracing for agent workflows, and LangChain exposes tra
 
 ### 3.2 Tool and Protocol Surfaces
 
-The Model Context Protocol (MCP) defines a protocol surface for tools and context exchange. ECL's local MCP-style stub is not a published MCP server and not a registry integration. It is a local anchor surface that demonstrates how an execution representation can be exposed through tool-shaped functions.
+The Model Context Protocol (MCP) defines a protocol surface for tools and context exchange. ECL's MCP-shaped local wrapper is not a conformant MCP implementation, JSON-RPC transport, published MCP server, or registry integration. It is a local anchor surface that demonstrates how an execution representation can be exposed through tool-shaped functions.
 
 ### 3.3 Observability and Trace Standards
 
@@ -64,7 +64,7 @@ Compiler and runtime ecosystems use intermediate representations such as LLVM IR
 
 ### 3.5 Canonicalization
 
-ECL's deterministic hash model depends on canonical JSON behavior: sorted keys, no insignificant whitespace, and SHA-256 hashing. This design aligns with the general role of JSON canonicalization schemes in making structured data hashable and reproducible.
+ECL's deterministic hash model depends on sorted-key compact JSON serialization and SHA-256 hashing. This local serialization is used for tested hash stability and is not claimed as full RFC 8785/JCS compliance.
 
 ## 4. ECL Model
 
@@ -103,7 +103,7 @@ Let:
 - `L` be a loss report.
 - `P` be the schema and hash validator.
 - `R` be the replay function.
-- `H` be SHA-256 over canonical JSON.
+- `H` be SHA-256 over deterministic sorted-key compact JSON.
 
 The adapter contract is:
 
@@ -164,10 +164,10 @@ The mapping rule is:
 
 | Runtime source | ECL surface |
 | --- | --- |
-| model input | state |
-| reasoning or requested operation | intent |
+| runtime metadata, actor, correlation | state |
+| model input, reasoning, requested operation | intent |
 | tool call or run step | action |
-| trace events and result refs | evidence |
+| trace events, outputs, result refs | evidence |
 
 ### 6.3 Replay Layer
 
@@ -197,16 +197,16 @@ payload = ecl.emit(ecl_object)
 result = ecl.verify(ecl_object)
 ```
 
-### 6.5 Local MCP-style Anchor
+### 6.5 MCP-Shaped Local Wrapper
 
-The MCP-style stub exposes the dependency API through tool-shaped functions:
+The MCP-shaped local wrapper exposes the dependency API through tool-shaped functions:
 
 ```text
 mcp/ecl_tool_spec.json
 mcp/ecl_server_stub.py
 ```
 
-This is a local stub only. It is not a registry plugin, not a published MCP server, and not an external adoption signal.
+This is a local wrapper only. It is not a conformant MCP implementation, JSON-RPC transport, registry plugin, published MCP server, and not an external adoption signal.
 
 ## 7. Architecture
 
@@ -219,7 +219,7 @@ flowchart LR
   VAL --> REP["Deterministic replay"]
   REP --> ART["execution_trace.json / evidence_bundle.json / replay_result.json"]
   ECL --> SDK["SDK dependency API: wrap / emit / verify"]
-  SDK --> MCP["Local MCP-style stub"]
+  SDK --> MCP["MCP-shaped local wrapper"]
 ```
 
 ## 8. Evaluation
@@ -234,9 +234,11 @@ The evaluation is local and fixture-based. It does not use external APIs and doe
 - Replay determinism.
 - SDK API stability.
 - Dependency API stability.
-- Local MCP-style anchor safety.
+- MCP-shaped local wrapper safety.
 - Citation reproducibility demo stability.
 - No drift in locked core files.
+- Synthetic cross-runtime trace-corpus conversion, loss reporting, and replay stability.
+- Field-level mapping coverage over the synthetic trace corpus.
 
 ### 8.2 Current Local Results
 
@@ -244,9 +246,55 @@ The latest local validation run reported:
 
 ```text
 python3 -m unittest discover -s tests
-Ran 65 tests
+Ran 75 tests
 OK
 ```
+
+The synthetic trace-corpus evaluation reported:
+
+```text
+python3 experiments/evaluate_trace_corpus.py
+case_count=12
+by_runtime={"langchain": 6, "openai": 6}
+valid_count=12
+deterministic_count=12
+loss_expectation_met_count=12
+loss_detected_count=3
+surface_coverage={"action": 12, "evidence": 12, "intent": 12, "state": 12}
+surface_coverage_by_runtime={"langchain": {"action": 6, "evidence": 6, "intent": 6, "state": 6}, "openai": {"action": 6, "evidence": 6, "intent": 6, "state": 6}}
+loss_type_counts={"semantic": 9, "structural": 3}
+evaluation_hash=sha256:2434da21056811e7eacf1ffac6944d5420ddeb2aa783f74423326a2b54a33974
+```
+
+The corpus contains local synthetic stress cases for complete traces, missing fields, unknown fields, failure status, timestamp drift, nested runs, and implicit tool events. It is not production trace evidence, third-party validation, or a benchmark result.
+
+The negative validation-matrix evaluation reported:
+
+```text
+python3 experiments/evaluate_validation_matrix.py
+baseline_valid=true
+case_count=8
+expected_invalid_count=8
+invalid_detected_count=8
+expectation_met_count=8
+evaluation_hash=sha256:00fe0ee8952988f7460280b40554889a890c93f9d181a6c9d8ee8b0194b031c0
+```
+
+The validation matrix mutates a valid ECL record to test rejection behavior for missing required surfaces, wrong schema version, tampered canonical hash, source-hash mismatch, empty event chains, additional root properties, invalid action modes, and missing evidence hashes.
+
+The field-level mapping coverage evaluation reported:
+
+```text
+python3 experiments/evaluate_mapping_coverage.py
+case_count=12
+total_source_fields=81
+direct_mapped_field_count=80
+source_hash_only_field_count=1
+loss_missing_field_count=4
+evaluation_hash=sha256:8a8b820ecbdd1b4e88a2d8e07b05be2d479add0f0c6c3265292cc5a86763e43a
+```
+
+This mapping coverage evaluation records whether each top-level source trace field is projected into an ECL surface or retained only through the source trace hash. It is synthetic corpus evidence, not a benchmark or external adoption signal.
 
 The citation reproducibility demo reported:
 
@@ -257,7 +305,7 @@ all_deterministic=true
 result_hash=sha256:358a039db2c737b8905d91e37e1ed8fc5ea4081dab8d25a0523b4958f7061651
 ```
 
-The MCP-style anchor self-check reported valid deterministic execution with:
+The MCP-shaped local wrapper self-check reported valid deterministic execution with:
 
 ```text
 verification_hash=sha256:3770d486d473720ae7d84546906e24214ee156ad458bee8fec3c59873ea153b8
@@ -277,7 +325,7 @@ mcp/ecl_server_stub.py
 
 ### 8.4 Interpretation
 
-The results support a narrow claim: ECL v0.1 is locally reproducible over the included fixtures and deterministic entrypoints. The results do not support claims of public release, ecosystem adoption, production reliability, or benchmark superiority.
+The results support a narrow claim: ECL v0.1 is locally reproducible over the included fixtures, synthetic trace corpus, and deterministic entrypoints. The results do not support claims of ecosystem adoption, production reliability, third-party validation, or benchmark superiority.
 
 ## 9. Discussion
 
@@ -285,7 +333,7 @@ ECL is most useful when execution records must be compared, replayed, or cited a
 
 ECL also separates representation from execution. A host runtime executes. ECL records and replays the execution representation. This separation keeps the dependency interface non-invasive and avoids modifying host frameworks.
 
-The local MCP-style stub is intentionally conservative. It demonstrates protocol surface readability but does not claim protocol adoption.
+The MCP-shaped local wrapper is intentionally conservative. It demonstrates tool-shaped surface readability but does not claim MCP protocol conformance or adoption.
 
 ## 10. Limitations
 
@@ -298,7 +346,7 @@ The local MCP-style stub is intentionally conservative. It demonstrates protocol
 
 ## 11. Conclusion
 
-ECL v0.1 demonstrates that agent execution traces can be mapped into a deterministic, replayable, hash-stable execution IR with a minimal dependency interface. The system is locally validated and citation-ready, but the paper-level claim remains deliberately narrow: ECL is a reproducible execution representation stack, not a framework, standard, public release, or external adoption result.
+ECL v0.1 demonstrates that agent execution traces can be mapped into a deterministic, replayable, hash-stable execution IR with a minimal dependency interface. The system is locally validated and citation-ready, but the paper-level claim remains deliberately narrow: ECL is a reproducible execution representation stack, not a framework, formal standard, production deployment, third-party validation result, or external adoption result.
 
 ## References
 

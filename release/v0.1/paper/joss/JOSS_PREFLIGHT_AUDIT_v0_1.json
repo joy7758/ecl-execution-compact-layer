@@ -28,7 +28,44 @@
       "id": "local-tests",
       "requirement": "local test suite passes",
       "status": "pass",
-      "evidence": "python3 -m unittest discover -s tests -> Ran 65 tests OK"
+      "evidence": "python3 -m unittest discover -s tests -> Ran 75 tests OK"
+    },
+    {
+      "id": "trace-corpus-evaluation",
+      "requirement": "synthetic trace-corpus evaluation passes",
+      "status": "pass",
+      "evidence": "python3 experiments/evaluate_trace_corpus.py -> 12 valid and deterministic cases"
+    },
+    {
+      "id": "mapping-coverage-evaluation",
+      "requirement": "field-level mapping coverage evaluation passes",
+      "status": "pass",
+      "evidence": "python3 experiments/evaluate_mapping_coverage.py -> 80 directly mapped source fields and 1 source-hash-only field"
+    },
+    {
+      "id": "joss-gate-verifier",
+      "requirement": "local JOSS gate verifier exists and records external blockers",
+      "status": "pass",
+      "evidence": "python3 scripts/joss_gate_verifier.py -> joss_gate_failed_external_blockers"
+    },
+    {
+      "id": "open-source-metadata",
+      "requirement": "citation, changelog, contribution, support, and CI metadata exist",
+      "status": "pass",
+      "evidence": [
+        "CITATION.cff",
+        "CHANGELOG.md",
+        "CONTRIBUTING.md",
+        "SUPPORT.md",
+        ".github/workflows/tests.yml",
+        ".github/workflows/joss-paper.yml",
+        ".github/PULL_REQUEST_TEMPLATE.md",
+        ".github/ISSUE_TEMPLATE/bug_report.yml",
+        ".github/ISSUE_TEMPLATE/research_use_report.yml",
+        ".github/ISSUE_TEMPLATE/trace_mapping_case.yml",
+        "paper/paper.md",
+        "paper/paper.bib"
+      ]
     },
     {
       "id": "no-paid-journal",
@@ -73,6 +110,12 @@
       "evidence": "new public release; six-month public development history not verified"
     },
     {
+      "id": "external-impact",
+      "requirement": "external research use, citation, dependency, or independent user signal is verified",
+      "status": "unverified",
+      "evidence": "no external dependency, citation, or third-party user signal verified in current worktree"
+    },
+    {
       "id": "author-metadata",
       "requirement": "author metadata contains no placeholders",
       "status": "pass",
@@ -93,6 +136,7 @@
     "submission_preflight_passed": false,
     "blocking_items": [
       "public-history",
+      "external-impact",
       "final_joss_submission_approval"
     ]
   },
@@ -104,6 +148,7 @@
   "boundary": {
     "formal_submission": false,
     "joss_submission_performed": false,
+    "public_repo_synced": true,
     "public_release": true,
     "github_release_created": true,
     "license_selected": true,
