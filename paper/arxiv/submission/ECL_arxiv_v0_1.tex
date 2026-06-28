@@ -1,0 +1,685 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+]{article}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{\textbf{#1}}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={ECL: A Deterministic Cross-Runtime Execution IR with Replayable Semantics and Dependency Interface},
+  pdfauthor={Bin Zhang},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{ECL: A Deterministic Cross-Runtime Execution IR with Replayable
+Semantics and Dependency Interface}
+\author{Bin Zhang}
+\date{2026-06-28}
+
+\begin{document}
+\maketitle
+
+\subsection{Abstract}\label{abstract}
+
+Agent runtimes increasingly expose traces, tool calls, callbacks, and
+event streams, but these records are usually tied to a specific
+framework. This paper presents Execution Compact Layer (ECL), a
+deterministic execution intermediate representation for agent systems.
+ECL maps runtime traces into four replayable surfaces: \texttt{state},
+\texttt{intent}, \texttt{action}, and \texttt{evidence}. The v0.1 system
+includes a frozen JSON schema, OpenAI Agents SDK and LangChain trace
+adapters, deterministic validation and replay, an embeddable SDK, a
+dependency-mode API, and an MCP-shaped local wrapper. Local evaluation
+shows stable replay hashes, cross-runtime fixture conversion, schema
+validation, and no drift across the locked v0.1 surfaces. ECL is not a
+framework, public standard, benchmark, or external adoption claim. It is
+a local, reproducible system artifact for representing agent execution
+semantics across runtime boundaries.
+
+\subsection{1. Introduction}\label{introduction}
+
+Modern agent systems produce execution traces through framework-specific
+surfaces: model inputs, tool calls, callback events, run trees, spans,
+and evidence logs. These records are useful inside their host
+frameworks, but they are difficult to compare, replay, or cite across
+runtimes without rewriting the host runtime or assuming a common
+execution model.
+
+ECL addresses this gap by defining a minimal deterministic
+representation for agent execution. The goal is not to replace agent
+frameworks. The goal is to provide a compact execution IR that can be
+generated from heterogeneous traces and replayed into stable local
+artifacts.
+
+This paper makes four contributions:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  A four-surface execution model: \texttt{state}, \texttt{intent},
+  \texttt{action}, and \texttt{evidence}.
+\item
+  A deterministic hash and replay contract for local execution records.
+\item
+  A cross-runtime mapping surface for OpenAI Agents SDK-style and
+  LangChain-style traces.
+\item
+  A dependency interface and MCP-shaped local wrapper that expose ECL
+  without modifying host runtimes.
+\end{enumerate}
+
+\subsection{2. Problem Statement}\label{problem-statement}
+
+Agent execution records are fragmented across runtimes. A tool call in
+one framework may appear as a span, callback, run node, trace event, or
+tool invocation object in another. Existing traces can preserve rich
+local detail, but they do not necessarily provide a minimal
+cross-runtime representation with deterministic replay semantics.
+
+The problem is:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Given a runtime trace T from framework R,}
+\NormalTok{produce a deterministic execution representation E}
+\NormalTok{such that E can be validated, replayed, hashed, and cited}
+\NormalTok{without modifying R or asserting full{-}fidelity trace preservation.}
+\end{Highlighting}
+\end{Shaded}
+
+The required properties are:
+
+\begin{itemize}
+\tightlist
+\item
+  Minimality: ECL keeps only the execution surfaces needed for state,
+  intent, action, and evidence.
+\item
+  Determinism: repeated conversion and replay over the same inputs
+  produces identical hashes.
+\item
+  Replayability: a valid ECL object can generate execution trace, replay
+  result, and evidence bundle artifacts.
+\item
+  Loss awareness: adapter mappings can record incomplete preservation
+  instead of silently claiming full fidelity.
+\item
+  Boundary preservation: ECL references host runtime data but does not
+  redefine the host runtime.
+\end{itemize}
+
+\subsection{3. Related Work}\label{related-work}
+
+\subsubsection{3.1 Runtime Tracing}\label{runtime-tracing}
+
+OpenAI Agents SDK exposes tracing for agent workflows, and LangChain
+exposes tracing and callback-style observability for chains, tools, and
+model calls. These systems are runtime-specific trace surfaces. ECL
+differs by mapping traces into a minimal replayable IR rather than
+serving as the primary runtime trace system.
+
+\subsubsection{3.2 Tool and Protocol
+Surfaces}\label{tool-and-protocol-surfaces}
+
+The Model Context Protocol (MCP) defines a protocol surface for tools
+and context exchange. ECL's MCP-shaped local wrapper is not a conformant
+MCP implementation, JSON-RPC transport, published MCP server, or
+registry integration. It is a local anchor surface that demonstrates how
+an execution representation can be exposed through tool-shaped
+functions.
+
+\subsubsection{3.3 Observability and Trace
+Standards}\label{observability-and-trace-standards}
+
+OpenTelemetry defines trace data models for distributed systems. ECL is
+related in spirit because it treats execution as reviewable trace data,
+but ECL is narrower: it targets deterministic agent execution
+representation, replay artifacts, and evidence bundles.
+
+\subsubsection{3.4 Intermediate
+Representations}\label{intermediate-representations}
+
+Compiler and runtime ecosystems use intermediate representations such as
+LLVM IR and WebAssembly to separate source-level systems from execution
+targets. ECL uses the same separation principle at a smaller scale: host
+runtimes emit or are mapped into a compact execution representation.
+
+\subsubsection{3.5 Canonicalization}\label{canonicalization}
+
+ECL's deterministic hash model depends on sorted-key compact JSON
+serialization and SHA-256 hashing. This local serialization is used for
+tested hash stability and is not claimed as full RFC 8785/JCS
+compliance.
+
+\subsection{4. ECL Model}\label{ecl-model}
+
+An ECL record is a tuple:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{E = (S, I, A, V)}
+\end{Highlighting}
+\end{Shaded}
+
+where:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{S} is state: lifecycle, actor, persona, runtime, and
+  correlation references.
+\item
+  \texttt{I} is intent: operation, constraints, expected result, and
+  evidence requirements.
+\item
+  \texttt{A} is action: tool or operation step, execution mode,
+  side-effect class, and parameters hash.
+\item
+  \texttt{V} is evidence: result summary, trace references, event chain,
+  policy decisions, and hashes.
+\end{itemize}
+
+The machine-readable binding is:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{schemas/ecl{-}execution{-}compact{-}layer.schema.json}
+\end{Highlighting}
+\end{Shaded}
+
+The local semantic source is:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{SPEC.md}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{5. Formal Execution
+Contract}\label{formal-execution-contract}
+
+Let:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{T\_r} be a source trace from runtime \texttt{r}.
+\item
+  \texttt{M\_r} be a deterministic adapter for runtime \texttt{r}.
+\item
+  \texttt{E} be an ECL object.
+\item
+  \texttt{L} be a loss report.
+\item
+  \texttt{P} be the schema and hash validator.
+\item
+  \texttt{R} be the replay function.
+\item
+  \texttt{H} be SHA-256 over deterministic sorted-key compact JSON.
+\end{itemize}
+
+The adapter contract is:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{M\_r(T\_r) {-}\textgreater{} (E, L)}
+\end{Highlighting}
+\end{Shaded}
+
+The validation contract is:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{P(E, schema) {-}\textgreater{} valid | invalid}
+\end{Highlighting}
+\end{Shaded}
+
+The replay contract is:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{R(E) {-}\textgreater{} (execution\_trace.json, evidence\_bundle.json, replay\_result.json)}
+\end{Highlighting}
+\end{Shaded}
+
+The determinism invariant is:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{If T\_r, M\_r, schema, checkpoint\_ref, and generated\_at are unchanged,}
+\NormalTok{then H(E) and H(R(E)) remain unchanged.}
+\end{Highlighting}
+\end{Shaded}
+
+The boundary invariant is:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ECL records execution representation semantics.}
+\NormalTok{ECL does not prove that an external side effect occurred.}
+\NormalTok{ECL does not make host runtime traces authoritative outside their source systems.}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{6. System Design}\label{system-design}
+
+\subsubsection{6.1 Schema Layer}\label{schema-layer}
+
+The schema layer defines the ECL object model and validates required
+fields. It is implemented in:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{schemas/ecl{-}execution{-}compact{-}layer.schema.json}
+\NormalTok{ecl/validator.py}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{6.2 Adapter Layer}\label{adapter-layer}
+
+The adapter layer maps runtime traces into ECL:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ecl/adapters/openai\_agents.py}
+\NormalTok{ecl/adapters/langchain.py}
+\NormalTok{external/adoption/ecl\_mapper.py}
+\NormalTok{external/adoption/trace\_loader.py}
+\end{Highlighting}
+\end{Shaded}
+
+The mapping rule is:
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+Runtime source & ECL surface \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+runtime metadata, actor, correlation & state \\
+model input, reasoning, requested operation & intent \\
+tool call or run step & action \\
+trace events, outputs, result refs & evidence \\
+\end{longtable}
+}
+
+\subsubsection{6.3 Replay Layer}\label{replay-layer}
+
+The replay layer validates an ECL record and emits deterministic
+artifacts:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{demo/replay\_demo.py}
+\NormalTok{external/adoption/replay\_adapter.py}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{6.4 SDK and Dependency
+Layer}\label{sdk-and-dependency-layer}
+
+The SDK exposes a minimal embedding surface:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sdk/ecl.py}
+\NormalTok{sdk/ecl\_dependency.py}
+\end{Highlighting}
+\end{Shaded}
+
+The dependency API is:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ ecl\_dependency }\ImportTok{as}\NormalTok{ ecl}
+
+\NormalTok{ecl\_object }\OperatorTok{=}\NormalTok{ ecl.wrap(trace)}
+\NormalTok{payload }\OperatorTok{=}\NormalTok{ ecl.emit(ecl\_object)}
+\NormalTok{result }\OperatorTok{=}\NormalTok{ ecl.verify(ecl\_object)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{6.5 MCP-Shaped Local
+Wrapper}\label{mcp-shaped-local-wrapper}
+
+The MCP-shaped local wrapper exposes the dependency API through
+tool-shaped functions:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mcp/ecl\_tool\_spec.json}
+\NormalTok{mcp/ecl\_server\_stub.py}
+\end{Highlighting}
+\end{Shaded}
+
+This is a local wrapper only. It is not a conformant MCP implementation,
+JSON-RPC transport, registry plugin, published MCP server, and not an
+external adoption signal.
+
+\subsection{7. Architecture}\label{architecture}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flowchart LR}
+\NormalTok{  OA["OpenAI{-}style trace"] {-}{-}\textgreater{} MAP["ECL mapping"]}
+\NormalTok{  LC["LangChain{-}style trace"] {-}{-}\textgreater{} MAP}
+\NormalTok{  MAP {-}{-}\textgreater{} ECL["ECL object: state / intent / action / evidence"]}
+\NormalTok{  ECL {-}{-}\textgreater{} VAL["Validator"]}
+\NormalTok{  VAL {-}{-}\textgreater{} REP["Deterministic replay"]}
+\NormalTok{  REP {-}{-}\textgreater{} ART["execution\_trace.json / evidence\_bundle.json / replay\_result.json"]}
+\NormalTok{  ECL {-}{-}\textgreater{} SDK["SDK dependency API: wrap / emit / verify"]}
+\NormalTok{  SDK {-}{-}\textgreater{} MCP["MCP{-}shaped local wrapper"]}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{8. Evaluation}\label{evaluation}
+
+\subsubsection{8.1 Method}\label{method}
+
+The evaluation is local and fixture-based. It does not use external APIs
+and does not claim third-party validation. The test suite checks:
+
+\begin{itemize}
+\tightlist
+\item
+  ECL schema validation.
+\item
+  OpenAI-style fixture mapping.
+\item
+  LangChain-style fixture mapping.
+\item
+  Replay determinism.
+\item
+  SDK API stability.
+\item
+  Dependency API stability.
+\item
+  MCP-shaped local wrapper safety.
+\item
+  Citation reproducibility demo stability.
+\item
+  No drift in locked core files.
+\item
+  Synthetic cross-runtime trace-corpus conversion, loss reporting, and
+  replay stability.
+\item
+  Field-level mapping coverage over the synthetic trace corpus.
+\end{itemize}
+
+\subsubsection{8.2 Current Local Results}\label{current-local-results}
+
+The latest local validation run reported:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{python3 {-}m unittest discover {-}s tests}
+\NormalTok{Ran 78 tests}
+\NormalTok{OK}
+\end{Highlighting}
+\end{Shaded}
+
+The synthetic trace-corpus evaluation reported:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{python3 experiments/evaluate\_trace\_corpus.py}
+\NormalTok{case\_count=12}
+\NormalTok{by\_runtime=\{"langchain": 6, "openai": 6\}}
+\NormalTok{valid\_count=12}
+\NormalTok{deterministic\_count=12}
+\NormalTok{loss\_expectation\_met\_count=12}
+\NormalTok{loss\_detected\_count=3}
+\NormalTok{surface\_coverage=\{"action": 12, "evidence": 12, "intent": 12, "state": 12\}}
+\NormalTok{surface\_coverage\_by\_runtime=\{"langchain": \{"action": 6, "evidence": 6, "intent": 6, "state": 6\}, "openai": \{"action": 6, "evidence": 6, "intent": 6, "state": 6\}\}}
+\NormalTok{loss\_type\_counts=\{"semantic": 9, "structural": 3\}}
+\NormalTok{evaluation\_hash=sha256:2434da21056811e7eacf1ffac6944d5420ddeb2aa783f74423326a2b54a33974}
+\end{Highlighting}
+\end{Shaded}
+
+The corpus contains local synthetic stress cases for complete traces,
+missing fields, unknown fields, failure status, timestamp drift, nested
+runs, and implicit tool events. It is not production trace evidence,
+third-party validation, or a benchmark result.
+
+The negative validation-matrix evaluation reported:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{python3 experiments/evaluate\_validation\_matrix.py}
+\NormalTok{baseline\_valid=true}
+\NormalTok{case\_count=8}
+\NormalTok{expected\_invalid\_count=8}
+\NormalTok{invalid\_detected\_count=8}
+\NormalTok{expectation\_met\_count=8}
+\NormalTok{evaluation\_hash=sha256:00fe0ee8952988f7460280b40554889a890c93f9d181a6c9d8ee8b0194b031c0}
+\end{Highlighting}
+\end{Shaded}
+
+The validation matrix mutates a valid ECL record to test rejection
+behavior for missing required surfaces, wrong schema version, tampered
+canonical hash, source-hash mismatch, empty event chains, additional
+root properties, invalid action modes, and missing evidence hashes.
+
+The field-level mapping coverage evaluation reported:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{python3 experiments/evaluate\_mapping\_coverage.py}
+\NormalTok{case\_count=12}
+\NormalTok{total\_source\_fields=81}
+\NormalTok{direct\_mapped\_field\_count=80}
+\NormalTok{source\_hash\_only\_field\_count=1}
+\NormalTok{loss\_missing\_field\_count=4}
+\NormalTok{evaluation\_hash=sha256:8a8b820ecbdd1b4e88a2d8e07b05be2d479add0f0c6c3265292cc5a86763e43a}
+\end{Highlighting}
+\end{Shaded}
+
+This mapping coverage evaluation records whether each top-level source
+trace field is projected into an ECL surface or retained only through
+the source trace hash. It is synthetic corpus evidence, not a benchmark
+or external adoption signal.
+
+The citation reproducibility demo reported:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{python3 examples/citation\_repro\_demo.py}
+\NormalTok{all\_valid=true}
+\NormalTok{all\_deterministic=true}
+\NormalTok{result\_hash=sha256:8684fa8963ff9ad55c36eed6b89eb15992d1b05566aa1c79ced754fac67e1cdd}
+\end{Highlighting}
+\end{Shaded}
+
+The MCP-shaped local wrapper self-check reported valid deterministic
+execution with:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{verification\_hash=sha256:bdcf2ddb30a0e5975782f77fa86415226c46652bbd5490a667a2f2106dd65a5f}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{8.3 Locked Core Surfaces}\label{locked-core-surfaces}
+
+The current local evaluation keeps these core surfaces unchanged:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{schemas/ecl{-}execution{-}compact{-}layer.schema.json}
+\NormalTok{sdk/ecl.py}
+\NormalTok{sdk/ecl\_dependency.py}
+\NormalTok{mcp/ecl\_tool\_spec.json}
+\NormalTok{mcp/ecl\_server\_stub.py}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{8.4 Interpretation}\label{interpretation}
+
+The results support a narrow claim: ECL v0.1 is locally reproducible
+over the included fixtures, synthetic trace corpus, and deterministic
+entrypoints. The results do not support claims of ecosystem adoption,
+production reliability, third-party validation, or benchmark
+superiority.
+
+\subsection{9. Discussion}\label{discussion}
+
+ECL is most useful when execution records must be compared, replayed, or
+cited across runtime boundaries. The main design choice is to preserve a
+small execution surface rather than reproduce every runtime-specific
+field. This makes the representation compact but requires explicit loss
+reports when mappings are incomplete.
+
+ECL also separates representation from execution. A host runtime
+executes. ECL records and replays the execution representation. This
+separation keeps the dependency interface non-invasive and avoids
+modifying host frameworks.
+
+The MCP-shaped local wrapper is intentionally conservative. It
+demonstrates tool-shaped surface readability but does not claim MCP
+protocol conformance or adoption.
+
+\subsection{10. Limitations}\label{limitations}
+
+\begin{itemize}
+\tightlist
+\item
+  The evaluation uses local fixtures, not production traces.
+\item
+  The system does not prove full-fidelity trace preservation.
+\item
+  The current adapters target OpenAI-style and LangChain-style traces
+  only.
+\item
+  The MCP surface is a local stub, not a published MCP server.
+\item
+  There is no external adoption signal in this version.
+\item
+  There is no benchmark suite or leaderboard result.
+\end{itemize}
+
+\subsection{11. Conclusion}\label{conclusion}
+
+ECL v0.1 demonstrates that agent execution traces can be mapped into a
+deterministic, replayable, hash-stable execution IR with a minimal
+dependency interface. The system is locally validated and
+citation-ready, but the paper-level claim remains deliberately narrow:
+ECL is a reproducible execution representation stack, not a framework,
+formal standard, production deployment, third-party validation result,
+or external adoption result.
+
+\subsection{References}\label{references}
+
+\begin{itemize}
+\tightlist
+\item
+  OpenAI Agents SDK tracing documentation:
+  https://openai.github.io/openai-agents-python/tracing/
+\item
+  LangChain tracing documentation:
+  https://docs.langchain.com/langsmith/tracing
+\item
+  Model Context Protocol specification:
+  https://modelcontextprotocol.io/specification/
+\item
+  OpenTelemetry trace specification:
+  https://opentelemetry.io/docs/specs/otel/trace/
+\item
+  RFC 8785 JSON Canonicalization Scheme:
+  https://www.rfc-editor.org/rfc/rfc8785
+\item
+  LLVM Language Reference Manual: https://llvm.org/docs/LangRef.html
+\item
+  WebAssembly Core Specification:
+  https://webassembly.github.io/spec/core/
+\end{itemize}
+
+\end{document}

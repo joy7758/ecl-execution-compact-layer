@@ -1,0 +1,51 @@
+{
+  "schema_version": "0.1.0",
+  "object_type": "ecl_arxiv_submission_manifest",
+  "status": "arxiv_package_prepared_not_submitted",
+  "date_prepared": "2026-06-28",
+  "target": {
+    "service": "arXiv",
+    "primary_category": "cs.SE",
+    "cross_list": "cs.AI",
+    "submission_performed": false
+  },
+  "files": [
+    "paper/arxiv/submission/ECL_arxiv_v0_1.pdf",
+    "paper/arxiv/submission/ECL_arxiv_v0_1.tex",
+    "paper/arxiv/submission/ECL_arxiv_v0_1.md",
+    "paper/arxiv/submission/ECL_arxiv_v0_1_source.zip",
+    "paper/arxiv/submission/README.md"
+  ],
+  "boundary": {
+    "arxiv_submission_performed": false,
+    "final_submit_article_clicked": false,
+    "doi_minted": false
+  },
+  "file_hashes": {
+    "paper/arxiv/submission/ECL_arxiv_v0_1.pdf": {
+      "sha256": "c618c08fc20227d2ce9edb0f750d5416278b75056e9c8c91d407a1d28aad1ea0",
+      "size_bytes": 54111
+    },
+    "paper/arxiv/submission/ECL_arxiv_v0_1.tex": {
+      "sha256": "02eb8fe2b9da8d4b787e8cd764f3c494fc97eb4373aafb4c5603aadf9a116eb3",
+      "size_bytes": 23388
+    },
+    "paper/arxiv/submission/ECL_arxiv_v0_1.md": {
+      "sha256": "fb604b001547b12f94b80fd3263f911c063f7c1d96c9cec350d6b81ebb317755",
+      "size_bytes": 14308
+    },
+    "paper/arxiv/submission/ECL_arxiv_v0_1_source.zip": {
+      "sha256": "6655df38d52eca36c20496713c39531d84c1f22f75d474a259720de3085cd6b1",
+      "size_bytes": 13547
+    },
+    "paper/arxiv/submission/README.md": {
+      "sha256": "78befdef9dde5928dbd71eabb79680b7da73539526311847b35f2d8e1b002ebc",
+      "size_bytes": 856
+    }
+  },
+  "validation": {
+    "pdf_pages": 8,
+    "tex_source_generated": true,
+    "visual_preview_checked": true
+  }
+}

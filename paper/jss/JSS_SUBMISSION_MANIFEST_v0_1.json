@@ -1,0 +1,80 @@
+{
+  "schema_version": "0.1.0",
+  "object_type": "ecl_jss_submission_manifest",
+  "status": "jss_package_prepared_not_submitted",
+  "date_prepared": "2026-06-28",
+  "target": {
+    "journal": "The Journal of Systems and Software",
+    "publisher": "Elsevier",
+    "route": "arxiv_plus_jss",
+    "submission_performed": false
+  },
+  "source_files": [
+    "paper/jss/JSS_READY.md",
+    "paper/jss/title_page.md",
+    "paper/jss/highlights.md",
+    "paper/jss/cover_letter.md",
+    "paper/jss/declarations.md",
+    "paper/jss/data_availability.md",
+    "paper/jss/JSS_SUBMISSION_CHECKLIST.md",
+    "paper/jss/JSS_ROUTE_LOCK_v0_1.md"
+  ],
+  "generated_files": [
+    "paper/jss/submission/ECL_JSS_manuscript_v0_1.docx",
+    "paper/jss/submission/ECL_JSS_manuscript_v0_1.pdf",
+    "paper/jss/submission/ECL_JSS_manuscript_v0_1.md",
+    "paper/jss/submission/ECL_JSS_highlights_v0_1.docx",
+    "paper/jss/submission/ECL_JSS_cover_letter_v0_1.docx",
+    "paper/jss/submission/ECL_JSS_declarations_v0_1.docx",
+    "paper/jss/submission/ECL_JSS_data_availability_v0_1.docx",
+    "paper/jss/submission/ECL_JSS_submission_v0_1.zip"
+  ],
+  "validation": {
+    "unit_tests": "78 OK",
+    "schema_changes": false,
+    "core_modification": false,
+    "jss_public_history_gate_required": false,
+    "docx_preview_pdf_pages": 9,
+    "visual_preview_checked": true
+  },
+  "boundary": {
+    "jss_submission_performed": false,
+    "arxiv_submission_performed": false,
+    "doi_minted": false,
+    "external_publication_triggered": false
+  },
+  "file_hashes": {
+    "paper/jss/submission/ECL_JSS_manuscript_v0_1.docx": {
+      "sha256": "3eeb2deecaa5acd2d5eae483f1d111364c4ea6008da2e63e0a81c554aa45631b",
+      "size_bytes": 18544
+    },
+    "paper/jss/submission/ECL_JSS_manuscript_v0_1.pdf": {
+      "sha256": "8d63042c08654233fe996b18db8f044117adff581a97704deaf4a7e4826f3063",
+      "size_bytes": 150203
+    },
+    "paper/jss/submission/ECL_JSS_manuscript_v0_1.md": {
+      "sha256": "458990550a9a39cf6d78070fbeb844899b1119f5e7bc21ad7ac1be9c8ba0474b",
+      "size_bytes": 14615
+    },
+    "paper/jss/submission/ECL_JSS_highlights_v0_1.docx": {
+      "sha256": "5de0334ab27e879fa69e86b152f4fc2992b304d5dbf0996a72a9ec5c6f834951",
+      "size_bytes": 10816
+    },
+    "paper/jss/submission/ECL_JSS_cover_letter_v0_1.docx": {
+      "sha256": "4b9ecdcba027fb001026f920141f2cc0991b0caa2db937f25236820510b84705",
+      "size_bytes": 11144
+    },
+    "paper/jss/submission/ECL_JSS_declarations_v0_1.docx": {
+      "sha256": "d77577e68850a5ed96242c10f45700ed65589dc3371b91eb6c89cfa40d325696",
+      "size_bytes": 11083
+    },
+    "paper/jss/submission/ECL_JSS_data_availability_v0_1.docx": {
+      "sha256": "6072273a9423c4aa287fa5c705e05b277be9b946487baa7a8df8027431a5c1ba",
+      "size_bytes": 10800
+    },
+    "paper/jss/submission/ECL_JSS_submission_v0_1.zip": {
+      "sha256": "3dd0ea9e7649a46cb87ac7f788130cc3b8e264b1e8742186823beb7b0dbedf56",
+      "size_bytes": 142219
+    }
+  }
+}
