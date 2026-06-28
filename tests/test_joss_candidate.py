@@ -52,18 +52,21 @@ class JOSSCandidateTests(unittest.TestCase):
         manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
         self.assertEqual(manifest["target"]["short_name"], "JOSS")
         self.assertEqual(manifest["target"]["classification"], "eligible_zero_fee")
-        self.assertEqual(manifest["status"], "candidate_missing_human_metadata_not_submitted")
-        for value in manifest["boundary"].values():
-            self.assertFalse(value)
-        self.assertIn("AUTHOR_NAME", manifest["human_required_fields"])
-        self.assertIn("license_confirmation", manifest["human_required_fields"])
+        self.assertEqual(manifest["status"], "candidate_metadata_applied_public_release_ready_not_submitted")
+        self.assertFalse(manifest["boundary"]["joss_submission_performed"])
+        self.assertFalse(manifest["boundary"]["formal_submission"])
+        self.assertFalse(manifest["boundary"]["paid_journal_selected"])
+        self.assertTrue(manifest["boundary"]["public_release"])
+        self.assertTrue(manifest["boundary"]["license_selected"])
+        self.assertTrue(manifest["boundary"]["github_release_created"])
+        self.assertIn("final_joss_submission_approval", manifest["human_required_fields"])
 
     def test_checklist_identifies_human_only_gaps(self) -> None:
         text = CHECKLIST.read_text(encoding="utf-8")
         self.assertIn("joss_submission_performed=false", text)
         self.assertIn("paid_journal_selected=false", text)
-        self.assertIn("Replace `<AUTHOR_NAME>`", text)
-        self.assertIn("Confirm OSI-approved license file", text)
+        self.assertIn("Author: Bin Zhang", text)
+        self.assertIn("License: MIT", text)
 
     def test_bibliography_has_required_keys(self) -> None:
         text = BIB.read_text(encoding="utf-8")

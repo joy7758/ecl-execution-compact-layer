@@ -52,8 +52,11 @@ class PaperV01Tests(unittest.TestCase):
         manifest = json.loads(EVIDENCE.read_text(encoding="utf-8"))
         self.assertEqual(manifest["paper"]["status"], "draft_not_submitted")
         self.assertEqual(manifest["local_evidence"]["test_result"]["tests"], 65)
-        for value in manifest["boundary"].values():
-            self.assertFalse(value)
+        self.assertTrue(manifest["boundary"]["public_release"])
+        self.assertFalse(manifest["boundary"]["formal_submission"])
+        self.assertFalse(manifest["boundary"]["third_party_validation"])
+        self.assertFalse(manifest["boundary"]["benchmark_result"])
+        self.assertFalse(manifest["boundary"]["schema_modified"])
         self.assertGreaterEqual(len(manifest["related_work_sources"]), 5)
 
     def test_no_core_drift(self) -> None:

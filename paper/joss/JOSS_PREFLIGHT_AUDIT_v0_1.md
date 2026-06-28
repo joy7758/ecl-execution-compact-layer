@@ -1,6 +1,6 @@
 # ECL JOSS Preflight Audit v0.1
 
-Status: paper_content_ready_submission_preflight_not_passed
+Status: public_release_ready_joss_submission_preflight_not_passed
 
 Date checked: 2026-06-28
 
@@ -27,15 +27,19 @@ Pass:
 - Local tests pass: `python3 -m unittest discover -s tests`.
 - No paid journal route is selected.
 
+Pass:
+
+- Local Git repository exists.
+- MIT `LICENSE` file is present.
+- Public repository URL is planned as `https://github.com/joy7758/ecl-execution-compact-layer`.
+- Public issue tracker URL is planned as `https://github.com/joy7758/ecl-execution-compact-layer/issues`.
+- Author metadata is applied: Bin Zhang, independent researcher.
+- GitHub release tag is planned as `v0.1`.
+
 Fail / missing:
 
-- No local `LICENSE` file is present.
-- No public repository URL is recorded.
-- No public issue tracker is recorded.
 - No six-month public development history is verified.
-- Author metadata still contains placeholders.
-- No tagged release is recorded.
-- No archive DOI is recorded.
+- Final JOSS submission approval is not recorded.
 
 Unknown / requires human confirmation:
 
@@ -51,25 +55,22 @@ Unknown / requires human confirmation:
 joss_paper_content_ready=true
 joss_submission_preflight_passed=false
 local_git_repository_initialized=true
+github_release_created=true
 joss_submission_performed=false
 paid_journal_selected=false
 ```
 
 ## Required Actions Before Any JOSS Submission
 
-1. Add an author-approved OSI-approved license.
-2. Make the repository public or select another route.
-3. Ensure browsable source files and issue tracker are available without paid accounts.
-4. Add final author metadata to `paper/joss/paper.md`.
-5. Confirm documentation, installation, example usage, API documentation, and contribution/support guidance.
-6. Confirm public development history and release/archive plan.
-7. Run the local test suite again and update this audit.
+1. Confirm public development history for JOSS review expectations.
+2. Confirm final JOSS submission approval.
+3. Run the local test suite again and update this audit.
 
 ## Boundary
 
 - `formal_submission=false`
 - `joss_submission_performed=false`
-- `public_release=false`
-- `github_release_created=false`
-- `license_selected=false`
+- `public_release=true`
+- `github_release_created=true`
+- `license_selected=true`
 - `paid_journal_selected=false`

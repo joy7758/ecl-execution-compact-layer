@@ -1,8 +1,8 @@
 # ECL Paper Completion Report v0.1
 
-Status: content_complete_submission_candidate_not_submitted
+Status: content_complete_public_release_ready_joss_not_submitted
 
-Scope: This report tracks paper-writing completion only. It does not claim journal submission, acceptance, publication, external adoption, or public release.
+Scope: This report tracks paper-writing completion and public-release activation. It does not claim journal submission, acceptance, external adoption, or DOI minting.
 
 ## Manuscript
 
@@ -47,7 +47,7 @@ paper_content_ready=true
 joss_submission_preflight_passed=false
 ```
 
-The preflight gap is not paper content. It is missing human/repository state: Git repository status, OSI license, public URL, issue tracker, public history, author metadata, release/archive plan, and final approval.
+The preflight gap is not paper content. Author metadata, MIT license, public repository URL, and issue tracker URL are now recorded. Remaining gaps are public development history, release/archive DOI decision if required, and final submission approval.
 
 The JOSS candidate paper currently contains:
 
@@ -89,23 +89,21 @@ python3 mcp/ecl_server_stub.py
 verification_hash=sha256:3770d486d473720ae7d84546906e24214ee156ad458bee8fec3c59873ea153b8
 ```
 
-## Remaining Human Metadata
+## Remaining Human State
 
-These fields are intentionally not fabricated:
+These fields are outside the current publication activation step and are intentionally not fabricated:
 
-- Author names
-- Author affiliations
-- ORCID identifiers
 - Funding statement
 - Conflict-of-interest statement
 - Data availability statement
-- License choice for public distribution
-- Final venue selection
+- Public development history eligibility
+- Release/archive DOI decision if required
+- Final JOSS submission approval
 
 ## Boundary
 
 - `formal_submission=false`
-- `public_release=false`
+- `public_release=true`
 - `third_party_validation=false`
 - `ecosystem_adoption=false`
 - `paid_journal_route_selected=false`

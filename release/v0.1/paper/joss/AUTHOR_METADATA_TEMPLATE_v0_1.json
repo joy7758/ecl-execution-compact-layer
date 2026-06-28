@@ -1,37 +1,37 @@
 {
   "schema_version": "0.1.0",
   "object_type": "ecl_joss_author_metadata_template",
-  "status": "requires_human_completion",
+  "status": "human_metadata_applied",
   "authors": [
     {
-      "name": "<AUTHOR_NAME>",
-      "orcid": "<ORCID_OPTIONAL>",
+      "name": "Bin Zhang",
+      "orcid": "",
       "affiliation_index": 1,
-      "contribution_confirmation": "human_author_must_confirm"
+      "contribution_confirmation": "human_author_provided_metadata"
     }
   ],
   "affiliations": [
     {
       "index": 1,
-      "name": "<AFFILIATION_NAME>"
+      "name": "independent researcher"
     }
   ],
   "repository": {
-    "public_url": "<PUBLIC_REPOSITORY_URL>",
-    "issue_tracker_url": "<PUBLIC_ISSUE_TRACKER_URL>",
-    "license": "<OSI_APPROVED_LICENSE>",
-    "release_tag": "<RELEASE_TAG>",
-    "archive_doi": "<ARCHIVE_DOI_OPTIONAL>"
+    "public_url": "https://github.com/joy7758/ecl-execution-compact-layer",
+    "issue_tracker_url": "https://github.com/joy7758/ecl-execution-compact-layer/issues",
+    "license": "MIT",
+    "release_tag": "v0.1",
+    "archive_doi": ""
   },
   "statements": {
-    "funding": "<FUNDING_STATEMENT_OR_NONE>",
-    "conflict_of_interest": "<COI_STATEMENT_OR_NONE>",
-    "data_availability": "<DATA_AVAILABILITY_STATEMENT>",
-    "ai_usage_review_confirmation": "<HUMAN_AUTHOR_REVIEW_CONFIRMATION>"
+    "funding": "No funding statement provided.",
+    "conflict_of_interest": "No conflict-of-interest statement provided.",
+    "data_availability": "Repository artifacts and deterministic fixtures are provided in the public repository release.",
+    "ai_usage_review_confirmation": "Human author metadata and public release confirmation provided by Bin Zhang."
   },
   "boundary": {
     "auto_filled": false,
-    "human_verified": false,
+    "human_verified": true,
     "submission_ready": false
   }
 }

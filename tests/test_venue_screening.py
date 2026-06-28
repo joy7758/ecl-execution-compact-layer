@@ -40,8 +40,9 @@ class VenueScreeningTests(unittest.TestCase):
 
     def test_completion_report_keeps_submission_boundary(self) -> None:
         text = COMPLETION_REPORT.read_text(encoding="utf-8")
-        self.assertIn("content_complete_submission_candidate_not_submitted", text)
+        self.assertIn("content_complete_public_release_ready_joss_not_submitted", text)
         self.assertIn("formal_submission=false", text)
+        self.assertIn("joss_submission_performed=false", text)
         self.assertIn("paid_journal_route_selected=false", text)
 
 

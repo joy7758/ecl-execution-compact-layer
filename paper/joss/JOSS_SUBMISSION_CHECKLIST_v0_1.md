@@ -35,16 +35,19 @@ Ready locally:
 - Local test command is documented.
 - No paid journal route is selected.
 
-Still requires human confirmation before submission:
+Confirmed for publication activation:
 
-- Replace `<AUTHOR_NAME>`.
-- Replace `<AFFILIATION_NAME>`.
-- Confirm or remove `<ORCID_OPTIONAL>`.
-- Complete `paper/joss/AUTHOR_METADATA_TEMPLATE_v0_1.json`.
-- Confirm repository public release status.
-- Confirm OSI-approved license file.
-- Confirm long-term archive or DOI plan.
-- Confirm final author approval.
+- Author: Bin Zhang.
+- Affiliation: independent researcher.
+- ORCID: omitted.
+- License: MIT.
+- Repository target: `https://github.com/joy7758/ecl-execution-compact-layer`.
+
+Still requires human confirmation before JOSS submission:
+
+- Confirm public development history expectation.
+- Confirm Zenodo DOI or archive plan if required.
+- Confirm final JOSS submission approval.
 - Pass `paper/joss/JOSS_PREFLIGHT_AUDIT_v0_1.json`.
 - Confirm final JOSS metadata and repository URL.
 
@@ -52,6 +55,6 @@ Still requires human confirmation before submission:
 
 - `joss_submission_performed=false`
 - `formal_submission=false`
-- `public_release=false`
+- `public_release=true`
 - `paid_journal_selected=false`
 - `acceptance_claim=false`

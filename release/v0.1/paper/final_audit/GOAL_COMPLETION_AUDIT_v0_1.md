@@ -1,10 +1,10 @@
 # ECL Paper and No-Paid Venue Screening Completion Audit v0.1
 
-Status: paper_created_and_no_paid_screening_complete_submission_not_ready
+Status: paper_created_no_paid_screening_complete_public_release_ready
 
 Date checked: 2026-06-28
 
-Scope: This audit evaluates the objective: complete paper creation and submission screening while excluding paid journals. It separates paper-writing completion from formal submission readiness.
+Scope: This audit evaluates the objective: complete paper creation, no-paid venue screening, and public-release activation while excluding paid journals. It separates public release readiness from formal JOSS submission.
 
 ## Requirements
 
@@ -19,6 +19,7 @@ Scope: This audit evaluates the objective: complete paper creation and submissio
 | JOSS preflight audited | complete | `paper/joss/JOSS_PREFLIGHT_AUDIT_v0_1.json` |
 | Formal submission performed | not_required_for_this_audit_and_not_done | `formal_submission=false` |
 | JOSS submission readiness | incomplete | `submission_preflight_passed=false` |
+| Public release metadata | complete | `license=MIT`, `author=Bin Zhang`, `repository=https://github.com/joy7758/ecl-execution-compact-layer` |
 
 ## Completed State
 
@@ -39,14 +40,10 @@ The venue-screening surface is complete:
 
 ## Not Completed / Requires Human State
 
-These items are outside the current local authoring scope and require human or repository-state decisions:
+These items are outside the current public-release activation scope and require human or repository-state decisions:
 
-- choose author name, affiliation, and ORCID
-- select and add an OSI-approved license
-- move or convert the directory into a public Git repository
-- record public repository URL and issue tracker URL
 - verify public development history
-- decide release/archive DOI plan
+- decide release/archive DOI plan if required
 - approve final JOSS submission
 
 ## Final Boundary
@@ -58,8 +55,9 @@ paid_journal_selected=false
 formal_submission=false
 joss_submission_ready=false
 joss_submission_performed=false
-public_release=false
+public_release=true
+github_release_created=true
+license_selected=true
 ```
 
-This is a paper-and-screening completion state, not a submission state.
-
+This is a paper, screening, and public-release activation state, not a formal JOSS submission state.

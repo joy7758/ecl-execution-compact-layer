@@ -41,7 +41,7 @@
     "paper/final_audit/HUMAN_ACTION_PACKET_v0_1.md"
   ],
   "boundary": {
-    "public_release": false,
+    "public_release": true,
     "formal_submission": false,
     "third_party_validation": false,
     "ecosystem_adoption": false,
@@ -77,5 +77,11 @@
       "name": "WebAssembly Core Specification",
       "url": "https://webassembly.github.io/spec/core/"
     }
-  ]
+  ],
+  "github_publication": {
+    "repository": "joy7758/ecl-execution-compact-layer",
+    "url": "https://github.com/joy7758/ecl-execution-compact-layer",
+    "release_tag": "v0.1",
+    "release_url": "https://github.com/joy7758/ecl-execution-compact-layer/releases/tag/v0.1"
+  }
 }

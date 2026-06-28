@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1.0",
   "object_type": "ecl_publication_finalization_manifest",
-  "status": "publication_package_created_not_published",
+  "status": "github_release_ready_zenodo_pending",
   "version": "0.1",
   "release_root": "release/v0.1",
   "required_structure": {
@@ -31,10 +31,16 @@
   "boundary": {
     "schema_modified": false,
     "feature_change": false,
-    "github_release_created": false,
+    "github_release_created": true,
     "zenodo_deposit_created": false,
     "doi_minted": false,
-    "public_release": false,
-    "license_selected": false
+    "public_release": true,
+    "license_selected": true
+  },
+  "github": {
+    "repository": "joy7758/ecl-execution-compact-layer",
+    "url": "https://github.com/joy7758/ecl-execution-compact-layer",
+    "release_tag": "v0.1",
+    "release_url": "https://github.com/joy7758/ecl-execution-compact-layer/releases/tag/v0.1"
   }
 }

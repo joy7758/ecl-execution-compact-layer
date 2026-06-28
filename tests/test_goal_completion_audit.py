@@ -37,11 +37,16 @@ class GoalCompletionAuditTests(unittest.TestCase):
         self.assertFalse(incomplete["formal_submission"])
         self.assertFalse(incomplete["joss_submission_ready"])
         self.assertFalse(incomplete["joss_submission_performed"])
-        self.assertFalse(incomplete["public_release"])
-        self.assertFalse(incomplete["github_release_created"])
-        self.assertFalse(incomplete["license_selected"])
-        for value in audit["boundary"].values():
-            self.assertFalse(value)
+        self.assertTrue(incomplete["public_release"])
+        self.assertTrue(incomplete["github_release_created"])
+        self.assertTrue(incomplete["license_selected"])
+        self.assertFalse(audit["boundary"]["submission_claim"])
+        self.assertTrue(audit["boundary"]["publication_claim"])
+        self.assertFalse(audit["boundary"]["acceptance_claim"])
+        self.assertFalse(audit["boundary"]["paid_journal_selected"])
+        self.assertTrue(audit["boundary"]["public_release"])
+        self.assertTrue(audit["boundary"]["github_release_created"])
+        self.assertTrue(audit["boundary"]["license_selected"])
 
     def test_human_action_packet_lists_required_inputs(self) -> None:
         text = HUMAN_PACKET.read_text(encoding="utf-8")

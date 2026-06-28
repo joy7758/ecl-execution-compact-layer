@@ -37,20 +37,21 @@ class PublicationReleasePackageTests(unittest.TestCase):
         self.assertNotIn("benchmark", text.lower())
         self.assertNotIn("standard", text.lower())
 
-    def test_zenodo_metadata_is_present_with_placeholders(self) -> None:
+    def test_zenodo_metadata_is_present_with_author_metadata(self) -> None:
         metadata = json.loads((RELEASE / "zenodo.json").read_text(encoding="utf-8"))
         self.assertEqual(metadata["title"], "ECL v0.1")
         self.assertEqual(metadata["description"], "deterministic execution IR layer")
         self.assertEqual(metadata["version"], "0.1")
         for keyword in ("execution IR", "agent systems", "determinism", "replay"):
             self.assertIn(keyword, metadata["keywords"])
-        self.assertEqual(metadata["creators"][0]["name"], "<AUTHOR_NAME>")
+        self.assertEqual(metadata["creators"][0]["name"], "Bin Zhang")
+        self.assertEqual(metadata["creators"][0]["affiliation"], "independent researcher")
+        self.assertEqual(metadata["license"], "MIT")
 
-    def test_release_license_is_explicitly_pending(self) -> None:
+    def test_release_license_is_mit(self) -> None:
         text = (RELEASE / "LICENSE").read_text(encoding="utf-8")
-        self.assertIn("license_pending_human_approval", text)
-        self.assertIn("No public redistribution license is granted", text)
-        self.assertIn("license_selected=false", text)
+        self.assertIn("MIT License", text)
+        self.assertIn("Copyright (c) 2026 Bin Zhang", text)
 
     def test_packaged_core_hashes_match_source(self) -> None:
         pairs = {
@@ -67,17 +68,17 @@ class PublicationReleasePackageTests(unittest.TestCase):
 
     def test_release_manifest_preserves_publication_boundary(self) -> None:
         manifest = json.loads((RELEASE / "RELEASE_MANIFEST_v0_1.json").read_text(encoding="utf-8"))
-        self.assertEqual(manifest["status"], "publication_package_created_not_published")
+        self.assertEqual(manifest["status"], "github_release_ready_zenodo_pending")
         self.assertFalse(manifest["boundary"]["schema_modified"])
         self.assertFalse(manifest["boundary"]["feature_change"])
-        self.assertFalse(manifest["boundary"]["github_release_created"])
         self.assertFalse(manifest["boundary"]["doi_minted"])
-        self.assertFalse(manifest["boundary"]["public_release"])
-        self.assertFalse(manifest["boundary"]["license_selected"])
+        self.assertTrue(manifest["boundary"]["github_release_created"])
+        self.assertTrue(manifest["boundary"]["public_release"])
+        self.assertTrue(manifest["boundary"]["license_selected"])
 
     def test_integrity_report_records_required_validation(self) -> None:
         report = json.loads((RELEASE / "INTEGRITY_REPORT_v0_1.json").read_text(encoding="utf-8"))
-        self.assertEqual(report["status"], "passed_local_release_package_validation")
+        self.assertEqual(report["status"], "passed_local_release_package_validation_github_release_ready")
         commands = {item["command"]: item for item in report["commands"]}
         self.assertIn("python3 -m unittest discover -s tests", commands)
         self.assertIn("python3 sdk/demo_dependency_mode.py", commands)
@@ -87,7 +88,9 @@ class PublicationReleasePackageTests(unittest.TestCase):
         self.assertTrue(report["boundary"]["replay_stable"])
         self.assertTrue(report["boundary"]["cross_runtime_consistency_stable"])
         self.assertFalse(report["boundary"]["doi_minted"])
-        self.assertFalse(report["boundary"]["public_release"])
+        self.assertTrue(report["boundary"]["github_release_created"])
+        self.assertTrue(report["boundary"]["public_release"])
+        self.assertTrue(report["boundary"]["license_selected"])
 
 
 if __name__ == "__main__":

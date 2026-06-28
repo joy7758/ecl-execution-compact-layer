@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1.0",
   "object_type": "ecl_joss_preflight_audit",
-  "status": "paper_content_ready_submission_preflight_not_passed",
+  "status": "public_release_ready_joss_submission_preflight_not_passed",
   "date_checked": "2026-06-28",
   "target": "Journal of Open Source Software",
   "fee_classification": "eligible_zero_fee",
@@ -45,61 +45,55 @@
     {
       "id": "public-git-hosting",
       "requirement": "paper and software are hosted in a public Git-based repository",
-      "status": "missing",
-      "evidence": null
+      "status": "pass",
+      "evidence": "https://github.com/joy7758/ecl-execution-compact-layer"
     },
     {
       "id": "license",
       "requirement": "OSI-approved license file is present",
-      "status": "fail",
-      "evidence": "no LICENSE/COPYING file found in local root"
+      "status": "pass",
+      "evidence": "LICENSE -> MIT"
     },
     {
       "id": "public-url",
       "requirement": "public browsable repository URL is recorded",
-      "status": "missing",
-      "evidence": null
+      "status": "pass",
+      "evidence": "https://github.com/joy7758/ecl-execution-compact-layer"
     },
     {
       "id": "issue-tracker",
       "requirement": "public issue tracker is recorded",
-      "status": "missing",
-      "evidence": null
+      "status": "pass",
+      "evidence": "https://github.com/joy7758/ecl-execution-compact-layer/issues"
     },
     {
       "id": "public-history",
       "requirement": "six-month public development history is verified",
       "status": "unverified",
-      "evidence": null
+      "evidence": "new public release; six-month public development history not verified"
     },
     {
       "id": "author-metadata",
       "requirement": "author metadata contains no placeholders",
-      "status": "missing",
+      "status": "pass",
       "evidence": [
-        "<AUTHOR_NAME>",
-        "<AFFILIATION_NAME>",
-        "<ORCID_OPTIONAL>"
+        "Bin Zhang",
+        "independent researcher"
       ]
     },
     {
       "id": "release-archive",
       "requirement": "release/archive DOI plan is recorded",
-      "status": "missing",
-      "evidence": null
+      "status": "pass",
+      "evidence": "https://github.com/joy7758/ecl-execution-compact-layer/releases/tag/v0.1"
     }
   ],
   "summary": {
     "paper_content_ready": true,
     "submission_preflight_passed": false,
     "blocking_items": [
-      "license",
-      "public-git-hosting",
-      "public-url",
-      "issue-tracker",
       "public-history",
-      "author-metadata",
-      "release-archive"
+      "final_joss_submission_approval"
     ]
   },
   "sources": [
@@ -110,9 +104,9 @@
   "boundary": {
     "formal_submission": false,
     "joss_submission_performed": false,
-    "public_release": false,
-    "github_release_created": false,
-    "license_selected": false,
+    "public_release": true,
+    "github_release_created": true,
+    "license_selected": true,
     "paid_journal_selected": false,
     "acceptance_claim": false
   }

@@ -7,11 +7,10 @@ tags:
   - reproducibility
   - trace analysis
 authors:
-  - name: <AUTHOR_NAME>
-    orcid: <ORCID_OPTIONAL>
+  - name: Bin Zhang
     affiliation: 1
 affiliations:
-  - name: <AFFILIATION_NAME>
+  - name: independent researcher
     index: 1
 date: 28 June 2026
 bibliography: paper.bib

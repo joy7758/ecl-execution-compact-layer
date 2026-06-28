@@ -2,6 +2,8 @@
 
 ECL is a deterministic execution IR for cross-runtime agent systems with replayable semantics and loss-aware mapping.
 
+License: MIT.
+
 ## Structure Overview
 
 - SDK: `sdk/`

@@ -1,8 +1,8 @@
 # ECL Publication Activation Status v0.1
 
-Status: publication_package_created_not_published
+Status: github_release_ready_zenodo_pending
 
-This package creates the local structure needed for external publication activation. It does not create a GitHub release, Zenodo deposit, DOI, public repository, or public license.
+This package creates the local structure needed for external publication activation. It is prepared for public GitHub release at `https://github.com/joy7758/ecl-execution-compact-layer`. It does not create a Zenodo deposit or DOI.
 
 ## Created
 
@@ -13,20 +13,17 @@ This package creates the local structure needed for external publication activat
 - `release/v0.1/sdk/`
 - `release/v0.1/mcp/`
 - `release/v0.1/examples/`
+- root `LICENSE` and `release/v0.1/LICENSE` use MIT.
 
 ## Still Requires Human Action
 
-- Select and approve a real OSI-approved software license.
-- Replace author placeholders in `zenodo.json`.
-- Move the package into a public GitHub repository.
-- Create a GitHub release.
 - Create a Zenodo deposit and mint DOI.
-- Confirm final distribution permission.
+- Confirm final JOSS submission approval.
 
 ## Boundary
 
-- `github_release_created=false`
+- `github_release_created=true`
 - `zenodo_deposit_created=false`
 - `doi_minted=false`
-- `public_release=false`
-- `license_selected=false`
+- `public_release=true`
+- `license_selected=true`

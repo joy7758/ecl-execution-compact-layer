@@ -3,9 +3,8 @@
   "description": "deterministic execution IR layer",
   "creators": [
     {
-      "name": "<AUTHOR_NAME>",
-      "affiliation": "<AFFILIATION_NAME>",
-      "orcid": "<ORCID_OPTIONAL>"
+      "name": "Bin Zhang",
+      "affiliation": "independent researcher"
     }
   ],
   "version": "0.1",
@@ -15,9 +14,16 @@
     "determinism",
     "replay"
   ],
-  "license": "license_pending_human_approval",
+  "license": "MIT",
   "publication_date": "2026-06-28",
   "upload_type": "software",
-  "related_identifiers": [],
-  "notes": "Publication-finalization metadata only. DOI minting has not been performed."
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/joy7758/ecl-execution-compact-layer",
+      "relation": "isSupplementTo",
+      "scheme": "url",
+      "resource_type": "software"
+    }
+  ],
+  "notes": "GitHub release metadata prepared. Zenodo DOI minting has not been performed."
 }

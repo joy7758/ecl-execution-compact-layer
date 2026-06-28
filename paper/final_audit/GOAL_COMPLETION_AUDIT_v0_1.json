@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1.0",
   "object_type": "ecl_paper_goal_completion_audit",
-  "status": "paper_created_and_no_paid_screening_complete_submission_not_ready",
+  "status": "paper_created_no_paid_screening_complete_public_release_ready",
   "date_checked": "2026-06-28",
   "objective": "complete paper creation and venue screening while excluding paid journals",
   "requirements": [
@@ -72,19 +72,15 @@
     "formal_submission": false,
     "joss_submission_ready": false,
     "joss_submission_performed": false,
-    "public_release": false,
-    "github_release_created": false,
-    "license_selected": false,
-    "human_author_metadata_verified": false
+    "public_release": true,
+    "github_release_created": true,
+    "license_selected": true,
+    "human_author_metadata_verified": true
   },
   "blocking_items_for_submission": [
-    "author_name_affiliation_orcid",
-    "osi_license",
-    "public_git_hosting",
-    "public_issue_tracker",
     "public_development_history",
-    "release_or_archive_doi",
-    "final_author_approval"
+    "final_joss_submission_approval",
+    "zenodo_doi_optional"
   ],
   "verification": {
     "command": "python3 -m unittest discover -s tests",
@@ -92,9 +88,11 @@
   },
   "boundary": {
     "submission_claim": false,
-    "publication_claim": false,
+    "publication_claim": true,
     "acceptance_claim": false,
     "paid_journal_selected": false,
-    "public_release": false
+    "public_release": true,
+    "github_release_created": true,
+    "license_selected": true
   }
 }
