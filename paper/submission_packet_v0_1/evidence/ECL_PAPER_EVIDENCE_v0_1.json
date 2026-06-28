@@ -54,42 +54,55 @@
       "evaluation_hash": "sha256:8a8b820ecbdd1b4e88a2d8e07b05be2d479add0f0c6c3265292cc5a86763e43a"
     },
     "joss_gate_verifier_command": "python3 scripts/joss_gate_verifier.py",
-        "joss_gate_verifier_result": {
-            "status": "joss_gate_failed_blockers",
-            "content_package_ready": true,
-            "immediate_joss_submission_recommended": false,
-            "blocking_gates": [
-                "public_history"
-            ],
-            "development_evidence_ready": true,
-            "development_evidence_satisfies_public_history_gate": false,
-            "public_history_maturation_plan_ready": true,
-            "public_history_maturation_plan_satisfies_public_history_gate": false,
-            "advisory_signals": {
-                "external_impact": "unverified"
-            }
-        },
-        "development_evidence": {
-            "path": "paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md",
-            "status": "pass",
-            "satisfies_public_history_gate": false
-        },
-        "public_history_maturation_plan": {
-            "path": "paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.md",
-            "status": "pass",
-            "earliest_safe_review_date_utc": "2026-12-29",
-            "satisfies_public_history_gate": false
-        },
-        "citation_demo_command": "python3 examples/citation_repro_demo.py",
+    "joss_gate_verifier_result": {
+      "status": "joss_gate_failed_blockers",
+      "content_package_ready": true,
+      "immediate_joss_submission_recommended": false,
+      "blocking_gates": [
+        "public_history"
+      ],
+      "development_evidence_ready": true,
+      "development_evidence_satisfies_public_history_gate": false,
+      "public_history_maturation_plan_ready": true,
+      "public_history_maturation_plan_satisfies_public_history_gate": false,
+      "advisory_signals": {
+        "external_impact": "unverified"
+      },
+      "reviewer_narrative_alignment_ready": true,
+      "reviewer_narrative_alignment_satisfies_public_history_gate": false
+    },
+    "development_evidence": {
+      "path": "paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md",
+      "status": "pass",
+      "satisfies_public_history_gate": false
+    },
+    "public_history_maturation_plan": {
+      "path": "paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.md",
+      "status": "pass",
+      "earliest_safe_review_date_utc": "2026-12-29",
+      "satisfies_public_history_gate": false
+    },
+    "citation_demo_command": "python3 examples/citation_repro_demo.py",
     "citation_demo_result_hash": "sha256:8684fa8963ff9ad55c36eed6b89eb15992d1b05566aa1c79ced754fac67e1cdd",
-    "mcp_anchor_verification_hash": "sha256:bdcf2ddb30a0e5975782f77fa86415226c46652bbd5490a667a2f2106dd65a5f"
+    "mcp_anchor_verification_hash": "sha256:bdcf2ddb30a0e5975782f77fa86415226c46652bbd5490a667a2f2106dd65a5f",
+    "reviewer_narrative_alignment": {
+      "paths": [
+        "paper/joss/ENGINEERING_PROCESS_STATEMENT_v0_1.md",
+        "paper/joss/JOSS_READY_SAFE.md",
+        "paper/NARRATIVE_UNIFICATION_v0_1.md",
+        "paper/joss/JOSS_FINAL_READINESS_REPORT_v0_1.md"
+      ],
+      "status": "pass",
+      "public_history_reviewer_concern": "mitigated_by_engineering_process_statement",
+      "satisfies_public_history_gate": false
+    }
   },
-    "core_surfaces": [
-        "schemas/ecl-execution-compact-layer.schema.json",
-        "SPEC.md",
-        "docs/joss/REVIEWER_QUICKSTART_v0_1.md",
-        "docs/api/ECL_API_REFERENCE_v0_1.md",
-        "sdk/ecl.py",
+  "core_surfaces": [
+    "schemas/ecl-execution-compact-layer.schema.json",
+    "SPEC.md",
+    "docs/joss/REVIEWER_QUICKSTART_v0_1.md",
+    "docs/api/ECL_API_REFERENCE_v0_1.md",
+    "sdk/ecl.py",
     "sdk/ecl_dependency.py",
     "mcp/ecl_tool_spec.json",
     "mcp/ecl_server_stub.py",
@@ -102,13 +115,13 @@
     "paper/joss/JOSS_SUBMISSION_CHECKLIST_v0_1.md",
     "paper/joss/JOSS_SUBMISSION_MANIFEST_v0_1.json",
     "paper/joss/JOSS_PREFLIGHT_AUDIT_v0_1.md",
-        "paper/joss/JOSS_PREFLIGHT_AUDIT_v0_1.json",
-        "paper/joss/JOSS_GATE_VERIFICATION_v0_1.md",
-        "paper/joss/JOSS_GATE_VERIFICATION_v0_1.json",
-        "paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md",
-        "paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.md",
-        "paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.json",
-        "paper/joss/AUTHOR_METADATA_TEMPLATE_v0_1.json",
+    "paper/joss/JOSS_PREFLIGHT_AUDIT_v0_1.json",
+    "paper/joss/JOSS_GATE_VERIFICATION_v0_1.md",
+    "paper/joss/JOSS_GATE_VERIFICATION_v0_1.json",
+    "paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md",
+    "paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.md",
+    "paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.json",
+    "paper/joss/AUTHOR_METADATA_TEMPLATE_v0_1.json",
     "paper/venue_screening/NO_PAID_JOURNAL_SCREENING_v0_1.md",
     "paper/venue_screening/NO_PAID_JOURNAL_SCREENING_v0_1.json",
     "paper/final_audit/GOAL_COMPLETION_AUDIT_v0_1.md",
@@ -120,7 +133,11 @@
     "experiments/VALIDATION_MATRIX_EVALUATION_v0_1.md",
     "experiments/out/validation_matrix_evaluation.json",
     "experiments/MAPPING_COVERAGE_EVALUATION_v0_1.md",
-    "experiments/out/mapping_coverage_evaluation.json"
+    "experiments/out/mapping_coverage_evaluation.json",
+    "paper/joss/ENGINEERING_PROCESS_STATEMENT_v0_1.md",
+    "paper/joss/JOSS_READY_SAFE.md",
+    "paper/NARRATIVE_UNIFICATION_v0_1.md",
+    "paper/joss/JOSS_FINAL_READINESS_REPORT_v0_1.md"
   ],
   "boundary": {
     "public_release": true,

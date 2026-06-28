@@ -158,6 +158,18 @@
       "status": "pass",
       "blocking": false,
       "evidence": "paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md"
+    },
+    {
+      "id": "reviewer-narrative-alignment",
+      "requirement": "engineering process statement and safe JOSS narrative exist without fabricating public history",
+      "status": "pass",
+      "blocking": false,
+      "evidence": [
+        "paper/joss/ENGINEERING_PROCESS_STATEMENT_v0_1.md",
+        "paper/joss/JOSS_READY_SAFE.md",
+        "paper/NARRATIVE_UNIFICATION_v0_1.md",
+        "paper/joss/JOSS_FINAL_READINESS_REPORT_v0_1.md"
+      ]
     }
   ],
   "summary": {
@@ -184,6 +196,7 @@
     "github_release_created": true,
     "license_selected": true,
     "paid_journal_selected": false,
-    "acceptance_claim": false
+    "acceptance_claim": false,
+    "reviewer_narrative_alignment_verified": true
   }
 }

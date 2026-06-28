@@ -8,20 +8,24 @@
     "paper": "release/v0.1/paper",
     "sdk": "release/v0.1/sdk",
     "mcp": "release/v0.1/mcp",
-        "examples": "release/v0.1/examples",
-        "docs": "release/v0.1/docs",
-        "readme": "release/v0.1/README.md",
+    "examples": "release/v0.1/examples",
+    "docs": "release/v0.1/docs",
+    "readme": "release/v0.1/README.md",
     "license": "release/v0.1/LICENSE",
     "zenodo": "release/v0.1/zenodo.json",
-    "integrity_report": "release/v0.1/INTEGRITY_REPORT_v0_1.json"
+    "integrity_report": "release/v0.1/INTEGRITY_REPORT_v0_1.json",
+    "reviewer_safe_joss_narrative": "release/v0.1/paper/joss/JOSS_READY_SAFE.md",
+    "engineering_process_statement": "release/v0.1/paper/joss/ENGINEERING_PROCESS_STATEMENT_v0_1.md",
+    "narrative_unification": "release/v0.1/paper/NARRATIVE_UNIFICATION_v0_1.md",
+    "joss_final_readiness_report": "release/v0.1/paper/joss/JOSS_FINAL_READINESS_REPORT_v0_1.md"
   },
   "packaged_support_surfaces": [
     "release/v0.1/schemas",
     "release/v0.1/ecl",
-        "release/v0.1/external",
-        "release/v0.1/demo",
-        "release/v0.1/docs",
-        "release/v0.1/pyproject.toml"
+    "release/v0.1/external",
+    "release/v0.1/demo",
+    "release/v0.1/docs",
+    "release/v0.1/pyproject.toml"
   ],
   "integrity": {
     "source_schema_sha256": "15d089eaee07ec27d1fc69b5418e5dc5f1b1fa55f2c9395c03cde0ad6773cf89",
@@ -37,7 +41,8 @@
     "zenodo_deposit_created": false,
     "doi_minted": false,
     "public_release": true,
-    "license_selected": true
+    "license_selected": true,
+    "reviewer_narrative_alignment_verified": true
   },
   "github": {
     "repository": "joy7758/ecl-execution-compact-layer",

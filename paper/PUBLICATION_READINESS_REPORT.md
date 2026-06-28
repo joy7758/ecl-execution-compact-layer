@@ -12,12 +12,14 @@ JOSS candidate file:
 
 ```text
 paper/joss/JOSS_READY.md
+paper/joss/JOSS_READY_SAFE.md
 ```
 
 Status:
 
 ```text
 joss_content_package_ready=true
+reviewer_narrative_alignment_ready=true
 immediate_joss_submission_recommended=false
 joss_submission_performed=false
 ```
@@ -41,7 +43,10 @@ Hostile readiness decision:
 
 ```text
 paper/joss/JOSS_HOSTILE_READINESS_DECISION_v0_1.json
+paper/joss/ENGINEERING_PROCESS_STATEMENT_v0_1.md
+paper/NARRATIVE_UNIFICATION_v0_1.md
 public_development_history_ready=false
+reviewer_narrative_alignment_ready=true
 external_impact_signal_ready=false
 public_repo_synced=true
 ```

@@ -21,6 +21,10 @@ paper/joss/JOSS_SUBMISSION_CHECKLIST_v0_1.md
 paper/joss/JOSS_SUBMISSION_MANIFEST_v0_1.json
 paper/joss/JOSS_PREFLIGHT_AUDIT_v0_1.md
 paper/joss/JOSS_PREFLIGHT_AUDIT_v0_1.json
+paper/joss/ENGINEERING_PROCESS_STATEMENT_v0_1.md
+paper/joss/JOSS_READY_SAFE.md
+paper/NARRATIVE_UNIFICATION_v0_1.md
+paper/joss/JOSS_FINAL_READINESS_REPORT_v0_1.md
 paper/joss/AUTHOR_METADATA_TEMPLATE_v0_1.json
 paper/paper.md
 paper/paper.bib
@@ -49,7 +53,7 @@ paper_content_ready=true
 joss_submission_preflight_passed=false
 ```
 
-The preflight gap is not paper content. Author metadata, MIT license, public repository URL, and issue tracker URL are now recorded. Remaining gaps are public development history, release/archive DOI decision if required, and final submission approval.
+The preflight gap is not paper content. Author metadata, MIT license, public repository URL, issue tracker URL, and reviewer-safe engineering-process narrative are now recorded. Remaining gaps are public development history, release/archive DOI decision if required, and final submission approval.
 
 The JOSS candidate paper currently contains:
 

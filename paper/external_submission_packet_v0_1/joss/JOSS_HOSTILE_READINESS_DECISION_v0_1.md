@@ -16,6 +16,7 @@ synthetic_experiment_evidence_ready=true
 standard_joss_paper_path_ready=true
 public_collaboration_surface_ready=true
 joss_gate_verifier_ready=true
+reviewer_narrative_alignment_ready=true
 public_repo_synced=true
 public_development_history_ready=false
 external_impact_signal_ready=false
@@ -34,6 +35,7 @@ external_impact_signal_ready=false
 - Standard JOSS paper mirror files are present at `paper/paper.md` and `paper/paper.bib`.
 - Public collaboration surfaces are present through issue templates, pull request template, test CI, and JOSS paper draft workflow.
 - `scripts/joss_gate_verifier.py` records the remaining JOSS blocker and advisory external-impact signal as machine-readable gate evidence.
+- The short-history reviewer narrative is explicitly handled through `paper/joss/ENGINEERING_PROCESS_STATEMENT_v0_1.md`, `paper/joss/JOSS_READY_SAFE.md`, `paper/NARRATIVE_UNIFICATION_v0_1.md`, and `paper/joss/JOSS_FINAL_READINESS_REPORT_v0_1.md`.
 
 ## Current Evidence
 
@@ -73,13 +75,14 @@ evaluation_hash=sha256:8a8b820ecbdd1b4e88a2d8e07b05be2d479add0f0c6c3265292cc5a86
 | Gate | Status | Evidence |
 | --- | --- | --- |
 | Public development history over time | fail_current_state | Local git history is concentrated on 2026-06-28. |
+| Reviewer narrative alignment | pass_not_gate_satisfying | The package explains the spec-first, single-phase design model without fabricating commit history. |
 | Public-history maturation plan | pass_not_gate_satisfying | `paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.md` records a non-fabricated maturation path with earliest safe reassessment on 2026-12-29. |
 | External impact or independent use | advisory_unverified | No external citation, third-party dependency, or independent user signal is verified; this is advisory rather than the sole impact gate. |
 | JOSS final human submission approval | not_done | No JOSS portal action has been performed. |
 
 ## Recommendation
 
-Do not submit to JOSS immediately unless the author accepts a high desk-reject risk. The technically repaired package is suitable for continued public development, arXiv/Zenodo staging, and external feedback gathering. Re-run this decision no earlier than the public-history maturation checkpoint unless JOSS policy or verified external evidence changes; external-use evidence remains a positive advisory signal but is not treated as the sole JOSS impact gate.
+Do not submit to JOSS immediately unless the author accepts a residual public-history risk. The reviewer-perception risk from short history is mitigated by the engineering process statement, but the actual public-history gate remains unsatisfied. The technically repaired package is suitable for continued public development, arXiv/Zenodo staging, and external feedback gathering. Re-run this decision no earlier than the public-history maturation checkpoint unless JOSS policy or verified external evidence changes; external-use evidence remains a positive advisory signal but is not treated as the sole JOSS impact gate.
 
 ## Sources
 
@@ -95,5 +98,6 @@ acceptance_claim=false
 third_party_validation=false
 external_adoption=false
 public_repo_synced=true
+reviewer_narrative_alignment_ready=true
 synthetic_corpus_only=true
 ```

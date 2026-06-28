@@ -24,6 +24,7 @@ paper/paper.md
 paper/paper.bib
 paper/joss/JOSS_SUBMISSION_CHECKLIST.md
 paper/joss/JOSS_READY.md
+paper/joss/JOSS_READY_SAFE.md
 ```
 
 Support and audit:
@@ -35,6 +36,9 @@ paper/joss/JOSS_HOSTILE_READINESS_DECISION_v0_1.md
 paper/joss/JOSS_HOSTILE_READINESS_DECISION_v0_1.json
 paper/joss/JOSS_GATE_VERIFICATION_v0_1.md
 paper/joss/JOSS_GATE_VERIFICATION_v0_1.json
+paper/joss/ENGINEERING_PROCESS_STATEMENT_v0_1.md
+paper/NARRATIVE_UNIFICATION_v0_1.md
+paper/joss/JOSS_FINAL_READINESS_REPORT_v0_1.md
 paper/joss/JOSS_SUBMISSION_MANIFEST_v0_1.json
 paper/joss/AUTHOR_METADATA_TEMPLATE_v0_1.json
 ```

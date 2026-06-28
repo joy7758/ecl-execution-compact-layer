@@ -12,6 +12,8 @@ Scope: This report summarizes final publication staging for ECL v0.1. It does no
 - GitHub release: https://github.com/joy7758/ecl-execution-compact-layer/releases/tag/v0.1
 - arXiv package: `paper/arxiv/ARXIV_SUBMISSION_PACKAGE.md`
 - JOSS human checklist: `paper/joss/JOSS_SUBMISSION_CHECKLIST.md`
+- JOSS reviewer-safe narrative: `paper/joss/JOSS_READY_SAFE.md`
+- Engineering process statement: `paper/joss/ENGINEERING_PROCESS_STATEMENT_v0_1.md`
 - Zenodo deposit metadata: `release/v0.1/zenodo_deposit_ready.json`
 
 ## 2. Requires Human Action
@@ -25,11 +27,13 @@ Scope: This report summarizes final publication staging for ECL v0.1. It does no
 
 ```text
 joss_content_package_ready=true
+reviewer_narrative_alignment_ready=true
+reviewer_narrative_alignment_satisfies_public_history_gate=false
 immediate_joss_submission_recommended=false
 joss_submission_performed=false
 ```
 
-The JOSS package includes software scope, reproducibility commands, MIT license status, examples, tests, repository metadata, and engineering-evolution evidence. A hostile readiness decision does not recommend immediate JOSS submission while public-development-history remains unverified; external-impact signals are tracked as advisory, not as the sole impact gate.
+The JOSS package includes software scope, reproducibility commands, MIT license status, examples, tests, repository metadata, engineering-evolution evidence, and a reviewer-safe engineering-process narrative. A hostile readiness decision does not recommend immediate JOSS submission while public-development-history remains unverified; the narrative layer mitigates short-history perception risk but does not satisfy the actual public-history gate.
 
 Additional repository-review surfaces now present:
 
@@ -39,6 +43,10 @@ Additional repository-review surfaces now present:
 - `.github/ISSUE_TEMPLATE/`
 - `.github/PULL_REQUEST_TEMPLATE.md`
 - `scripts/joss_gate_verifier.py`
+- `paper/joss/ENGINEERING_PROCESS_STATEMENT_v0_1.md`
+- `paper/joss/JOSS_READY_SAFE.md`
+- `paper/NARRATIVE_UNIFICATION_v0_1.md`
+- `paper/joss/JOSS_FINAL_READINESS_REPORT_v0_1.md`
 
 ## 4. arXiv Readiness Status
 

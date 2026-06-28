@@ -38,6 +38,10 @@ REQUIRED_FILES = [
     "experiments/VALIDATION_MATRIX_EVALUATION_v0_1.md",
     "experiments/MAPPING_COVERAGE_EVALUATION_v0_1.md",
     "paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md",
+    "paper/joss/ENGINEERING_PROCESS_STATEMENT_v0_1.md",
+    "paper/joss/JOSS_READY_SAFE.md",
+    "paper/NARRATIVE_UNIFICATION_v0_1.md",
+    "paper/joss/JOSS_FINAL_READINESS_REPORT_v0_1.md",
     "paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.md",
     "paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.json",
 ]
@@ -217,6 +221,70 @@ def check_public_history_maturation_plan() -> dict[str, Any]:
     }
 
 
+def check_reviewer_narrative_alignment() -> dict[str, Any]:
+    engineering_statement = ROOT / "paper" / "joss" / "ENGINEERING_PROCESS_STATEMENT_v0_1.md"
+    safe_joss = ROOT / "paper" / "joss" / "JOSS_READY_SAFE.md"
+    narrative_unification = ROOT / "paper" / "NARRATIVE_UNIFICATION_v0_1.md"
+    final_report = ROOT / "paper" / "joss" / "JOSS_FINAL_READINESS_REPORT_v0_1.md"
+    files = [engineering_statement, safe_joss, narrative_unification, final_report]
+    text_by_path = {
+        path: path.read_text(encoding="utf-8") if path.exists() else ""
+        for path in files
+    }
+    required_tokens = {
+        engineering_statement: [
+            "engineering_process_statement",
+            "single_phase_design_methodology=true",
+            "spec_first_implementation_model=true",
+            "deterministic_architecture_predefined=true",
+            "reproducibility_depends_on_artifacts_not_commit_history=true",
+            "public_history_gate_status=fail_current_state",
+            "no_fake_history_added=true",
+            "no_commit_manipulation=true",
+        ],
+        safe_joss: [
+            "# Engineering Process Model",
+            "single_phase_design_methodology=true",
+            "public_history_gate_status=fail_current_state",
+            "no_fake_history_added=true",
+            "no_commit_manipulation=true",
+        ],
+        narrative_unification: [
+            "single_authoritative_execution_flow=true",
+            "public_history_gate_status=fail_current_state",
+            "no_fake_history_added=true",
+            "no_commit_manipulation=true",
+        ],
+        final_report: [
+            "public_history_reviewer_concern=mitigated_by_engineering_process_statement",
+            "public_history_gate_status=fail_current_state",
+            "submission_readiness_level=content_package_ready_time_gate_not_satisfied",
+            "no_fake_history_added=true",
+            "no_commit_manipulation=true",
+            "schema_changes=false",
+        ],
+    }
+    missing_by_path = {
+        str(path.relative_to(ROOT)): [
+            token for token in tokens if token not in text_by_path[path]
+        ]
+        for path, tokens in required_tokens.items()
+    }
+    missing = {
+        path: tokens for path, tokens in missing_by_path.items() if tokens
+    }
+    ready = all(path.exists() for path in files) and not missing
+    return {
+        "status": "pass" if ready else "fail",
+        "ready": ready,
+        "evidence": {
+            "paths": [str(path.relative_to(ROOT)) for path in files],
+            "missing_tokens_by_path": missing,
+        },
+        "note": "Reviewer narrative concern is mitigated without satisfying or fabricating the public-history gate.",
+    }
+
+
 def check_research_impact() -> dict[str, Any]:
     paper = ROOT / "paper" / "paper.md"
     research_use = ROOT / "docs" / "research_use" / "ECL_RESEARCH_USE_CASE_v0_1.md"
@@ -295,6 +363,7 @@ def build_payload() -> dict[str, Any]:
         "experiment_reports": check_experiment_reports(),
         "development_evidence": check_development_evidence(),
         "public_history_maturation_plan": check_public_history_maturation_plan(),
+        "reviewer_narrative_alignment": check_reviewer_narrative_alignment(),
         "research_impact": check_research_impact(),
         "public_repo_sync": check_public_repo_sync(),
         "public_history": check_public_history(),
@@ -321,6 +390,7 @@ def build_payload() -> dict[str, Any]:
             and gates["experiment_reports"]["status"] == "pass"
             and gates["development_evidence"]["status"] == "pass"
             and gates["public_history_maturation_plan"]["status"] == "pass"
+            and gates["reviewer_narrative_alignment"]["status"] == "pass"
             and gates["research_impact"]["status"] == "pass",
             "immediate_joss_submission_recommended": False if blocking else True,
         },
@@ -332,6 +402,7 @@ def build_payload() -> dict[str, Any]:
             "public_history_verified": gates["public_history"]["status"] == "pass",
             "development_evidence_verified": gates["development_evidence"]["status"] == "pass",
             "public_history_maturation_plan_verified": gates["public_history_maturation_plan"]["status"] == "pass",
+            "reviewer_narrative_alignment_verified": gates["reviewer_narrative_alignment"]["status"] == "pass",
             "research_impact_verified": gates["research_impact"]["status"] == "pass",
         },
     }
@@ -372,6 +443,7 @@ def markdown(payload: dict[str, Any]) -> str:
         f"public_history_verified={str(payload['boundary']['public_history_verified']).lower()}\n"
         f"development_evidence_verified={str(payload['boundary']['development_evidence_verified']).lower()}\n"
         f"public_history_maturation_plan_verified={str(payload['boundary']['public_history_maturation_plan_verified']).lower()}\n"
+        f"reviewer_narrative_alignment_verified={str(payload['boundary']['reviewer_narrative_alignment_verified']).lower()}\n"
         f"research_impact_verified={str(payload['boundary']['research_impact_verified']).lower()}\n"
         "```\n"
     )

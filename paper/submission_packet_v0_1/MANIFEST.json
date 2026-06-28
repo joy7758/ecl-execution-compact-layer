@@ -17,33 +17,37 @@
   "tracks": {
     "joss": {
       "status": "content_package_ready_immediate_submission_not_recommended",
-            "submission_performed": false,
-            "blocking_items": [
-                "public_development_history",
-                "final_human_submission_approval"
-            ],
-            "advisory_items": [
-                "external_impact_signal"
-            ],
-            "primary_files": [
-                "standard-paper/paper.md",
-                "standard-paper/paper.bib",
-                "joss/JOSS_SUBMISSION_CHECKLIST.md",
-                "joss/JOSS_READY.md"
+      "submission_performed": false,
+      "blocking_items": [
+        "public_development_history",
+        "final_human_submission_approval"
+      ],
+      "advisory_items": [
+        "external_impact_signal"
+      ],
+      "primary_files": [
+        "standard-paper/paper.md",
+        "standard-paper/paper.bib",
+        "joss/JOSS_SUBMISSION_CHECKLIST.md",
+        "joss/JOSS_READY.md",
+        "joss/JOSS_READY_SAFE.md"
       ],
       "supporting_files": [
         "joss/JOSS_PREFLIGHT_AUDIT_v0_1.md",
         "joss/JOSS_PREFLIGHT_AUDIT_v0_1.json",
-                "joss/JOSS_GATE_VERIFICATION_v0_1.md",
-                "joss/JOSS_GATE_VERIFICATION_v0_1.json",
-                "joss/JOSS_HOSTILE_READINESS_DECISION_v0_1.md",
-                "joss/JOSS_HOSTILE_READINESS_DECISION_v0_1.json",
-                "joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md",
-                "joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.md",
-                "joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.json",
-                "joss/JOSS_SUBMISSION_MANIFEST_v0_1.json",
-                "joss/AUTHOR_METADATA_TEMPLATE_v0_1.json"
-            ]
+        "joss/JOSS_GATE_VERIFICATION_v0_1.md",
+        "joss/JOSS_GATE_VERIFICATION_v0_1.json",
+        "joss/JOSS_HOSTILE_READINESS_DECISION_v0_1.md",
+        "joss/JOSS_HOSTILE_READINESS_DECISION_v0_1.json",
+        "joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md",
+        "joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.md",
+        "joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.json",
+        "joss/JOSS_SUBMISSION_MANIFEST_v0_1.json",
+        "joss/AUTHOR_METADATA_TEMPLATE_v0_1.json",
+        "joss/ENGINEERING_PROCESS_STATEMENT_v0_1.md",
+        "NARRATIVE_UNIFICATION_v0_1.md",
+        "joss/JOSS_FINAL_READINESS_REPORT_v0_1.md"
+      ]
     },
     "arxiv": {
       "status": "ready_for_human_submission",
@@ -72,18 +76,18 @@
     "github/ISSUE_TEMPLATE/research_use_report.yml",
     "github/ISSUE_TEMPLATE/trace_mapping_case.yml"
   ],
-    "metadata": [
-        "metadata/CITATION.cff",
-        "metadata/CHANGELOG.md",
-        "metadata/CONTRIBUTING.md",
-        "metadata/SUPPORT.md",
-        "metadata/ECL_RESEARCH_USE_CASE_v0_1.md"
-    ],
-    "documentation": [
-        "docs/joss/REVIEWER_QUICKSTART_v0_1.md",
-        "docs/api/ECL_API_REFERENCE_v0_1.md"
-    ],
-    "evidence": [
+  "metadata": [
+    "metadata/CITATION.cff",
+    "metadata/CHANGELOG.md",
+    "metadata/CONTRIBUTING.md",
+    "metadata/SUPPORT.md",
+    "metadata/ECL_RESEARCH_USE_CASE_v0_1.md"
+  ],
+  "documentation": [
+    "docs/joss/REVIEWER_QUICKSTART_v0_1.md",
+    "docs/api/ECL_API_REFERENCE_v0_1.md"
+  ],
+  "evidence": [
     "evidence/ECL_PAPER_EVIDENCE_v0_1.json",
     "evidence/PAPER_COMPLETION_REPORT_v0_1.md",
     "evidence/GOAL_COMPLETION_AUDIT_v0_1.md",
@@ -129,17 +133,19 @@
     "mapping_coverage_loss_missing_field_count": 4,
     "mapping_coverage_evaluation_hash": "sha256:8a8b820ecbdd1b4e88a2d8e07b05be2d479add0f0c6c3265292cc5a86763e43a",
     "joss_gate_verifier_command": "python3 scripts/joss_gate_verifier.py",
-        "joss_gate_verifier_status": "joss_gate_failed_blockers",
-        "joss_gate_verifier_blocking_gates": [
-            "public_history"
-        ],
-        "development_evidence_ready": true,
-        "development_evidence_satisfies_public_history_gate": false,
-        "public_history_maturation_plan_ready": true,
-        "public_history_maturation_plan_satisfies_public_history_gate": false,
-        "joss_gate_verifier_advisory_signals": {
-            "external_impact": "unverified"
-        }
+    "joss_gate_verifier_status": "joss_gate_failed_blockers",
+    "joss_gate_verifier_blocking_gates": [
+      "public_history"
+    ],
+    "development_evidence_ready": true,
+    "development_evidence_satisfies_public_history_gate": false,
+    "public_history_maturation_plan_ready": true,
+    "public_history_maturation_plan_satisfies_public_history_gate": false,
+    "joss_gate_verifier_advisory_signals": {
+      "external_impact": "unverified"
+    },
+    "reviewer_narrative_alignment_ready": true,
+    "reviewer_narrative_alignment_satisfies_public_history_gate": false
   },
   "boundary": {
     "automatic_submission_performed": false,

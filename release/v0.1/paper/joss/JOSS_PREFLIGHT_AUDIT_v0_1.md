@@ -33,6 +33,8 @@ Pass:
 - JOSS workflow and standard paper mirror exist: `.github/workflows/joss-paper.yml`, `paper/paper.md`, and `paper/paper.bib`.
 - Public collaboration templates exist: `.github/ISSUE_TEMPLATE/` and `.github/PULL_REQUEST_TEMPLATE.md`.
 - Engineering evolution narrative exists: `paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md`.
+- Engineering process statement and safe JOSS narrative exist: `paper/joss/ENGINEERING_PROCESS_STATEMENT_v0_1.md` and `paper/joss/JOSS_READY_SAFE.md`.
+- Narrative unification and final readiness report exist: `paper/NARRATIVE_UNIFICATION_v0_1.md` and `paper/joss/JOSS_FINAL_READINESS_REPORT_v0_1.md`.
 - Public-history maturation plan exists: `paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.md`.
 - No paid journal route is selected.
 
@@ -53,6 +55,7 @@ Fail / missing:
 Advisory:
 
 - No external user or third-party research-impact signal is verified.
+- The short-history reviewer perception risk is mitigated by explicit engineering-process documentation, but this does not satisfy the public-history gate.
 
 Unknown / requires human confirmation:
 
@@ -69,6 +72,7 @@ joss_paper_content_ready=true
 joss_submission_preflight_passed=false
 local_git_repository_initialized=true
 github_release_created=true
+reviewer_narrative_alignment_verified=true
 joss_submission_performed=false
 paid_journal_selected=false
 ```

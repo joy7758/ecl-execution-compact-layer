@@ -47,6 +47,15 @@ class JOSSGateVerifierTests(unittest.TestCase):
             payload["gates"]["public_history_maturation_plan"]["evidence"]["earliest_safe_review_date_utc"],
             "2026-12-29",
         )
+        self.assertEqual(payload["gates"]["reviewer_narrative_alignment"]["status"], "pass")
+        self.assertIn(
+            "paper/joss/ENGINEERING_PROCESS_STATEMENT_v0_1.md",
+            payload["gates"]["reviewer_narrative_alignment"]["evidence"]["paths"],
+        )
+        self.assertEqual(
+            payload["gates"]["reviewer_narrative_alignment"]["evidence"]["missing_tokens_by_path"],
+            {},
+        )
         self.assertEqual(payload["gates"]["research_impact"]["status"], "pass")
         self.assertTrue(payload["gates"]["research_impact"]["evidence"]["statement_of_need_present"])
         self.assertTrue(payload["gates"]["research_impact"]["evidence"]["research_impact_statement_present"])
@@ -70,9 +79,11 @@ class JOSSGateVerifierTests(unittest.TestCase):
             self.assertFalse(payload["boundary"]["public_repo_synced"])
         self.assertIn("public_history", payload["blocking_gates"])
         self.assertNotIn("public_history_maturation_plan", payload["blocking_gates"])
+        self.assertNotIn("reviewer_narrative_alignment", payload["blocking_gates"])
         self.assertNotIn("external_impact", payload["blocking_gates"])
         self.assertTrue(payload["boundary"]["development_evidence_verified"])
         self.assertTrue(payload["boundary"]["public_history_maturation_plan_verified"])
+        self.assertTrue(payload["boundary"]["reviewer_narrative_alignment_verified"])
         self.assertTrue(payload["boundary"]["research_impact_verified"])
         self.assertFalse(payload["boundary"]["joss_submission_performed"])
 

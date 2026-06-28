@@ -23,6 +23,8 @@ public_collaboration_surface_ready=true
 joss_gate_verifier_ready=true
 development_evidence_ready=true
 development_evidence_satisfies_public_history_gate=false
+reviewer_narrative_alignment_ready=true
+reviewer_narrative_alignment_satisfies_public_history_gate=false
 public_history_maturation_plan_ready=true
 public_history_maturation_plan_satisfies_public_history_gate=false
 immediate_joss_submission_recommended=false
@@ -33,6 +35,7 @@ external_impact_signal_ready=false
 ```
 
 Use `joss/JOSS_HOSTILE_READINESS_DECISION_v0_1.md` before deciding whether to submit.
+Use `joss/JOSS_READY_SAFE.md` and `joss/ENGINEERING_PROCESS_STATEMENT_v0_1.md` for the reviewer-safe engineering-process narrative.
 
 ## Validation Snapshot
 

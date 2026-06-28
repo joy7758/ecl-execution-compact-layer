@@ -79,6 +79,10 @@ class JOSSPreflightTests(unittest.TestCase):
             "docs/api/ECL_API_REFERENCE_v0_1.md",
             "docs/research_use/ECL_RESEARCH_USE_CASE_v0_1.md",
             "paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md",
+            "paper/joss/ENGINEERING_PROCESS_STATEMENT_v0_1.md",
+            "paper/joss/JOSS_READY_SAFE.md",
+            "paper/NARRATIVE_UNIFICATION_v0_1.md",
+            "paper/joss/JOSS_FINAL_READINESS_REPORT_v0_1.md",
             "paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.md",
             "paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.json",
         ):
@@ -88,6 +92,8 @@ class JOSSPreflightTests(unittest.TestCase):
         self.assertEqual(ids["open-source-metadata"]["status"], "pass")
         self.assertEqual(ids["reviewer-documentation"]["status"], "pass")
         self.assertEqual(ids["development-evidence"]["status"], "pass")
+        self.assertEqual(ids["reviewer-narrative-alignment"]["status"], "pass")
+        self.assertFalse(ids["reviewer-narrative-alignment"]["blocking"])
         self.assertEqual(ids["public-history-maturation-plan"]["status"], "pass")
         self.assertFalse(ids["public-history-maturation-plan"]["blocking"])
         self.assertEqual(ids["external-impact"]["status"], "advisory_unverified")
@@ -101,10 +107,16 @@ class JOSSPreflightTests(unittest.TestCase):
         self.assertTrue(decision["decision"]["standard_joss_paper_path_ready"])
         self.assertTrue(decision["decision"]["public_collaboration_surface_ready"])
         self.assertTrue(decision["decision"]["development_evidence_ready"])
+        self.assertTrue(decision["decision"]["reviewer_narrative_alignment_ready"])
         self.assertTrue(decision["decision"]["public_history_maturation_plan_ready"])
         self.assertFalse(decision["decision"]["public_development_history_ready"])
         self.assertFalse(decision["decision"]["external_impact_signal_ready"])
         self.assertFalse(decision["evidence"]["development_evidence"]["satisfies_public_history_gate"])
+        self.assertEqual(
+            decision["evidence"]["reviewer_narrative_alignment"]["status"],
+            "pass",
+        )
+        self.assertFalse(decision["evidence"]["reviewer_narrative_alignment"]["satisfies_public_history_gate"])
         self.assertFalse(decision["evidence"]["public_history_maturation_plan"]["satisfies_public_history_gate"])
         self.assertEqual(
             decision["evidence"]["public_history_maturation_plan"]["earliest_safe_review_date_utc"],
@@ -116,6 +128,27 @@ class JOSSPreflightTests(unittest.TestCase):
         advisory_ids = {signal["id"] for signal in decision["advisory_signals"]}
         self.assertIn("external-impact-signal", advisory_ids)
         self.assertFalse(decision["boundary"]["joss_submission_performed"])
+
+    def test_reviewer_safe_narrative_does_not_claim_public_history_gate(self) -> None:
+        engineering_statement = (ROOT / "paper" / "joss" / "ENGINEERING_PROCESS_STATEMENT_v0_1.md").read_text(
+            encoding="utf-8"
+        )
+        safe_joss = (ROOT / "paper" / "joss" / "JOSS_READY_SAFE.md").read_text(encoding="utf-8")
+        narrative_unification = (ROOT / "paper" / "NARRATIVE_UNIFICATION_v0_1.md").read_text(encoding="utf-8")
+        final_report = (ROOT / "paper" / "joss" / "JOSS_FINAL_READINESS_REPORT_v0_1.md").read_text(
+            encoding="utf-8"
+        )
+        for text in (engineering_statement, safe_joss, narrative_unification, final_report):
+            self.assertIn("public_history_gate_status=fail_current_state", text)
+            self.assertIn("no_fake_history_added=true", text)
+            self.assertIn("no_commit_manipulation=true", text)
+        self.assertIn("single_phase_design_methodology=true", engineering_statement)
+        self.assertIn("# Engineering Process Model", safe_joss)
+        self.assertIn("single_authoritative_execution_flow=true", narrative_unification)
+        self.assertIn(
+            "public_history_reviewer_concern=mitigated_by_engineering_process_statement",
+            final_report,
+        )
 
     def test_reviewer_documentation_is_agent_readable(self) -> None:
         quickstart = (ROOT / "docs" / "joss" / "REVIEWER_QUICKSTART_v0_1.md").read_text(encoding="utf-8")

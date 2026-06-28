@@ -19,6 +19,7 @@
     "public_history_verified": false,
     "public_repo_synced": true,
     "research_impact_verified": true,
+    "reviewer_narrative_alignment_verified": true,
     "third_party_validation": false
   },
   "date_checked": "2026-06-28",
@@ -128,6 +129,10 @@
         "experiments/VALIDATION_MATRIX_EVALUATION_v0_1.md",
         "experiments/MAPPING_COVERAGE_EVALUATION_v0_1.md",
         "paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md",
+        "paper/joss/ENGINEERING_PROCESS_STATEMENT_v0_1.md",
+        "paper/joss/JOSS_READY_SAFE.md",
+        "paper/NARRATIVE_UNIFICATION_v0_1.md",
+        "paper/joss/JOSS_FINAL_READINESS_REPORT_v0_1.md",
         "paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.md",
         "paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.json"
       ],
@@ -146,6 +151,20 @@
         "validation_matrix_cases": 8
       },
       "note": "This gate checks local research-software significance and reproducible evidence; it does not claim external adoption or third-party validation.",
+      "ready": true,
+      "status": "pass"
+    },
+    "reviewer_narrative_alignment": {
+      "evidence": {
+        "missing_tokens_by_path": {},
+        "paths": [
+          "paper/joss/ENGINEERING_PROCESS_STATEMENT_v0_1.md",
+          "paper/joss/JOSS_READY_SAFE.md",
+          "paper/NARRATIVE_UNIFICATION_v0_1.md",
+          "paper/joss/JOSS_FINAL_READINESS_REPORT_v0_1.md"
+        ]
+      },
+      "note": "Reviewer narrative concern is mitigated without satisfying or fabricating the public-history gate.",
       "ready": true,
       "status": "pass"
     },

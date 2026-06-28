@@ -13,6 +13,7 @@ Status: joss_gate_failed_blockers
 | `public_repo_sync` | `pass` |
 | `required_files` | `pass` |
 | `research_impact` | `pass` |
+| `reviewer_narrative_alignment` | `pass` |
 | `standard_paper_mirror` | `pass` |
 
 ## Advisory Signals
@@ -39,5 +40,6 @@ public_repo_synced=true
 public_history_verified=false
 development_evidence_verified=true
 public_history_maturation_plan_verified=true
+reviewer_narrative_alignment_verified=true
 research_impact_verified=true
 ```

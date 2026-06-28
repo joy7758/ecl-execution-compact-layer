@@ -44,53 +44,71 @@
       "status": "complete",
       "evidence": "preferred_no_fee_candidate=JOSS"
     },
-        {
-            "id": "joss-preflight-audited",
-            "requirement": "JOSS submission preflight audited",
-            "status": "complete",
-            "evidence": "paper/joss/JOSS_PREFLIGHT_AUDIT_v0_1.json"
-        },
-        {
-            "id": "reviewer-documentation",
-            "requirement": "reviewer quickstart and public API reference exist",
-            "status": "complete",
-            "evidence": [
-                "docs/joss/REVIEWER_QUICKSTART_v0_1.md",
-                "docs/api/ECL_API_REFERENCE_v0_1.md"
-            ]
-        },
-        {
-            "id": "trace-corpus-evaluation",
-            "requirement": "synthetic trace-corpus evaluation exists",
-            "status": "complete",
-            "evidence": "experiments/TRACE_CORPUS_EVALUATION_v0_1.md"
-        },
-        {
-            "id": "mapping-coverage-evaluation",
-            "requirement": "field-level mapping coverage evaluation exists",
-            "status": "complete",
-            "evidence": "experiments/MAPPING_COVERAGE_EVALUATION_v0_1.md"
-        },
-        {
-            "id": "hostile-joss-readiness-decision",
-            "requirement": "hostile JOSS readiness decision exists",
-            "status": "complete",
-            "evidence": "paper/joss/JOSS_HOSTILE_READINESS_DECISION_v0_1.json"
-        },
-        {
-            "id": "development-evidence",
-            "requirement": "engineering evolution evidence narrative exists without fabricating public history",
-            "status": "complete",
-            "evidence": "paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md"
-        },
-        {
-            "id": "public-history-maturation-plan",
-            "requirement": "public-history maturation plan exists without fabricating elapsed public history",
-            "status": "complete",
-            "evidence": "paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.md"
-        },
-        {
-            "id": "formal-submission",
+    {
+      "id": "joss-preflight-audited",
+      "requirement": "JOSS submission preflight audited",
+      "status": "complete",
+      "evidence": "paper/joss/JOSS_PREFLIGHT_AUDIT_v0_1.json"
+    },
+    {
+      "id": "reviewer-documentation",
+      "requirement": "reviewer quickstart and public API reference exist",
+      "status": "complete",
+      "evidence": [
+        "docs/joss/REVIEWER_QUICKSTART_v0_1.md",
+        "docs/api/ECL_API_REFERENCE_v0_1.md"
+      ]
+    },
+    {
+      "id": "trace-corpus-evaluation",
+      "requirement": "synthetic trace-corpus evaluation exists",
+      "status": "complete",
+      "evidence": "experiments/TRACE_CORPUS_EVALUATION_v0_1.md"
+    },
+    {
+      "id": "mapping-coverage-evaluation",
+      "requirement": "field-level mapping coverage evaluation exists",
+      "status": "complete",
+      "evidence": "experiments/MAPPING_COVERAGE_EVALUATION_v0_1.md"
+    },
+    {
+      "id": "hostile-joss-readiness-decision",
+      "requirement": "hostile JOSS readiness decision exists",
+      "status": "complete",
+      "evidence": "paper/joss/JOSS_HOSTILE_READINESS_DECISION_v0_1.json"
+    },
+    {
+      "id": "development-evidence",
+      "requirement": "engineering evolution evidence narrative exists without fabricating public history",
+      "status": "complete",
+      "evidence": "paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md"
+    },
+    {
+      "id": "engineering-process-statement",
+      "requirement": "engineering process statement and reviewer-safe JOSS narrative exist without fabricating public history",
+      "status": "complete",
+      "evidence": [
+        "paper/joss/ENGINEERING_PROCESS_STATEMENT_v0_1.md",
+        "paper/joss/JOSS_READY_SAFE.md"
+      ]
+    },
+    {
+      "id": "narrative-unification",
+      "requirement": "single authoritative execution-flow narrative and final JOSS readiness report exist",
+      "status": "complete",
+      "evidence": [
+        "paper/NARRATIVE_UNIFICATION_v0_1.md",
+        "paper/joss/JOSS_FINAL_READINESS_REPORT_v0_1.md"
+      ]
+    },
+    {
+      "id": "public-history-maturation-plan",
+      "requirement": "public-history maturation plan exists without fabricating elapsed public history",
+      "status": "complete",
+      "evidence": "paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.md"
+    },
+    {
+      "id": "formal-submission",
       "requirement": "formal submission performed",
       "status": "not_required_for_paper_and_screening_objective_not_done",
       "evidence": "formal_submission=false"
@@ -116,14 +134,14 @@
     "license_selected": true,
     "human_author_metadata_verified": true
   },
-    "blocking_items_for_submission": [
-        "public_development_history",
-        "final_joss_submission_approval",
-        "zenodo_doi_optional"
-    ],
-    "advisory_items_for_submission": [
-        "external_impact_signal"
-    ],
+  "blocking_items_for_submission": [
+    "public_development_history",
+    "final_joss_submission_approval",
+    "zenodo_doi_optional"
+  ],
+  "advisory_items_for_submission": [
+    "external_impact_signal"
+  ],
   "verification": {
     "command": "python3 -m unittest discover -s tests",
     "expected_result": "Ran 77 tests OK",
@@ -142,35 +160,46 @@
       "evaluation_hash": "sha256:2434da21056811e7eacf1ffac6944d5420ddeb2aa783f74423326a2b54a33974"
     },
     "validation_matrix_command": "python3 experiments/evaluate_validation_matrix.py",
-        "validation_matrix_result": {
-            "baseline_valid": true,
-            "case_count": 8,
-            "expected_invalid_count": 8,
-            "invalid_detected_count": 8,
-            "expectation_met_count": 8,
-            "evaluation_hash": "sha256:00fe0ee8952988f7460280b40554889a890c93f9d181a6c9d8ee8b0194b031c0"
-        },
-        "mapping_coverage_command": "python3 experiments/evaluate_mapping_coverage.py",
-        "mapping_coverage_result": {
-            "case_count": 12,
-            "total_source_fields": 81,
-            "direct_mapped_field_count": 80,
-            "source_hash_only_field_count": 1,
-            "loss_missing_field_count": 4,
-            "evaluation_hash": "sha256:8a8b820ecbdd1b4e88a2d8e07b05be2d479add0f0c6c3265292cc5a86763e43a"
-        },
-        "development_evidence": {
-            "path": "paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md",
-            "status": "pass",
-            "satisfies_public_history_gate": false
-        },
-        "public_history_maturation_plan": {
-            "path": "paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.md",
-            "status": "pass",
-            "earliest_safe_review_date_utc": "2026-12-29",
-            "satisfies_public_history_gate": false
-        }
+    "validation_matrix_result": {
+      "baseline_valid": true,
+      "case_count": 8,
+      "expected_invalid_count": 8,
+      "invalid_detected_count": 8,
+      "expectation_met_count": 8,
+      "evaluation_hash": "sha256:00fe0ee8952988f7460280b40554889a890c93f9d181a6c9d8ee8b0194b031c0"
     },
+    "mapping_coverage_command": "python3 experiments/evaluate_mapping_coverage.py",
+    "mapping_coverage_result": {
+      "case_count": 12,
+      "total_source_fields": 81,
+      "direct_mapped_field_count": 80,
+      "source_hash_only_field_count": 1,
+      "loss_missing_field_count": 4,
+      "evaluation_hash": "sha256:8a8b820ecbdd1b4e88a2d8e07b05be2d479add0f0c6c3265292cc5a86763e43a"
+    },
+    "development_evidence": {
+      "path": "paper/joss/ECL_DEVELOPMENT_EVIDENCE_LAYER_v0_1.md",
+      "status": "pass",
+      "satisfies_public_history_gate": false
+    },
+    "public_history_maturation_plan": {
+      "path": "paper/joss/JOSS_PUBLIC_HISTORY_MATURATION_PLAN_v0_1.md",
+      "status": "pass",
+      "earliest_safe_review_date_utc": "2026-12-29",
+      "satisfies_public_history_gate": false
+    },
+    "reviewer_narrative_alignment": {
+      "paths": [
+        "paper/joss/ENGINEERING_PROCESS_STATEMENT_v0_1.md",
+        "paper/joss/JOSS_READY_SAFE.md",
+        "paper/NARRATIVE_UNIFICATION_v0_1.md",
+        "paper/joss/JOSS_FINAL_READINESS_REPORT_v0_1.md"
+      ],
+      "status": "pass",
+      "public_history_reviewer_concern": "mitigated_by_engineering_process_statement",
+      "satisfies_public_history_gate": false
+    }
+  },
   "boundary": {
     "submission_claim": false,
     "publication_claim": true,
@@ -178,6 +207,7 @@
     "paid_journal_selected": false,
     "public_release": true,
     "github_release_created": true,
-    "license_selected": true
+    "license_selected": true,
+    "reviewer_narrative_alignment_verified": true
   }
 }
