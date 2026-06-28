@@ -9,7 +9,7 @@
   "local_evidence": {
     "test_command": "python3 -m unittest discover -s tests",
     "test_result": {
-      "tests": 77,
+      "tests": 78,
       "status": "OK"
     },
     "trace_corpus_command": "python3 experiments/evaluate_trace_corpus.py",

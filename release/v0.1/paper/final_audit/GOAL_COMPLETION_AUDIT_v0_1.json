@@ -144,7 +144,7 @@
   ],
   "verification": {
     "command": "python3 -m unittest discover -s tests",
-    "expected_result": "Ran 77 tests OK",
+    "expected_result": "Ran 78 tests OK",
     "trace_corpus_command": "python3 experiments/evaluate_trace_corpus.py",
     "trace_corpus_result": {
       "case_count": 12,

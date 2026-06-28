@@ -108,7 +108,7 @@
   "validation": {
     "command": "python3 -m unittest discover -s tests",
     "tests_passed": true,
-    "test_count": 77,
+    "test_count": 78,
     "trace_corpus_command": "python3 experiments/evaluate_trace_corpus.py",
     "trace_corpus_cases": 12,
     "trace_corpus_valid": 12,

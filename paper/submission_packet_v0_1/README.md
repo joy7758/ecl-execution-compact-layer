@@ -41,7 +41,7 @@ Use `joss/JOSS_READY_SAFE.md` and `joss/ENGINEERING_PROCESS_STATEMENT_v0_1.md` f
 
 ```text
 python3 -m unittest discover -s tests
-Ran 77 tests
+Ran 78 tests
 OK
 
 python3 experiments/evaluate_trace_corpus.py

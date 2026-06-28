@@ -246,7 +246,7 @@ The latest local validation run reported:
 
 ```text
 python3 -m unittest discover -s tests
-Ran 77 tests
+Ran 78 tests
 OK
 ```
 

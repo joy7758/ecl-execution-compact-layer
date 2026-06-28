@@ -42,7 +42,7 @@ class PaperV01Tests(unittest.TestCase):
     def test_paper_contains_local_evidence_only(self) -> None:
         text = PAPER.read_text(encoding="utf-8")
         lower_text = text.lower()
-        self.assertIn("Ran 77 tests", text)
+        self.assertIn("Ran 78 tests", text)
         self.assertIn("case_count=12", text)
         self.assertIn('surface_coverage={"action": 12, "evidence": 12, "intent": 12, "state": 12}', text)
         self.assertIn("total_source_fields=81", text)
@@ -58,7 +58,7 @@ class PaperV01Tests(unittest.TestCase):
     def test_evidence_manifest_boundaries(self) -> None:
         manifest = json.loads(EVIDENCE.read_text(encoding="utf-8"))
         self.assertEqual(manifest["paper"]["status"], "draft_not_submitted")
-        self.assertEqual(manifest["local_evidence"]["test_result"]["tests"], 77)
+        self.assertEqual(manifest["local_evidence"]["test_result"]["tests"], 78)
         self.assertEqual(manifest["local_evidence"]["trace_corpus_result"]["case_count"], 12)
         self.assertEqual(manifest["local_evidence"]["trace_corpus_result"]["loss_expectation_met_count"], 12)
         self.assertEqual(manifest["local_evidence"]["validation_matrix_result"]["case_count"], 8)

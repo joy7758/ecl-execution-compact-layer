@@ -28,7 +28,7 @@
       "id": "local-tests",
       "requirement": "local test suite passes",
       "status": "pass",
-      "evidence": "python3 -m unittest discover -s tests -> Ran 77 tests OK"
+      "evidence": "python3 -m unittest discover -s tests -> Ran 78 tests OK"
     },
     {
       "id": "trace-corpus-evaluation",
