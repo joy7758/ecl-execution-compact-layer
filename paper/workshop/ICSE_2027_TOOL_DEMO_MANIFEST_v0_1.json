@@ -7,7 +7,9 @@
     "track": "Tool Demonstration and Data Showcase",
     "submission_performed": false,
     "portal_upload_performed": false,
-    "video_recorded": false
+    "video_recorded": false,
+    "local_video_candidate_generated": true,
+    "youtube_upload_performed": false
   },
   "public_artifacts": {
     "repository": "https://github.com/joy7758/ecl-execution-compact-layer",
@@ -24,6 +26,10 @@
     "video_script": "paper/workshop/demo_video_script.md",
     "storyboard": "paper/workshop/demo_storyboard.md",
     "video_recording_gate": "paper/workshop/VIDEO_RECORDING_GATE_v0_1.md",
+    "video_candidate": "paper/workshop/video/ECL_ICSE_2027_DEMO_VIDEO_CANDIDATE.mp4",
+    "video_asset_manifest": "paper/workshop/video/VIDEO_ASSET_MANIFEST_v0_1.md",
+    "youtube_metadata_draft": "paper/workshop/YOUTUBE_METADATA_DRAFT_v0_1.md",
+    "hotcrp_submission_draft": "paper/workshop/HOTCRP_SUBMISSION_DRAFT_v0_1.md",
     "checklist": "paper/workshop/TOOL_DEMO_SUBMISSION_CHECKLIST.md",
     "public_link_check": "paper/workshop/PUBLIC_LINK_CHECK_v0_1.md",
     "demo_transcript": "paper/workshop/demo_terminal_transcript_v0_1.md",
@@ -53,6 +59,17 @@
     "status": "all_checked_links_reachable",
     "path": "paper/workshop/PUBLIC_LINK_CHECK_v0_1.json"
   },
+  "video": {
+    "local_candidate_generated": true,
+    "local_candidate_path": "paper/workshop/video/ECL_ICSE_2027_DEMO_VIDEO_CANDIDATE.mp4",
+    "local_candidate_sha256": "a9b1d130da66a38e408d5d51655678750354c62753ac7d7d33891dddec7927aa",
+    "duration_seconds": 225.033016,
+    "duration_human": "3m45s",
+    "duration_between_three_and_five_minutes": true,
+    "youtube_upload_performed": false,
+    "youtube_url": null,
+    "human_review_required": true
+  },
   "demo": {
     "make_demo_verified": true,
     "docker_cli_present": true,
@@ -74,6 +91,7 @@
     "no_production_deployment_claim": true,
     "no_icse_submission_claim": true,
     "video_recording_pending": true,
+    "youtube_upload_pending": true,
     "tool_demo_issue_is_tracking_only": true
   }
 }

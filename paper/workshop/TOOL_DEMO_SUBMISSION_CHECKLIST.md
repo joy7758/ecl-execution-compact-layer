@@ -25,6 +25,10 @@ Official track page: https://conf.researchr.org/track/icse-2027/icse-2027-demons
 - Video script: `paper/workshop/demo_video_script.md`
 - Storyboard: `paper/workshop/demo_storyboard.md`
 - Video recording gate: `paper/workshop/VIDEO_RECORDING_GATE_v0_1.md`
+- Local video candidate: `paper/workshop/video/ECL_ICSE_2027_DEMO_VIDEO_CANDIDATE.mp4`
+- Video asset manifest: `paper/workshop/video/VIDEO_ASSET_MANIFEST_v0_1.md`
+- YouTube metadata draft: `paper/workshop/YOUTUBE_METADATA_DRAFT_v0_1.md`
+- HotCRP submission draft: `paper/workshop/HOTCRP_SUBMISSION_DRAFT_v0_1.md`
 - Demo manifest: `paper/workshop/ICSE_2027_TOOL_DEMO_MANIFEST_v0_1.json`
 - Public link check: `paper/workshop/PUBLIC_LINK_CHECK_v0_1.md`
 - Terminal transcript: `paper/workshop/demo_terminal_transcript_v0_1.md`
@@ -43,7 +47,8 @@ Official track page: https://conf.researchr.org/track/icse-2027/icse-2027-demons
 - [x] Verify all public links resolve.
 - [x] Confirm no claims of external adoption, production deployment, benchmark leadership, standards-body endorsement, or peer-reviewed acceptance.
 - [x] Confirm JSS rejection is treated as routing feedback, not as reviewer validation.
-- [ ] Record 3-5 minute demo video.
+- [x] Generate local 3-5 minute video candidate for human review.
+- [ ] Approve or replace the local video candidate with the final YouTube-ready recording.
 - [ ] Upload demo video to YouTube and record the URL.
 - [ ] Append the video URL to the submission abstract before HotCRP upload.
 - [ ] Perform human PDF review before any portal submission.

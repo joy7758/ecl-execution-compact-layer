@@ -1,0 +1,81 @@
+{
+  "schema_version": "0.1.0",
+  "object_type": "ecl_icse_2027_video_asset_manifest",
+  "status": "local_video_candidate_generated_not_uploaded_not_submitted",
+  "date_checked": "2026-06-30",
+  "candidate_video": {
+    "path": "paper/workshop/video/ECL_ICSE_2027_DEMO_VIDEO_CANDIDATE.mp4",
+    "sha256": "a9b1d130da66a38e408d5d51655678750354c62753ac7d7d33891dddec7927aa",
+    "duration_seconds": 225.033016,
+    "duration_human": "3m45s",
+    "size_bytes": 3114661,
+    "bit_rate": 110727,
+    "format": "mp4",
+    "video_type": "local generated draft with synthesized voiceover",
+    "human_review_required": true
+  },
+  "supporting_assets": {
+    "captions_srt": {
+      "path": "paper/workshop/video/ECL_ICSE_2027_DEMO_VIDEO_CANDIDATE.srt",
+      "sha256": "d32b3422c366daa7d7449ac6928a8b96c41c9974cee4f0448bf8b8f8f4febf92"
+    },
+    "voiceover_text": {
+      "path": "paper/workshop/video/voiceover_text.txt",
+      "sha256": "502589b6afec4453e9a3a72d489119c4c74f23080106c85f868dacf50e26bc2c"
+    },
+    "make_demo_output": {
+      "path": "paper/workshop/video/make_demo_output.txt",
+      "sha256": "ea5d87f3b17f8dd55be7617e4f73d746205f10eb88ab4ae43f281541f50fea6b"
+    },
+    "thumbnail": {
+      "path": "paper/workshop/video/video_thumbnail.png",
+      "sha256": "203f662fd4498a1489b0b68967fa14ac05ab3552267161601dee8b6ec7b41210"
+    },
+    "slides": [
+      {
+        "path": "paper/workshop/video/slides/slide_01.png",
+        "sha256": "40c97ba099e2249062ed0c5ab7f73a94b98a2b0251fefa4a603dec1abb0ae7c6"
+      },
+      {
+        "path": "paper/workshop/video/slides/slide_02.png",
+        "sha256": "9316e7c47644e93dee08963bd1a99b0459a8d33cfb0ae560b888c8dab847c5f6"
+      },
+      {
+        "path": "paper/workshop/video/slides/slide_03.png",
+        "sha256": "24e20dce81f7b74212b5e23eebb219ff6ef024b883295eacc64c2364cb0bbeac"
+      },
+      {
+        "path": "paper/workshop/video/slides/slide_04.png",
+        "sha256": "f0c2b5e999fbb7464698f4b17e28dacedcfb3d27f9f4ea9b677041797a1f77b9"
+      },
+      {
+        "path": "paper/workshop/video/slides/slide_05.png",
+        "sha256": "92f71f476acbc56bb2f3c208e55f91446fddea4b3770683fec15acb6cbbce167"
+      },
+      {
+        "path": "paper/workshop/video/slides/slide_06.png",
+        "sha256": "95ce63b7e42d82910f61e32980af9cb26af51b6abd0656c1a319814ee7d6df1d"
+      }
+    ]
+  },
+  "verified_requirements": {
+    "duration_between_three_and_five_minutes": true,
+    "includes_repository_and_archive_links": true,
+    "states_boundary_no_peer_review_or_adoption_claim": true,
+    "shows_one_command_demo": true,
+    "contains_local_candidate_label": true
+  },
+  "external_actions": {
+    "youtube_upload_performed": false,
+    "youtube_url": null,
+    "hotcrp_submission_performed": false,
+    "icse_submission_performed": false
+  },
+  "boundary": {
+    "local_video_candidate_only": true,
+    "official_submission_video": false,
+    "human_review_required": true,
+    "external_adoption_claim": false,
+    "peer_review_claim": false
+  }
+}
