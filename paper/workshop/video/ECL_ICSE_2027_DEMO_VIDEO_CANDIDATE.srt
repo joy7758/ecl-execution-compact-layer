@@ -15,9 +15,9 @@ The reviewer workflow is one command: make demo. It uses local fixtures and no e
 The current local run reports 78 tests passing and stable dependency and external-recognition hashes.
 
 5
-00:02:55,000 --> 00:03:45,000
+00:02:55,000 --> 00:03:25,000
 ECL verify creates validation and replay artifacts, and incomplete mapping is recorded as loss.
 
 6
-00:03:45,000 --> 00:04:35,000
+00:03:25,000 --> 00:03:45,000
 ECL is intentionally narrow: no framework, no benchmark, no standard, no production or adoption claim.

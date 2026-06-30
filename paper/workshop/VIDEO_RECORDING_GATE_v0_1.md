@@ -1,6 +1,6 @@
 # ECL ICSE 2027 Video Recording Gate v0.1
 
-Status: local_video_candidate_generated_upload_not_performed
+Status: local_video_candidate_qa_passed_upload_not_performed
 
 Date checked: 2026-06-30
 
@@ -13,6 +13,8 @@ Date checked: 2026-06-30
 - Public link check: `paper/workshop/PUBLIC_LINK_CHECK_v0_1.md`
 - Local video candidate: `paper/workshop/video/ECL_ICSE_2027_DEMO_VIDEO_CANDIDATE.mp4`
 - Video asset manifest: `paper/workshop/video/VIDEO_ASSET_MANIFEST_v0_1.md`
+- Video QA report: `paper/workshop/video/VIDEO_QA_REPORT_v0_1.md`
+- YouTube upload handoff: `paper/workshop/YOUTUBE_UPLOAD_HANDOFF_v0_1.md`
 
 ## Official Requirement Observed
 

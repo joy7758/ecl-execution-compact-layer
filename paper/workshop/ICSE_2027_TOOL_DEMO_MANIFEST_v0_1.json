@@ -1,97 +1,102 @@
 {
-  "schema_version": "0.1.0",
-  "object_type": "ecl_icse_2027_tool_demo_manifest",
-  "status": "tool_demo_pdf_and_links_verified_video_pending_not_submitted",
-  "target": {
-    "venue": "ICSE 2027",
-    "track": "Tool Demonstration and Data Showcase",
-    "submission_performed": false,
-    "portal_upload_performed": false,
-    "video_recorded": false,
-    "local_video_candidate_generated": true,
-    "youtube_upload_performed": false
-  },
-  "public_artifacts": {
-    "repository": "https://github.com/joy7758/ecl-execution-compact-layer",
-    "github_release": "https://github.com/joy7758/ecl-execution-compact-layer/releases/tag/v0.1",
-    "zenodo_record": "https://zenodo.org/records/21003766",
-    "version_doi": "10.5281/zenodo.21003766",
-    "tool_demo_tracking_issue": "https://github.com/joy7758/ecl-execution-compact-layer/issues/7"
-  },
-  "local_files": {
-    "draft": "paper/workshop/ICSE_2027_TOOL_DEMO_DRAFT.md",
-    "ieee_source": "paper/workshop/ieee/ECL_ICSE_2027_TOOL_DEMO_DRAFT.tex",
-    "ieee_pdf": "paper/workshop/ieee/ECL_ICSE_2027_TOOL_DEMO_DRAFT.pdf",
-    "pdf_build_status": "paper/workshop/ICSE_2027_PDF_BUILD_STATUS_v0_1.md",
-    "video_script": "paper/workshop/demo_video_script.md",
-    "storyboard": "paper/workshop/demo_storyboard.md",
-    "video_recording_gate": "paper/workshop/VIDEO_RECORDING_GATE_v0_1.md",
-    "video_candidate": "paper/workshop/video/ECL_ICSE_2027_DEMO_VIDEO_CANDIDATE.mp4",
-    "video_asset_manifest": "paper/workshop/video/VIDEO_ASSET_MANIFEST_v0_1.md",
-    "youtube_metadata_draft": "paper/workshop/YOUTUBE_METADATA_DRAFT_v0_1.md",
-    "hotcrp_submission_draft": "paper/workshop/HOTCRP_SUBMISSION_DRAFT_v0_1.md",
-    "checklist": "paper/workshop/TOOL_DEMO_SUBMISSION_CHECKLIST.md",
-    "public_link_check": "paper/workshop/PUBLIC_LINK_CHECK_v0_1.md",
-    "demo_transcript": "paper/workshop/demo_terminal_transcript_v0_1.md",
-    "docker_status": "paper/workshop/DOCKER_DEMO_STATUS_v0_1.md"
-  },
-  "official_requirements_observed": {
-    "source": "https://conf.researchr.org/track/icse-2027/icse-2027-demonstrations",
-    "submission_deadline": "Friday 23-Oct-2026 AoE",
-    "acceptance_notification": "Friday 11-Dec-2026 AoE",
-    "camera_ready": "Wednesday 20-Jan-2027 AoE",
-    "format": "IEEE conference proceedings formatting; LaTeX class options \\\\documentclass[10pt,conference]{IEEEtran}",
-    "page_limit": "not exceed four pages for main text, inclusive of references, figures, tables, appendices, etc.",
-    "video": "short video between three and five minutes; YouTube required during review"
-  },
-  "paper": {
-    "pdf_rendered": true,
-    "pdf_human_review_required": true,
-    "pdf_camera_ready": false,
-    "format": "IEEEtran",
-    "pages": 2,
-    "page_limit": 4,
-    "source_sha256": "5d30fa2d2d34fcb82e7f31ccadccdc9adeaeb0cb99e1c36bfed20a1a75e00d85",
-    "pdf_sha256": "7633104c76f499b6e3447da47c1e860f652782b870e1e98cef0e9d8e2ff2558e"
-  },
-  "public_link_check": {
-    "performed": true,
-    "status": "all_checked_links_reachable",
-    "path": "paper/workshop/PUBLIC_LINK_CHECK_v0_1.json"
-  },
-  "video": {
-    "local_candidate_generated": true,
-    "local_candidate_path": "paper/workshop/video/ECL_ICSE_2027_DEMO_VIDEO_CANDIDATE.mp4",
-    "local_candidate_sha256": "a9b1d130da66a38e408d5d51655678750354c62753ac7d7d33891dddec7927aa",
-    "duration_seconds": 225.033016,
-    "duration_human": "3m45s",
-    "duration_between_three_and_five_minutes": true,
-    "youtube_upload_performed": false,
-    "youtube_url": null,
-    "human_review_required": true
-  },
-  "demo": {
-    "make_demo_verified": true,
-    "docker_cli_present": true,
-    "docker_daemon_running": true,
-    "docker_demo_verified": true,
-    "docker_start_attempted": true,
-    "docker_daemon_poll_attempts": 1,
-    "docker_blocker": null,
-    "docker_image": "ecl-demo:latest",
-    "docker_image_id": "sha256:740cc621c668a1608f9f897c0d53662a825cf706a42017d2b8f06c4038b29c3f",
-    "docker_credential_helper_workaround_used": true,
-    "dependency_mode_result_hash": "sha256:b9d8fa0269bd2efef4572daed9818a10cc3d389fb60d0d9fb376221572af7ff3",
-    "external_recognition_result_hash": "sha256:dfafe2572fdf1ee2f48732d0c3931795151afcdeb0b1ead11b887747a99f7441"
-  },
-  "boundary": {
-    "no_schema_change": true,
-    "no_core_runtime_change": true,
-    "no_external_adoption_claim": true,
-    "no_production_deployment_claim": true,
-    "no_icse_submission_claim": true,
-    "video_recording_pending": true,
-    "youtube_upload_pending": true,
-    "tool_demo_issue_is_tracking_only": true
-  }
+    "schema_version": "0.1.0",
+    "object_type": "ecl_icse_2027_tool_demo_manifest",
+    "status": "tool_demo_pdf_links_and_local_video_candidate_verified_upload_pending_not_submitted",
+    "target": {
+        "venue": "ICSE 2027",
+        "track": "Tool Demonstration and Data Showcase",
+        "submission_performed": false,
+        "portal_upload_performed": false,
+        "video_recorded": false,
+        "local_video_candidate_generated": true,
+        "local_video_candidate_qa_passed": true,
+        "youtube_upload_performed": false
+    },
+    "public_artifacts": {
+        "repository": "https://github.com/joy7758/ecl-execution-compact-layer",
+        "github_release": "https://github.com/joy7758/ecl-execution-compact-layer/releases/tag/v0.1",
+        "zenodo_record": "https://zenodo.org/records/21003766",
+        "version_doi": "10.5281/zenodo.21003766",
+        "tool_demo_tracking_issue": "https://github.com/joy7758/ecl-execution-compact-layer/issues/7"
+    },
+    "local_files": {
+        "draft": "paper/workshop/ICSE_2027_TOOL_DEMO_DRAFT.md",
+        "ieee_source": "paper/workshop/ieee/ECL_ICSE_2027_TOOL_DEMO_DRAFT.tex",
+        "ieee_pdf": "paper/workshop/ieee/ECL_ICSE_2027_TOOL_DEMO_DRAFT.pdf",
+        "pdf_build_status": "paper/workshop/ICSE_2027_PDF_BUILD_STATUS_v0_1.md",
+        "video_script": "paper/workshop/demo_video_script.md",
+        "storyboard": "paper/workshop/demo_storyboard.md",
+        "video_recording_gate": "paper/workshop/VIDEO_RECORDING_GATE_v0_1.md",
+        "video_candidate": "paper/workshop/video/ECL_ICSE_2027_DEMO_VIDEO_CANDIDATE.mp4",
+        "video_asset_manifest": "paper/workshop/video/VIDEO_ASSET_MANIFEST_v0_1.md",
+        "video_qa_report": "paper/workshop/video/VIDEO_QA_REPORT_v0_1.md",
+        "youtube_upload_handoff": "paper/workshop/YOUTUBE_UPLOAD_HANDOFF_v0_1.md",
+        "youtube_metadata_draft": "paper/workshop/YOUTUBE_METADATA_DRAFT_v0_1.md",
+        "hotcrp_submission_draft": "paper/workshop/HOTCRP_SUBMISSION_DRAFT_v0_1.md",
+        "checklist": "paper/workshop/TOOL_DEMO_SUBMISSION_CHECKLIST.md",
+        "public_link_check": "paper/workshop/PUBLIC_LINK_CHECK_v0_1.md",
+        "demo_transcript": "paper/workshop/demo_terminal_transcript_v0_1.md",
+        "docker_status": "paper/workshop/DOCKER_DEMO_STATUS_v0_1.md"
+    },
+    "official_requirements_observed": {
+        "source": "https://conf.researchr.org/track/icse-2027/icse-2027-demonstrations",
+        "submission_deadline": "Friday 23-Oct-2026 AoE",
+        "acceptance_notification": "Friday 11-Dec-2026 AoE",
+        "camera_ready": "Wednesday 20-Jan-2027 AoE",
+        "format": "IEEE conference proceedings formatting; LaTeX class options \\\\documentclass[10pt,conference]{IEEEtran}",
+        "page_limit": "not exceed four pages for main text, inclusive of references, figures, tables, appendices, etc.",
+        "video": "short video between three and five minutes; YouTube required during review"
+    },
+    "paper": {
+        "pdf_rendered": true,
+        "pdf_human_review_required": true,
+        "pdf_camera_ready": false,
+        "format": "IEEEtran",
+        "pages": 2,
+        "page_limit": 4,
+        "source_sha256": "5d30fa2d2d34fcb82e7f31ccadccdc9adeaeb0cb99e1c36bfed20a1a75e00d85",
+        "pdf_sha256": "7633104c76f499b6e3447da47c1e860f652782b870e1e98cef0e9d8e2ff2558e"
+    },
+    "public_link_check": {
+        "performed": true,
+        "status": "all_checked_links_reachable",
+        "path": "paper/workshop/PUBLIC_LINK_CHECK_v0_1.json"
+    },
+    "video": {
+        "local_candidate_generated": true,
+        "local_candidate_path": "paper/workshop/video/ECL_ICSE_2027_DEMO_VIDEO_CANDIDATE.mp4",
+        "local_candidate_sha256": "70c31bc62f9c8855b0fa82c8bcef1092c260b9e3e65116d233af9355335f4e35",
+        "duration_seconds": 225.033333,
+        "duration_human": "3m45s",
+        "duration_between_three_and_five_minutes": true,
+        "video_audio_duration_aligned": true,
+        "captions_bounded_inside_video_duration": true,
+        "youtube_upload_performed": false,
+        "youtube_url": null,
+        "human_review_required": true
+    },
+    "demo": {
+        "make_demo_verified": true,
+        "docker_cli_present": true,
+        "docker_daemon_running": true,
+        "docker_demo_verified": true,
+        "docker_start_attempted": true,
+        "docker_daemon_poll_attempts": 1,
+        "docker_blocker": null,
+        "docker_image": "ecl-demo:latest",
+        "docker_image_id": "sha256:740cc621c668a1608f9f897c0d53662a825cf706a42017d2b8f06c4038b29c3f",
+        "docker_credential_helper_workaround_used": true,
+        "dependency_mode_result_hash": "sha256:b9d8fa0269bd2efef4572daed9818a10cc3d389fb60d0d9fb376221572af7ff3",
+        "external_recognition_result_hash": "sha256:dfafe2572fdf1ee2f48732d0c3931795151afcdeb0b1ead11b887747a99f7441"
+    },
+    "boundary": {
+        "no_schema_change": true,
+        "no_core_runtime_change": true,
+        "no_external_adoption_claim": true,
+        "no_production_deployment_claim": true,
+        "no_icse_submission_claim": true,
+        "final_video_upload_pending": true,
+        "youtube_upload_pending": true,
+        "tool_demo_issue_is_tracking_only": true
+    }
 }

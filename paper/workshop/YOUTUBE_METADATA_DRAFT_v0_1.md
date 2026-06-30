@@ -31,6 +31,16 @@ This video describes a local research software artifact. The Zenodo DOI is a sof
 
 Unlisted during review.
 
+## Local Files
+
+```text
+video_file=paper/workshop/video/ECL_ICSE_2027_DEMO_VIDEO_CANDIDATE.mp4
+video_sha256=70c31bc62f9c8855b0fa82c8bcef1092c260b9e3e65116d233af9355335f4e35
+caption_file=paper/workshop/video/ECL_ICSE_2027_DEMO_VIDEO_CANDIDATE.srt
+caption_sha256=7001c24bc17dbf44079681a6addeb36481c639004c74eedac1834691d0f7e525
+thumbnail_file=paper/workshop/video/video_thumbnail.png
+```
+
 ## Tags
 
 ```text
