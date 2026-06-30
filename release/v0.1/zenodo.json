@@ -4,7 +4,8 @@
   "creators": [
     {
       "name": "Bin Zhang",
-      "affiliation": "independent researcher"
+      "affiliation": "independent researcher",
+      "orcid": "0009-0002-8861-1481"
     }
   ],
   "version": "0.1",
@@ -25,5 +26,8 @@
       "resource_type": "software"
     }
   ],
-  "notes": "GitHub release metadata prepared. Zenodo DOI minting has not been performed."
+  "doi": "10.5281/zenodo.21003766",
+  "conceptdoi": "10.5281/zenodo.21003765",
+  "record_url": "https://zenodo.org/records/21003766",
+  "notes": "Zenodo record 21003766 was published for the ECL v0.1 software archive. This is not peer-review acceptance, arXiv submission, external adoption, or a standards claim."
 }

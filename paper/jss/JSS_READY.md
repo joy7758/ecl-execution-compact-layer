@@ -6,11 +6,11 @@ Title: ECL: A Deterministic Cross-Runtime Execution IR with Replayable Semantics
 
 Author: Bin Zhang
 
-Affiliation: independent researcher
+Affiliation: Independent Researcher
 
 Corresponding author: Bin Zhang
 
-ORCID: not provided
+ORCID: 0009-0002-8861-1481
 
 Repository: https://github.com/joy7758/ecl-execution-compact-layer
 
@@ -18,7 +18,7 @@ Version: v0.1
 
 Target journal: The Journal of Systems and Software
 
-Article type: Research article / software systems paper
+Article type: Research Paper
 
 ## Highlights
 
@@ -162,13 +162,10 @@ The MCP-shaped local wrapper exposes the dependency API through tool-shaped func
 
 ## 7. Architecture
 
-```text
-OpenAI-style trace ----\
-                       -> ECL mapping -> ECL object -> Validator -> Replay artifacts
-LangChain-style trace -/                    |
-                                            -> SDK dependency API
-                                            -> MCP-shaped local wrapper
-```
+OpenAI-style and LangChain-style traces are mapped into an ECL object. The
+object is validated and replayed into deterministic artifacts. The same ECL
+object can also be exposed through the SDK dependency API and the MCP-shaped
+local wrapper.
 
 ## 8. Evaluation
 

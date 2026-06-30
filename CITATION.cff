@@ -4,12 +4,15 @@ title: "ECL v0.1: Deterministic execution IR layer"
 version: "0.1.0"
 date-released: "2026-06-28"
 license: MIT
+doi: "10.5281/zenodo.21003766"
 authors:
   - family-names: Zhang
     given-names: Bin
     affiliation: independent researcher
+    orcid: "https://orcid.org/0009-0002-8861-1481"
 repository-code: "https://github.com/joy7758/ecl-execution-compact-layer"
-url: "https://github.com/joy7758/ecl-execution-compact-layer/releases/tag/v0.1"
+url: "https://zenodo.org/records/21003766"
+repository-artifact: "https://github.com/joy7758/ecl-execution-compact-layer/releases/tag/v0.1"
 keywords:
   - execution IR
   - agent systems

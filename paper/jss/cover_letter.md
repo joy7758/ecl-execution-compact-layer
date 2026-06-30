@@ -2,7 +2,7 @@
 
 Dear Editor,
 
-I am submitting the manuscript "ECL: A Deterministic Cross-Runtime Execution IR with Replayable Semantics and Dependency Interface" for consideration as a research article / software systems paper in The Journal of Systems and Software.
+I am submitting the manuscript "ECL: A Deterministic Cross-Runtime Execution IR with Replayable Semantics and Dependency Interface" for consideration as a Research Paper in The Journal of Systems and Software.
 
 The manuscript presents Execution Compact Layer (ECL), a deterministic execution intermediate representation for agent runtime traces. ECL maps OpenAI Agents SDK-style and LangChain-style traces into four replayable surfaces: state, intent, action, and evidence. The paper reports a local validation suite, synthetic trace-corpus evaluation, negative validation matrix, mapping coverage analysis, SDK entrypoints, and reproducible replay artifacts.
 
@@ -14,4 +14,4 @@ Sincerely,
 
 Bin Zhang
 
-independent researcher
+Independent Researcher

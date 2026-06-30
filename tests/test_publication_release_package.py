@@ -69,17 +69,20 @@ class PublicationReleasePackageTests(unittest.TestCase):
 
     def test_release_manifest_preserves_publication_boundary(self) -> None:
         manifest = json.loads((RELEASE / "RELEASE_MANIFEST_v0_1.json").read_text(encoding="utf-8"))
-        self.assertEqual(manifest["status"], "github_release_ready_zenodo_pending")
+        self.assertEqual(manifest["status"], "zenodo_published_doi_minted")
         self.assertFalse(manifest["boundary"]["schema_modified"])
         self.assertFalse(manifest["boundary"]["feature_change"])
-        self.assertFalse(manifest["boundary"]["doi_minted"])
+        self.assertTrue(manifest["boundary"]["doi_minted"])
+        self.assertTrue(manifest["boundary"]["publish_performed"])
+        self.assertEqual(manifest["boundary"]["zenodo_version_doi"], "10.5281/zenodo.21003766")
+        self.assertEqual(manifest["zenodo"]["version_doi"], "10.5281/zenodo.21003766")
         self.assertTrue(manifest["boundary"]["github_release_created"])
         self.assertTrue(manifest["boundary"]["public_release"])
         self.assertTrue(manifest["boundary"]["license_selected"])
 
     def test_integrity_report_records_required_validation(self) -> None:
         report = json.loads((RELEASE / "INTEGRITY_REPORT_v0_1.json").read_text(encoding="utf-8"))
-        self.assertEqual(report["status"], "passed_local_release_package_validation_github_release_ready")
+        self.assertEqual(report["status"], "passed_local_release_package_validation_zenodo_doi_minted")
         commands = {item["command"]: item for item in report["commands"]}
         self.assertIn("python3 -m unittest discover -s tests", commands)
         self.assertIn("python3 sdk/demo_dependency_mode.py", commands)
@@ -88,7 +91,9 @@ class PublicationReleasePackageTests(unittest.TestCase):
         self.assertTrue(report["boundary"]["schema_unchanged"])
         self.assertTrue(report["boundary"]["replay_stable"])
         self.assertTrue(report["boundary"]["cross_runtime_consistency_stable"])
-        self.assertFalse(report["boundary"]["doi_minted"])
+        self.assertTrue(report["boundary"]["doi_minted"])
+        self.assertTrue(report["boundary"]["zenodo_record_published"])
+        self.assertEqual(report["boundary"]["zenodo_version_doi"], "10.5281/zenodo.21003766")
         self.assertTrue(report["boundary"]["github_release_created"])
         self.assertTrue(report["boundary"]["public_release"])
         self.assertTrue(report["boundary"]["license_selected"])

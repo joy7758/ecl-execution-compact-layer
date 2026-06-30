@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1.0",
   "object_type": "ecl_release_integrity_report",
-  "status": "passed_local_release_package_validation_github_release_ready",
+  "status": "passed_local_release_package_validation_zenodo_doi_minted",
   "release_root": "release/v0.1",
   "commands": [
     {
@@ -42,8 +42,12 @@
     "replay_stable": true,
     "cross_runtime_consistency_stable": true,
     "github_release_created": true,
-    "zenodo_deposit_created": false,
-    "doi_minted": false,
+    "zenodo_deposit_created": true,
+    "zenodo_record_published": true,
+    "doi_minted": true,
+    "zenodo_record_url": "https://zenodo.org/records/21003766",
+    "zenodo_version_doi": "10.5281/zenodo.21003766",
+    "zenodo_concept_doi": "10.5281/zenodo.21003765",
     "public_release": true,
     "license_selected": true
   },
@@ -52,5 +56,11 @@
     "url": "https://github.com/joy7758/ecl-execution-compact-layer",
     "release_tag": "v0.1",
     "release_url": "https://github.com/joy7758/ecl-execution-compact-layer/releases/tag/v0.1"
+  },
+  "zenodo": {
+    "record_id": "21003766",
+    "record_url": "https://zenodo.org/records/21003766",
+    "version_doi": "10.5281/zenodo.21003766",
+    "concept_doi": "10.5281/zenodo.21003765"
   }
 }

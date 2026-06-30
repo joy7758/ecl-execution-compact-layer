@@ -1,13 +1,38 @@
 {
   "schema_version": "0.1.0",
   "object_type": "ecl_arxiv_submission_manifest",
-  "status": "arxiv_package_prepared_not_submitted",
+  "status": "arxiv_endorsement_code_generated_pending_endorser",
   "date_prepared": "2026-06-28",
   "target": {
     "service": "arXiv",
     "primary_category": "cs.SE",
     "cross_list": "cs.AI",
-    "submission_performed": false
+    "submission_performed": false,
+    "submission_attempted": true,
+    "submission_form_id": "7761929",
+    "primary_category_attempted": "cs.SE",
+    "license_selected": "arXiv.org perpetual, non-exclusive license",
+    "blocker": "not_endorsed_for_cs.SE",
+    "endorsement_request_status": "endorsement_code_generated_pending_endorser",
+    "endorsement_support_article": {
+      "title": "A Minimal UDI-DICOM Mapping Profile and Validation Artifact for Medical-Device Imaging Workflows",
+      "author": "Bin Zhang",
+      "journal": "Journal of Imaging Informatics in Medicine",
+      "publisher": "Springer Nature",
+      "published": "2026-05-27",
+      "doi": "https://doi.org/10.1007/s10278-026-02019-6",
+      "article_url": "https://link.springer.com/article/10.1007/s10278-026-02019-6"
+    },
+    "endorsement_request_draft": "paper/arxiv/ARXIV_ENDORSEMENT_REQUEST_DRAFT_v0_1.md",
+    "endorsement_request_submitted": false,
+    "endorsement_code_generated": true,
+    "endorsement_code": "WBI7WG",
+    "endorsement_email_sent_to": "joy7758@aliyun.com",
+    "endorser_contacted": false,
+    "endorsement_completed": false,
+    "arxiv_support_request_submitted": true,
+    "arxiv_support_reference": "AH-196098",
+    "arxiv_support_confirmation_destination": "joy7758@aliyun.com"
   },
   "files": [
     "paper/arxiv/submission/ECL_arxiv_v0_1.pdf",
@@ -19,7 +44,26 @@
   "boundary": {
     "arxiv_submission_performed": false,
     "final_submit_article_clicked": false,
-    "doi_minted": false
+    "doi_minted": false,
+    "arxiv_submission_attempted": true,
+    "file_upload_performed": false,
+    "processing_performed": false,
+    "preview_approved": false,
+    "arxiv_id_assigned": false,
+    "announcement_performed": false,
+    "blocker": "You are not endorsed for this archive",
+    "supporting_evidence_available": "published_springer_article_doi_10.1007/s10278-026-02019-6",
+    "endorsement_support_article_recorded": true,
+    "endorsement_request_draft_created": true,
+    "endorsement_request_submitted": false,
+    "endorsement_code_generated": true,
+    "endorsement_code": "WBI7WG",
+    "endorsement_email_sent_to": "joy7758@aliyun.com",
+    "endorser_contacted": false,
+    "endorsement_completed": false,
+    "arxiv_support_request_submitted": true,
+    "arxiv_support_reference": "AH-196098",
+    "arxiv_support_confirmation_destination": "joy7758@aliyun.com"
   },
   "file_hashes": {
     "paper/arxiv/submission/ECL_arxiv_v0_1.pdf": {

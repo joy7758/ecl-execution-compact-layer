@@ -38,4 +38,14 @@ python3 experiments/evaluate_trace_corpus.py
 
 ## Citation
 
-Use `CITATION.cff` for software citation metadata. Current boundaries are recorded in `CHANGELOG.md` and `paper/SUBMISSION_MATERIALS_INDEX.md`.
+ECL v0.1 is archived on Zenodo as a software record:
+
+```text
+Zhang, B. (2026). ECL v0.1 (0.1). Zenodo. https://doi.org/10.5281/zenodo.21003766
+```
+
+- Version DOI: `10.5281/zenodo.21003766`
+- Concept DOI: `10.5281/zenodo.21003765`
+- Record URL: `https://zenodo.org/records/21003766`
+
+Use `CITATION.cff` for software citation metadata. Current boundaries are recorded in `CHANGELOG.md` and `paper/SUBMISSION_MATERIALS_INDEX.md`. The Zenodo archive is a software DOI record; it is not peer-review acceptance, external adoption, or a standardization claim.

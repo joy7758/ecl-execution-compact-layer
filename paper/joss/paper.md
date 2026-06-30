@@ -30,6 +30,8 @@ ECL is designed for work where execution records must be compared, archived, tes
 
 The artifact is useful when a team wants to preserve the shape of an agent execution without preserving every runtime-specific field. ECL's loss-aware adapters make this tradeoff explicit: some source information may be preserved only as raw trace references or recorded as mapping loss. This makes ECL closer to an execution representation layer than a tracing framework.
 
+The ECL v0.1 software archive is available on Zenodo with version DOI `10.5281/zenodo.21003766` and concept DOI `10.5281/zenodo.21003765`. The DOI records the software artifact and does not imply journal acceptance, production deployment, external adoption, or standards-body endorsement.
+
 # State of the field
 
 Several adjacent systems motivate ECL. OpenAI Agents SDK and LangChain provide runtime-specific tracing and callback mechanisms [@openai_agents_tracing; @langchain_tracing]. MCP defines a tool and context exchange protocol surface [@mcp_spec]. OpenTelemetry defines a broad observability model for distributed traces [@opentelemetry_trace]. Compiler and execution environments use intermediate representations, including LLVM IR and WebAssembly, to separate source systems from execution or portability targets [@llvm_langref; @wasm_core].

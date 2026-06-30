@@ -4,7 +4,7 @@
     {
       "name": "Bin Zhang",
       "affiliation": "independent researcher",
-      "orcid": ""
+      "orcid": "0009-0002-8861-1481"
     }
   ],
   "description": "ECL v0.1 is a deterministic execution IR layer for cross-runtime agent traces with replayable semantics, local validation, SDK embedding, and dependency-mode verification.",
@@ -33,10 +33,14 @@
     }
   ],
   "boundary": {
-    "prepared_only": true,
+    "prepared_only": false,
     "external_api_call_performed": false,
-    "deposit_created": false,
-    "doi_minted": false,
-    "submission_executed": false
+    "deposit_created": true,
+    "record_published": true,
+    "doi_minted": true,
+    "submission_executed": true,
+    "record_url": "https://zenodo.org/records/21003766",
+    "version_doi": "10.5281/zenodo.21003766",
+    "concept_doi": "10.5281/zenodo.21003765"
   }
 }

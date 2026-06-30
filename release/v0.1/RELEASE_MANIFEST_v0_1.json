@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1.0",
   "object_type": "ecl_publication_finalization_manifest",
-  "status": "github_release_ready_zenodo_pending",
+  "status": "zenodo_published_doi_minted",
   "version": "0.1",
   "release_root": "release/v0.1",
   "required_structure": {
@@ -38,16 +38,52 @@
     "schema_modified": false,
     "feature_change": false,
     "github_release_created": true,
-    "zenodo_deposit_created": false,
-    "doi_minted": false,
+    "zenodo_deposit_created": true,
+    "doi_minted": true,
     "public_release": true,
     "license_selected": true,
-    "reviewer_narrative_alignment_verified": true
+    "reviewer_narrative_alignment_verified": true,
+    "github_release_assets_uploaded": true,
+    "zenodo_web_login_required": false,
+    "zenodo_record_id": "21003766",
+    "zenodo_preview_verified": true,
+    "publish_performed": true,
+    "zenodo_record_url": "https://zenodo.org/records/21003766",
+    "zenodo_version_doi": "10.5281/zenodo.21003766",
+    "zenodo_concept_doi": "10.5281/zenodo.21003765"
   },
   "github": {
     "repository": "joy7758/ecl-execution-compact-layer",
     "url": "https://github.com/joy7758/ecl-execution-compact-layer",
     "release_tag": "v0.1",
-    "release_url": "https://github.com/joy7758/ecl-execution-compact-layer/releases/tag/v0.1"
+    "release_url": "https://github.com/joy7758/ecl-execution-compact-layer/releases/tag/v0.1",
+    "release_published_at": "2026-06-28T02:15:11Z",
+    "doi_ready_assets_uploaded": true,
+    "doi_ready_assets": {
+      "CITATION.cff": "https://github.com/joy7758/ecl-execution-compact-layer/releases/download/v0.1/CITATION.cff",
+      "ECL_v0.1_zenodo_deposit_package.zip": "https://github.com/joy7758/ecl-execution-compact-layer/releases/download/v0.1/ECL_v0.1_zenodo_deposit_package.zip",
+      "ZENODO_DOI_ACTION_STATUS_v0_1.md": "https://github.com/joy7758/ecl-execution-compact-layer/releases/download/v0.1/ZENODO_DOI_ACTION_STATUS_v0_1.md",
+      "zenodo.json": "https://github.com/joy7758/ecl-execution-compact-layer/releases/download/v0.1/zenodo.json",
+      "zenodo_deposit_ready.json": "https://github.com/joy7758/ecl-execution-compact-layer/releases/download/v0.1/zenodo_deposit_ready.json"
+    }
+  },
+  "zenodo": {
+    "deposit_package": "release/ECL_v0.1_zenodo_deposit_package.zip",
+    "deposit_package_sha256": "7840355122dc78ecd06183f6b39e593dce122f7296381a4536694ef5a6f8369e",
+    "web_login_required": false,
+    "deposit_created": true,
+    "record_id": "21003766",
+    "draft_url": "https://zenodo.org/uploads/21003766",
+    "preview_url": "https://zenodo.org/records/21003766?preview=1",
+    "preview_verified": true,
+    "uploaded_filename": "ECL_v0.1_zenodo_deposit_package.zip",
+    "uploaded_md5": "4061370b47e35ccd6c7ace7593a5a787",
+    "uploaded_size": "90.31 KB",
+    "doi_minted": true,
+    "publish_performed": true,
+    "record_url": "https://zenodo.org/records/21003766",
+    "version_doi": "10.5281/zenodo.21003766",
+    "concept_doi": "10.5281/zenodo.21003765",
+    "citation": "Zhang, B. (2026). ECL v0.1 (0.1). Zenodo. https://doi.org/10.5281/zenodo.21003766"
   }
 }

@@ -4,6 +4,15 @@ ECL is a deterministic execution IR for cross-runtime agent systems with replaya
 
 License: MIT.
 
+## Archive DOI
+
+- Version DOI: `10.5281/zenodo.21003766`
+- Concept DOI: `10.5281/zenodo.21003765`
+- Zenodo record: `https://zenodo.org/records/21003766`
+- Citation: `Zhang, B. (2026). ECL v0.1 (0.1). Zenodo. https://doi.org/10.5281/zenodo.21003766`
+
+This DOI records the ECL v0.1 software archive. It is not a peer-review acceptance, production deployment, external adoption signal, or formal endorsement.
+
 ## Structure Overview
 
 - SDK: `sdk/`
