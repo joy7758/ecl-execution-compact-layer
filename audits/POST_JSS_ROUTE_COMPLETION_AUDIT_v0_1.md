@@ -20,9 +20,11 @@ Date: 2026-06-30
 | ICSE demo video script/storyboard | `paper/workshop/demo_video_script.md`, `paper/workshop/demo_storyboard.md` | complete |
 | Reviewer one-command demo | `Makefile`, `docs/demo/ONE_COMMAND_DEMO.md` | complete |
 | Docker demo path | `Dockerfile` | complete_local_file |
+| Docker demo runtime verification | `paper/workshop/DOCKER_DEMO_STATUS_v0_1.md` | blocked_docker_daemon_unavailable |
 | Six-month JOSS plan | `post_pub/JOSS_SIX_MONTH_READINESS_PLAN.md` | plan_complete |
 | 90-day execution plan | `post_pub/ECL_90_DAY_EXECUTION_PLAN.md` | plan_complete |
 | Safe dissemination copy | `docs/dissemination/SAFE_PUBLIC_ANNOUNCEMENT_v0_1.md` | complete |
+| Zenodo technical-report new-version candidate package | `release/ECL_v0.1_zenodo_technical_report_update_candidate.zip` | candidate_prepared_not_uploaded |
 | Actual ICSE submission | no portal submission evidence | future_external_action |
 | Actual JOSS resubmission | six-month history not elapsed | future_external_action |
 | External user feedback | no public feedback evidence recorded | future_external_action |

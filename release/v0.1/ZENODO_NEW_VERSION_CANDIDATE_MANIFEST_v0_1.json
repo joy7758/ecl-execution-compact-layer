@@ -1,0 +1,47 @@
+{
+  "schema_version": "0.1.0",
+  "object_type": "ecl_zenodo_new_version_candidate_manifest",
+  "status": "candidate_package_prepared_not_uploaded_not_published",
+  "date_prepared": "2026-06-30",
+  "current_published_record": {
+    "record_id": "21003766",
+    "record_url": "https://zenodo.org/records/21003766",
+    "version_doi": "10.5281/zenodo.21003766",
+    "concept_doi": "10.5281/zenodo.21003765"
+  },
+  "candidate_package": {
+    "path": "release/ECL_v0.1_zenodo_technical_report_update_candidate.zip",
+    "sha256": "dd07e9c3b9664e810ac53b2044305fdb71031dea705e62240b8b3e7db13eab08",
+    "purpose": "Candidate package for a future Zenodo new version that would include the technical report PDF."
+  },
+  "included_inputs": [
+    {
+      "path": "release/ECL_v0.1_zenodo_deposit_package.zip",
+      "sha256": "7840355122dc78ecd06183f6b39e593dce122f7296381a4536694ef5a6f8369e"
+    },
+    {
+      "path": "paper/technical_report/ECL_TECHNICAL_REPORT_v0_1.pdf",
+      "sha256": "c5210e3c3782971b371c9e0fad12cf7fd6c1a0dfadaf13ad783c5a47f2155af5"
+    },
+    {
+      "path": "release/ECL_v0.1_citation_package.zip",
+      "sha256": "2d50e3e569299a3a3450b55aa764efb396a83b3623171a6e43f1ce8060d032ea"
+    },
+    {
+      "path": "release/v0.1/ZENODO_TECH_REPORT_ATTACHMENT_DECISION_v0_1.md",
+      "sha256": "25691dfb69723bfa8788953109d0e0e01135da7e78ce9385d7323a7cbf4f8e9d"
+    },
+    {
+      "path": "CITATION.cff",
+      "sha256": "44a500bc2b683fba8c77851d1647a7a88488f2ff53c36cbc9573f50be97fc5f6"
+    }
+  ],
+  "boundary": {
+    "zenodo_new_version_created": false,
+    "candidate_uploaded_to_zenodo": false,
+    "zenodo_new_version_published": false,
+    "new_version_doi_minted": false,
+    "human_confirmation_required_before_publish": true,
+    "current_record_files_modified": false
+  }
+}

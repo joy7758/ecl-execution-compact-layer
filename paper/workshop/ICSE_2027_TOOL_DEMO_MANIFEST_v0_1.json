@@ -1,0 +1,41 @@
+{
+  "schema_version": "0.1.0",
+  "object_type": "ecl_icse_2027_tool_demo_manifest",
+  "status": "tool_demo_package_prepared_not_submitted",
+  "target": {
+    "venue": "ICSE 2027",
+    "track": "Tool Demonstration and Data Showcase",
+    "submission_performed": false,
+    "portal_upload_performed": false,
+    "video_recorded": false
+  },
+  "public_artifacts": {
+    "repository": "https://github.com/joy7758/ecl-execution-compact-layer",
+    "github_release": "https://github.com/joy7758/ecl-execution-compact-layer/releases/tag/v0.1",
+    "zenodo_record": "https://zenodo.org/records/21003766",
+    "version_doi": "10.5281/zenodo.21003766"
+  },
+  "local_files": {
+    "draft": "paper/workshop/ICSE_2027_TOOL_DEMO_DRAFT.md",
+    "video_script": "paper/workshop/demo_video_script.md",
+    "storyboard": "paper/workshop/demo_storyboard.md",
+    "checklist": "paper/workshop/TOOL_DEMO_SUBMISSION_CHECKLIST.md",
+    "demo_transcript": "paper/workshop/demo_terminal_transcript_v0_1.md",
+    "docker_status": "paper/workshop/DOCKER_DEMO_STATUS_v0_1.md"
+  },
+  "demo": {
+    "make_demo_verified": true,
+    "docker_cli_present": true,
+    "docker_daemon_running": false,
+    "docker_demo_verified": false,
+    "dependency_mode_result_hash": "sha256:e6decc8c2c4117011db44c6bcd62956b62344fe47871fc6564913cac2c156ac2",
+    "external_recognition_result_hash": "sha256:dfafe2572fdf1ee2f48732d0c3931795151afcdeb0b1ead11b887747a99f7441"
+  },
+  "boundary": {
+    "no_schema_change": true,
+    "no_core_runtime_change": true,
+    "no_external_adoption_claim": true,
+    "no_production_deployment_claim": true,
+    "no_icse_submission_claim": true
+  }
+}

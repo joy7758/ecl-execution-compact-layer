@@ -19,6 +19,9 @@ Official track page: https://conf.researchr.org/track/icse-2027/icse-2027-demons
 - Draft paper: `paper/workshop/ICSE_2027_TOOL_DEMO_DRAFT.md`
 - Video script: `paper/workshop/demo_video_script.md`
 - Storyboard: `paper/workshop/demo_storyboard.md`
+- Demo manifest: `paper/workshop/ICSE_2027_TOOL_DEMO_MANIFEST_v0_1.json`
+- Terminal transcript: `paper/workshop/demo_terminal_transcript_v0_1.md`
+- Docker verification status: `paper/workshop/DOCKER_DEMO_STATUS_v0_1.md`
 - One-command demo: `make demo`
 - Repository: `https://github.com/joy7758/ecl-execution-compact-layer`
 - Software archive DOI: `10.5281/zenodo.21003766`
@@ -26,6 +29,7 @@ Official track page: https://conf.researchr.org/track/icse-2027/icse-2027-demons
 ## Pre-Submission Gates
 
 - [ ] Run `make demo`.
+- [ ] Start Docker daemon and rerun `docker build -t ecl-demo . && docker run --rm ecl-demo` if a container artifact is required.
 - [ ] Record current test count and output hashes.
 - [ ] Render 4-page PDF in required ACM format.
 - [ ] Record 3-5 minute demo video.

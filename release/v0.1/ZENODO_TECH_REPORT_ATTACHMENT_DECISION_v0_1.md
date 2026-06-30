@@ -36,6 +36,8 @@ technical_report_uploaded_to_github_release=true
 technical_report_uploaded_to_zenodo_record=false
 zenodo_new_version_required=true
 zenodo_new_version_published=false
+zenodo_new_version_candidate_package=release/ECL_v0.1_zenodo_technical_report_update_candidate.zip
+zenodo_new_version_candidate_sha256=dd07e9c3b9664e810ac53b2044305fdb71031dea705e62240b8b3e7db13eab08
 ```
 
 ## Next Action

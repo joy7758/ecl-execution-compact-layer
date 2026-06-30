@@ -18,6 +18,7 @@ Status: public_release_and_zenodo_archive
 - Added technical-report and ICSE 2027 tool-demo preparation surfaces after JSS prescreen rejection.
 - Added `make demo` as the one-command local reviewer entrypoint.
 - Added citation package, safe public announcement copy, 90-day execution plan, and post-JSS route audit.
+- Added ICSE demo manifest, local terminal transcript, Docker daemon status, and Zenodo technical-report new-version candidate package.
 
 Boundary:
 
