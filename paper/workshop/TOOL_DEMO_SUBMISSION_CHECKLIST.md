@@ -25,6 +25,7 @@ Official track page: https://conf.researchr.org/track/icse-2027/icse-2027-demons
 - One-command demo: `make demo`
 - Repository: `https://github.com/joy7758/ecl-execution-compact-layer`
 - Software archive DOI: `10.5281/zenodo.21003766`
+- Tool-demo tracking issue: `https://github.com/joy7758/ecl-execution-compact-layer/issues/7`
 
 ## Pre-Submission Gates
 

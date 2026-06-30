@@ -27,6 +27,7 @@ Date: 2026-06-30
 | Feedback intake protocol | `post_pub/FEEDBACK_INTAKE_PROTOCOL_v0_1.md` | initialized |
 | 90-day execution plan | `post_pub/ECL_90_DAY_EXECUTION_PLAN.md` | plan_complete |
 | Safe dissemination copy | `docs/dissemination/SAFE_PUBLIC_ANNOUNCEMENT_v0_1.md` | complete |
+| External feedback request drafts | `docs/dissemination/EXTERNAL_FEEDBACK_REQUEST_DRAFTS_v0_1.md` and `.json` | drafts_ready_not_posted |
 | Zenodo technical-report new-version candidate package | `release/ECL_v0.1_zenodo_technical_report_update_candidate.zip` | candidate_prepared_not_uploaded |
 | Actual ICSE submission | no portal submission evidence | future_external_action |
 | Actual JOSS resubmission | six-month history not elapsed | future_external_action |

@@ -34,6 +34,7 @@ public_maintenance_issues_created=true
 | --- | --- | --- | --- | --- |
 | 2026-06-30 | `v0.1` / `1f22308026a66ebd7a762d5dac6111802f890fef` | public archive + demo baseline | Zenodo DOI, GitHub Release, `make demo` | baseline_recorded |
 | 2026-06-30 | `443e73e68879e06ca3280cc08e02f53e3c8d783e` | public maintenance issue bootstrap | GitHub issues [#1](https://github.com/joy7758/ecl-execution-compact-layer/issues/1)-[#6](https://github.com/joy7758/ecl-execution-compact-layer/issues/6), labels `maintenance` and `joss-maturation` | maintainer_planning_issues_recorded |
+| 2026-06-30 | `6dc23a92ed9d034076e147e7c0368e694d40ef6d` | ICSE tool-demo tracking issue | GitHub issue [#7](https://github.com/joy7758/ecl-execution-compact-layer/issues/7), label `tool-demo` | maintainer_tool_demo_tracking_recorded |
 
 ## External Feedback Entries
 

@@ -32,6 +32,7 @@ Start date: 2026-06-30
 - Record external reproductions only when a named external party or public issue verifies execution.
 - Do not convert stars, forks, or mentions alone into adoption claims.
 - Prepare ICSE 2027 Tool Demonstration submission package before the official deadline.
+- Use `docs/dissemination/EXTERNAL_FEEDBACK_REQUEST_DRAFTS_v0_1.md` as draft copy only; do not mark feedback received until a real external response exists.
 
 ## Boundary
 

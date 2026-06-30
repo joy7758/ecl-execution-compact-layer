@@ -1,0 +1,33 @@
+{
+  "schema_version": "0.1.0",
+  "object_type": "ecl_external_feedback_request_drafts",
+  "status": "drafts_ready_not_posted",
+  "date_checked": "2026-06-30",
+  "repository": "https://github.com/joy7758/ecl-execution-compact-layer",
+  "archive": "https://doi.org/10.5281/zenodo.21003766",
+  "drafts": [
+    {
+      "channel": "langchain_forum",
+      "status": "draft_ready_not_posted",
+      "purpose": "request bounded feedback on trace mapping, loss reporting, and demo reproducibility"
+    },
+    {
+      "channel": "mcp_discussion",
+      "status": "draft_ready_not_posted",
+      "purpose": "request bounded feedback on MCP-shaped local wrapper boundary wording"
+    },
+    {
+      "channel": "github_issue_prompt",
+      "status": "draft_ready_not_posted",
+      "purpose": "collect reproducible make demo feedback without private traces or personal data"
+    }
+  ],
+  "boundary": {
+    "drafts_prepared": true,
+    "posts_published": false,
+    "external_feedback_recorded": false,
+    "external_adoption_claim": false,
+    "peer_review_claim": false,
+    "production_deployment_claim": false
+  }
+}

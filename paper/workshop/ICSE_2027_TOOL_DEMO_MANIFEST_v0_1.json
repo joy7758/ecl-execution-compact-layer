@@ -13,7 +13,8 @@
     "repository": "https://github.com/joy7758/ecl-execution-compact-layer",
     "github_release": "https://github.com/joy7758/ecl-execution-compact-layer/releases/tag/v0.1",
     "zenodo_record": "https://zenodo.org/records/21003766",
-    "version_doi": "10.5281/zenodo.21003766"
+    "version_doi": "10.5281/zenodo.21003766",
+    "tool_demo_tracking_issue": "https://github.com/joy7758/ecl-execution-compact-layer/issues/7"
   },
   "local_files": {
     "draft": "paper/workshop/ICSE_2027_TOOL_DEMO_DRAFT.md",
@@ -39,6 +40,7 @@
     "no_core_runtime_change": true,
     "no_external_adoption_claim": true,
     "no_production_deployment_claim": true,
-    "no_icse_submission_claim": true
+    "no_icse_submission_claim": true,
+    "tool_demo_issue_is_tracking_only": true
   }
 }
