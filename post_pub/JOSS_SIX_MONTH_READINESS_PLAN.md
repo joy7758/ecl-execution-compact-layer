@@ -67,6 +67,8 @@ Before any JOSS resubmission, verify:
 ## Evidence Ledgers
 
 - Maintenance evidence ledger: `post_pub/MAINTENANCE_EVIDENCE_LEDGER_v0_1.md`
+- Maintenance issue bootstrap: `post_pub/MAINTENANCE_ISSUE_BOOTSTRAP_v0_1.md`
+- Maintenance issue bootstrap manifest: `post_pub/MAINTENANCE_ISSUE_BOOTSTRAP_v0_1.json`
 - Maintenance release template: `post_pub/RELEASE_MAINTENANCE_TEMPLATE_v0_1.md`
 - Feedback intake protocol: `post_pub/FEEDBACK_INTAKE_PROTOCOL_v0_1.md`
 
