@@ -1,6 +1,6 @@
 # ECL Docker Demo Status v0.1
 
-Status: docker_cli_present_daemon_unavailable
+Status: docker_cli_present_daemon_unavailable_after_start_attempt
 
 Date: 2026-06-30
 
@@ -16,6 +16,23 @@ docker run --rm ecl-demo
 ```text
 Docker version 29.5.2, build 79eb04c7d8
 Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+```
+
+## Start Attempt
+
+Command:
+
+```bash
+open -ga Docker
+```
+
+Polling result:
+
+```text
+waiting_for_docker_daemon attempts=24
+poll_interval_seconds=5
+docker_daemon_ready=false
+final_error=Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
 ```
 
 ## Interpretation
@@ -41,4 +58,4 @@ external_recognition_result_hash=sha256:dfafe2572fdf1ee2f48732d0c3931795151afcde
 
 ## Boundary
 
-This file does not claim a working container image. It records a prepared Dockerfile and a blocked local Docker verification due to daemon availability.
+This file does not claim a working container image. It records a prepared Dockerfile and a blocked local Docker verification due to daemon availability after an explicit start attempt.

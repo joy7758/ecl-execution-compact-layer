@@ -64,6 +64,12 @@ Before any JOSS resubmission, verify:
 - citation metadata is current;
 - no unsupported adoption, production, or standardization claims are present.
 
+## Evidence Ledgers
+
+- Maintenance evidence ledger: `post_pub/MAINTENANCE_EVIDENCE_LEDGER_v0_1.md`
+- Maintenance release template: `post_pub/RELEASE_MAINTENANCE_TEMPLATE_v0_1.md`
+- Feedback intake protocol: `post_pub/FEEDBACK_INTAKE_PROTOCOL_v0_1.md`
+
 ## Boundary
 
 This is a readiness plan, not a JOSS acceptance signal, revision invitation, community adoption record, or peer-reviewed result.

@@ -28,6 +28,9 @@
     "docker_cli_present": true,
     "docker_daemon_running": false,
     "docker_demo_verified": false,
+    "docker_start_attempted": true,
+    "docker_daemon_poll_attempts": 24,
+    "docker_blocker": "daemon_unavailable_after_start_attempt",
     "dependency_mode_result_hash": "sha256:e6decc8c2c4117011db44c6bcd62956b62344fe47871fc6564913cac2c156ac2",
     "external_recognition_result_hash": "sha256:dfafe2572fdf1ee2f48732d0c3931795151afcdeb0b1ead11b887747a99f7441"
   },

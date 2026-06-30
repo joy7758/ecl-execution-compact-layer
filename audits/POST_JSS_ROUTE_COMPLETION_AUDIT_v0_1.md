@@ -22,6 +22,8 @@ Date: 2026-06-30
 | Docker demo path | `Dockerfile` | complete_local_file |
 | Docker demo runtime verification | `paper/workshop/DOCKER_DEMO_STATUS_v0_1.md` | blocked_docker_daemon_unavailable |
 | Six-month JOSS plan | `post_pub/JOSS_SIX_MONTH_READINESS_PLAN.md` | plan_complete |
+| Maintenance evidence ledger | `post_pub/MAINTENANCE_EVIDENCE_LEDGER_v0_1.md` | initialized_no_external_feedback_recorded |
+| Feedback intake protocol | `post_pub/FEEDBACK_INTAKE_PROTOCOL_v0_1.md` | initialized |
 | 90-day execution plan | `post_pub/ECL_90_DAY_EXECUTION_PLAN.md` | plan_complete |
 | Safe dissemination copy | `docs/dissemination/SAFE_PUBLIC_ANNOUNCEMENT_v0_1.md` | complete |
 | Zenodo technical-report new-version candidate package | `release/ECL_v0.1_zenodo_technical_report_update_candidate.zip` | candidate_prepared_not_uploaded |
