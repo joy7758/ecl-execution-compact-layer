@@ -1,4 +1,4 @@
-.PHONY: demo test dependency-demo recognition-demo external-action-queue external-action-intake
+.PHONY: demo test dependency-demo recognition-demo external-action-queue external-action-intake icse-package
 
 PYTHON ?= python3
 
@@ -17,4 +17,7 @@ external-action-queue:
 external-action-intake:
 	$(PYTHON) scripts/validate_external_action_evidence_intake.py
 
-demo: test external-action-queue external-action-intake dependency-demo recognition-demo
+icse-package:
+	$(PYTHON) scripts/verify_icse_tool_demo_package.py
+
+demo: test external-action-queue external-action-intake icse-package dependency-demo recognition-demo

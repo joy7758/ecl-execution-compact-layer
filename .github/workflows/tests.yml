@@ -44,3 +44,6 @@ jobs:
 
       - name: Run external action evidence intake validator
         run: python scripts/validate_external_action_evidence_intake.py
+
+      - name: Run ICSE tool-demo package verifier
+        run: python scripts/verify_icse_tool_demo_package.py

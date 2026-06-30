@@ -33,6 +33,7 @@ Status: public_release_and_zenodo_archive
 - Added unit-test coverage for the external action queue boundaries, referenced packets, and cross-manifest hashes.
 - Added a command-line external action queue verifier and wired it into `make demo` and CI without claiming any external action occurred.
 - Added an external action evidence intake template and validator for future YouTube, forum, HotCRP, and third-party feedback URLs while keeping the default state empty.
+- Added an ICSE tool-demo package verifier for local PDF, video, link, demo-hash, and external-submission boundary checks.
 
 Boundary:
 
