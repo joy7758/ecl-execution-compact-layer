@@ -37,6 +37,7 @@ Status: public_release_and_zenodo_archive
 - Added an aggregate post-JSS route verifier that reports local gates passing while keeping future external steps open.
 - Added a next-human-actions packet and verifier that converts the post-JSS route state into bounded manual actions without claiming upload, forum posting, HotCRP submission, external feedback, or route completion.
 - Rebuilt the local ICSE video candidate without fixed test-count claims and added an agent-readable rebuild entrypoint plus verifier coverage for stale video count text.
+- Added a pending human video-review packet and verifier that binds the next human action to the current local ICSE video candidate without approving, uploading, or submitting it.
 
 Boundary:
 

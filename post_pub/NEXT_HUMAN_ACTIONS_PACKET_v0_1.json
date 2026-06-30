@@ -13,9 +13,9 @@
       "order": 1,
       "id": "review_video_candidate",
       "human_action": "Review local ICSE demo video candidate",
-      "input_packet": "paper/workshop/video/VIDEO_QA_REPORT_v0_1.md",
+      "input_packet": "paper/workshop/video/VIDEO_HUMAN_REVIEW_PACKET_v0_1.md",
       "evidence_to_collect": "human decision to approve or replace candidate",
-      "verification_command": "python3 scripts/verify_icse_tool_demo_package.py",
+      "verification_command": "python3 scripts/verify_video_human_review_packet.py",
       "status": "pending_human_review"
     },
     {

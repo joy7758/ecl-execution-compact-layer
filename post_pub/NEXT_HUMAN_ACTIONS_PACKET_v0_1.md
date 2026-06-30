@@ -24,7 +24,7 @@ external_action_evidence_intake_empty=true
 
 | Order | Human action | Input packet | Evidence to collect | Verification before recording |
 | ---: | --- | --- | --- | --- |
-| 1 | Review local ICSE demo video candidate | `paper/workshop/video/VIDEO_QA_REPORT_v0_1.md` | human decision: approve or replace | `python3 scripts/verify_icse_tool_demo_package.py` |
+| 1 | Review local ICSE demo video candidate | `paper/workshop/video/VIDEO_HUMAN_REVIEW_PACKET_v0_1.md` | human decision: approve or replace | `python3 scripts/verify_video_human_review_packet.py` |
 | 2 | Upload approved video to YouTube | `paper/workshop/YOUTUBE_UPLOAD_HANDOFF_v0_1.md` | final YouTube URL | do not record until URL exists |
 | 3 | Record YouTube URL | `post_pub/EXTERNAL_ACTION_EVIDENCE_INTAKE_TEMPLATE_v0_1.json` | filled `youtube_video` slot | `python3 scripts/validate_external_action_evidence_intake.py <filled-intake-json>` |
 | 4 | Post LangChain feedback request | `docs/dissemination/EXTERNAL_FORUM_POSTING_HANDOFF_v0_1.md` | public LangChain Forum URL | record forum URL only, not feedback |

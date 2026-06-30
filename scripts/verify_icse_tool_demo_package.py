@@ -121,6 +121,8 @@ def verify(manifest_path: Path) -> dict[str, Any]:
     video_asset_manifest_md = ROOT / local_files.get("video_asset_manifest", "")
     video_asset_manifest_json = video_asset_manifest_md.with_suffix(".json")
     video_assets = load_json(video_asset_manifest_json) if video_asset_manifest_json.exists() else {}
+    human_review_packet_path = ROOT / "paper/workshop/video/VIDEO_HUMAN_REVIEW_PACKET_v0_1.json"
+    human_review_packet = load_json(human_review_packet_path) if human_review_packet_path.exists() else {}
     video_asset_text_paths = [
         ROOT / "paper/workshop/video/ECL_ICSE_2027_DEMO_VIDEO_CANDIDATE.srt",
         ROOT / "paper/workshop/video/voiceover_text.txt",
@@ -171,6 +173,23 @@ def verify(manifest_path: Path) -> dict[str, Any]:
                 "asset_manifest_video_sha256": video_assets.get("candidate_video", {}).get("sha256"),
                 "manifest_video_sha256": video.get("local_candidate_sha256"),
                 "stale_count_hits": stale_count_hits,
+            },
+        )
+    )
+
+    checks.append(
+        check(
+            human_review_packet.get("status") == "pending_human_review_not_approved"
+            and human_review_packet.get("candidate", {}).get("video_sha256") == video.get("local_candidate_sha256")
+            and human_review_packet.get("decision", {}).get("approved_for_youtube_upload") is False
+            and human_review_packet.get("boundary", {}).get("youtube_upload_performed") is False,
+            "video_human_review_packet_is_pending_and_bound_to_candidate",
+            {
+                "packet": rel(human_review_packet_path),
+                "packet_status": human_review_packet.get("status"),
+                "packet_video_sha256": human_review_packet.get("candidate", {}).get("video_sha256"),
+                "manifest_video_sha256": video.get("local_candidate_sha256"),
+                "approved_for_youtube_upload": human_review_packet.get("decision", {}).get("approved_for_youtube_upload"),
             },
         )
     )

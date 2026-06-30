@@ -1,0 +1,57 @@
+{
+  "schema_version": "0.1.0",
+  "object_type": "ecl_icse_video_human_review_packet",
+  "status": "pending_human_review_not_approved",
+  "date_checked": "2026-06-30",
+  "candidate": {
+    "video": "paper/workshop/video/ECL_ICSE_2027_DEMO_VIDEO_CANDIDATE.mp4",
+    "video_sha256": "f349243a08f7230717e413ab7b19441c42a81b9a5addb08beacc23cedf59957a",
+    "caption": "paper/workshop/video/ECL_ICSE_2027_DEMO_VIDEO_CANDIDATE.srt",
+    "caption_sha256": "5e96ebcb1d7c07ac140d329fa664b9b88144dedb5017aafb9a9f5c9c7bdf929e",
+    "duration_seconds": 239.16,
+    "duration_human": "3m59s",
+    "qa_report": "paper/workshop/video/VIDEO_QA_REPORT_v0_1.md",
+    "asset_manifest": "paper/workshop/video/VIDEO_ASSET_MANIFEST_v0_1.json",
+    "youtube_handoff": "paper/workshop/YOUTUBE_UPLOAD_HANDOFF_v0_1.md"
+  },
+  "required_human_checks": [
+    "video_opens_and_plays_through_locally",
+    "voiceover_understandable_for_review_use",
+    "slides_readable_at_720p",
+    "captions_bounded_inside_video_duration",
+    "zenodo_doi_described_as_software_archive_only",
+    "no_external_adoption_or_acceptance_claims",
+    "no_fixed_test_count_claims",
+    "suitable_for_unlisted_youtube_review_upload"
+  ],
+  "decision": {
+    "review_decision": "pending",
+    "approved_for_youtube_upload": false,
+    "reviewed_by": null,
+    "reviewed_at": null,
+    "replacement_required": null,
+    "notes": null
+  },
+  "if_approved": {
+    "next_packet": "paper/workshop/YOUTUBE_UPLOAD_HANDOFF_v0_1.md",
+    "record_evidence_with": "post_pub/EXTERNAL_ACTION_EVIDENCE_INTAKE_TEMPLATE_v0_1.json",
+    "required_record": "final YouTube URL"
+  },
+  "if_rejected": {
+    "rebuild_command": "python3 scripts/build_icse_video_candidate.py",
+    "verify_command": "python3 scripts/verify_video_human_review_packet.py && python3 scripts/verify_icse_tool_demo_package.py"
+  },
+  "boundary": {
+    "packet_only": true,
+    "human_review_pending": true,
+    "video_approved": false,
+    "youtube_upload_performed": false,
+    "hotcrp_submission_performed": false,
+    "external_feedback_recorded": false,
+    "external_adoption_claim": false,
+    "peer_review_claim": false,
+    "icse_acceptance_claim": false,
+    "joss_readiness_claim": false,
+    "route_complete": false
+  }
+}

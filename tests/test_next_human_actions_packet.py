@@ -44,7 +44,16 @@ class NextHumanActionsPacketTests(unittest.TestCase):
             self.assertIn(action_id, queue_ids)
 
     def test_packet_references_existing_input_packets(self) -> None:
-        for action in self.load_packet()["actions"]:
+        actions = self.load_packet()["actions"]
+        self.assertEqual(
+            actions[0]["input_packet"],
+            "paper/workshop/video/VIDEO_HUMAN_REVIEW_PACKET_v0_1.md",
+        )
+        self.assertEqual(
+            actions[0]["verification_command"],
+            "python3 scripts/verify_video_human_review_packet.py",
+        )
+        for action in actions:
             input_packet = action["input_packet"]
             self.assertTrue((ROOT / input_packet).exists(), input_packet)
 
