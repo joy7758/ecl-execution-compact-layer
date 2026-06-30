@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1.0",
+  "object_type": "ecl_icse_2027_pdf_build_status",
+  "status": "ieeetran_pdf_rendered_for_human_review",
+  "date_checked": "2026-06-30",
+  "official_format_observed": "IEEE conference proceedings formatting; LaTeX class options \\\\documentclass[10pt,conference]{IEEEtran}",
+  "source": {
+    "path": "paper/workshop/ieee/ECL_ICSE_2027_TOOL_DEMO_DRAFT.tex",
+    "sha256": "5d30fa2d2d34fcb82e7f31ccadccdc9adeaeb0cb99e1c36bfed20a1a75e00d85"
+  },
+  "pdf": {
+    "path": "paper/workshop/ieee/ECL_ICSE_2027_TOOL_DEMO_DRAFT.pdf",
+    "sha256": "7633104c76f499b6e3447da47c1e860f652782b870e1e98cef0e9d8e2ff2558e",
+    "pages": 2,
+    "page_limit": 4,
+    "page_size": "letter",
+    "visual_render_checked": true,
+    "visual_render_status": "no_overlap_or_clipping_observed"
+  },
+  "compile": {
+    "command": "SOURCE_DATE_EPOCH=1782777600 FORCE_SOURCE_DATE=1 python3 /Users/zhangbin/.codex/plugins/cache/openai-bundled/latex/0.2.4/scripts/compile_latex.py paper/workshop/ieee/ECL_ICSE_2027_TOOL_DEMO_DRAFT.tex --compiler texlive --output-directory paper/workshop/ieee/build --json",
+    "compiler": "texlive latexmk pdflatex",
+    "exit_code": 0,
+    "warnings": [
+      "underfull hbox warnings only",
+      "IEEEtran camera-ready note about manually equalizing final columns"
+    ],
+    "rebuild_hash_stable": true
+  },
+  "boundary": {
+    "human_review_required": true,
+    "camera_ready": false,
+    "icse_submission_performed": false,
+    "video_recorded": false,
+    "peer_review_claim": false
+  }
+}

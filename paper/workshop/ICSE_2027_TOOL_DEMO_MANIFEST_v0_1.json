@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1.0",
   "object_type": "ecl_icse_2027_tool_demo_manifest",
-  "status": "tool_demo_package_prepared_not_submitted",
+  "status": "tool_demo_pdf_and_links_verified_video_pending_not_submitted",
   "target": {
     "venue": "ICSE 2027",
     "track": "Tool Demonstration and Data Showcase",
@@ -18,11 +18,40 @@
   },
   "local_files": {
     "draft": "paper/workshop/ICSE_2027_TOOL_DEMO_DRAFT.md",
+    "ieee_source": "paper/workshop/ieee/ECL_ICSE_2027_TOOL_DEMO_DRAFT.tex",
+    "ieee_pdf": "paper/workshop/ieee/ECL_ICSE_2027_TOOL_DEMO_DRAFT.pdf",
+    "pdf_build_status": "paper/workshop/ICSE_2027_PDF_BUILD_STATUS_v0_1.md",
     "video_script": "paper/workshop/demo_video_script.md",
     "storyboard": "paper/workshop/demo_storyboard.md",
+    "video_recording_gate": "paper/workshop/VIDEO_RECORDING_GATE_v0_1.md",
     "checklist": "paper/workshop/TOOL_DEMO_SUBMISSION_CHECKLIST.md",
+    "public_link_check": "paper/workshop/PUBLIC_LINK_CHECK_v0_1.md",
     "demo_transcript": "paper/workshop/demo_terminal_transcript_v0_1.md",
     "docker_status": "paper/workshop/DOCKER_DEMO_STATUS_v0_1.md"
+  },
+  "official_requirements_observed": {
+    "source": "https://conf.researchr.org/track/icse-2027/icse-2027-demonstrations",
+    "submission_deadline": "Friday 23-Oct-2026 AoE",
+    "acceptance_notification": "Friday 11-Dec-2026 AoE",
+    "camera_ready": "Wednesday 20-Jan-2027 AoE",
+    "format": "IEEE conference proceedings formatting; LaTeX class options \\\\documentclass[10pt,conference]{IEEEtran}",
+    "page_limit": "not exceed four pages for main text, inclusive of references, figures, tables, appendices, etc.",
+    "video": "short video between three and five minutes; YouTube required during review"
+  },
+  "paper": {
+    "pdf_rendered": true,
+    "pdf_human_review_required": true,
+    "pdf_camera_ready": false,
+    "format": "IEEEtran",
+    "pages": 2,
+    "page_limit": 4,
+    "source_sha256": "5d30fa2d2d34fcb82e7f31ccadccdc9adeaeb0cb99e1c36bfed20a1a75e00d85",
+    "pdf_sha256": "7633104c76f499b6e3447da47c1e860f652782b870e1e98cef0e9d8e2ff2558e"
+  },
+  "public_link_check": {
+    "performed": true,
+    "status": "all_checked_links_reachable",
+    "path": "paper/workshop/PUBLIC_LINK_CHECK_v0_1.json"
   },
   "demo": {
     "make_demo_verified": true,
@@ -44,6 +73,7 @@
     "no_external_adoption_claim": true,
     "no_production_deployment_claim": true,
     "no_icse_submission_claim": true,
+    "video_recording_pending": true,
     "tool_demo_issue_is_tracking_only": true
   }
 }

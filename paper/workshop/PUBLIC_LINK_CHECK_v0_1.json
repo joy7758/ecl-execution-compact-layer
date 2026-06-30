@@ -1,0 +1,74 @@
+{
+  "schema_version": "0.1.0",
+  "object_type": "ecl_icse_public_link_check",
+  "status": "public_links_verified",
+  "date_checked": "2026-06-30",
+  "method": "curl -L -sS -o /dev/null -w http_code=%{http_code}",
+  "links": [
+    {
+      "name": "ICSE 2027 Tool Demonstration and Data Showcase",
+      "url": "https://conf.researchr.org/track/icse-2027/icse-2027-demonstrations",
+      "http_code": 200,
+      "final_url": "https://conf.researchr.org/track/icse-2027/icse-2027-demonstrations",
+      "status": "reachable"
+    },
+    {
+      "name": "ECL repository",
+      "url": "https://github.com/joy7758/ecl-execution-compact-layer",
+      "http_code": 200,
+      "final_url": "https://github.com/joy7758/ecl-execution-compact-layer",
+      "status": "reachable"
+    },
+    {
+      "name": "ECL GitHub release v0.1",
+      "url": "https://github.com/joy7758/ecl-execution-compact-layer/releases/tag/v0.1",
+      "http_code": 200,
+      "final_url": "https://github.com/joy7758/ecl-execution-compact-layer/releases/tag/v0.1",
+      "status": "reachable"
+    },
+    {
+      "name": "ECL Zenodo record",
+      "url": "https://zenodo.org/records/21003766",
+      "http_code": 200,
+      "final_url": "https://zenodo.org/records/21003766",
+      "status": "reachable"
+    },
+    {
+      "name": "ECL version DOI",
+      "url": "https://doi.org/10.5281/zenodo.21003766",
+      "http_code": 200,
+      "final_url": "https://zenodo.org/records/21003766",
+      "status": "reachable"
+    },
+    {
+      "name": "ICSE tool-demo tracking issue",
+      "url": "https://github.com/joy7758/ecl-execution-compact-layer/issues/7",
+      "http_code": 200,
+      "final_url": "https://github.com/joy7758/ecl-execution-compact-layer/issues/7",
+      "status": "reachable"
+    },
+    {
+      "name": "public feedback request issue",
+      "url": "https://github.com/joy7758/ecl-execution-compact-layer/issues/8",
+      "http_code": 200,
+      "final_url": "https://github.com/joy7758/ecl-execution-compact-layer/issues/8",
+      "status": "reachable"
+    }
+  ],
+  "official_icse_facts_observed": {
+    "submission_deadline": "Friday 23-Oct-2026 AoE",
+    "acceptance_notification": "Friday 11-Dec-2026 AoE",
+    "camera_ready": "Wednesday 20-Jan-2027 AoE",
+    "submission_site": "https://icse27demos.hotcrp.com/",
+    "paper_format": "IEEE conference proceedings formatting; LaTeX class options \\\\documentclass[10pt,conference]{IEEEtran}",
+    "page_limit": "not exceed four pages for main text, inclusive of references, figures, tables, appendices, etc.",
+    "video_requirement": "short video between three and five minutes; must be online at submission; YouTube required during review",
+    "tool_distribution_requirement": "tool authors must distribute the tool in an easy-to-use form; reviewers should not have to build code"
+  },
+  "boundary": {
+    "icse_submission_performed": false,
+    "video_recorded": false,
+    "peer_review_claim": false,
+    "external_adoption_claim": false
+  }
+}

@@ -24,6 +24,7 @@ Status: public_release_and_zenodo_archive
 - Added external feedback request drafts and ICSE tool-demo tracking issue reference without posting or claiming feedback.
 - Added public GitHub feedback request issue status while keeping external feedback and adoption claims false.
 - Fixed the reviewer Docker demo path by installing `git` and `make`, and normalized replay artifact references for container/host-stable demo hashes.
+- Added ICSE 2027 public-link verification and an IEEEtran draft PDF/source package for human review; video recording and ICSE submission remain pending.
 
 Boundary:
 

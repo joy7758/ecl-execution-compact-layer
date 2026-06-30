@@ -1,0 +1,155 @@
+\documentclass[10pt,conference]{IEEEtran}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{cite}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{listings}
+
+\lstset{
+  basicstyle=\ttfamily\footnotesize,
+  columns=fullflexible,
+  breaklines=true,
+  frame=single,
+  keepspaces=true
+}
+
+\title{ECL: A Deterministic Execution IR for Replayable Agent Runtime Traces}
+
+\author{
+\IEEEauthorblockN{Bin Zhang}
+\IEEEauthorblockA{Independent Researcher\\
+Email: joy7759@gmail.com}
+}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Agent runtimes emit execution traces through framework-specific structures such as model inputs, tool calls, callback trees, spans, and event lists. These records are useful inside a source framework, but they are difficult to compare, replay, or cite across runtimes. ECL is a small deterministic execution intermediate representation (IR) for replayable agent-runtime traces. The tool maps supported OpenAI-style and LangChain-style local fixtures into four ECL surfaces: state, intent, action, and evidence. It then validates the normalized record, emits replay artifacts, and computes stable hashes. This tool demonstration presents the repository, one-command reviewer workflow, Docker packaging path, replay outputs, and explicit loss reporting. ECL v0.1 is intentionally narrow: it is not an agent framework, tracing backend, benchmark, public standard, production deployment, or external adoption claim.
+\end{abstract}
+
+\begin{IEEEkeywords}
+agent systems, execution traces, intermediate representation, deterministic replay, reproducibility
+\end{IEEEkeywords}
+
+\section{Problem and Motivation}
+
+Agent frameworks increasingly expose traces for tool calls, model inputs, reasoning events, callbacks, and run trees. These traces help developers inspect individual runs, but their native structures remain tied to the originating runtime. A trace from an OpenAI-style agent and a trace from a LangChain-style run can both describe tool-using execution while still using different object models and event conventions.
+
+ECL addresses a narrow software-engineering problem: provide a deterministic, local, replayable representation target for supported agent-runtime traces. The goal is not to replace existing tracing systems. The goal is to make a small execution record that can be validated, replayed, hashed, archived, and cited across runtime boundaries.
+
+\section{Tool Overview}
+
+ECL v0.1 defines four execution surfaces: \texttt{state}, \texttt{intent}, \texttt{action}, and \texttt{evidence}. The repository includes a JSON schema, validators, deterministic JSON hashing utilities, OpenAI-style and LangChain-style adapters, an embeddable SDK, a dependency API, and a local MCP-shaped wrapper. The local wrapper is a protocol-surface simulation; it is not a published MCP server.
+
+Table~\ref{tab:surface} summarizes the minimal mapping used in the demonstration.
+
+\begin{table}[ht]
+\caption{ECL trace normalization surfaces}
+\label{tab:surface}
+\centering
+\begin{tabular}{ll}
+\toprule
+Runtime trace element & ECL surface \\
+\midrule
+model input or run input & state \\
+reasoning or prompt intent & intent \\
+tool call or operation & action \\
+events, results, loss report & evidence \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Loss-aware mapping is part of the tool boundary. When source runtime information cannot be preserved completely, the adapter records loss information instead of claiming full-fidelity conversion.
+
+\section{Reviewer Workflow}
+
+The reviewer-facing local workflow is a single command:
+
+\begin{lstlisting}[language=bash]
+make demo
+\end{lstlisting}
+
+This runs:
+
+\begin{lstlisting}[language=bash]
+python3 -m unittest discover -s tests
+python3 sdk/demo_dependency_mode.py
+python3 examples/external_recognition_demo.py
+\end{lstlisting}
+
+The optional container path is:
+
+\begin{lstlisting}[language=bash]
+docker build -t ecl-demo .
+docker run --rm ecl-demo
+\end{lstlisting}
+
+The dependency-mode API used by the demo is:
+
+\begin{lstlisting}[language=Python]
+import ecl_dependency as ecl
+
+ecl_object = ecl.wrap(trace)
+result = ecl.verify(ecl_object)
+\end{lstlisting}
+
+The demo uses bundled local fixtures and performs no external API calls.
+
+\section{Demonstration Scenario}
+
+The video demonstration follows four steps. First, it opens the OpenAI-style and LangChain-style fixture files in \texttt{tests/fixtures/}. Second, it runs \texttt{make demo} and shows the passing tests and stable result hashes. Third, it opens the generated ECL objects for both runtimes and points to the four normalized surfaces. Fourth, it opens replay outputs, including the execution trace, evidence bundle, replay result, and verification hash.
+
+The current checked local output is:
+
+\begin{lstlisting}
+Ran 78 tests
+OK
+dependency_mode_result_hash=
+sha256:b9d8fa0269bd2efef4572daed...
+external_recognition_result_hash=
+sha256:dfafe2572fdf1ee2f48732d0c...
+\end{lstlisting}
+
+Full hashes and generated artifacts are stored in the repository manifest files.
+
+\section{Validation and Reproducibility}
+
+The verification surface includes unit tests for schema handling, adapters, SDK behavior, dependency-mode wrapping, local replay, and the MCP-shaped local wrapper. The repository also contains synthetic trace-corpus evaluation, negative validation-matrix evaluation, and mapping coverage reports. These are local reproducibility checks, not independent third-party validation.
+
+The current Docker reviewer demo records an image identifier, a terminal transcript, and the same deterministic demo hashes as the host run. This supports the ICSE tool-demo requirement that reviewers should not have to perform complex manual setup.
+
+\section{Distribution}
+
+The software repository is publicly available on GitHub, and ECL v0.1 is archived as a Zenodo software record with DOI \texttt{10.5281/zenodo.21003766}. The archive establishes a citable software object. It does not imply peer-review acceptance, community adoption, production deployment, or standardization.
+
+\section{Limitations}
+
+ECL v0.1 supports only the included OpenAI-style and LangChain-style trace families. The current evaluation uses synthetic local fixtures. The replay model is deterministic for the local artifact surface, not a claim about deterministic behavior of external agent runtimes. The MCP-shaped wrapper is local only. The project does not claim benchmark superiority, production readiness, external adoption, or standards-body endorsement. A Journal of Systems and Software manuscript was rejected at pre-screening; the current ICSE tool-demo route is intended to obtain focused community feedback.
+
+\section{Conclusion}
+
+ECL demonstrates a minimal deterministic execution IR for replayable agent-runtime traces. The contribution is a small, runnable, DOI-archived tool artifact that normalizes supported traces into four surfaces, records mapping loss, emits replay artifacts, and verifies stable hashes through a one-command local workflow.
+
+\begin{thebibliography}{9}
+
+\bibitem{repo}
+B. Zhang, ``ECL: Execution Compact Layer,'' GitHub repository. [Online]. Available: \url{https://github.com/joy7758/ecl-execution-compact-layer}
+
+\bibitem{zenodo}
+B. Zhang, ``ECL v0.1,'' Zenodo software archive, 2026. doi: \url{https://doi.org/10.5281/zenodo.21003766}
+
+\bibitem{icse2027}
+ICSE 2027, ``Tool Demonstration and Data Showcase.'' [Online]. Available: \url{https://conf.researchr.org/track/icse-2027/icse-2027-demonstrations}
+
+\bibitem{opentelemetry}
+OpenTelemetry Authors, ``OpenTelemetry documentation.'' [Online]. Available: \url{https://opentelemetry.io/docs/}
+
+\bibitem{w3cprov}
+W3C, ``PROV Overview.'' [Online]. Available: \url{https://www.w3.org/TR/prov-overview/}
+
+\end{thebibliography}
+
+\end{document}
