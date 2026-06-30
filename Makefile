@@ -1,4 +1,4 @@
-.PHONY: demo test dependency-demo recognition-demo external-action-queue
+.PHONY: demo test dependency-demo recognition-demo external-action-queue external-action-intake
 
 PYTHON ?= python3
 
@@ -14,4 +14,7 @@ recognition-demo:
 external-action-queue:
 	$(PYTHON) scripts/verify_external_action_queue.py
 
-demo: test external-action-queue dependency-demo recognition-demo
+external-action-intake:
+	$(PYTHON) scripts/validate_external_action_evidence_intake.py
+
+demo: test external-action-queue external-action-intake dependency-demo recognition-demo

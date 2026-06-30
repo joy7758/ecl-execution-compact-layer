@@ -28,13 +28,13 @@ video_candidate_sha256=70c31bc62f9c8855b0fa82c8bcef1092c260b9e3e65116d233af93553
 | --- | --- | --- | --- | --- | --- |
 | 1 | Human review of local video candidate | local file review | `paper/workshop/video/VIDEO_QA_REPORT_v0_1.md` | human decision to approve or replace candidate | pending_human_review |
 | 2 | Upload final demo video | YouTube, unlisted during review | `paper/workshop/YOUTUBE_UPLOAD_HANDOFF_v0_1.md` | final YouTube URL | pending_human_upload |
-| 3 | Record YouTube URL in repo | local repository | `paper/workshop/HOTCRP_SUBMISSION_DRAFT_v0_1.md`, `paper/workshop/ICSE_2027_TOOL_DEMO_MANIFEST_v0_1.json`, `paper/workshop/TOOL_DEMO_SUBMISSION_CHECKLIST.md` | commit containing `youtube_upload_performed=true` and URL | waiting_on_youtube_url |
+| 3 | Record YouTube URL in repo | local repository | `post_pub/EXTERNAL_ACTION_EVIDENCE_INTAKE_TEMPLATE_v0_1.json`, `paper/workshop/HOTCRP_SUBMISSION_DRAFT_v0_1.md`, `paper/workshop/ICSE_2027_TOOL_DEMO_MANIFEST_v0_1.json`, `paper/workshop/TOOL_DEMO_SUBMISSION_CHECKLIST.md` | commit containing `youtube_upload_performed=true` and URL | waiting_on_youtube_url |
 | 4 | Post feedback request | LangChain Forum | `docs/dissemination/EXTERNAL_FORUM_POSTING_HANDOFF_v0_1.md` | public forum URL | pending_human_post |
 | 5 | Post feedback request | MCP GitHub Discussions | `docs/dissemination/EXTERNAL_FORUM_POSTING_HANDOFF_v0_1.md` | public discussion URL | pending_human_post |
-| 6 | Record forum URLs in repo | local repository | `post_pub/FEEDBACK_REQUEST_STATUS_v0_1.md`, `post_pub/MAINTENANCE_EVIDENCE_LEDGER_v0_1.md` | commit containing forum URLs and still `external_feedback_recorded=false` unless a third party replies | waiting_on_forum_urls |
+| 6 | Record forum URLs in repo | local repository | `post_pub/EXTERNAL_ACTION_EVIDENCE_INTAKE_TEMPLATE_v0_1.json`, `post_pub/FEEDBACK_REQUEST_STATUS_v0_1.md`, `post_pub/MAINTENANCE_EVIDENCE_LEDGER_v0_1.md` | commit containing forum URLs and still `external_feedback_recorded=false` unless a third party replies | waiting_on_forum_urls |
 | 7 | Submit ICSE tool demo | HotCRP `https://icse27demos.hotcrp.com/` | PDF, YouTube URL, HotCRP draft, public repo, DOI | HotCRP submission ID or confirmation page | pending_human_submission |
-| 8 | Record ICSE submission evidence | local repository and issue #7 | `paper/workshop/ICSE_2027_TOOL_DEMO_MANIFEST_v0_1.json`, `post_pub/MAINTENANCE_EVIDENCE_LEDGER_v0_1.md` | commit and public tracking comment | waiting_on_hotcrp_evidence |
-| 9 | Record real third-party feedback | GitHub issue, forum reply, or reproducibility report | `post_pub/FEEDBACK_INTAKE_PROTOCOL_v0_1.md` | attributable third-party URL and reported command/result | waiting_on_external_response |
+| 8 | Record ICSE submission evidence | local repository and issue #7 | `post_pub/EXTERNAL_ACTION_EVIDENCE_INTAKE_TEMPLATE_v0_1.json`, `paper/workshop/ICSE_2027_TOOL_DEMO_MANIFEST_v0_1.json`, `post_pub/MAINTENANCE_EVIDENCE_LEDGER_v0_1.md` | commit and public tracking comment | waiting_on_hotcrp_evidence |
+| 9 | Record real third-party feedback | GitHub issue, forum reply, or reproducibility report | `post_pub/EXTERNAL_ACTION_EVIDENCE_INTAKE_TEMPLATE_v0_1.json`, `post_pub/FEEDBACK_INTAKE_PROTOCOL_v0_1.md` | attributable third-party URL and reported command/result | waiting_on_external_response |
 | 10 | Continue monthly maintenance | GitHub issues #1-#6 | `post_pub/JOSS_SIX_MONTH_READINESS_PLAN.md` | monthly commits, tests, release notes, and issue updates | ongoing_time_dependent |
 
 ## After-Action Update Rules
@@ -44,6 +44,7 @@ video_candidate_sha256=70c31bc62f9c8855b0fa82c8bcef1092c260b9e3e65116d233af93553
 - Do not mark `external_feedback_recorded=true` until a third party replies with attributable feedback or a reproducibility report.
 - Do not mark `icse_submission_performed=true` until a real HotCRP submission confirmation exists.
 - Do not mark `joss_readiness_claim=true` until the six-month public-history window has actually elapsed and the JOSS gate passes.
+- Validate any filled evidence intake file with `python3 scripts/validate_external_action_evidence_intake.py <filled-intake-json>` before updating status files.
 
 ## Boundary
 

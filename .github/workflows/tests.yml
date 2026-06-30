@@ -41,3 +41,6 @@ jobs:
 
       - name: Run external action queue verifier
         run: python scripts/verify_external_action_queue.py
+
+      - name: Run external action evidence intake validator
+        run: python scripts/validate_external_action_evidence_intake.py

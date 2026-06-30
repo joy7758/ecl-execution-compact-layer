@@ -39,6 +39,7 @@
       "action": "Record YouTube URL in repository",
       "target": "local_repository",
       "input_packet": [
+        "post_pub/EXTERNAL_ACTION_EVIDENCE_INTAKE_TEMPLATE_v0_1.json",
         "paper/workshop/HOTCRP_SUBMISSION_DRAFT_v0_1.md",
         "paper/workshop/ICSE_2027_TOOL_DEMO_MANIFEST_v0_1.json",
         "paper/workshop/TOOL_DEMO_SUBMISSION_CHECKLIST.md"
@@ -70,6 +71,7 @@
       "action": "Record forum URLs in repository",
       "target": "local_repository",
       "input_packet": [
+        "post_pub/EXTERNAL_ACTION_EVIDENCE_INTAKE_TEMPLATE_v0_1.json",
         "post_pub/FEEDBACK_REQUEST_STATUS_v0_1.md",
         "post_pub/MAINTENANCE_EVIDENCE_LEDGER_v0_1.md"
       ],
@@ -95,6 +97,7 @@
       "action": "Record ICSE submission evidence",
       "target": "local_repository_and_issue_7",
       "input_packet": [
+        "post_pub/EXTERNAL_ACTION_EVIDENCE_INTAKE_TEMPLATE_v0_1.json",
         "paper/workshop/ICSE_2027_TOOL_DEMO_MANIFEST_v0_1.json",
         "post_pub/MAINTENANCE_EVIDENCE_LEDGER_v0_1.md"
       ],
@@ -106,7 +109,10 @@
       "id": "record_third_party_feedback",
       "action": "Record real third-party feedback",
       "target": "GitHub issue, forum reply, or reproducibility report",
-      "input_packet": "post_pub/FEEDBACK_INTAKE_PROTOCOL_v0_1.md",
+      "input_packet": [
+        "post_pub/EXTERNAL_ACTION_EVIDENCE_INTAKE_TEMPLATE_v0_1.json",
+        "post_pub/FEEDBACK_INTAKE_PROTOCOL_v0_1.md"
+      ],
       "completion_evidence": "attributable third-party URL and reported command/result",
       "status": "waiting_on_external_response"
     },

@@ -5,11 +5,13 @@ import json
 from pathlib import Path
 import subprocess
 import sys
+import tempfile
 import unittest
 
 
 ROOT = Path(__file__).resolve().parents[1]
 QUEUE_PATH = ROOT / "post_pub" / "EXTERNAL_ACTION_QUEUE_v0_1.json"
+INTAKE_PATH = ROOT / "post_pub" / "EXTERNAL_ACTION_EVIDENCE_INTAKE_TEMPLATE_v0_1.json"
 
 
 class ExternalActionQueueTests(unittest.TestCase):
@@ -113,6 +115,17 @@ class ExternalActionQueueTests(unittest.TestCase):
         self.assertIn("post_pub/EXTERNAL_ACTION_QUEUE_v0_1.md", index["primary_artifacts"])
         self.assertIn("post_pub/EXTERNAL_ACTION_QUEUE_v0_1.json", index["primary_artifacts"])
         self.assertIn("scripts/verify_external_action_queue.py", index["primary_artifacts"])
+        self.assertEqual(
+            index["entrypoints"]["external_action_evidence_intake"],
+            "post_pub/EXTERNAL_ACTION_EVIDENCE_INTAKE_TEMPLATE_v0_1.md",
+        )
+        self.assertEqual(
+            index["entrypoints"]["external_action_evidence_intake_validator"],
+            "python3 scripts/validate_external_action_evidence_intake.py",
+        )
+        self.assertIn("post_pub/EXTERNAL_ACTION_EVIDENCE_INTAKE_TEMPLATE_v0_1.md", index["primary_artifacts"])
+        self.assertIn("post_pub/EXTERNAL_ACTION_EVIDENCE_INTAKE_TEMPLATE_v0_1.json", index["primary_artifacts"])
+        self.assertIn("scripts/validate_external_action_evidence_intake.py", index["primary_artifacts"])
 
     def test_external_action_queue_verifier_reports_pass_without_writes(self) -> None:
         result = subprocess.run(
@@ -128,6 +141,78 @@ class ExternalActionQueueTests(unittest.TestCase):
         self.assertFalse(report["boundary"]["writes_external_state"])
         self.assertFalse(report["boundary"]["youtube_upload_performed"])
         self.assertFalse(report["boundary"]["external_feedback_recorded"])
+
+    def test_external_action_evidence_intake_template_is_empty_and_valid(self) -> None:
+        payload = json.loads(INTAKE_PATH.read_text(encoding="utf-8"))
+        self.assertEqual(payload["status"], "template_pending_external_evidence")
+        for slot in payload["evidence_slots"]:
+            self.assertIsNone(slot["source_url"])
+            self.assertIsNone(slot["evidence_date"])
+            self.assertIsNone(slot["recorded_by"])
+
+        result = subprocess.run(
+            [sys.executable, "scripts/validate_external_action_evidence_intake.py"],
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+            check=True,
+        )
+        report = json.loads(result.stdout)
+        self.assertEqual(report["status"], "pass")
+        self.assertEqual(report["recorded_slot_count"], 0)
+        self.assertFalse(report["boundary"]["writes_external_state"])
+
+    def test_external_action_evidence_intake_rejects_unsupported_claim_boundary(self) -> None:
+        payload = json.loads(INTAKE_PATH.read_text(encoding="utf-8"))
+        payload["boundary"]["peer_review_claim"] = True
+        with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as handle:
+            json.dump(payload, handle)
+            temp_path = handle.name
+        try:
+            result = subprocess.run(
+                [sys.executable, "scripts/validate_external_action_evidence_intake.py", temp_path],
+                cwd=ROOT,
+                text=True,
+                capture_output=True,
+                check=False,
+            )
+            self.assertNotEqual(result.returncode, 0)
+            report = json.loads(result.stdout)
+            self.assertEqual(report["status"], "fail")
+            self.assertIn("boundary.peer_review_claim must remain false", report["errors"])
+        finally:
+            Path(temp_path).unlink(missing_ok=True)
+
+    def test_external_action_evidence_intake_accepts_bounded_youtube_url(self) -> None:
+        payload = json.loads(INTAKE_PATH.read_text(encoding="utf-8"))
+        payload["status"] = "youtube_url_recorded"
+        payload["boundary"]["template_only"] = False
+        payload["boundary"]["external_action_recorded"] = True
+        payload["boundary"]["youtube_upload_performed"] = True
+        for slot in payload["evidence_slots"]:
+            if slot["slot_id"] == "youtube_video":
+                slot["status"] = "youtube_url_recorded"
+                slot["source_url"] = "https://youtu.be/example"
+                slot["evidence_date"] = "2026-06-30"
+                slot["recorded_by"] = "Bin Zhang"
+
+        with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as handle:
+            json.dump(payload, handle)
+            temp_path = handle.name
+        try:
+            result = subprocess.run(
+                [sys.executable, "scripts/validate_external_action_evidence_intake.py", temp_path],
+                cwd=ROOT,
+                text=True,
+                capture_output=True,
+                check=True,
+            )
+            report = json.loads(result.stdout)
+            self.assertEqual(report["status"], "pass")
+            self.assertEqual(report["recorded_slot_count"], 1)
+            self.assertFalse(report["boundary"]["peer_review_claim"])
+        finally:
+            Path(temp_path).unlink(missing_ok=True)
 
 
 if __name__ == "__main__":

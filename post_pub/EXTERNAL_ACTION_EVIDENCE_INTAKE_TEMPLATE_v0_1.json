@@ -1,0 +1,80 @@
+{
+  "schema_version": "0.1.0",
+  "object_type": "ecl_external_action_evidence_intake_template",
+  "status": "template_pending_external_evidence",
+  "date_checked": "2026-06-30",
+  "repository": "https://github.com/joy7758/ecl-execution-compact-layer",
+  "related_queue": "post_pub/EXTERNAL_ACTION_QUEUE_v0_1.json",
+  "instructions": {
+    "fill_rule": "Copy this template and fill only the evidence slot corresponding to the real external action that occurred.",
+    "validation_command": "python3 scripts/validate_external_action_evidence_intake.py <filled-intake-json>",
+    "no_placeholder_url_rule": "Do not replace null URLs unless a real public URL or confirmation identifier exists."
+  },
+  "evidence_slots": [
+    {
+      "slot_id": "youtube_video",
+      "external_action_id": "upload_youtube_video",
+      "evidence_kind": "youtube_url",
+      "status": "pending_human_upload",
+      "source_url": null,
+      "evidence_date": null,
+      "recorded_by": null,
+      "claim_boundary": "A YouTube URL proves a video upload only. It does not prove ICSE submission, acceptance, external validation, external adoption, or peer review."
+    },
+    {
+      "slot_id": "langchain_forum_post",
+      "external_action_id": "post_langchain_feedback_request",
+      "evidence_kind": "forum_post_url",
+      "status": "pending_human_post",
+      "source_url": null,
+      "evidence_date": null,
+      "recorded_by": null,
+      "claim_boundary": "A maintainer-authored forum post proves a feedback request was posted only. It does not prove third-party feedback or adoption."
+    },
+    {
+      "slot_id": "mcp_discussion_post",
+      "external_action_id": "post_mcp_feedback_request",
+      "evidence_kind": "discussion_url",
+      "status": "pending_human_post",
+      "source_url": null,
+      "evidence_date": null,
+      "recorded_by": null,
+      "claim_boundary": "A maintainer-authored discussion proves a feedback request was posted only. It does not prove third-party feedback or adoption."
+    },
+    {
+      "slot_id": "hotcrp_submission",
+      "external_action_id": "submit_icse_tool_demo",
+      "evidence_kind": "submission_confirmation",
+      "status": "pending_human_submission",
+      "source_url": null,
+      "evidence_date": null,
+      "recorded_by": null,
+      "claim_boundary": "A HotCRP confirmation proves submission only. It does not prove acceptance, peer review outcome, publication, or external validation."
+    },
+    {
+      "slot_id": "third_party_feedback",
+      "external_action_id": "record_third_party_feedback",
+      "evidence_kind": "feedback_url",
+      "status": "waiting_on_external_response",
+      "source_url": null,
+      "evidence_date": null,
+      "recorded_by": null,
+      "reporting_party": null,
+      "what_was_run": null,
+      "observed_result": null,
+      "claim_boundary": "Third-party feedback is not adoption unless the external party explicitly reports integration or dependency use. It is not validation unless the reported command and result are reproducible."
+    }
+  ],
+  "boundary": {
+    "template_only": true,
+    "external_action_recorded": false,
+    "youtube_upload_performed": false,
+    "forum_posts_published": false,
+    "hotcrp_submission_performed": false,
+    "external_feedback_recorded": false,
+    "external_reproduction_recorded": false,
+    "external_adoption_claim": false,
+    "peer_review_claim": false,
+    "joss_readiness_claim": false
+  }
+}
