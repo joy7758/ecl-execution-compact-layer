@@ -118,6 +118,25 @@ def verify(manifest_path: Path) -> dict[str, Any]:
     video = manifest.get("video", {})
     video_path = ROOT / video.get("local_candidate_path", "")
     video_hash = file_sha256(video_path) if video_path.exists() else None
+    video_asset_manifest_md = ROOT / local_files.get("video_asset_manifest", "")
+    video_asset_manifest_json = video_asset_manifest_md.with_suffix(".json")
+    video_assets = load_json(video_asset_manifest_json) if video_asset_manifest_json.exists() else {}
+    video_asset_text_paths = [
+        ROOT / "paper/workshop/video/ECL_ICSE_2027_DEMO_VIDEO_CANDIDATE.srt",
+        ROOT / "paper/workshop/video/voiceover_text.txt",
+        ROOT / "paper/workshop/video/make_demo_output.txt",
+    ]
+    stale_count_patterns = ["Ran 78 tests", "Ran 98 tests", "seventy eight tests", "ninety eight tests"]
+    stale_count_hits = [
+        {
+            "path": rel(path),
+            "pattern": pattern,
+        }
+        for path in video_asset_text_paths
+        if path.exists()
+        for pattern in stale_count_patterns
+        if pattern in path.read_text(encoding="utf-8")
+    ]
     checks.append(
         check(
             video.get("local_candidate_generated") is True
@@ -137,6 +156,21 @@ def verify(manifest_path: Path) -> dict[str, Any]:
                 "duration_seconds": video.get("duration_seconds"),
                 "youtube_upload_performed": video.get("youtube_upload_performed"),
                 "youtube_url": video.get("youtube_url"),
+            },
+        )
+    )
+
+    checks.append(
+        check(
+            video_assets.get("candidate_video", {}).get("sha256") == video.get("local_candidate_sha256")
+            and video_assets.get("verified_requirements", {}).get("avoids_fixed_test_count_claim") is True
+            and not stale_count_hits,
+            "video_assets_avoid_fixed_test_count_claims",
+            {
+                "asset_manifest": rel(video_asset_manifest_json),
+                "asset_manifest_video_sha256": video_assets.get("candidate_video", {}).get("sha256"),
+                "manifest_video_sha256": video.get("local_candidate_sha256"),
+                "stale_count_hits": stale_count_hits,
             },
         )
     )

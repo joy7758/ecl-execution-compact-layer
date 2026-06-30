@@ -32,14 +32,20 @@ class ICSEToolDemoPackageTests(unittest.TestCase):
         check_names = {check["name"] for check in report["checks"]}
         self.assertIn("paper_pdf_and_source_match_manifest", check_names)
         self.assertIn("video_candidate_matches_manifest_and_upload_is_pending", check_names)
+        self.assertIn("video_assets_avoid_fixed_test_count_claims", check_names)
         self.assertIn("external_submission_boundaries_remain_false", check_names)
 
     def test_agent_index_exposes_icse_tool_demo_package_verifier(self) -> None:
         index = json.loads((ROOT / "agent-index.json").read_text(encoding="utf-8"))
         self.assertEqual(
+            index["entrypoints"]["icse_video_candidate_builder"],
+            "python3 scripts/build_icse_video_candidate.py",
+        )
+        self.assertEqual(
             index["entrypoints"]["icse_tool_demo_package_verifier"],
             "python3 scripts/verify_icse_tool_demo_package.py",
         )
+        self.assertIn("scripts/build_icse_video_candidate.py", index["primary_artifacts"])
         self.assertIn("scripts/verify_icse_tool_demo_package.py", index["primary_artifacts"])
 
     def test_icse_tool_demo_package_verifier_rejects_unsupported_submission_claim(self) -> None:

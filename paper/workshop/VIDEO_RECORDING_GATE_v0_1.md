@@ -22,7 +22,7 @@ The ICSE 2027 Tool Demonstration and Data Showcase page states that each submiss
 
 ## Required Human Actions
 
-1. Review the local 3m45s candidate video.
+1. Review the local candidate video.
 2. Replace it with a true screen recording if the generated draft is not acceptable.
 3. Show `make demo` and generated replay/evidence outputs.
 4. State that the Zenodo DOI is a software archive, not peer-review acceptance.

@@ -4,9 +4,9 @@ Agent runtimes produce traces in different shapes. An OpenAI style trace and a L
 
 The public repository is available at github dot com slash joy7758 slash ecl execution compact layer. The software archive is published on Zenodo with version DOI 10.5281 slash zenodo dot 21003766. This DOI is a software archive record. It is not peer review acceptance, production deployment, external adoption, or a standardization claim.
 
-The reviewer workflow is one command: make demo. The command runs the unit tests, the dependency mode demo, and the external recognition demo. It uses local fixtures only. It does not call external APIs, does not use random behavior, and does not require a hosted runtime.
+The reviewer workflow is one command: make demo. The command runs the unit test suite, route verifiers, the dependency mode demo, and the external recognition demo. It uses local fixtures only. It does not call external APIs, does not use random behavior, and does not require a hosted runtime.
 
-The current local run reports seventy eight tests passing. The dependency mode result hash is sha256 b9d8fa0269bd2efef4572daed9818a10cc3d389fb60d0d9fb376221572af7ff3. The external recognition result hash is sha256 dfafe2572fdf1ee2f48732d0c3931795151afcdeb0b1ead11b887747a99f7441.
+The current local run reports the test suite passing. The dependency mode result hash is sha256 b9d8fa0269bd2efef4572daed9818a10cc3d389fb60d0d9fb376221572af7ff3. The external recognition result hash is sha256 dfafe2572fdf1ee2f48732d0c3931795151afcdeb0b1ead11b887747a99f7441.
 
 The dependency API has three operations: wrap, emit, and verify. A host system can pass a trace to ecl dot wrap, produce an ECL object, and then call ecl dot verify to validate and replay the record. This is non invasive: it does not modify the host runtime and does not execute the agent.
 

@@ -1,23 +1,23 @@
 1
-00:00:00,000 --> 00:00:35,000
+00:00:00,000 --> 00:00:39,860
 ECL v0.1 is a deterministic execution IR for replayable agent runtime traces.
 
 2
-00:00:35,000 --> 00:01:20,000
-Agent runtimes produce traces in different shapes; ECL normalizes supported traces into state, intent, action, and evidence.
+00:00:39,860 --> 00:01:19,720
+Agent runtimes produce different trace shapes; ECL normalizes supported traces into state, intent, action, and evidence.
 
 3
-00:01:20,000 --> 00:02:05,000
+00:01:19,720 --> 00:01:59,580
 The reviewer workflow is one command: make demo. It uses local fixtures and no external API calls.
 
 4
-00:02:05,000 --> 00:02:55,000
-The current local run reports 78 tests passing and stable dependency and external-recognition hashes.
+00:01:59,580 --> 00:02:39,440
+The current local run reports the test suite passing and stable dependency and external-recognition hashes.
 
 5
-00:02:55,000 --> 00:03:25,000
+00:02:39,440 --> 00:03:19,300
 ECL verify creates validation and replay artifacts, and incomplete mapping is recorded as loss.
 
 6
-00:03:25,000 --> 00:03:45,000
+00:03:19,300 --> 00:03:59,160
 ECL is intentionally narrow: no framework, no benchmark, no standard, no production or adoption claim.

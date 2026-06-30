@@ -54,8 +54,8 @@
         "format": "IEEEtran",
         "pages": 2,
         "page_limit": 4,
-        "source_sha256": "5d30fa2d2d34fcb82e7f31ccadccdc9adeaeb0cb99e1c36bfed20a1a75e00d85",
-        "pdf_sha256": "7633104c76f499b6e3447da47c1e860f652782b870e1e98cef0e9d8e2ff2558e"
+        "source_sha256": "d4f76c7b6c122e0a70aa444378cc505a103e3c54f4698728379a5221aa5d3c1d",
+        "pdf_sha256": "4c9eb0d7bcaa3bea5ea4a4e1ffd2bd6748da869ba4d4772aa55853188e216b05"
     },
     "public_link_check": {
         "performed": true,
@@ -65,9 +65,9 @@
     "video": {
         "local_candidate_generated": true,
         "local_candidate_path": "paper/workshop/video/ECL_ICSE_2027_DEMO_VIDEO_CANDIDATE.mp4",
-        "local_candidate_sha256": "70c31bc62f9c8855b0fa82c8bcef1092c260b9e3e65116d233af9355335f4e35",
-        "duration_seconds": 225.033333,
-        "duration_human": "3m45s",
+        "local_candidate_sha256": "f349243a08f7230717e413ab7b19441c42a81b9a5addb08beacc23cedf59957a",
+        "duration_seconds": 239.16,
+        "duration_human": "3m59s",
         "duration_between_three_and_five_minutes": true,
         "video_audio_duration_aligned": true,
         "captions_bounded_inside_video_duration": true,

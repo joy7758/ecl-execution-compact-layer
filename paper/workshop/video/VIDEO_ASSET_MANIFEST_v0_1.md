@@ -1,6 +1,6 @@
 # ECL ICSE 2027 Video Asset Manifest v0.1
 
-Status: local_video_candidate_generated_not_uploaded_not_submitted
+Status: local_video_candidate_rebuilt_not_uploaded_not_submitted
 
 Date checked: 2026-06-30
 
@@ -8,10 +8,10 @@ Date checked: 2026-06-30
 
 ```text
 path=paper/workshop/video/ECL_ICSE_2027_DEMO_VIDEO_CANDIDATE.mp4
-sha256=70c31bc62f9c8855b0fa82c8bcef1092c260b9e3e65116d233af9355335f4e35
-duration_seconds=225.033333
-duration_human=3m45s
-size_bytes=4707476
+sha256=f349243a08f7230717e413ab7b19441c42a81b9a5addb08beacc23cedf59957a
+duration_seconds=239.160000
+duration_human=3m59s
+size_bytes=4212817
 format=mp4
 ```
 
@@ -21,23 +21,24 @@ The duration satisfies the observed ICSE 2027 Tool Demonstration and Data Showca
 
 ```text
 captions_srt=paper/workshop/video/ECL_ICSE_2027_DEMO_VIDEO_CANDIDATE.srt
-captions_srt_sha256=7001c24bc17dbf44079681a6addeb36481c639004c74eedac1834691d0f7e525
+captions_srt_sha256=5e96ebcb1d7c07ac140d329fa664b9b88144dedb5017aafb9a9f5c9c7bdf929e
 voiceover_text=paper/workshop/video/voiceover_text.txt
-voiceover_text_sha256=502589b6afec4453e9a3a72d489119c4c74f23080106c85f868dacf50e26bc2c
+voiceover_text_sha256=027c0b63cfd6a861935479f057dec0f018b634840f291258606c31297ceb1cdb
 make_demo_output=paper/workshop/video/make_demo_output.txt
-make_demo_output_sha256=ea5d87f3b17f8dd55be7617e4f73d746205f10eb88ab4ae43f281541f50fea6b
+make_demo_output_sha256=dd57f439682a1bb3b8b9a3d529e37eae9061d32fbbb4741b1c793467cd2b8c8d
 thumbnail=paper/workshop/video/video_thumbnail.png
-thumbnail_sha256=203f662fd4498a1489b0b68967fa14ac05ab3552267161601dee8b6ec7b41210
+thumbnail_sha256=133dcc0ca2bc2d1ece6931261444120bce9d6a672078f8bc0ec32e54dafd2b9a
 ```
 
 ## Verification
 
 - Duration is between 3 and 5 minutes.
-- Video and audio streams both run for approximately 225 seconds.
+- Video and audio streams both run for approximately 239.160 seconds.
 - Captions are bounded inside the video duration.
 - The video states the repository and Zenodo DOI.
 - The video states that the DOI is a software archive, not peer-review acceptance or external adoption.
 - The video presents `make demo` as the one-command workflow.
+- The video avoids fixed test-count claims; live verifiers report the current test count.
 - The video is labeled as a local draft candidate, not an uploaded submission video.
 
 ## Boundary

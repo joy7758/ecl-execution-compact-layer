@@ -1,15 +1,15 @@
 {
     "schema_version": "0.1.0",
     "object_type": "ecl_icse_2027_video_asset_manifest",
-    "status": "local_video_candidate_generated_not_uploaded_not_submitted",
+    "status": "local_video_candidate_rebuilt_not_uploaded_not_submitted",
     "date_checked": "2026-06-30",
     "candidate_video": {
         "path": "paper/workshop/video/ECL_ICSE_2027_DEMO_VIDEO_CANDIDATE.mp4",
-        "sha256": "70c31bc62f9c8855b0fa82c8bcef1092c260b9e3e65116d233af9355335f4e35",
-        "duration_seconds": 225.033333,
-        "duration_human": "3m45s",
-        "size_bytes": 4707476,
-        "bit_rate": 167352,
+        "sha256": "f349243a08f7230717e413ab7b19441c42a81b9a5addb08beacc23cedf59957a",
+        "duration_seconds": 239.16,
+        "duration_human": "3m59s",
+        "size_bytes": 4212817,
+        "bit_rate": 140920,
         "format": "mp4",
         "video_type": "local generated draft with synthesized voiceover",
         "human_review_required": true
@@ -17,44 +17,44 @@
     "supporting_assets": {
         "captions_srt": {
             "path": "paper/workshop/video/ECL_ICSE_2027_DEMO_VIDEO_CANDIDATE.srt",
-            "sha256": "7001c24bc17dbf44079681a6addeb36481c639004c74eedac1834691d0f7e525"
+            "sha256": "5e96ebcb1d7c07ac140d329fa664b9b88144dedb5017aafb9a9f5c9c7bdf929e"
         },
         "voiceover_text": {
             "path": "paper/workshop/video/voiceover_text.txt",
-            "sha256": "502589b6afec4453e9a3a72d489119c4c74f23080106c85f868dacf50e26bc2c"
+            "sha256": "027c0b63cfd6a861935479f057dec0f018b634840f291258606c31297ceb1cdb"
         },
         "make_demo_output": {
             "path": "paper/workshop/video/make_demo_output.txt",
-            "sha256": "ea5d87f3b17f8dd55be7617e4f73d746205f10eb88ab4ae43f281541f50fea6b"
+            "sha256": "dd57f439682a1bb3b8b9a3d529e37eae9061d32fbbb4741b1c793467cd2b8c8d"
         },
         "thumbnail": {
             "path": "paper/workshop/video/video_thumbnail.png",
-            "sha256": "203f662fd4498a1489b0b68967fa14ac05ab3552267161601dee8b6ec7b41210"
+            "sha256": "133dcc0ca2bc2d1ece6931261444120bce9d6a672078f8bc0ec32e54dafd2b9a"
         },
         "slides": [
             {
                 "path": "paper/workshop/video/slides/slide_01.png",
-                "sha256": "40c97ba099e2249062ed0c5ab7f73a94b98a2b0251fefa4a603dec1abb0ae7c6"
+                "sha256": "133dcc0ca2bc2d1ece6931261444120bce9d6a672078f8bc0ec32e54dafd2b9a"
             },
             {
                 "path": "paper/workshop/video/slides/slide_02.png",
-                "sha256": "9316e7c47644e93dee08963bd1a99b0459a8d33cfb0ae560b888c8dab847c5f6"
+                "sha256": "0900c3944efa3d4c706a139a2894762deb5f3997ea3ac5ee35346892dec27a0c"
             },
             {
                 "path": "paper/workshop/video/slides/slide_03.png",
-                "sha256": "24e20dce81f7b74212b5e23eebb219ff6ef024b883295eacc64c2364cb0bbeac"
+                "sha256": "b27cba0218245c67f9c9b14ef032586e370e2049f17acf41033f10991eae206a"
             },
             {
                 "path": "paper/workshop/video/slides/slide_04.png",
-                "sha256": "f0c2b5e999fbb7464698f4b17e28dacedcfb3d27f9f4ea9b677041797a1f77b9"
+                "sha256": "90b0deff25b32661d1e99614f3373a8ceef4e2e34287d4ec21aa8353c1a5f861"
             },
             {
                 "path": "paper/workshop/video/slides/slide_05.png",
-                "sha256": "92f71f476acbc56bb2f3c208e55f91446fddea4b3770683fec15acb6cbbce167"
+                "sha256": "d85a158da90bf47f10d8e4390bd03cb9d09edbc161d5a31fb24d1c53f98232a5"
             },
             {
                 "path": "paper/workshop/video/slides/slide_06.png",
-                "sha256": "95ce63b7e42d82910f61e32980af9cb26af51b6abd0656c1a319814ee7d6df1d"
+                "sha256": "ff6afa2f0cf1441ed481faa6eff7f213dc3fa7156626cc524a7ed03203b21883"
             }
         ]
     },
@@ -65,7 +65,8 @@
         "includes_repository_and_archive_links": true,
         "states_boundary_no_peer_review_or_adoption_claim": true,
         "shows_one_command_demo": true,
-        "contains_local_candidate_label": true
+        "contains_local_candidate_label": true,
+        "avoids_fixed_test_count_claim": true
     },
     "external_actions": {
         "youtube_upload_performed": false,

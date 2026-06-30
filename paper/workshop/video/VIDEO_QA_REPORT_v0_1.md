@@ -8,20 +8,21 @@ Date checked: 2026-06-30
 
 ```text
 video=paper/workshop/video/ECL_ICSE_2027_DEMO_VIDEO_CANDIDATE.mp4
-video_sha256=70c31bc62f9c8855b0fa82c8bcef1092c260b9e3e65116d233af9355335f4e35
+video_sha256=f349243a08f7230717e413ab7b19441c42a81b9a5addb08beacc23cedf59957a
 caption=paper/workshop/video/ECL_ICSE_2027_DEMO_VIDEO_CANDIDATE.srt
-caption_sha256=7001c24bc17dbf44079681a6addeb36481c639004c74eedac1834691d0f7e525
-duration_seconds=225.033333
-duration_human=3m45s
-size_bytes=4707476
+caption_sha256=5e96ebcb1d7c07ac140d329fa664b9b88144dedb5017aafb9a9f5c9c7bdf929e
+duration_seconds=239.160000
+duration_human=3m59s
+size_bytes=4212817
 ```
 
 ## Checks
 
 - The MP4 duration is between 3 and 5 minutes.
-- The video stream duration is approximately 225.033333 seconds.
-- The audio stream duration is approximately 225.033016 seconds.
-- The caption cues end at 3m45s and are bounded inside the video duration.
+- The video stream duration is approximately 239.160000 seconds.
+- The audio stream duration is approximately 239.119002 seconds.
+- The caption cues end at 3m59s and are bounded inside the video duration.
+- The video avoids fixed test-count claims; live verifiers report the current count.
 - The video keeps the local-draft boundary and does not claim ICSE submission, acceptance, external adoption, production deployment, benchmark superiority, or peer-review validation.
 
 ## Upload Gate

@@ -1,4 +1,9 @@
 python3 -m unittest discover -s tests
+python3 scripts/verify_external_action_queue.py
+python3 scripts/validate_external_action_evidence_intake.py
+python3 scripts/verify_icse_tool_demo_package.py
+python3 scripts/verify_post_jss_route.py
+python3 scripts/verify_next_human_actions_packet.py
 python3 sdk/demo_dependency_mode.py
 {"all_deterministic": true, "all_valid": true, "result_hash": "sha256:b9d8fa0269bd2efef4572daed9818a10cc3d389fb60d0d9fb376221572af7ff3"}
 python3 examples/external_recognition_demo.py
