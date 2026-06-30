@@ -40,7 +40,7 @@ public_feedback_request_issue_opened=true
 | 2026-06-30 | `632d6441e09ffcd96ff707f816c588c8450d87bd` | Docker reviewer demo verification | `docker build -t ecl-demo .` and `docker run --rm ecl-demo`, image `sha256:740cc621c668a1608f9f897c0d53662a825cf706a42017d2b8f06c4038b29c3f` | docker_demo_verified |
 | 2026-06-30 | `9b2d8a4134a2523a4434c7d0b217b932a2ff5728` | ICSE tool-demo PDF and link verification | IEEEtran PDF `sha256:7633104c76f499b6e3447da47c1e860f652782b870e1e98cef0e9d8e2ff2558e`, public link check all reachable | tool_demo_pdf_links_verified |
 | 2026-06-30 | `ba7b4ae468d99096b049e30312fa84cc1b7613aa` | ICSE local video candidate | 3m45s MP4 `sha256:a9b1d130da66a38e408d5d51655678750354c62753ac7d7d33891dddec7927aa`, YouTube metadata draft, HotCRP field draft | local_video_candidate_generated |
-| 2026-06-30 | pending commit | ICSE local video candidate timing repair and upload handoff | Rebuilt MP4 with aligned video/audio stream duration and bounded captions; new MP4 `sha256:70c31bc62f9c8855b0fa82c8bcef1092c260b9e3e65116d233af9355335f4e35`; YouTube upload still not performed | local_video_candidate_qa_repaired |
+| 2026-06-30 | `29d29912e634414a3aa4410821df1eb2b75ea0c3` | ICSE local video candidate timing repair and upload handoff | Rebuilt MP4 with aligned video/audio stream duration and bounded captions; new MP4 `sha256:70c31bc62f9c8855b0fa82c8bcef1092c260b9e3e65116d233af9355335f4e35`; YouTube upload still not performed | local_video_candidate_qa_repaired |
 
 ## External Feedback Entries
 
