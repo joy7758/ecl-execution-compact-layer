@@ -33,6 +33,7 @@ Start date: 2026-06-30
 - Do not convert stars, forks, or mentions alone into adoption claims.
 - Prepare ICSE 2027 Tool Demonstration submission package before the official deadline.
 - Use `docs/dissemination/EXTERNAL_FEEDBACK_REQUEST_DRAFTS_v0_1.md` as draft copy only; do not mark feedback received until a real external response exists.
+- Use `post_pub/EXTERNAL_ACTION_QUEUE_v0_1.md` as the current queue for human-executed YouTube, forum, HotCRP, and feedback-recording actions.
 
 ## Boundary
 

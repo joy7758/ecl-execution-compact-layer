@@ -1,0 +1,133 @@
+{
+  "schema_version": "0.1.0",
+  "object_type": "ecl_external_action_queue",
+  "status": "external_actions_queued_not_executed",
+  "date_checked": "2026-06-30",
+  "current_verified_inputs": {
+    "repository": "https://github.com/joy7758/ecl-execution-compact-layer",
+    "zenodo_record": "https://zenodo.org/records/21003766",
+    "version_doi": "10.5281/zenodo.21003766",
+    "icse_tracking_issue": "https://github.com/joy7758/ecl-execution-compact-layer/issues/7",
+    "feedback_issue": "https://github.com/joy7758/ecl-execution-compact-layer/issues/8",
+    "make_demo_dependency_hash": "sha256:b9d8fa0269bd2efef4572daed9818a10cc3d389fb60d0d9fb376221572af7ff3",
+    "make_demo_external_recognition_hash": "sha256:dfafe2572fdf1ee2f48732d0c3931795151afcdeb0b1ead11b887747a99f7441",
+    "video_candidate": "paper/workshop/video/ECL_ICSE_2027_DEMO_VIDEO_CANDIDATE.mp4",
+    "video_candidate_sha256": "70c31bc62f9c8855b0fa82c8bcef1092c260b9e3e65116d233af9355335f4e35"
+  },
+  "actions": [
+    {
+      "order": 1,
+      "id": "review_video_candidate",
+      "action": "Human review of local video candidate",
+      "target": "local_file_review",
+      "input_packet": "paper/workshop/video/VIDEO_QA_REPORT_v0_1.md",
+      "completion_evidence": "human decision to approve or replace candidate",
+      "status": "pending_human_review"
+    },
+    {
+      "order": 2,
+      "id": "upload_youtube_video",
+      "action": "Upload final demo video",
+      "target": "YouTube unlisted during review",
+      "input_packet": "paper/workshop/YOUTUBE_UPLOAD_HANDOFF_v0_1.md",
+      "completion_evidence": "final YouTube URL",
+      "status": "pending_human_upload"
+    },
+    {
+      "order": 3,
+      "id": "record_youtube_url",
+      "action": "Record YouTube URL in repository",
+      "target": "local_repository",
+      "input_packet": [
+        "paper/workshop/HOTCRP_SUBMISSION_DRAFT_v0_1.md",
+        "paper/workshop/ICSE_2027_TOOL_DEMO_MANIFEST_v0_1.json",
+        "paper/workshop/TOOL_DEMO_SUBMISSION_CHECKLIST.md"
+      ],
+      "completion_evidence": "commit containing youtube_upload_performed=true and URL",
+      "status": "waiting_on_youtube_url"
+    },
+    {
+      "order": 4,
+      "id": "post_langchain_feedback_request",
+      "action": "Post feedback request",
+      "target": "https://forum.langchain.com/",
+      "input_packet": "docs/dissemination/EXTERNAL_FORUM_POSTING_HANDOFF_v0_1.md",
+      "completion_evidence": "public forum URL",
+      "status": "pending_human_post"
+    },
+    {
+      "order": 5,
+      "id": "post_mcp_feedback_request",
+      "action": "Post feedback request",
+      "target": "https://github.com/orgs/modelcontextprotocol/discussions",
+      "input_packet": "docs/dissemination/EXTERNAL_FORUM_POSTING_HANDOFF_v0_1.md",
+      "completion_evidence": "public discussion URL",
+      "status": "pending_human_post"
+    },
+    {
+      "order": 6,
+      "id": "record_forum_urls",
+      "action": "Record forum URLs in repository",
+      "target": "local_repository",
+      "input_packet": [
+        "post_pub/FEEDBACK_REQUEST_STATUS_v0_1.md",
+        "post_pub/MAINTENANCE_EVIDENCE_LEDGER_v0_1.md"
+      ],
+      "completion_evidence": "commit containing forum URLs and no unsupported external feedback claim",
+      "status": "waiting_on_forum_urls"
+    },
+    {
+      "order": 7,
+      "id": "submit_icse_tool_demo",
+      "action": "Submit ICSE tool demo",
+      "target": "https://icse27demos.hotcrp.com/",
+      "input_packet": [
+        "paper/workshop/ieee/ECL_ICSE_2027_TOOL_DEMO_DRAFT.pdf",
+        "paper/workshop/HOTCRP_SUBMISSION_DRAFT_v0_1.md",
+        "paper/workshop/YOUTUBE_UPLOAD_HANDOFF_v0_1.md"
+      ],
+      "completion_evidence": "HotCRP submission ID or confirmation page",
+      "status": "pending_human_submission"
+    },
+    {
+      "order": 8,
+      "id": "record_icse_submission_evidence",
+      "action": "Record ICSE submission evidence",
+      "target": "local_repository_and_issue_7",
+      "input_packet": [
+        "paper/workshop/ICSE_2027_TOOL_DEMO_MANIFEST_v0_1.json",
+        "post_pub/MAINTENANCE_EVIDENCE_LEDGER_v0_1.md"
+      ],
+      "completion_evidence": "commit and public tracking comment",
+      "status": "waiting_on_hotcrp_evidence"
+    },
+    {
+      "order": 9,
+      "id": "record_third_party_feedback",
+      "action": "Record real third-party feedback",
+      "target": "GitHub issue, forum reply, or reproducibility report",
+      "input_packet": "post_pub/FEEDBACK_INTAKE_PROTOCOL_v0_1.md",
+      "completion_evidence": "attributable third-party URL and reported command/result",
+      "status": "waiting_on_external_response"
+    },
+    {
+      "order": 10,
+      "id": "continue_monthly_maintenance",
+      "action": "Continue monthly maintenance",
+      "target": "GitHub issues #1-#6",
+      "input_packet": "post_pub/JOSS_SIX_MONTH_READINESS_PLAN.md",
+      "completion_evidence": "monthly commits, tests, release notes, and issue updates",
+      "status": "ongoing_time_dependent"
+    }
+  ],
+  "boundary": {
+    "queue_only": true,
+    "youtube_upload_performed": false,
+    "forum_posts_published": false,
+    "hotcrp_submission_performed": false,
+    "external_feedback_recorded": false,
+    "external_adoption_claim": false,
+    "peer_review_claim": false,
+    "joss_readiness_claim": false
+  }
+}
