@@ -41,7 +41,7 @@ public_feedback_request_issue_opened=true
 | 2026-06-30 | `9b2d8a4134a2523a4434c7d0b217b932a2ff5728` | ICSE tool-demo PDF and link verification | IEEEtran PDF `sha256:7633104c76f499b6e3447da47c1e860f652782b870e1e98cef0e9d8e2ff2558e`, public link check all reachable | tool_demo_pdf_links_verified |
 | 2026-06-30 | `ba7b4ae468d99096b049e30312fa84cc1b7613aa` | ICSE local video candidate | 3m45s MP4 `sha256:a9b1d130da66a38e408d5d51655678750354c62753ac7d7d33891dddec7927aa`, YouTube metadata draft, HotCRP field draft | local_video_candidate_generated |
 | 2026-06-30 | `29d29912e634414a3aa4410821df1eb2b75ea0c3` | ICSE local video candidate timing repair and upload handoff | Rebuilt MP4 with aligned video/audio stream duration and bounded captions; new MP4 `sha256:70c31bc62f9c8855b0fa82c8bcef1092c260b9e3e65116d233af9355335f4e35`; YouTube upload still not performed | local_video_candidate_qa_repaired |
-| 2026-06-30 | pending commit | feedback issue expected-hash sync | Updated public feedback issue #8 and local dissemination surfaces to current `make demo` hashes: dependency `sha256:b9d8fa0269bd2efef4572daed9818a10cc3d389fb60d0d9fb376221572af7ff3`, external recognition `sha256:dfafe2572fdf1ee2f48732d0c3931795151afcdeb0b1ead11b887747a99f7441` | feedback_issue_hashes_synced |
+| 2026-06-30 | `7b93eb36256b95ba4786cd55291e7672932d9a80` | feedback issue expected-hash sync | Updated public feedback issue #8 and local dissemination surfaces to current `make demo` hashes: dependency `sha256:b9d8fa0269bd2efef4572daed9818a10cc3d389fb60d0d9fb376221572af7ff3`, external recognition `sha256:dfafe2572fdf1ee2f48732d0c3931795151afcdeb0b1ead11b887747a99f7441` | feedback_issue_hashes_synced |
 
 ## External Feedback Entries
 
