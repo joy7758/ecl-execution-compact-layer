@@ -1,11 +1,17 @@
 {
   "schema_version": "0.1.0",
   "object_type": "ecl_external_feedback_request_drafts",
-  "status": "drafts_ready_not_posted",
+  "status": "github_feedback_issue_opened_forum_drafts_not_posted",
   "date_checked": "2026-06-30",
   "repository": "https://github.com/joy7758/ecl-execution-compact-layer",
   "archive": "https://doi.org/10.5281/zenodo.21003766",
   "drafts": [
+    {
+      "channel": "github_issue",
+      "status": "published_intake_issue_no_feedback_recorded",
+      "url": "https://github.com/joy7758/ecl-execution-compact-layer/issues/8",
+      "purpose": "request reproducibility observations from external readers who run make demo"
+    },
     {
       "channel": "langchain_forum",
       "status": "draft_ready_not_posted",
@@ -24,7 +30,8 @@
   ],
   "boundary": {
     "drafts_prepared": true,
-    "posts_published": false,
+    "github_feedback_issue_opened": true,
+    "forum_posts_published": false,
     "external_feedback_recorded": false,
     "external_adoption_claim": false,
     "peer_review_claim": false,

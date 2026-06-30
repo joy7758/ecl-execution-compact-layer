@@ -28,7 +28,7 @@ Start date: 2026-06-30
 
 ## Weeks 9-12: External Feedback Intake
 
-- Open feedback issues only when real public feedback exists.
+- Public feedback request issue is open at `https://github.com/joy7758/ecl-execution-compact-layer/issues/8`.
 - Record external reproductions only when a named external party or public issue verifies execution.
 - Do not convert stars, forks, or mentions alone into adoption claims.
 - Prepare ICSE 2027 Tool Demonstration submission package before the official deadline.

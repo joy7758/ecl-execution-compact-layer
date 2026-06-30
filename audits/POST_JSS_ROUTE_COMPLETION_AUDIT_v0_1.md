@@ -27,11 +27,12 @@ Date: 2026-06-30
 | Feedback intake protocol | `post_pub/FEEDBACK_INTAKE_PROTOCOL_v0_1.md` | initialized |
 | 90-day execution plan | `post_pub/ECL_90_DAY_EXECUTION_PLAN.md` | plan_complete |
 | Safe dissemination copy | `docs/dissemination/SAFE_PUBLIC_ANNOUNCEMENT_v0_1.md` | complete |
-| External feedback request drafts | `docs/dissemination/EXTERNAL_FEEDBACK_REQUEST_DRAFTS_v0_1.md` and `.json` | drafts_ready_not_posted |
+| Public feedback request issue | GitHub issue `#8`, `post_pub/FEEDBACK_REQUEST_STATUS_v0_1.md` and `.json` | github_feedback_issue_opened_no_feedback_recorded |
+| External feedback request drafts | `docs/dissemination/EXTERNAL_FEEDBACK_REQUEST_DRAFTS_v0_1.md` and `.json` | github_feedback_issue_opened_forum_drafts_not_posted |
 | Zenodo technical-report new-version candidate package | `release/ECL_v0.1_zenodo_technical_report_update_candidate.zip` | candidate_prepared_not_uploaded |
 | Actual ICSE submission | no portal submission evidence | future_external_action |
 | Actual JOSS resubmission | six-month history not elapsed | future_external_action |
-| External user feedback | no public feedback evidence recorded | future_external_action |
+| External user feedback | feedback request issue open, no external response recorded | future_external_action |
 
 ## Current Verified Commands
 

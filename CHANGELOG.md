@@ -22,6 +22,7 @@ Status: public_release_and_zenodo_archive
 - Added maintenance evidence ledger, maintenance release template, and feedback intake protocol for the six-month JOSS maturation route.
 - Added public maintainer-created maintenance issue bootstrap for `v0.1.1` through `v0.1.6`.
 - Added external feedback request drafts and ICSE tool-demo tracking issue reference without posting or claiming feedback.
+- Added public GitHub feedback request issue status while keeping external feedback and adoption claims false.
 
 Boundary:
 

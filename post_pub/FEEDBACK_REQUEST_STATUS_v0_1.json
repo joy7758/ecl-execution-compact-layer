@@ -1,0 +1,30 @@
+{
+  "schema_version": "0.1.0",
+  "object_type": "ecl_feedback_request_status",
+  "status": "github_feedback_issue_opened_no_feedback_recorded",
+  "date_checked": "2026-06-30",
+  "repository": "https://github.com/joy7758/ecl-execution-compact-layer",
+  "github_feedback_issue": {
+    "number": 8,
+    "title": "Feedback request: run make demo and report reproducibility",
+    "url": "https://github.com/joy7758/ecl-execution-compact-layer/issues/8",
+    "state": "OPEN",
+    "created_at": "2026-06-30T09:09:03Z",
+    "labels": [
+      "feedback",
+      "reproducibility"
+    ]
+  },
+  "external_channels": {
+    "langchain_forum_posted": false,
+    "mcp_discussion_posted": false
+  },
+  "boundary": {
+    "github_feedback_issue_opened": true,
+    "external_feedback_recorded": false,
+    "external_reproduction_recorded": false,
+    "external_adoption_claim": false,
+    "peer_review_claim": false,
+    "joss_readiness_claim": false
+  }
+}

@@ -1,12 +1,20 @@
 # ECL External Feedback Request Drafts v0.1
 
-Status: drafts_ready_not_posted
+Status: github_feedback_issue_opened_forum_drafts_not_posted
 
 Date: 2026-06-30
 
 ## Purpose
 
-These drafts support the 90-day feedback-intake route after the Zenodo DOI archive. They are not evidence that feedback has been requested, received, or independently validated.
+These drafts support the 90-day feedback-intake route after the Zenodo DOI archive. The GitHub feedback issue has been opened, but the forum drafts have not been posted. This file is not evidence that external feedback has been received or independently validated.
+
+## Public GitHub Feedback Issue
+
+Issue: https://github.com/joy7758/ecl-execution-compact-layer/issues/8
+
+Status: opened by maintainer as a public feedback request.
+
+Boundary: the issue is an intake surface only. It is not feedback, validation, adoption, peer review, or JOSS readiness evidence by itself.
 
 ## LangChain Forum Draft
 
@@ -75,7 +83,8 @@ Do not include private traces, credentials, personal data, or production logs.
 
 ```text
 drafts_prepared=true
-posts_published=false
+github_feedback_issue_opened=true
+forum_posts_published=false
 external_feedback_recorded=false
 external_adoption_claim=false
 peer_review_claim=false

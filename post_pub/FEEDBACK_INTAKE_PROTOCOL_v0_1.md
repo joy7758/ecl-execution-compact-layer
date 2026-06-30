@@ -2,6 +2,8 @@
 
 Status: initialized_no_feedback_claim
 
+Public intake issue: https://github.com/joy7758/ecl-execution-compact-layer/issues/8
+
 ## What Counts
 
 - A public GitHub issue from a third party.
@@ -34,3 +36,4 @@ claim_boundary=
 
 Feedback is not adoption unless the external party uses ECL as a dependency or explicitly reports integration. Feedback is not validation unless the reported command and result are reproducible.
 
+Opening the public intake issue is not feedback by itself. It only creates a public place where reproducibility reports can be recorded.
