@@ -1,13 +1,14 @@
 # ECL arXiv + JSS Submission Status
 
-Status: jss_prescreen_reject_rejected_and_closed_arxiv_endorsement_code_generated_pending_endorser
+Status: post_jss_prescreen_reject_arxiv_blocked_zenodo_doi_active
 
 Date: 2026-06-30
 
 ## Route
 
 ```text
-primary_route=arxiv_plus_jss
+current_primary_route=zenodo_doi_plus_icse_tool_demo_feedback_route
+previous_primary_route=arxiv_plus_jss
 arxiv_submission_attempted=true
 arxiv_submission_performed=false
 arxiv_blocker=no_endorsement_for_cs.SE
@@ -36,6 +37,7 @@ jss_rejected_and_closed=true
 jss_decision_evidence=user_provided_decision_email_2026-06-30
 jss_decision_editor=Alexander Chatzigeorgiou
 jss_decision_phase=pre_screening_before_reviewers
+jss_recommended_next_step=workshops_and_or_conferences_before_jss
 github_release_created=true
 zenodo_record_id=21003766
 zenodo_record_url=https://zenodo.org/records/21003766
@@ -43,6 +45,7 @@ zenodo_version_doi=10.5281/zenodo.21003766
 zenodo_concept_doi=10.5281/zenodo.21003765
 zenodo_publish_performed=true
 zenodo_doi_minted=true
+jss_route_deprioritized_until_external_feedback=true
 joss_route_deprioritized=true
 schema_changes=false
 core_modification=false

@@ -2,7 +2,15 @@
 
 Target journal: The Journal of Systems and Software
 
-Route: arXiv preprint plus JSS journal submission package.
+Route status: historical submitted-and-rejected JSS package.
+
+```text
+jss_submission_performed=true
+jss_manuscript_number=JSSOFTWARE-D-26-01460
+jss_decision_status=prescreen_reject
+jss_decision_phase=pre_screening_before_reviewers
+jss_rejected_and_closed=true
+```
 
 ## Source Requirements
 
@@ -46,17 +54,18 @@ core_modification=false
 ## Boundary
 
 ```text
-jss_submission_performed=false
+jss_submission_performed=true
+jss_rejected_and_closed=true
 arxiv_submission_performed=false
-doi_minted=false
+doi_minted=true
+zenodo_version_doi=10.5281/zenodo.21003766
 joss_route_deprioritized=true
 public_history_gate_not_applicable_to_jss=true
 ```
 
-## Human Actions Still Required
+## Human Actions No Longer Required For This JSS Line
 
-- Verify final author metadata and email address in the journal portal.
-- Select the correct article type and classification in Editorial Manager.
-- Confirm whether an arXiv preprint has already been submitted before journal submission.
-- Upload the DOCX source, highlights file, cover letter, declarations, and PDF preview.
-- Complete publisher declarations in the portal.
+- Do not continue uploading or editing this closed JSS submission.
+- Do not describe this line as under review, sent to reviewers, accepted, published, or externally validated.
+- Treat the editor's workshop/conference recommendation as routing guidance, not as an external review report.
+- Reassess any future JSS route only after real external feedback and maintenance evidence are available.

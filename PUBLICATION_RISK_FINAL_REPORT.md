@@ -5,35 +5,46 @@
 ```text
 object_type=ecl_publication_risk_final_report
 version=0.1
-date_checked=2026-06-28
+date_checked=2026-06-30
+status=superseded_by_actual_jss_prescreen_decision
 system_changes=false
 new_features=false
 joss_submission_performed=false
-jss_submission_performed=false
+jss_submission_performed=true
+jss_manuscript_number=JSSOFTWARE-D-26-01460
+jss_decision=prescreen_reject
+jss_rejected_and_closed=true
 arxiv_submission_performed=false
-doi_minted=false
+doi_minted=true
+zenodo_version_doi=10.5281/zenodo.21003766
 ```
 
-This report estimates submission risk for the frozen ECL v0.1 package. The estimates are qualitative risk bands, not statistical predictions. The current primary route is `arxiv_plus_jss`; the previous JOSS route is deprioritized because of its public-history gate.
+This report is now a historical risk snapshot plus current route correction. The JSS risk estimate resolved as an actual pre-screen rejection before reviewer assignment. The current primary route is `zenodo_doi_plus_icse_tool_demo_feedback_route`; the old `arxiv_plus_jss` route is not active.
 
 ## Current Route
 
 ```text
-primary_route=arxiv_plus_jss
+primary_route=zenodo_doi_plus_icse_tool_demo_feedback_route
+previous_primary_route=arxiv_plus_jss
 jss_expansion=The Journal of Systems and Software
+jss_current_state=prescreen_reject_rejected_and_closed
+arxiv_current_state=endorsement_blocked_not_submitted
+zenodo_current_state=published_doi_archive
 joss_route_deprioritized=true
-jss_public_history_gate_required=false
+jss_public_history_gate_required_for_jss=false
 ```
 
-## JSS Acceptance Probability Estimate
+## JSS Outcome
 
 ```text
-immediate_jss_editorial_screening_probability=moderate
-jss_major_revision_probability=high
-jss_acceptance_without_revision_probability=low
+jss_editorial_screening_outcome=reject
+jss_sent_to_reviewers=false
+jss_external_reviewer_reports=false
+jss_revision_invited=false
+jss_acceptance=false
 ```
 
-Reason: the JSS route does not depend on the JOSS public-history gate, but reviewers are likely to challenge evaluation scope, comparison depth, and the absence of external user evidence.
+Reason recorded from the decision email: the paper was judged not quite ready for publication in a leading journal, and the editor recommended feedback via workshops and/or conferences before submitting to JSS.
 
 ## JOSS Historical Risk
 
@@ -52,7 +63,7 @@ external_impact_signal_ready=false
 
 The engineering process statement mitigates a reviewer narrative concern. It does not satisfy the public-history gate.
 
-## Top 5 JSS Reviewer Objections
+## Top 5 JSS Prescreen Risk Factors Now Confirmed
 
 1. `evaluation_scope`: The trace corpus is synthetic and local.
 2. `comparison_depth`: Reviewers may ask for deeper comparison with tracing and observability systems.
@@ -94,18 +105,18 @@ Primary risks:
 ## Recommended Final Submission Timing
 
 ```text
-arxiv_submission_timing=acceptable_after_human_pdf_and_category_review
-jss_submission_timing=acceptable_after_human_metadata_and_file_review
+arxiv_submission_timing=blocked_until_endorsement_or_alternative_preprint_route
+jss_submission_timing=not_recommended_until_workshop_or_conference_feedback
 joss_submission_timing=not_recommended_unless_route_reopens
 joss_safe_reassessment_date=2026-12-29
 ```
 
 Recommended path:
 
-1. Submit arXiv only after final PDF/category/human metadata review.
-2. Submit JSS only after human portal metadata review and file classification.
-3. Treat JSS as the primary journal route because it does not use the JOSS public-history gate.
-4. Keep JOSS deprioritized unless the public-history risk is later acceptable or resolved.
+1. Use the Zenodo DOI as the stable public software archive.
+2. Continue ICSE 2027 Tool Demonstration and Data Showcase preparation.
+3. Collect real external feedback through GitHub issues, tool-demo review, and public forum posts if manually performed.
+4. Reassess JSS/JOSS only after observable public maintenance history and external feedback evidence exist.
 
 ## Sources Checked
 
