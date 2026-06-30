@@ -1,0 +1,98 @@
+{
+  "schema_version": "0.1.0",
+  "object_type": "ecl_next_human_actions_packet",
+  "status": "human_actions_pending_not_executed",
+  "date_checked": "2026-06-30",
+  "source_verifier": "python3 scripts/verify_post_jss_route.py",
+  "source_status": "actionable_local_gates_pass_future_external_steps_open",
+  "repository": "https://github.com/joy7758/ecl-execution-compact-layer",
+  "zenodo_version_doi": "10.5281/zenodo.21003766",
+  "jss_state": "JSSOFTWARE-D-26-01460 prescreen_reject rejected_and_closed",
+  "actions": [
+    {
+      "order": 1,
+      "id": "review_video_candidate",
+      "human_action": "Review local ICSE demo video candidate",
+      "input_packet": "paper/workshop/video/VIDEO_QA_REPORT_v0_1.md",
+      "evidence_to_collect": "human decision to approve or replace candidate",
+      "verification_command": "python3 scripts/verify_icse_tool_demo_package.py",
+      "status": "pending_human_review"
+    },
+    {
+      "order": 2,
+      "id": "upload_youtube_video",
+      "human_action": "Upload approved video to YouTube",
+      "input_packet": "paper/workshop/YOUTUBE_UPLOAD_HANDOFF_v0_1.md",
+      "evidence_to_collect": "final YouTube URL",
+      "verification_command": "do not record until URL exists",
+      "status": "pending_human_upload"
+    },
+    {
+      "order": 3,
+      "id": "record_youtube_url",
+      "human_action": "Record YouTube URL",
+      "input_packet": "post_pub/EXTERNAL_ACTION_EVIDENCE_INTAKE_TEMPLATE_v0_1.json",
+      "evidence_to_collect": "filled youtube_video slot",
+      "verification_command": "python3 scripts/validate_external_action_evidence_intake.py <filled-intake-json>",
+      "status": "waiting_on_youtube_url"
+    },
+    {
+      "order": 4,
+      "id": "post_langchain_feedback_request",
+      "human_action": "Post LangChain feedback request",
+      "input_packet": "docs/dissemination/EXTERNAL_FORUM_POSTING_HANDOFF_v0_1.md",
+      "evidence_to_collect": "public LangChain Forum URL",
+      "verification_command": "record forum URL only; do not mark third-party feedback until someone replies",
+      "status": "pending_human_post"
+    },
+    {
+      "order": 5,
+      "id": "post_mcp_feedback_request",
+      "human_action": "Post MCP feedback request",
+      "input_packet": "docs/dissemination/EXTERNAL_FORUM_POSTING_HANDOFF_v0_1.md",
+      "evidence_to_collect": "public MCP Discussion URL",
+      "verification_command": "record discussion URL only; do not mark third-party feedback until someone replies",
+      "status": "pending_human_post"
+    },
+    {
+      "order": 6,
+      "id": "submit_icse_tool_demo",
+      "human_action": "Submit ICSE tool demo in HotCRP",
+      "input_packet": "paper/workshop/HOTCRP_SUBMISSION_DRAFT_v0_1.md",
+      "evidence_to_collect": "HotCRP submission ID or confirmation page",
+      "verification_command": "do not record until HotCRP confirmation exists",
+      "status": "pending_human_submission"
+    },
+    {
+      "order": 7,
+      "id": "record_third_party_feedback",
+      "human_action": "Record real third-party feedback",
+      "input_packet": "post_pub/FEEDBACK_INTAKE_PROTOCOL_v0_1.md",
+      "evidence_to_collect": "attributable third-party URL and reported command/result",
+      "verification_command": "python3 scripts/validate_external_action_evidence_intake.py <filled-intake-json>",
+      "status": "waiting_on_external_response"
+    },
+    {
+      "order": 8,
+      "id": "continue_monthly_maintenance",
+      "human_action": "Continue monthly maintenance",
+      "input_packet": "post_pub/JOSS_SIX_MONTH_READINESS_PLAN.md",
+      "evidence_to_collect": "monthly commits, tests, release notes, issue updates, and feedback if it exists",
+      "verification_command": "do not reassess JOSS before 2026-12-29",
+      "status": "ongoing_time_dependent"
+    }
+  ],
+  "boundary": {
+    "packet_only": true,
+    "human_actions_pending": true,
+    "youtube_upload_performed": false,
+    "forum_posts_published": false,
+    "hotcrp_submission_performed": false,
+    "external_feedback_recorded": false,
+    "external_adoption_claim": false,
+    "peer_review_claim": false,
+    "icse_acceptance_claim": false,
+    "joss_readiness_claim": false,
+    "route_complete": false
+  }
+}

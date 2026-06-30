@@ -1,4 +1,4 @@
-.PHONY: demo test dependency-demo recognition-demo external-action-queue external-action-intake icse-package post-jss-route
+.PHONY: demo test dependency-demo recognition-demo external-action-queue external-action-intake icse-package post-jss-route next-human-actions
 
 PYTHON ?= python3
 
@@ -23,4 +23,7 @@ icse-package:
 post-jss-route:
 	$(PYTHON) scripts/verify_post_jss_route.py
 
-demo: test external-action-queue external-action-intake icse-package post-jss-route dependency-demo recognition-demo
+next-human-actions:
+	$(PYTHON) scripts/verify_next_human_actions_packet.py
+
+demo: test external-action-queue external-action-intake icse-package post-jss-route next-human-actions dependency-demo recognition-demo
