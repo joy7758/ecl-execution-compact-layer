@@ -28,6 +28,7 @@ Status: public_release_and_zenodo_archive
 - Added a local ICSE demo video candidate, captions, YouTube metadata draft, and HotCRP submission-field draft while keeping YouTube upload and ICSE submission false.
 - Repaired the local ICSE demo video candidate timing so video/audio streams align and captions remain inside the 3m45s video duration; upload and submission remain false.
 - Synchronized the public feedback request expected `make demo` hashes with the current deterministic demo outputs.
+- Added an external forum posting handoff for LangChain Forum and MCP Discussions without marking any forum post as published.
 
 Boundary:
 

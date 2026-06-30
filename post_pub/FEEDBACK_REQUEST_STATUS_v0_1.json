@@ -19,6 +19,12 @@
         "dependency_mode_result_hash": "sha256:b9d8fa0269bd2efef4572daed9818a10cc3d389fb60d0d9fb376221572af7ff3",
         "external_recognition_result_hash": "sha256:dfafe2572fdf1ee2f48732d0c3931795151afcdeb0b1ead11b887747a99f7441"
     },
+    "external_posting_handoff": {
+        "path": "docs/dissemination/EXTERNAL_FORUM_POSTING_HANDOFF_v0_1.md",
+        "langchain_forum_target": "https://forum.langchain.com/",
+        "mcp_discussions_target": "https://github.com/orgs/modelcontextprotocol/discussions",
+        "published": false
+    },
     "external_channels": {
         "langchain_forum_posted": false,
         "mcp_discussion_posted": false
@@ -26,6 +32,7 @@
     "boundary": {
         "github_feedback_issue_opened": true,
         "github_feedback_issue_expected_hashes_synced": true,
+        "external_forum_posting_handoff_prepared": true,
         "external_feedback_recorded": false,
         "external_reproduction_recorded": false,
         "external_adoption_claim": false,

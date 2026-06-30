@@ -1,0 +1,33 @@
+{
+  "schema_version": "0.1.0",
+  "object_type": "ecl_external_forum_posting_handoff",
+  "status": "handoff_prepared_not_posted",
+  "date_checked": "2026-06-30",
+  "verified_targets": {
+    "langchain_forum": "https://forum.langchain.com/",
+    "mcp_discussions": "https://github.com/orgs/modelcontextprotocol/discussions",
+    "github_feedback_issue": "https://github.com/joy7758/ecl-execution-compact-layer/issues/8"
+  },
+  "target_link_check": {
+    "langchain_forum_http": 200,
+    "mcp_discussions_http": 200
+  },
+  "expected_make_demo_hashes": {
+    "dependency_mode_result_hash": "sha256:b9d8fa0269bd2efef4572daed9818a10cc3d389fb60d0d9fb376221572af7ff3",
+    "external_recognition_result_hash": "sha256:dfafe2572fdf1ee2f48732d0c3931795151afcdeb0b1ead11b887747a99f7441"
+  },
+  "external_actions": {
+    "langchain_forum_posted": false,
+    "mcp_discussion_posted": false,
+    "external_feedback_recorded": false,
+    "external_reproduction_recorded": false,
+    "external_adoption_claim": false
+  },
+  "boundary": {
+    "handoff_only": true,
+    "forum_posts_published": false,
+    "peer_review_claim": false,
+    "production_deployment_claim": false,
+    "standardization_claim": false
+  }
+}

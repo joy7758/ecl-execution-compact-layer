@@ -1,30 +1,35 @@
-# ECL External Feedback Request Drafts v0.1
+# ECL External Forum Posting Handoff v0.1
 
-Status: github_feedback_issue_opened_forum_drafts_not_posted
+Status: handoff_prepared_not_posted
 
-Date: 2026-06-30
+Date checked: 2026-06-30
 
-## Purpose
-
-These drafts support the 90-day feedback-intake route after the Zenodo DOI archive. The GitHub feedback issue has been opened, but the forum drafts have not been posted. This file is not evidence that external feedback has been received or independently validated.
-
-## Verified Posting Targets
+## Verified Targets
 
 ```text
 langchain_forum=https://forum.langchain.com/
 mcp_discussions=https://github.com/orgs/modelcontextprotocol/discussions
-posting_handoff=docs/dissemination/EXTERNAL_FORUM_POSTING_HANDOFF_v0_1.md
+github_feedback_issue=https://github.com/joy7758/ecl-execution-compact-layer/issues/8
+repository=https://github.com/joy7758/ecl-execution-compact-layer
+archive=https://doi.org/10.5281/zenodo.21003766
 ```
 
-## Public GitHub Feedback Issue
+Link check:
 
-Issue: https://github.com/joy7758/ecl-execution-compact-layer/issues/8
+```text
+langchain_forum_http=200
+mcp_discussions_http=200
+```
 
-Status: opened by maintainer as a public feedback request.
+## Expected Demo Hashes
 
-Boundary: the issue is an intake surface only. It is not feedback, validation, adoption, peer review, or JOSS readiness evidence by itself.
+```text
+command=make demo
+dependency_mode_result_hash=sha256:b9d8fa0269bd2efef4572daed9818a10cc3d389fb60d0d9fb376221572af7ff3
+external_recognition_result_hash=sha256:dfafe2572fdf1ee2f48732d0c3931795151afcdeb0b1ead11b887747a99f7441
+```
 
-## LangChain Forum Draft
+## LangChain Forum Post
 
 ```text
 Title: Feedback request: deterministic execution IR for replayable agent runtime traces
@@ -54,7 +59,7 @@ Feedback issue: https://github.com/joy7758/ecl-execution-compact-layer/issues/8
 Boundary: this is a prototype and citation-ready software artifact. It is not a framework, benchmark, production deployment, standard, or adoption claim.
 ```
 
-## MCP Discussion Draft
+## MCP Discussions Post
 
 ```text
 Title: Feedback request: MCP-shaped local wrapper boundary for ECL
@@ -84,40 +89,14 @@ Feedback issue: https://github.com/joy7758/ecl-execution-compact-layer/issues/8
 Boundary: no production integration, external adoption, or standards-body claim is made.
 ```
 
-## GitHub Feedback Issue Prompt
+## Human Posting Steps
 
-```text
-Please run:
-
-make demo
-
-Expected stable hashes from current local verification:
-
-- dependency_mode_result_hash=sha256:b9d8fa0269bd2efef4572daed9818a10cc3d389fb60d0d9fb376221572af7ff3
-- external_recognition_result_hash=sha256:dfafe2572fdf1ee2f48732d0c3931795151afcdeb0b1ead11b887747a99f7441
-
-Then report:
-
-- operating system;
-- Python version;
-- whether all tests passed;
-- dependency_mode_result_hash;
-- external_recognition_result_hash;
-- any confusing documentation or trace-mapping boundary.
-
-Do not include private traces, credentials, personal data, or production logs.
-```
+1. Log in to the target forum or GitHub account manually.
+2. Choose the closest non-promotional help, discussion, or show-and-tell category.
+3. Paste the relevant post body above.
+4. Record the public URL in `post_pub/FEEDBACK_REQUEST_STATUS_v0_1.md`.
+5. Do not mark external feedback as received until a third party replies with attributable or reproducible information.
 
 ## Boundary
 
-```text
-drafts_prepared=true
-github_feedback_issue_opened=true
-github_feedback_issue_expected_hashes_synced=true
-external_forum_posting_handoff_prepared=true
-forum_posts_published=false
-external_feedback_recorded=false
-external_adoption_claim=false
-peer_review_claim=false
-production_deployment_claim=false
-```
+This file is a posting handoff only. It does not prove that any forum post was published, that anyone replied, that the software was externally validated, or that ECL has been adopted.

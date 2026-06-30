@@ -5,6 +5,11 @@
     "date_checked": "2026-06-30",
     "repository": "https://github.com/joy7758/ecl-execution-compact-layer",
     "archive": "https://doi.org/10.5281/zenodo.21003766",
+    "verified_targets": {
+        "langchain_forum": "https://forum.langchain.com/",
+        "mcp_discussions": "https://github.com/orgs/modelcontextprotocol/discussions",
+        "posting_handoff": "docs/dissemination/EXTERNAL_FORUM_POSTING_HANDOFF_v0_1.md"
+    },
     "expected_make_demo_hashes": {
         "dependency_mode_result_hash": "sha256:b9d8fa0269bd2efef4572daed9818a10cc3d389fb60d0d9fb376221572af7ff3",
         "external_recognition_result_hash": "sha256:dfafe2572fdf1ee2f48732d0c3931795151afcdeb0b1ead11b887747a99f7441"
@@ -36,6 +41,7 @@
         "drafts_prepared": true,
         "github_feedback_issue_opened": true,
         "github_feedback_issue_expected_hashes_synced": true,
+        "external_forum_posting_handoff_prepared": true,
         "forum_posts_published": false,
         "external_feedback_recorded": false,
         "external_adoption_claim": false,

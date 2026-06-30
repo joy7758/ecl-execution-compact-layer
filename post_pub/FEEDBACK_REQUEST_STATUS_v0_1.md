@@ -10,6 +10,8 @@ GitHub feedback issue: https://github.com/joy7758/ecl-execution-compact-layer/is
 
 Purpose: ask external readers to run `make demo` and report reproducibility observations.
 
+External posting handoff: `docs/dissemination/EXTERNAL_FORUM_POSTING_HANDOFF_v0_1.md`
+
 Expected stable hashes:
 
 ```text
@@ -22,6 +24,7 @@ external_recognition_result_hash=sha256:dfafe2572fdf1ee2f48732d0c3931795151afcde
 ```text
 github_feedback_issue_opened=true
 github_feedback_issue_expected_hashes_synced=true
+external_forum_posting_handoff_prepared=true
 langchain_forum_posted=false
 mcp_discussion_posted=false
 external_feedback_recorded=false
