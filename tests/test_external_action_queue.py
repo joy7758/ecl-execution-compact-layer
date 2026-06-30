@@ -1,0 +1,112 @@
+from __future__ import annotations
+
+from hashlib import sha256
+import json
+from pathlib import Path
+import unittest
+
+
+ROOT = Path(__file__).resolve().parents[1]
+QUEUE_PATH = ROOT / "post_pub" / "EXTERNAL_ACTION_QUEUE_v0_1.json"
+
+
+class ExternalActionQueueTests(unittest.TestCase):
+    def load_queue(self) -> dict:
+        return json.loads(QUEUE_PATH.read_text(encoding="utf-8"))
+
+    def test_queue_has_expected_ordered_actions(self) -> None:
+        queue = self.load_queue()
+        self.assertEqual(queue["status"], "external_actions_queued_not_executed")
+        expected_ids = [
+            "review_video_candidate",
+            "upload_youtube_video",
+            "record_youtube_url",
+            "post_langchain_feedback_request",
+            "post_mcp_feedback_request",
+            "record_forum_urls",
+            "submit_icse_tool_demo",
+            "record_icse_submission_evidence",
+            "record_third_party_feedback",
+            "continue_monthly_maintenance",
+        ]
+        actions = queue["actions"]
+        self.assertEqual([action["id"] for action in actions], expected_ids)
+        self.assertEqual([action["order"] for action in actions], list(range(1, 11)))
+        for action in actions:
+            self.assertNotIn(action["status"], {"complete", "done", "posted", "submitted"})
+
+    def test_queue_preserves_external_action_boundaries(self) -> None:
+        boundary = self.load_queue()["boundary"]
+        self.assertTrue(boundary["queue_only"])
+        for key in (
+            "youtube_upload_performed",
+            "forum_posts_published",
+            "hotcrp_submission_performed",
+            "external_feedback_recorded",
+            "external_adoption_claim",
+            "peer_review_claim",
+            "joss_readiness_claim",
+        ):
+            self.assertFalse(boundary[key], key)
+
+    def test_queue_references_existing_local_packets(self) -> None:
+        queue = self.load_queue()
+        packet_values: list[str] = []
+        for action in queue["actions"]:
+            input_packet = action["input_packet"]
+            if isinstance(input_packet, str):
+                packet_values.append(input_packet)
+            else:
+                packet_values.extend(input_packet)
+
+        for packet in packet_values:
+            self.assertTrue((ROOT / packet).exists(), packet)
+
+    def test_queue_hashes_match_current_artifacts_and_manifests(self) -> None:
+        queue = self.load_queue()
+        inputs = queue["current_verified_inputs"]
+        video_path = ROOT / inputs["video_candidate"]
+        self.assertEqual(
+            sha256(video_path.read_bytes()).hexdigest(),
+            inputs["video_candidate_sha256"],
+        )
+
+        icse_manifest = json.loads(
+            (ROOT / "paper" / "workshop" / "ICSE_2027_TOOL_DEMO_MANIFEST_v0_1.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        self.assertEqual(
+            inputs["video_candidate_sha256"],
+            icse_manifest["video"]["local_candidate_sha256"],
+        )
+        self.assertEqual(
+            inputs["make_demo_dependency_hash"],
+            icse_manifest["demo"]["dependency_mode_result_hash"],
+        )
+        self.assertEqual(
+            inputs["make_demo_external_recognition_hash"],
+            icse_manifest["demo"]["external_recognition_result_hash"],
+        )
+
+        feedback_status = json.loads(
+            (ROOT / "post_pub" / "FEEDBACK_REQUEST_STATUS_v0_1.json").read_text(encoding="utf-8")
+        )
+        self.assertEqual(
+            inputs["make_demo_dependency_hash"],
+            feedback_status["expected_make_demo_hashes"]["dependency_mode_result_hash"],
+        )
+        self.assertEqual(
+            inputs["make_demo_external_recognition_hash"],
+            feedback_status["expected_make_demo_hashes"]["external_recognition_result_hash"],
+        )
+
+    def test_agent_index_exposes_queue(self) -> None:
+        index = json.loads((ROOT / "agent-index.json").read_text(encoding="utf-8"))
+        self.assertEqual(index["entrypoints"]["external_action_queue"], "post_pub/EXTERNAL_ACTION_QUEUE_v0_1.md")
+        self.assertIn("post_pub/EXTERNAL_ACTION_QUEUE_v0_1.md", index["primary_artifacts"])
+        self.assertIn("post_pub/EXTERNAL_ACTION_QUEUE_v0_1.json", index["primary_artifacts"])
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -30,6 +30,7 @@ Status: public_release_and_zenodo_archive
 - Synchronized the public feedback request expected `make demo` hashes with the current deterministic demo outputs.
 - Added an external forum posting handoff for LangChain Forum and MCP Discussions without marking any forum post as published.
 - Added an external action queue for the remaining human-executed YouTube, forum, HotCRP, feedback, and maintenance steps.
+- Added unit-test coverage for the external action queue boundaries, referenced packets, and cross-manifest hashes.
 
 Boundary:
 
