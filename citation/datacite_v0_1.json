@@ -1,0 +1,79 @@
+{
+  "creators": [
+    {
+      "affiliation": "independent researcher",
+      "name": "Zhang, Bin",
+      "nameIdentifiers": [
+        {
+          "nameIdentifier": "0009-0002-8861-1481",
+          "nameIdentifierScheme": "ORCID",
+          "schemeUri": "https://orcid.org"
+        }
+      ]
+    }
+  ],
+  "dates": [
+    {
+      "date": "2026-06-28",
+      "dateType": "Issued"
+    }
+  ],
+  "descriptions": [
+    {
+      "description": "ECL v0.1 is a deterministic execution IR layer for cross-runtime agent traces with replayable semantics, local validation, SDK embedding, and dependency-mode verification.",
+      "descriptionType": "Abstract"
+    }
+  ],
+  "doi": "10.5281/zenodo.21003766",
+  "formats": [
+    "application/zip",
+    "application/pdf",
+    "text/markdown",
+    "application/json"
+  ],
+  "language": "en",
+  "publisher": "Zenodo",
+  "publicationYear": 2026,
+  "relatedIdentifiers": [
+    {
+      "relatedIdentifier": "https://github.com/joy7758/ecl-execution-compact-layer",
+      "relatedIdentifierType": "URL",
+      "relationType": "IsSupplementedBy"
+    },
+    {
+      "relatedIdentifier": "https://github.com/joy7758/ecl-execution-compact-layer/releases/tag/v0.1",
+      "relatedIdentifierType": "URL",
+      "relationType": "IsIdenticalTo"
+    }
+  ],
+  "resourceType": {
+    "resourceType": "Software",
+    "resourceTypeGeneral": "Software"
+  },
+  "rightsList": [
+    {
+      "rights": "MIT License",
+      "rightsUri": "https://opensource.org/licenses/MIT"
+    }
+  ],
+  "subjects": [
+    {
+      "subject": "execution IR"
+    },
+    {
+      "subject": "agent systems"
+    },
+    {
+      "subject": "determinism"
+    },
+    {
+      "subject": "replay"
+    }
+  ],
+  "titles": [
+    {
+      "title": "ECL v0.1"
+    }
+  ],
+  "version": "0.1"
+}

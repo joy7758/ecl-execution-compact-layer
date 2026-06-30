@@ -16,7 +16,7 @@ from ecl.validator import validate_record
 
 FROZEN_SCHEMA_SHA256 = "15d089eaee07ec27d1fc69b5418e5dc5f1b1fa55f2c9395c03cde0ad6773cf89"
 EXTERNAL_INTERFACE_LOCK = {
-    "README.md": "01f5b07f602edf3a46b5061770b850d644c83e6887e513187013e8875e8a9e4b",
+    "README.md": "aafb9b2974f0d092136b4404b64a4c92050aa65c4dc1e35206612acf0bf7afcc",
     "ecl/adapters/openai_agents.py": "6dd653924c97e4b746de72e35cf57a2d07f08898d0f65b9fb930cadac8ebdfc6",
     "demo/replay_demo.py": "14aba3613b6e2070c94191b73d686d94685fc314c34500bb03b185cb6399ebf1",
     "schemas/ecl-execution-compact-layer.schema.json": FROZEN_SCHEMA_SHA256,

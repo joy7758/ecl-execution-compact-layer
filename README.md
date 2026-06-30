@@ -35,6 +35,10 @@ python3 experiments/evaluate_trace_corpus.py
 - SDK guide: `sdk/README.md`
 - Dependency API guide: `sdk/DEPENDENCY_README.md`
 - Research-use boundary: `docs/research_use/ECL_RESEARCH_USE_CASE_v0_1.md`
+- One-command demo: `docs/demo/ONE_COMMAND_DEMO.md`
+- Citation package: `citation/ECL_CITATION_PACKAGE_v0_1.md`
+- Technical report: `paper/technical_report/ECL_TECHNICAL_REPORT_v0_1.md`
+- Safe public announcement: `docs/dissemination/SAFE_PUBLIC_ANNOUNCEMENT_v0_1.md`
 
 ## Citation
 

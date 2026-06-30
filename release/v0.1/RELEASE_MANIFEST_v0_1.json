@@ -61,11 +61,18 @@
     "doi_ready_assets_uploaded": true,
     "doi_ready_assets": {
       "CITATION.cff": "https://github.com/joy7758/ecl-execution-compact-layer/releases/download/v0.1/CITATION.cff",
+      "ECL_TECHNICAL_REPORT_v0_1.pdf": "https://github.com/joy7758/ecl-execution-compact-layer/releases/download/v0.1/ECL_TECHNICAL_REPORT_v0_1.pdf",
+      "ECL_v0.1_citation_package.zip": "https://github.com/joy7758/ecl-execution-compact-layer/releases/download/v0.1/ECL_v0.1_citation_package.zip",
       "ECL_v0.1_zenodo_deposit_package.zip": "https://github.com/joy7758/ecl-execution-compact-layer/releases/download/v0.1/ECL_v0.1_zenodo_deposit_package.zip",
       "ZENODO_DOI_ACTION_STATUS_v0_1.md": "https://github.com/joy7758/ecl-execution-compact-layer/releases/download/v0.1/ZENODO_DOI_ACTION_STATUS_v0_1.md",
+      "ZENODO_TECH_REPORT_ATTACHMENT_DECISION_v0_1.md": "https://github.com/joy7758/ecl-execution-compact-layer/releases/download/v0.1/ZENODO_TECH_REPORT_ATTACHMENT_DECISION_v0_1.md",
       "zenodo.json": "https://github.com/joy7758/ecl-execution-compact-layer/releases/download/v0.1/zenodo.json",
       "zenodo_deposit_ready.json": "https://github.com/joy7758/ecl-execution-compact-layer/releases/download/v0.1/zenodo_deposit_ready.json"
     }
+  },
+  "citation_package": {
+    "path": "release/ECL_v0.1_citation_package.zip",
+    "sha256": "2d50e3e569299a3a3450b55aa764efb396a83b3623171a6e43f1ce8060d032ea"
   },
   "zenodo": {
     "deposit_package": "release/ECL_v0.1_zenodo_deposit_package.zip",

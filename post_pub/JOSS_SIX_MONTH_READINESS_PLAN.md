@@ -12,12 +12,16 @@ Build observable engineering maturity before any future JOSS resubmission. This 
 
 ## Month 1: Public Artifact Stabilization
 
+Target maintenance release: `v0.1.1`
+
 - Keep Zenodo DOI and GitHub Release links visible.
 - Maintain `make demo` as the reviewer entrypoint.
 - Record issue templates and contribution rules.
 - Fix documentation errors without changing v0.1 semantics.
 
 ## Month 2: User-Readable Workflow
+
+Target maintenance release: `v0.1.2`
 
 - Improve one-command demo clarity.
 - Add screenshots or terminal transcript if needed.
@@ -26,11 +30,15 @@ Build observable engineering maturity before any future JOSS resubmission. This 
 
 ## Month 3: Feedback Collection
 
+Target maintenance release: `v0.1.3`
+
 - Seek workshop, tool-demo, or repository issue feedback.
 - Record external comments as comments or issues only when they really exist.
 - Do not convert casual mentions into adoption claims.
 
 ## Month 4: Evaluation Hardening
+
+Target maintenance release: `v0.1.4`
 
 - Expand local fixtures only if they are reproducible and license-safe.
 - Keep production trace claims blocked unless real public traces are available.
@@ -38,11 +46,15 @@ Build observable engineering maturity before any future JOSS resubmission. This 
 
 ## Month 5: Maintenance Release Candidate
 
+Target maintenance release: `v0.1.5`
+
 - Prepare a maintenance release if defects are found.
 - Record schema migration only if schema changes.
 - Keep v0.1 DOI immutable; use a new version for payload changes.
 
 ## Month 6: Resubmission Gate
+
+Target maintenance release: `v0.1.6`
 
 Before any JOSS resubmission, verify:
 
