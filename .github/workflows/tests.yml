@@ -38,3 +38,6 @@ jobs:
 
       - name: Run JOSS gate verifier
         run: python scripts/joss_gate_verifier.py
+
+      - name: Run external action queue verifier
+        run: python scripts/verify_external_action_queue.py

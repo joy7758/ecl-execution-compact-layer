@@ -3,6 +3,8 @@ from __future__ import annotations
 from hashlib import sha256
 import json
 from pathlib import Path
+import subprocess
+import sys
 import unittest
 
 
@@ -104,8 +106,28 @@ class ExternalActionQueueTests(unittest.TestCase):
     def test_agent_index_exposes_queue(self) -> None:
         index = json.loads((ROOT / "agent-index.json").read_text(encoding="utf-8"))
         self.assertEqual(index["entrypoints"]["external_action_queue"], "post_pub/EXTERNAL_ACTION_QUEUE_v0_1.md")
+        self.assertEqual(
+            index["entrypoints"]["external_action_queue_verifier"],
+            "python3 scripts/verify_external_action_queue.py",
+        )
         self.assertIn("post_pub/EXTERNAL_ACTION_QUEUE_v0_1.md", index["primary_artifacts"])
         self.assertIn("post_pub/EXTERNAL_ACTION_QUEUE_v0_1.json", index["primary_artifacts"])
+        self.assertIn("scripts/verify_external_action_queue.py", index["primary_artifacts"])
+
+    def test_external_action_queue_verifier_reports_pass_without_writes(self) -> None:
+        result = subprocess.run(
+            [sys.executable, "scripts/verify_external_action_queue.py"],
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+            check=True,
+        )
+        report = json.loads(result.stdout)
+        self.assertEqual(report["status"], "pass")
+        self.assertTrue(report["boundary"]["verification_only"])
+        self.assertFalse(report["boundary"]["writes_external_state"])
+        self.assertFalse(report["boundary"]["youtube_upload_performed"])
+        self.assertFalse(report["boundary"]["external_feedback_recorded"])
 
 
 if __name__ == "__main__":

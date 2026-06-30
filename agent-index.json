@@ -4,7 +4,7 @@
   "repository": {
     "name": "ecl-execution-compact-layer",
     "purpose": "Build a deterministic Execution Compact Layer artifact package that compresses state, intent, action, and evidence while preserving references to POP, AIP, and ARO surfaces.",
-    "status": "local_artifact_builder"
+    "status": "public_archive_active_post_jss_prescreen_reject"
   },
   "entrypoints": {
     "build": "python3 scripts/build_artifacts.py",
@@ -17,6 +17,7 @@
     "joss_preflight": "paper/joss/JOSS_PREFLIGHT_AUDIT_v0_1.md",
     "paper_goal_audit": "paper/final_audit/GOAL_COMPLETION_AUDIT_v0_1.md",
     "external_action_queue": "post_pub/EXTERNAL_ACTION_QUEUE_v0_1.md",
+    "external_action_queue_verifier": "python3 scripts/verify_external_action_queue.py",
     "publication_package": "release/v0.1/README.md",
     "venue_screening": "paper/venue_screening/NO_PAID_JOURNAL_SCREENING_v0_1.md",
     "validate": "python3 -m ecl.validator out/ecl_artifacts/ecl_from_openai_agents_trace.json --schema schemas/ecl-execution-compact-layer.schema.json",
@@ -33,6 +34,7 @@
     "demo/replay_demo.py",
     "scripts/build_artifacts.py",
     "scripts/create_v0_1_freeze.py",
+    "scripts/verify_external_action_queue.py",
     "docs/citation/ECL_CANONICAL_SPEC_v0_1.md",
     "docs/citation/ECL_DEFINITION_NOTE_v0_1.md",
     "docs/citation/ECL_REFERENCE_SNIPPETS_v0_1.md",
@@ -73,7 +75,8 @@
     "ecl_is": [
       "local deterministic execution record",
       "schema and adapter package",
-      "audit evidence bundle generator"
+      "audit evidence bundle generator",
+      "public DOI-archived software artifact"
     ],
     "ecl_is_not": [
       "production audit control plane",
@@ -81,7 +84,9 @@
       "replacement for AIP",
       "replacement for ARO",
       "external validation result",
-      "public release"
+      "peer-reviewed publication",
+      "external adoption result",
+      "formal standard"
     ]
   }
 }
