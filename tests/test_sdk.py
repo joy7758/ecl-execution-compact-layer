@@ -18,7 +18,7 @@ LOCKED_HASHES = {
     "schemas/ecl-execution-compact-layer.schema.json": "15d089eaee07ec27d1fc69b5418e5dc5f1b1fa55f2c9395c03cde0ad6773cf89",
     "ecl/adapters/openai_agents.py": "6dd653924c97e4b746de72e35cf57a2d07f08898d0f65b9fb930cadac8ebdfc6",
     "ecl/adapters/langchain.py": "0dba4e6d7a8ed0ea63a466fec3e5bae7a7de0f6d39c57efd18f90b69d494eee5",
-    "demo/replay_demo.py": "14aba3613b6e2070c94191b73d686d94685fc314c34500bb03b185cb6399ebf1",
+    "demo/replay_demo.py": "72f4da7d636ff8ad495cede4cf1e6f85b62f3da22568f5025c9f69282c1ea66d",
 }
 
 
@@ -75,4 +75,3 @@ class SDKTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

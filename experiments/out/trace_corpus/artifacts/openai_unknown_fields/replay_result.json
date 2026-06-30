@@ -4,9 +4,9 @@
   "generated_at": "2026-06-28T00:00:00Z",
   "object_type": "ecl_replay_result",
   "output_refs": [
-    "/Users/zhangbin/GitHub/ecl-execution-compact-layer/experiments/out/trace_corpus/artifacts/openai_unknown_fields/execution_trace.json",
-    "/Users/zhangbin/GitHub/ecl-execution-compact-layer/experiments/out/trace_corpus/artifacts/openai_unknown_fields/evidence_bundle.json",
-    "/Users/zhangbin/GitHub/ecl-execution-compact-layer/experiments/out/trace_corpus/artifacts/openai_unknown_fields/replay_result.json"
+    "experiments/out/trace_corpus/artifacts/openai_unknown_fields/execution_trace.json",
+    "experiments/out/trace_corpus/artifacts/openai_unknown_fields/evidence_bundle.json",
+    "experiments/out/trace_corpus/artifacts/openai_unknown_fields/replay_result.json"
   ],
   "record_id": "ecl:a8665582c1bd51cd",
   "schema_version": "0.1.0",

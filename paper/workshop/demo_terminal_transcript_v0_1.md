@@ -23,7 +23,7 @@ python3 examples/external_recognition_demo.py
 ```text
 Ran 78 tests
 OK
-{"all_deterministic": true, "all_valid": true, "result_hash": "sha256:e6decc8c2c4117011db44c6bcd62956b62344fe47871fc6564913cac2c156ac2"}
+{"all_deterministic": true, "all_valid": true, "result_hash": "sha256:b9d8fa0269bd2efef4572daed9818a10cc3d389fb60d0d9fb376221572af7ff3"}
 {"all_deterministic": true, "all_valid": true, "result_hash": "sha256:dfafe2572fdf1ee2f48732d0c3931795151afcdeb0b1ead11b887747a99f7441"}
 ```
 

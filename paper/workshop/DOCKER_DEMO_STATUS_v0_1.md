@@ -1,61 +1,88 @@
 # ECL Docker Demo Status v0.1
 
-Status: docker_cli_present_daemon_unavailable_after_start_attempt
+Status: docker_demo_verified_after_daemon_start_and_dockerfile_fix
 
 Date: 2026-06-30
 
-## Command Attempted
+## Command Verified
 
 ```bash
 docker build -t ecl-demo .
 docker run --rm ecl-demo
 ```
 
-## Observed Result
+## Earlier Blockers
+
+Initial daemon state:
 
 ```text
 Docker version 29.5.2, build 79eb04c7d8
 Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
 ```
 
-## Start Attempt
-
-Command:
-
-```bash
-open -ga Docker
-```
-
-Polling result:
+Initial start attempt:
 
 ```text
+command=open -ga Docker
 waiting_for_docker_daemon attempts=24
 poll_interval_seconds=5
 docker_daemon_ready=false
-final_error=Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
 ```
 
-## Interpretation
+After a later start attempt, Docker became available:
 
-The Docker CLI is installed, but the Docker daemon was not running in the current environment. The container demo path is therefore prepared but not verified in this run.
+```text
+command=open -ga Docker
+waiting_for_docker_daemon attempt=1
+docker_daemon_ready=true
+docker_context=desktop-linux
+```
 
-## Verified Alternative
+The default local Docker credential helper was unavailable from the shell:
 
-The reviewer-facing non-container command is verified:
+```text
+error getting credentials - err: exec: "docker-credential-desktop": executable file not found in $PATH
+```
+
+The verified build used a temporary Docker config that does not depend on the local credential helper:
 
 ```bash
-make demo
+tmpdockerconfig=$(mktemp -d)
+printf '{"auths":{}}\n' > "$tmpdockerconfig/config.json"
+DOCKER_CONFIG="$tmpdockerconfig" docker build -t ecl-demo .
+docker run --rm ecl-demo
 ```
 
-Observed deterministic summary:
+## Dockerfile Fix
+
+The reviewer container requires `git` and `make` inside `python:3.11-slim`:
+
+```text
+apt-get install -y --no-install-recommends git make
+```
+
+`git` is required by the JOSS gate verifier tests. `make` is required by the container command.
+
+## Verified Image
+
+```text
+image=ecl-demo:latest
+image_id=sha256:740cc621c668a1608f9f897c0d53662a825cf706a42017d2b8f06c4038b29c3f
+image_created=2026-06-30T09:32:42.241439138Z
+image_size_bytes=90892094
+```
+
+## Verified Output
+
+Host `make demo` and container `docker run --rm ecl-demo` now produce the same deterministic demo hashes:
 
 ```text
 Ran 78 tests
 OK
-dependency_mode_result_hash=sha256:e6decc8c2c4117011db44c6bcd62956b62344fe47871fc6564913cac2c156ac2
+dependency_mode_result_hash=sha256:b9d8fa0269bd2efef4572daed9818a10cc3d389fb60d0d9fb376221572af7ff3
 external_recognition_result_hash=sha256:dfafe2572fdf1ee2f48732d0c3931795151afcdeb0b1ead11b887747a99f7441
 ```
 
 ## Boundary
 
-This file does not claim a working container image. It records a prepared Dockerfile and a blocked local Docker verification due to daemon availability after an explicit start attempt.
+This file claims only local Docker verification of the reviewer demo command. It does not claim ICSE submission, ICSE acceptance, external adoption, production deployment, benchmark superiority, or peer-review validation.

@@ -32,6 +32,16 @@ def write_json(path: Path, value: Any) -> None:
     path.write_text(json.dumps(value, indent=2, sort_keys=True, ensure_ascii=True) + "\n", encoding="utf-8")
 
 
+def stable_ref(path: Path) -> str:
+    raw = str(path)
+    if raw.startswith("memory:"):
+        return raw
+    try:
+        return str(path.resolve().relative_to(ROOT))
+    except ValueError:
+        return raw
+
+
 def replay(record: dict[str, Any], schema: dict[str, Any], *, input_ref: Path, out_dir: Path) -> dict[str, Any]:
     validation_report = validate_record(record, schema)
     input_hash = sha256_json(record)
@@ -49,7 +59,7 @@ def replay(record: dict[str, Any], schema: dict[str, Any], *, input_ref: Path, o
         "schema_version": "0.1.0",
         "object_type": "ecl_replay_execution_trace",
         "generated_at": generated_at,
-        "input_ref": str(input_ref),
+        "input_ref": stable_ref(input_ref),
         "input_hash": input_hash,
         "record_id": record["ecl_id"],
         "validation_valid": validation_report["valid"],
@@ -66,9 +76,9 @@ def replay(record: dict[str, Any], schema: dict[str, Any], *, input_ref: Path, o
         "deterministic": True,
         "execution_hash": execution_hash,
         "output_refs": [
-            str(out_dir / "execution_trace.json"),
-            str(out_dir / "evidence_bundle.json"),
-            str(out_dir / "replay_result.json"),
+            stable_ref(out_dir / "execution_trace.json"),
+            stable_ref(out_dir / "evidence_bundle.json"),
+            stable_ref(out_dir / "replay_result.json"),
         ],
     }
     evidence_bundle = {
@@ -76,7 +86,7 @@ def replay(record: dict[str, Any], schema: dict[str, Any], *, input_ref: Path, o
         "object_type": "ecl_replay_evidence_bundle",
         "generated_at": generated_at,
         "record_id": record["ecl_id"],
-        "input_ref": str(input_ref),
+        "input_ref": stable_ref(input_ref),
         "input_hash": input_hash,
         "validation_report": validation_report,
         "execution_trace_hash": sha256_json(execution_trace),
@@ -120,4 +130,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

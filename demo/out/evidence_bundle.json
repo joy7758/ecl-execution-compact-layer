@@ -5,13 +5,13 @@
     "schema_modified": false
   },
   "execution_hash": "sha256:2b7a36e817c06c41dacb1a965a37517018dabe776de1301bc6a98b5681a8eb4b",
-  "execution_trace_hash": "sha256:af47628e3bc1b054b804bf11d22a5f3d614f52f7f07556e76e7234d181c5fb13",
+  "execution_trace_hash": "sha256:2f9adc754e422be7f861260f2be993566916d015505921a376a7db5132f228d8",
   "generated_at": "2026-06-28T00:00:00Z",
   "input_hash": "sha256:51ebca28478d3ca63800f54e276de1aace4f5bf4ad3f9c2f4ddf8ced85b63880",
-  "input_ref": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/ecl_from_openai_agents_trace.json",
+  "input_ref": "out/ecl_artifacts/ecl_from_openai_agents_trace.json",
   "object_type": "ecl_replay_evidence_bundle",
   "record_id": "ecl:1c591e6e8beeb89f",
-  "replay_result_hash": "sha256:f20ea87d914b1224124e34764fb645fe9cb40f59827be56c0595bff1d9004fcb",
+  "replay_result_hash": "sha256:4c9643962c78934411360373e45ea4c0cf99ef0492f23a5b811b17c23ac1b9a1",
   "schema_version": "0.1.0",
   "validation_report": {
     "canonical_hash": "sha256:109c8f994889af912dc10c159ff41a060525b7c8a8ead7d04becc6d03e4a10f0",

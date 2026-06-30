@@ -20,7 +20,7 @@ Date: 2026-06-30
 | ICSE demo video script/storyboard | `paper/workshop/demo_video_script.md`, `paper/workshop/demo_storyboard.md` | complete |
 | Reviewer one-command demo | `Makefile`, `docs/demo/ONE_COMMAND_DEMO.md` | complete |
 | Docker demo path | `Dockerfile` | complete_local_file |
-| Docker demo runtime verification | `paper/workshop/DOCKER_DEMO_STATUS_v0_1.md` | blocked_docker_daemon_unavailable |
+| Docker demo runtime verification | `paper/workshop/DOCKER_DEMO_STATUS_v0_1.md` | verified_after_daemon_start_and_dockerfile_fix |
 | Six-month JOSS plan | `post_pub/JOSS_SIX_MONTH_READINESS_PLAN.md` | plan_complete |
 | Maintenance evidence ledger | `post_pub/MAINTENANCE_EVIDENCE_LEDGER_v0_1.md` | initialized_no_external_feedback_recorded |
 | Public maintenance issue bootstrap | `post_pub/MAINTENANCE_ISSUE_BOOTSTRAP_v0_1.md` and `post_pub/MAINTENANCE_ISSUE_BOOTSTRAP_v0_1.json` | public_maintenance_issues_created |
@@ -39,6 +39,8 @@ Date: 2026-06-30
 ```text
 python3 -m unittest discover -s tests
 make demo
+docker build -t ecl-demo .
+docker run --rm ecl-demo
 python3 /Users/zhangbin/GitHub/scripts/check_manuscript_lineage_tree.py
 ```
 

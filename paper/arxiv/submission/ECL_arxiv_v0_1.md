@@ -273,7 +273,7 @@ loss_detected_count=3
 surface_coverage={"action": 12, "evidence": 12, "intent": 12, "state": 12}
 surface_coverage_by_runtime={"langchain": {"action": 6, "evidence": 6, "intent": 6, "state": 6}, "openai": {"action": 6, "evidence": 6, "intent": 6, "state": 6}}
 loss_type_counts={"semantic": 9, "structural": 3}
-evaluation_hash=sha256:2434da21056811e7eacf1ffac6944d5420ddeb2aa783f74423326a2b54a33974
+evaluation_hash=sha256:f6afbe5e7cd63960f844c41bcb88438b3fa567e760504a61ad91ade245a7e8f9
 ```
 
 The corpus contains local synthetic stress cases for complete traces, missing fields, unknown fields, failure status, timestamp drift, nested runs, and implicit tool events. It is not production trace evidence, third-party validation, or a benchmark result.

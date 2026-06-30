@@ -4,9 +4,9 @@
   "generated_at": "2026-06-28T00:00:00Z",
   "object_type": "ecl_replay_result",
   "output_refs": [
-    "/Users/zhangbin/GitHub/ecl-execution-compact-layer/experiments/out/trace_corpus/artifacts/langchain_multi_step_tree/execution_trace.json",
-    "/Users/zhangbin/GitHub/ecl-execution-compact-layer/experiments/out/trace_corpus/artifacts/langchain_multi_step_tree/evidence_bundle.json",
-    "/Users/zhangbin/GitHub/ecl-execution-compact-layer/experiments/out/trace_corpus/artifacts/langchain_multi_step_tree/replay_result.json"
+    "experiments/out/trace_corpus/artifacts/langchain_multi_step_tree/execution_trace.json",
+    "experiments/out/trace_corpus/artifacts/langchain_multi_step_tree/evidence_bundle.json",
+    "experiments/out/trace_corpus/artifacts/langchain_multi_step_tree/replay_result.json"
   ],
   "record_id": "ecl:84a7a0dcae1c3bf5",
   "schema_version": "0.1.0",

@@ -171,18 +171,18 @@
       "runtime_ref": "openai-agents-sdk"
     }
   },
-  "evidence_bundle": "sha256:a81cdd5d49d4c7c47dd85ff046d1148dfe86af6df7c364d05504fd13868f7d72",
+  "evidence_bundle": "sha256:a2bed4c4ab53f7d42f85626825717271d86c04e3a7feb70d249bf1258cb4b85e",
   "replay_result": {
     "artifact_hashes": {
-      "evidence_bundle": "sha256:a81cdd5d49d4c7c47dd85ff046d1148dfe86af6df7c364d05504fd13868f7d72",
+      "evidence_bundle": "sha256:a2bed4c4ab53f7d42f85626825717271d86c04e3a7feb70d249bf1258cb4b85e",
       "execution_trace": "sha256:d560dd11748f2ac59882bf3a3095ed99cfa2077979082c449f726e13824a9cc9",
-      "replay_result": "sha256:9533247b13d23f5e7a58001287462d5b1b0717c81791f013b5abe073a4efabc0"
+      "replay_result": "sha256:187340889023daa5d1a9d24ab3750255a00601832d7a18382e62dc05f9619e02"
     },
     "deterministic": true,
     "object_type": "ecl_external_replay_verification",
     "schema_version": "0.1.0",
     "valid": true,
-    "verification_hash": "sha256:9f964dca1beb5e5d0419604d5ae4435b034b7a7125ff0cf16a5311ce640741e7"
+    "verification_hash": "sha256:69b3aac84e8c01dabee289488b2ab34d89164abf3ffcc9c37c0886e3ecf55cc3"
   },
   "runtime": "openai",
   "valid": true

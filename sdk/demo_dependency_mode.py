@@ -32,6 +32,10 @@ def write_json(path: Path, value: Any) -> None:
     path.write_text(json.dumps(value, indent=2, sort_keys=True, ensure_ascii=True) + "\n", encoding="utf-8")
 
 
+def relative_ref(path: Path | str) -> str:
+    return str(Path(path).resolve().relative_to(ROOT))
+
+
 def run_runtime(runtime: str, fixture: Path) -> dict[str, Any]:
     trace = {"runtime": runtime, "trace": read_json(fixture), "source_ref": f"sdk/demo_dependency_mode.py:{runtime}"}
     ecl_object = ecl.wrap(trace)
@@ -43,9 +47,9 @@ def run_runtime(runtime: str, fixture: Path) -> dict[str, Any]:
     write_json(runtime_dir / "verify.json", verified)
     return {
         "runtime": runtime,
-        "ecl_ref": str(runtime_dir / "ecl_object.json"),
+        "ecl_ref": relative_ref(runtime_dir / "ecl_object.json"),
         "replay_result": verified["replay"],
-        "evidence_bundle": verified["artifact_paths"]["evidence_bundle"],
+        "evidence_bundle": relative_ref(verified["artifact_paths"]["evidence_bundle"]),
         "valid": verified["valid"],
         "deterministic": verified["deterministic"],
         "verification_hash": verified["replay"]["verification_hash"],
@@ -70,4 +74,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

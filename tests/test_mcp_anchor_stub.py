@@ -23,7 +23,7 @@ LOCKED_HASHES = {
     "sdk/ecl.py": "6862a865bd1057b0159c135a75ee8fa4492399794c063a21c02aa12e90f5ed04",
     "ecl/adapters/openai_agents.py": "6dd653924c97e4b746de72e35cf57a2d07f08898d0f65b9fb930cadac8ebdfc6",
     "ecl/adapters/langchain.py": "0dba4e6d7a8ed0ea63a466fec3e5bae7a7de0f6d39c57efd18f90b69d494eee5",
-    "demo/replay_demo.py": "14aba3613b6e2070c94191b73d686d94685fc314c34500bb03b185cb6399ebf1",
+    "demo/replay_demo.py": "72f4da7d636ff8ad495cede4cf1e6f85b62f3da22568f5025c9f69282c1ea66d",
 }
 
 

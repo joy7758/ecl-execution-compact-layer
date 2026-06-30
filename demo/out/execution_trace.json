@@ -4,7 +4,7 @@
   "execution_hash": "sha256:2b7a36e817c06c41dacb1a965a37517018dabe776de1301bc6a98b5681a8eb4b",
   "generated_at": "2026-06-28T00:00:00Z",
   "input_hash": "sha256:51ebca28478d3ca63800f54e276de1aace4f5bf4ad3f9c2f4ddf8ced85b63880",
-  "input_ref": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/out/ecl_artifacts/ecl_from_openai_agents_trace.json",
+  "input_ref": "out/ecl_artifacts/ecl_from_openai_agents_trace.json",
   "object_type": "ecl_replay_execution_trace",
   "record_id": "ecl:1c591e6e8beeb89f",
   "schema_version": "0.1.0",

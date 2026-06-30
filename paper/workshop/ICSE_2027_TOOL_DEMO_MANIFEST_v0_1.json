@@ -27,12 +27,15 @@
   "demo": {
     "make_demo_verified": true,
     "docker_cli_present": true,
-    "docker_daemon_running": false,
-    "docker_demo_verified": false,
+    "docker_daemon_running": true,
+    "docker_demo_verified": true,
     "docker_start_attempted": true,
-    "docker_daemon_poll_attempts": 24,
-    "docker_blocker": "daemon_unavailable_after_start_attempt",
-    "dependency_mode_result_hash": "sha256:e6decc8c2c4117011db44c6bcd62956b62344fe47871fc6564913cac2c156ac2",
+    "docker_daemon_poll_attempts": 1,
+    "docker_blocker": null,
+    "docker_image": "ecl-demo:latest",
+    "docker_image_id": "sha256:740cc621c668a1608f9f897c0d53662a825cf706a42017d2b8f06c4038b29c3f",
+    "docker_credential_helper_workaround_used": true,
+    "dependency_mode_result_hash": "sha256:b9d8fa0269bd2efef4572daed9818a10cc3d389fb60d0d9fb376221572af7ff3",
     "external_recognition_result_hash": "sha256:dfafe2572fdf1ee2f48732d0c3931795151afcdeb0b1ead11b887747a99f7441"
   },
   "boundary": {

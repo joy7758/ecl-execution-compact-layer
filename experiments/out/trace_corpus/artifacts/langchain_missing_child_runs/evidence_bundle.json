@@ -11,7 +11,7 @@
   "input_ref": "memory:/external-adoption-ecl",
   "object_type": "ecl_replay_evidence_bundle",
   "record_id": "ecl:6ccd4f97b2547e28",
-  "replay_result_hash": "sha256:5372e4ce79933f30d9cca5b9f2ec9eeead75aed5ad83881bf55393c8ffa46b10",
+  "replay_result_hash": "sha256:a0ca69324d9bdff824fc6beec6493901928d761c3dd1f682401061eb45e79178",
   "schema_version": "0.1.0",
   "validation_report": {
     "canonical_hash": "sha256:157fedc8ec5e2f554ee1839892d7bbf18efc02ed3e4ba7c3fe372467cca53b7c",

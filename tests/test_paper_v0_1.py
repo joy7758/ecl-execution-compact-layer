@@ -48,7 +48,7 @@ class PaperV01Tests(unittest.TestCase):
         self.assertIn("total_source_fields=81", text)
         self.assertIn("direct_mapped_field_count=80", text)
         self.assertIn("sha256:8a8b820ecbdd1b4e88a2d8e07b05be2d479add0f0c6c3265292cc5a86763e43a", text)
-        self.assertIn("sha256:2434da21056811e7eacf1ffac6944d5420ddeb2aa783f74423326a2b54a33974", text)
+        self.assertIn("sha256:f6afbe5e7cd63960f844c41bcb88438b3fa567e760504a61ad91ade245a7e8f9", text)
         self.assertIn("sha256:8684fa8963ff9ad55c36eed6b89eb15992d1b05566aa1c79ced754fac67e1cdd", text)
         self.assertIn("not a published MCP server", text)
         self.assertIn("not an external adoption signal", text)

@@ -4,9 +4,9 @@
   "generated_at": "2026-06-28T00:00:00Z",
   "object_type": "ecl_replay_result",
   "output_refs": [
-    "/Users/zhangbin/GitHub/ecl-execution-compact-layer/demo/out/execution_trace.json",
-    "/Users/zhangbin/GitHub/ecl-execution-compact-layer/demo/out/evidence_bundle.json",
-    "/Users/zhangbin/GitHub/ecl-execution-compact-layer/demo/out/replay_result.json"
+    "demo/out/execution_trace.json",
+    "demo/out/evidence_bundle.json",
+    "demo/out/replay_result.json"
   ],
   "record_id": "ecl:1c591e6e8beeb89f",
   "schema_version": "0.1.0",

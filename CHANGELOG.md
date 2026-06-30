@@ -23,6 +23,7 @@ Status: public_release_and_zenodo_archive
 - Added public maintainer-created maintenance issue bootstrap for `v0.1.1` through `v0.1.6`.
 - Added external feedback request drafts and ICSE tool-demo tracking issue reference without posting or claiming feedback.
 - Added public GitHub feedback request issue status while keeping external feedback and adoption claims false.
+- Fixed the reviewer Docker demo path by installing `git` and `make`, and normalized replay artifact references for container/host-stable demo hashes.
 
 Boundary:
 

@@ -156,7 +156,7 @@ class JOSSPreflightTests(unittest.TestCase):
         for token in (
             "python3 -m pip install -e .",
             "python3 -m unittest discover -s tests",
-            "trace_corpus_evaluation_hash=sha256:2434da21056811e7eacf1ffac6944d5420ddeb2aa783f74423326a2b54a33974",
+            "trace_corpus_evaluation_hash=sha256:f6afbe5e7cd63960f844c41bcb88438b3fa567e760504a61ad91ade245a7e8f9",
             "blocking_gates=[\"public_history\"]",
         ):
             self.assertIn(token, quickstart)

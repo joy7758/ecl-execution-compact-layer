@@ -29,9 +29,9 @@ Official track page: https://conf.researchr.org/track/icse-2027/icse-2027-demons
 
 ## Pre-Submission Gates
 
-- [ ] Run `make demo`.
-- [ ] Start Docker daemon and rerun `docker build -t ecl-demo . && docker run --rm ecl-demo` if a container artifact is required.
-- [ ] Record current test count and output hashes.
+- [x] Run `make demo`.
+- [x] Start Docker daemon and rerun `docker build -t ecl-demo . && docker run --rm ecl-demo`.
+- [x] Record current test count and output hashes.
 - [ ] Render 4-page PDF in required ACM format.
 - [ ] Record 3-5 minute demo video.
 - [ ] Verify all public links resolve.

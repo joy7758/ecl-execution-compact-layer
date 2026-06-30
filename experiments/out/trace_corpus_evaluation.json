@@ -7,7 +7,7 @@
   },
   "corpus": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/experiments/trace_corpus/corpus_manifest.json",
   "corpus_hash": "sha256:84423ba61eb71fae836ecbfb970df07f2eb1222ee6b0baa1f14cd65482ad79cc",
-  "evaluation_hash": "sha256:2434da21056811e7eacf1ffac6944d5420ddeb2aa783f74423326a2b54a33974",
+  "evaluation_hash": "sha256:f6afbe5e7cd63960f844c41bcb88438b3fa567e760504a61ad91ade245a7e8f9",
   "generated_at": "2026-06-28T00:00:00Z",
   "object_type": "ecl_trace_corpus_evaluation",
   "results": [
@@ -37,7 +37,7 @@
         "multi_event"
       ],
       "valid": true,
-      "verification_hash": "sha256:dd7ff48deeb96f13f9f82fe68d6d68cd7bf9716519d896c97d3d14d4d2cee56a"
+      "verification_hash": "sha256:40384ff17b9e05a7c4669303d8258e2f8ebf36c46242cd91b401a1622281cd69"
     },
     {
       "case_id": "openai_missing_reasoning",
@@ -67,7 +67,7 @@
         "missing_field"
       ],
       "valid": true,
-      "verification_hash": "sha256:cd066dbba182af7b86c2b6a753d43534e0a8346b30dee7c02fe1f42384bca5bf"
+      "verification_hash": "sha256:e45e3d9f674ff2c42313ea9fdcd12cccff250c62a8cd9b8f240cbe35d5108bcb"
     },
     {
       "case_id": "openai_event_only_tool",
@@ -97,7 +97,7 @@
         "loss_expected"
       ],
       "valid": true,
-      "verification_hash": "sha256:c8437f9414bab7f452f63ea8ab689cf9120a4cad99426d08cf567d7f761f56c7"
+      "verification_hash": "sha256:b0e7db94a08812ecfe2c3842e0acdafe73cfbfc5e9f1c440b72a8a98ed2cf750"
     },
     {
       "case_id": "openai_failed_result",
@@ -125,7 +125,7 @@
         "failure_status"
       ],
       "valid": true,
-      "verification_hash": "sha256:54ae33cd3357ae2dceb655a8f46b949edee9afdc03dbbc7b2d1497d4a8459625"
+      "verification_hash": "sha256:26930b37164fef034d9f81f6286e47b104dfe2b902f039881dd7e5efffd818b9"
     },
     {
       "case_id": "openai_unknown_fields",
@@ -153,7 +153,7 @@
         "unknown_field"
       ],
       "valid": true,
-      "verification_hash": "sha256:d8c3253b82e3f9443eed0c9e56eef8ae96ad2f595ed52bf94c3624d973f095e9"
+      "verification_hash": "sha256:fafd8a5e318976b8da68e00adce1b75c10c9624ebf4943b59e7d196b14706a1a"
     },
     {
       "case_id": "openai_timestamp_drift",
@@ -181,7 +181,7 @@
         "timestamp"
       ],
       "valid": true,
-      "verification_hash": "sha256:1caafc311a0a6e17d221f42d6eb11d6c759ffed5ac267aa8dd22d3eeebb48b61"
+      "verification_hash": "sha256:9d2c0b9af8d58cff0f27f41129f47800e19de1b49c653333e09d24e957c36d37"
     },
     {
       "case_id": "langchain_complete_nested",
@@ -209,7 +209,7 @@
         "nested_run"
       ],
       "valid": true,
-      "verification_hash": "sha256:6e67e6138f544cb7732c5254d321216cb2ca27f3278abecacef9b60b6cd7afd0"
+      "verification_hash": "sha256:471d7229ae908f8d212208e8dcb558575d69a60dc9697f5d8ca45fbbb27dd943"
     },
     {
       "case_id": "langchain_missing_child_runs",
@@ -240,7 +240,7 @@
         "missing_field"
       ],
       "valid": true,
-      "verification_hash": "sha256:615d3235ae8a054b143e08b7bdcb0bf581c611c7c723224f0ebe707db2c8ccaa"
+      "verification_hash": "sha256:52e79c002f8ece9c5cc4566327088b8ebf41b90657a40f116355c68f7de74740"
     },
     {
       "case_id": "langchain_failed_tool",
@@ -268,7 +268,7 @@
         "failure_status"
       ],
       "valid": true,
-      "verification_hash": "sha256:e110361319f41d518b7b1576c876e2bba2f501a99cc22dd7f26848912e807f2a"
+      "verification_hash": "sha256:38166890e7d42bb1ddec0dacbdb5417c60b8e964efaafd49beeafcc3157d284a"
     },
     {
       "case_id": "langchain_unknown_metadata",
@@ -296,7 +296,7 @@
         "unknown_field"
       ],
       "valid": true,
-      "verification_hash": "sha256:80405a922a48cc891f8ee09000159df4addbd192d5e4a07de26423f1f504deb7"
+      "verification_hash": "sha256:05a94f4a7dc34b78ca2bb7efeb791e24fdf2e538441153dd4dd7a470e11adc35"
     },
     {
       "case_id": "langchain_multi_step_tree",
@@ -324,7 +324,7 @@
         "nested_run"
       ],
       "valid": true,
-      "verification_hash": "sha256:346790451fada68e3442021b086a55f689c86fa225c23d1cc5d061743e5f480d"
+      "verification_hash": "sha256:12353685a596c3922f6568898505b112b031ffa88bc1551ee9ee0674c7080caf"
     },
     {
       "case_id": "langchain_timestamp_drift",
@@ -352,7 +352,7 @@
         "timestamp"
       ],
       "valid": true,
-      "verification_hash": "sha256:5f338d11f4cbc3d677d7ca438aa2342a89d63730a7f0b75879ffdebb61edd51e"
+      "verification_hash": "sha256:31ece3abcfc5f6030d303c9e4d2a6f72c342f042e58d67aab5fa7d16d99b6a69"
     }
   ],
   "schema_version": "0.1.0",

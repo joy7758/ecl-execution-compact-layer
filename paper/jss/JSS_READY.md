@@ -195,7 +195,7 @@ loss_expectation_met_count=12
 loss_detected_count=3
 surface_coverage={"action": 12, "evidence": 12, "intent": 12, "state": 12}
 loss_type_counts={"semantic": 9, "structural": 3}
-evaluation_hash=sha256:2434da21056811e7eacf1ffac6944d5420ddeb2aa783f74423326a2b54a33974
+evaluation_hash=sha256:f6afbe5e7cd63960f844c41bcb88438b3fa567e760504a61ad91ade245a7e8f9
 ```
 
 The trace-corpus counters use case-level units. `case_count`, `valid_count`, `deterministic_count`, `loss_expectation_met_count`, and `loss_detected_count` count synthetic cases. `loss_type_counts` also partitions all 12 synthetic cases by the adapter-level loss type classification, so it is not a subset of the three cases where missing fields were detected.

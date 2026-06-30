@@ -4,9 +4,9 @@
   "generated_at": "2026-06-28T00:00:00Z",
   "object_type": "ecl_replay_result",
   "output_refs": [
-    "/Users/zhangbin/GitHub/ecl-execution-compact-layer/experiments/out/trace_corpus/artifacts/openai_missing_reasoning/execution_trace.json",
-    "/Users/zhangbin/GitHub/ecl-execution-compact-layer/experiments/out/trace_corpus/artifacts/openai_missing_reasoning/evidence_bundle.json",
-    "/Users/zhangbin/GitHub/ecl-execution-compact-layer/experiments/out/trace_corpus/artifacts/openai_missing_reasoning/replay_result.json"
+    "experiments/out/trace_corpus/artifacts/openai_missing_reasoning/execution_trace.json",
+    "experiments/out/trace_corpus/artifacts/openai_missing_reasoning/evidence_bundle.json",
+    "experiments/out/trace_corpus/artifacts/openai_missing_reasoning/replay_result.json"
   ],
   "record_id": "ecl:2c101b2ba1f446b7",
   "schema_version": "0.1.0",

@@ -9,7 +9,7 @@
     "third_party_validation": false
   },
   "object_type": "ecl_citation_repro_demo_result",
-  "result_hash": "sha256:8684fa8963ff9ad55c36eed6b89eb15992d1b05566aa1c79ced754fac67e1cdd",
+  "result_hash": "sha256:658193168c438cd41ee7aaf727c2d23756af4f8fa0e94b924ffa7a809715e5cf",
   "results": {
     "langchain": {
       "canonical_hash": "sha256:2ac7a3a935f13212d737adb844b3b02113bd26f4d266634607adb91343a83b47",
@@ -20,7 +20,7 @@
       "emit_ref": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/examples/out/citation_seed/langchain/emit.json",
       "runtime": "langchain",
       "valid": true,
-      "verification_hash": "sha256:0e11963652c2c5811685de29821dd2fe063c5fd21f51f58bf71f363aba5cd17c",
+      "verification_hash": "sha256:f1408fca7fd541aeda8a1f20c5f439e8ecb177ee2f44a8049b706be1d5013fd2",
       "verify_ref": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/examples/out/citation_seed/langchain/verify.json"
     },
     "openai": {
@@ -32,7 +32,7 @@
       "emit_ref": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/examples/out/citation_seed/openai/emit.json",
       "runtime": "openai",
       "valid": true,
-      "verification_hash": "sha256:b7d8ac2510d7eb7d22c4d88390e5ce3654b20a509d55da234db0f5cde0913fe0",
+      "verification_hash": "sha256:83af95cb066a8f94aeedf4277ff28d44e809a18df6bd7992bfef0ca6d16c51fa",
       "verify_ref": "/Users/zhangbin/GitHub/ecl-execution-compact-layer/examples/out/citation_seed/openai/verify.json"
     }
   },
