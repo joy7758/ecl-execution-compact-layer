@@ -47,3 +47,6 @@ jobs:
 
       - name: Run ICSE tool-demo package verifier
         run: python scripts/verify_icse_tool_demo_package.py
+
+      - name: Run post-JSS route verifier
+        run: python scripts/verify_post_jss_route.py
