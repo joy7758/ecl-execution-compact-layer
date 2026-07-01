@@ -34,6 +34,7 @@ class ICSEToolDemoPackageTests(unittest.TestCase):
         self.assertIn("video_candidate_matches_manifest_and_upload_is_pending", check_names)
         self.assertIn("video_assets_avoid_fixed_test_count_claims", check_names)
         self.assertIn("video_human_review_packet_is_pending_and_bound_to_candidate", check_names)
+        self.assertIn("youtube_upload_preflight_is_blocked_until_review_approved", check_names)
         self.assertIn("external_submission_boundaries_remain_false", check_names)
 
     def test_agent_index_exposes_icse_tool_demo_package_verifier(self) -> None:
@@ -51,13 +52,24 @@ class ICSEToolDemoPackageTests(unittest.TestCase):
             "python3 scripts/verify_video_human_review_packet.py",
         )
         self.assertEqual(
+            index["entrypoints"]["youtube_upload_preflight"],
+            "paper/workshop/YOUTUBE_UPLOAD_PREFLIGHT_v0_1.md",
+        )
+        self.assertEqual(
+            index["entrypoints"]["youtube_upload_preflight_verifier"],
+            "python3 scripts/verify_youtube_upload_preflight.py",
+        )
+        self.assertEqual(
             index["entrypoints"]["icse_tool_demo_package_verifier"],
             "python3 scripts/verify_icse_tool_demo_package.py",
         )
         self.assertIn("scripts/build_icse_video_candidate.py", index["primary_artifacts"])
         self.assertIn("scripts/verify_video_human_review_packet.py", index["primary_artifacts"])
+        self.assertIn("scripts/verify_youtube_upload_preflight.py", index["primary_artifacts"])
         self.assertIn("paper/workshop/video/VIDEO_HUMAN_REVIEW_PACKET_v0_1.md", index["primary_artifacts"])
         self.assertIn("paper/workshop/video/VIDEO_HUMAN_REVIEW_PACKET_v0_1.json", index["primary_artifacts"])
+        self.assertIn("paper/workshop/YOUTUBE_UPLOAD_PREFLIGHT_v0_1.md", index["primary_artifacts"])
+        self.assertIn("paper/workshop/YOUTUBE_UPLOAD_PREFLIGHT_v0_1.json", index["primary_artifacts"])
         self.assertIn("scripts/verify_icse_tool_demo_package.py", index["primary_artifacts"])
 
     def test_icse_tool_demo_package_verifier_rejects_unsupported_submission_claim(self) -> None:

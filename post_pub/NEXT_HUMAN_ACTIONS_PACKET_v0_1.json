@@ -22,7 +22,7 @@
       "order": 2,
       "id": "upload_youtube_video",
       "human_action": "Upload approved video to YouTube",
-      "input_packet": "paper/workshop/YOUTUBE_UPLOAD_HANDOFF_v0_1.md",
+      "input_packet": "paper/workshop/YOUTUBE_UPLOAD_PREFLIGHT_v0_1.md",
       "evidence_to_collect": "final YouTube URL",
       "verification_command": "do not record until URL exists",
       "status": "pending_human_upload"

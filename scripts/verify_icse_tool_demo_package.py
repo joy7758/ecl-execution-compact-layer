@@ -123,6 +123,8 @@ def verify(manifest_path: Path) -> dict[str, Any]:
     video_assets = load_json(video_asset_manifest_json) if video_asset_manifest_json.exists() else {}
     human_review_packet_path = ROOT / "paper/workshop/video/VIDEO_HUMAN_REVIEW_PACKET_v0_1.json"
     human_review_packet = load_json(human_review_packet_path) if human_review_packet_path.exists() else {}
+    youtube_preflight_path = ROOT / "paper/workshop/YOUTUBE_UPLOAD_PREFLIGHT_v0_1.json"
+    youtube_preflight = load_json(youtube_preflight_path) if youtube_preflight_path.exists() else {}
     video_asset_text_paths = [
         ROOT / "paper/workshop/video/ECL_ICSE_2027_DEMO_VIDEO_CANDIDATE.srt",
         ROOT / "paper/workshop/video/voiceover_text.txt",
@@ -190,6 +192,24 @@ def verify(manifest_path: Path) -> dict[str, Any]:
                 "packet_video_sha256": human_review_packet.get("candidate", {}).get("video_sha256"),
                 "manifest_video_sha256": video.get("local_candidate_sha256"),
                 "approved_for_youtube_upload": human_review_packet.get("decision", {}).get("approved_for_youtube_upload"),
+            },
+        )
+    )
+
+    checks.append(
+        check(
+            youtube_preflight.get("status") == "preflight_inputs_ready_blocked_until_video_review_approved"
+            and youtube_preflight.get("upload_inputs", {}).get("video_sha256") == video.get("local_candidate_sha256")
+            and youtube_preflight.get("current_gate", {}).get("approved_for_youtube_upload") is False
+            and youtube_preflight.get("current_gate", {}).get("youtube_upload_performed") is False
+            and youtube_preflight.get("boundary", {}).get("blocked_until_video_review_approved") is True,
+            "youtube_upload_preflight_is_blocked_until_review_approved",
+            {
+                "preflight": rel(youtube_preflight_path),
+                "preflight_status": youtube_preflight.get("status"),
+                "preflight_video_sha256": youtube_preflight.get("upload_inputs", {}).get("video_sha256"),
+                "manifest_video_sha256": video.get("local_candidate_sha256"),
+                "approved_for_youtube_upload": youtube_preflight.get("current_gate", {}).get("approved_for_youtube_upload"),
             },
         )
     )

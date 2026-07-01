@@ -10,6 +10,7 @@ caption=paper/workshop/video/ECL_ICSE_2027_DEMO_VIDEO_CANDIDATE.srt
 thumbnail=paper/workshop/video/video_thumbnail.png
 metadata=paper/workshop/YOUTUBE_METADATA_DRAFT_v0_1.md
 qa_report=paper/workshop/video/VIDEO_QA_REPORT_v0_1.md
+preflight=paper/workshop/YOUTUBE_UPLOAD_PREFLIGHT_v0_1.md
 ```
 
 ## Upload Settings
@@ -32,4 +33,4 @@ thumbnail=upload local thumbnail if YouTube accepts it
 
 ## Boundary
 
-This handoff is local preparation only. It does not upload the video, publish a public video, modify HotCRP, submit to ICSE, or claim external validation.
+This handoff is local preparation only. It does not approve the video, upload the video, publish a public video, modify HotCRP, submit to ICSE, or claim external validation.

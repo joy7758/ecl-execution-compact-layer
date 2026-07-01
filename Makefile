@@ -1,4 +1,4 @@
-.PHONY: demo test dependency-demo recognition-demo external-action-queue external-action-intake icse-package icse-video-candidate video-human-review post-jss-route next-human-actions
+.PHONY: demo test dependency-demo recognition-demo external-action-queue external-action-intake icse-package icse-video-candidate video-human-review youtube-upload-preflight post-jss-route next-human-actions
 
 PYTHON ?= python3
 
@@ -26,10 +26,13 @@ icse-video-candidate:
 video-human-review:
 	$(PYTHON) scripts/verify_video_human_review_packet.py
 
+youtube-upload-preflight:
+	$(PYTHON) scripts/verify_youtube_upload_preflight.py
+
 post-jss-route:
 	$(PYTHON) scripts/verify_post_jss_route.py
 
 next-human-actions:
 	$(PYTHON) scripts/verify_next_human_actions_packet.py
 
-demo: test external-action-queue external-action-intake icse-package video-human-review post-jss-route next-human-actions dependency-demo recognition-demo
+demo: test external-action-queue external-action-intake icse-package video-human-review youtube-upload-preflight post-jss-route next-human-actions dependency-demo recognition-demo

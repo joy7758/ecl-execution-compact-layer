@@ -53,6 +53,10 @@ class NextHumanActionsPacketTests(unittest.TestCase):
             actions[0]["verification_command"],
             "python3 scripts/verify_video_human_review_packet.py",
         )
+        self.assertEqual(
+            actions[1]["input_packet"],
+            "paper/workshop/YOUTUBE_UPLOAD_PREFLIGHT_v0_1.md",
+        )
         for action in actions:
             input_packet = action["input_packet"]
             self.assertTrue((ROOT / input_packet).exists(), input_packet)
